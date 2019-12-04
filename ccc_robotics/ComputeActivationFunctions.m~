@@ -2,10 +2,10 @@ function [uvms] = ComputeActivationFunctions(uvms, mission)
 % compute the activation functions here
 
 % example: MAV
-% if mav < -1, A = 1;
-% if mav > -0.25, A = 0;
+% if mav < -0.25, A = 1;
+% if mav > -1, A = 0;
 % in between, there is a smooth behavior.
-uvms.A.mav = IncreasingBellShapedFunction(-1, -0.25, 0, 1, uvms.xdot.mav);
+uvms.A.mav = IncreasingBellShapedFunction(-0.2, -1, 0, 1, uvms.xdot.mav);
 
 % example: manipulability
 % if mu < 0.02, A = 1;

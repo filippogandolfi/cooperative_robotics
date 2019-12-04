@@ -19,5 +19,13 @@ uvms.xdot.v(1:3) = Saturate(uvms.xdot.v(1:3), 0.2);
 uvms.xdot.v(4:6) = Saturate(uvms.xdot.v(4:6), 0.2);
 uvms.xdot.v
 
+% reference for MAV control task
+uvms.xdot.mav = 0.2*(uvms.dist_limit - uvms.sensorDistance);
+% limit the requested velocities...
+% uvms.xdot.mav(1:3) = Saturate(uvms.xdot.mav(1:3), 0.2);
+% uvms.xdot.mav(4:6) = Saturate(uvms.xdot.mav(4:6), 0.2);
+uvms.xdot.mav
+
+
 % reference for horizontal attitude
 uvms.xdot.ha = -0.1 * norm(uvms.phi); 

@@ -25,8 +25,7 @@ uvms.jlmax  = [2.9;1.65;2.9;0.01;2.9;1.25;2.8];
 
 % MAV task distance limits
 delta = 0.50;
-d = 5;
-uvms.dist_limit = d+delta;
+uvms.dist_limit = 1+delta;
 
 % to be compute at each time step
 uvms.wTv = eye(4,4);

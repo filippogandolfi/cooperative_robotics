@@ -6,7 +6,7 @@ close all
 
 % Simulation variables (integration and final time)
 deltat = 0.005;
-end_time = 35;
+end_time = 25;
 loop = 1;
 maxloops = ceil(end_time/deltat);
 
@@ -50,7 +50,7 @@ uvms.q = [-0.0031 0 0.0128 -1.2460 0.0137 0.0853-pi/2 0.0137]';
 % [x y z r(rot_x) p(rot_y) y(rot_z)]
 % RPY angles are applied in the following sequence
 % R(rot_x, rot_y, rot_z) = Rz (rot_z) * Ry(rot_y) * Rx(rot_x)
-uvms.p = [48.5 11.5 -33 0 0 -pi/2]'; 
+uvms.p = [10.5 38.5 -38 0 -0.06 0.5]'; 
 
 % defines the goal position for the end-effector/tool position task
 uvms.goalPosition = [12.2025   37.3748  -39.8860]';
@@ -82,12 +82,13 @@ for t = 0:deltat:end_time
     Qp = eye(13); 
     % add all the other tasks here!
     % the sequence of iCAT_task calls defines the priority
-    [Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10);
+    % [Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10);
     [Qp, rhop] = iCAT_task(uvms.A.mu,   uvms.Jmu,   Qp, rhop, uvms.xdot.mu, 0.000001, 0.0001, 10);
-    %[Qp, rhop] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp, rhop, uvms.xdot.v,  0.0001,   0.01, 10);
+    % [Qp, rhop] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp, rhop, uvms.xdot.v,  0.0001,   0.01, 10);
     [Qp, rhop] = iCAT_task(uvms.A.ha,   uvms.Jha,   Qp, rhop, uvms.xdot.ha, 0.0001,   0.01, 10);
-    %[Qp, rhop] = iCAT_task(uvms.A.t,    uvms.Jt,    Qp, rhop, uvms.xdot.t,  0.0001,   0.01, 10);
-    [Qp, rhop] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp, rhop, uvms.xdot.v,  0.0001,   0.01, 10);
+    % [Qp, rhop] = iCAT_task(uvms.A.t,    uvms.Jt,    Qp, rhop, uvms.xdot.t,  0.0001,   0.01, 10);
+    [Qp, rhop] = iCAT_task(uvms.A.l,    uvms.Jl,   Qp, rhop, uvms.xdot.l, 0.000001, 0.0001, 10);
+    %[Qp, rhop] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp, rhop, uvms.xdot.v,  0.0001,   0.01, 10);
     [Qp, rhop] = iCAT_task(eye(13),     eye(13),    Qp, rhop, zeros(13,1),  0.0001,   0.01, 10);    % this task should be the last one
     
     % get the two variables for integration

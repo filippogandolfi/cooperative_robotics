@@ -7,6 +7,12 @@ function [uvms] = ComputeActivationFunctions(uvms, mission)
 % in between, there is a smooth behavior.
 uvms.A.mav = IncreasingBellShapedFunction(-1, -0.25, 0, 1, uvms.xdot.mav);
 
+% example: landing
+% if mav < -1, A = 1;
+% if mav > -0.10, A = 0;
+% in between, there is a smooth behavior.
+uvms.A.l = 1;
+
 % example: manipulability
 % if mu < 0.02, A = 1;
 % if mu > 0.05, A = 0;

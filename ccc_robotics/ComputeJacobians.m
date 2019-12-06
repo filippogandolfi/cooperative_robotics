@@ -16,7 +16,7 @@ function [uvms] = ComputeJacobians(uvms)
 % m x 13
 % where m is the row dimension of the task, and of its reference rate
 
-% compute manipulability Jacobian
+%% compute manipulability Jacobian
 [Jmu_a, uvms.mu] = ComputeManipulability(uvms.bJe, uvms.djdq);
 uvms.Jmu = [Jmu_a zeros(1,6)];
 
@@ -52,6 +52,9 @@ uvms.Jv = [uvms.Jv_a uvms.Jv_v];
 
 %% MAV task
 uvms.Jmav = [0 0 0 0 0 1]*uvms.Jv;
+
+%% landing task
+uvms.Jl = [0 0 0 0 0 1]*uvms.Jv;
 
 %% horizontal attitude Jacobian
 kv   = [0 0 1]';

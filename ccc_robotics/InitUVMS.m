@@ -28,6 +28,11 @@ delta = 0.50;
 d = 5;
 uvms.dist_limit = d+delta;
 
+% landing task distance limits
+delta = 0.15;
+d = 0;
+uvms.dist_floor = d+delta;
+
 % to be compute at each time step
 uvms.wTv = eye(4,4);
 uvms.wTt = eye(4,4);
@@ -55,15 +60,19 @@ uvms.Jt_v = [];
 uvms.Jt = [];
 uvms.Jc = [];
 uvms.Jca = [];
+uvms.Jmav = [];
+uvms.Jl = [];
     
 uvms.xdot.jl = [];
 uvms.xdot.mu = [];
+uvms.xdot.mav = [];
 uvms.xdot.cc = [];
 uvms.xdot.ha = [];
 uvms.xdot.t = [];
 uvms.xdot.v = [];
 uvms.xdot.c = [];
 uvms.xdot.ca = [];
+uvms.xdot.l = [];
     
 uvms.A.jl = zeros(7,7);
 uvms.A.mu = 0;
@@ -73,6 +82,8 @@ uvms.A.t = zeros(6,6);
 uvms.A.v = zeros(6,6);
 uvms.A.c = [];
 uvms.A.ca = zeros(3,3);
+uvms.A.mav = zeros(1,1);
+uvms.A.l = zeros(1,1);
 
 uvms.toolFrameError = zeros(6,1);
 uvms.totalError = zeros(6,1);

@@ -17,17 +17,19 @@ uvms.xdot.v = 0.2 * [ang; lin];
 % limit the requested velocities...
 uvms.xdot.v(1:3) = Saturate(uvms.xdot.v(1:3), 0.2);
 uvms.xdot.v(4:6) = Saturate(uvms.xdot.v(4:6), 0.2);
-uvms.xdot.v
+uvms.xdot.v;
 
 % reference for MAV control task
-uvms.xdot.mav = 0.2*(uvms.dist_limit - uvms.sensorDistance);
+k=[0; 0; 1];
+uvms.wsensorDistance = k'*uvms.wTv(1:3,1:3)*[0 0 uvms.sensorDistance]';
+uvms.xdot.mav = 0.2*(uvms.dist_limit - uvms.wsensorDistance);
 % limit the requested velocities...
 % uvms.xdot.mav(1:3) = Saturate(uvms.xdot.mav(1:3), 0.2);
 % uvms.xdot.mav(4:6) = Saturate(uvms.xdot.mav(4:6), 0.2);
-uvms.xdot.mav
+uvms.xdot.mav;
 
 % reference for Landing control task
-uvms.xdot.l = 0.2*(uvms.dist_floor - uvms.sensorDistance);
+uvms.xdot.l = 0.2*(uvms.dist_floor - uvms.wsensorDistance);
 % limit the requested velocities...
 % uvms.xdot.mav(1:3) = Saturate(uvms.xdot.mav(1:3), 0.2);
 % uvms.xdot.mav(4:6) = Saturate(uvms.xdot.mav(4:6), 0.2);

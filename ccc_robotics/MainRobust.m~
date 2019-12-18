@@ -6,7 +6,7 @@ close all
 
 % Simulation variables (integration and final time)
 deltat = 0.005;
-end_time = 35;
+end_time = 30;
 loop = 1;
 maxloops = ceil(end_time/deltat);
 
@@ -24,7 +24,7 @@ u_pipe_center = [-10.66 31.47 -1.94]'; % in unity coordinates
 pipe_center = wuRw'*u_pipe_center;     % in world frame coordinates
 pipe_radius = 0.3;
 
-% rock position 
+%w rock position 
 rock_center = [12.2025   37.3748  -39.8860]'; % in world frame coordinates
 
 % UDP Connection with Unity vieuvmswer v2
@@ -45,12 +45,12 @@ uvms = InitUVMS('Robust');
 % different starting position for the arm
 uvms.q = [-0.0031 0 0.0128 -1.2460 0.0137 0.0853-pi/2 0.0137]'; 
 % uvms.p
-% initial position of the vehicle
+% INITIAL POSITION of the vehicle
 % the vector contains the values in the following order
 % [x y z r(rot_x) p(rot_y) y(rot_z)]
 % RPY angles are applied in the following sequence
 % R(rot_x, rot_y, rot_z) = Rz (rot_z) * Ry(rot_y) * Rx(rot_x)
-uvms.p = [48.5 11.5 -33 0 0 -pi/2]'; 
+uvms.p = [8.5 38.5 -36 0 -0.06 0.5]'; 
 
 % defines the goal position for the end-effector/tool position task
 uvms.goalPosition = [12.2025   37.3748  -39.8860]';
@@ -58,8 +58,8 @@ uvms.wRg = rotation(0, 0, pi/2);
 uvms.wTg = [uvms.wRg uvms.goalPosition; 0 0 0 1];
 
 % defines the target (tg) position for the vehicle position task (1.1)
-uvms.targetPosition = [50 -12.5 -35]';
-uvms.wRtg = rotation(0, 0, -pi/2);
+uvms.targetPosition = [10.5 37.5 -38]';
+uvms.wRtg = rotation(0, -0.06, 0.5);
 uvms.wTtg = [uvms.wRtg uvms.targetPosition; 0 0 0 1];
 
 % defines the tool control point (end effector - tool)
@@ -82,13 +82,13 @@ for t = 0:deltat:end_time
     Qp = eye(13); 
     % add all the other tasks here!
     % the sequence of iCAT_task calls defines the priority
-    % [Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10);
-    [Qp, rhop] = iCAT_task(uvms.A.mu,   uvms.Jmu,   Qp, rhop, uvms.xdot.mu, 0.000001, 0.0001, 10);
-    % [Qp, rhop] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp, rhop, uvms.xdot.v,  0.0001,   0.01, 10);
-    [Qp, rhop] = iCAT_task(uvms.A.ha,   uvms.Jha,   Qp, rhop, uvms.xdot.ha, 0.0001,   0.01, 10);
-    % [Qp, rhop] = iCAT_task(uvms.A.t,    uvms.Jt,    Qp, rhop, uvms.xdot.t,  0.0001,   0.01, 10);
-    [Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10)
-    [Qp, rhop] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp, rhop, uvms.xdot.v,  0.0001,   0.01, 10);
+    [Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10); %Minimum Alt. Vehicle
+    [Qp, rhop] = iCAT_task(uvms.A.mu,   uvms.Jmu,   Qp, rhop, uvms.xdot.mu, 0.000001, 0.0001, 10); %Manipulability
+    [Qp, rhop] = iCAT_task(uvms.A.ha,   uvms.Jha,   Qp, rhop, uvms.xdot.ha, 0.0001,   0.01, 10); %Horizontal Attitude
+    [Qp, rhop] = iCAT_task(uvms.A.t,    uvms.Jt,    Qp, rhop, uvms.xdot.t,  0.0001,   0.01, 10); %Tool
+    [Qp, rhop] = iCAT_task(uvms.A.l,    uvms.Jl,   Qp, rhop, uvms.xdot.l, 0.000001, 0.0001, 10); %landing
+    [Qp, rhop] = iCAT_task(uvms.A.alr,    uvms.Jalr,   Qp, rhop, uvms.xdot.alr, 0.000001, 0.0001, 10); %landing
+    [Qp, rhop] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp, rhop, uvms.xdot.v,  0.0001,   0.01, 10); %Vechicle position
     [Qp, rhop] = iCAT_task(eye(13),     eye(13),    Qp, rhop, zeros(13,1),  0.0001,   0.01, 10);    % this task should be the last one
     
     % get the two variables for integration
@@ -101,24 +101,26 @@ for t = 0:deltat:end_time
     uvms.p = integrate_vehicle(uvms.p, uvms.p_dot, deltat);
     
     % check if the mission phase should be changed
+    mission.phase_time = t;
     [uvms, mission] = UpdateMissionPhase(uvms, mission);
+    
     
     % send packets to Unity viewer
     SendUdpPackets(uvms,wuRw,vRvu,uArm,uVehicle);
-        
+         
     % collect data for plots
     plt = UpdateDataPlot(plt,uvms,t,loop);
     loop = loop + 1;
    
     % add debug prints here
     if (mod(t,0.1) == 0)
-        t
-        uvms.sensorDistance
+        t;
+        mission.phase
     end
 
     % enable this to have the simulation approximately evolving like real
     % time. Remove to go as fast as possible
-    %SlowdownToRealtime(deltat);
+    %SlowdownToRealtsssime(deltat);
 end
 
 fclose(uVehicle);

@@ -29,10 +29,9 @@ uvms.d_mav = 1;
 uvms.dist_limit = uvms.d_mav+delta;
 
 % landing task distance limits
-delta = 0.15;
-d = 0;
+delta = 0.05;
+uvms.d = 0;
 uvms.dist_floor = d+delta;
-uvms.startGoDown = 0.;
 
 % to be compute at each time step
 uvms.wTv = eye(4,4);
@@ -63,8 +62,7 @@ uvms.Jc = [];
 uvms.Jca = [];
 uvms.Jmav = [];
 uvms.Jl = [];
-uvms.Jalr = [];
-
+    
 uvms.xdot.jl = [];
 uvms.xdot.mu = [];
 uvms.xdot.mav = [];
@@ -75,7 +73,6 @@ uvms.xdot.v = [];
 uvms.xdot.c = [];
 uvms.xdot.ca = [];
 uvms.xdot.l = [];
-uvms.xdot.alr = [];
     
 uvms.A.jl = zeros(7,7);
 uvms.A.mu = 0;
@@ -87,7 +84,6 @@ uvms.A.c = [];
 uvms.A.ca = zeros(3,3);
 uvms.A.mav = zeros(1,1);
 uvms.A.l = zeros(1,1);
-uvms.A.alr = zeros(1,1);
 
 uvms.Amiss.jl = 1;
 uvms.Amiss.mu = 1;
@@ -99,9 +95,9 @@ uvms.Amiss.c = 1;
 uvms.Amiss.ca = 1;
 uvms.Amiss.mav = 1;
 uvms.Amiss.l = 1;
-uvms.Amiss.alr=0;
 
 
 uvms.toolFrameError = zeros(6,1);
 uvms.totalError = zeros(6,1);
 end
+

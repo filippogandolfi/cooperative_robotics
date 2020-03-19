@@ -1,7 +1,7 @@
 function [uvms, mission] = UpdateMissionPhase(uvms, mission)
 
 [~, PosErrorLin] = CartError(uvms.wTtg, uvms.wTv);
-[AlgRockError, ~]= CartError(uvms.wTtg, uvms.wTv);
+AlgRockError = norm(uvms.misalignment);
 
 % example: manipulability
 % if mu < 0.02, A = 1;
@@ -29,7 +29,7 @@ switch mission.phase
         uvms.Amiss.l=0;
         uvms.Amiss.alr=0;
     case 2
-        if(norm(AlgRockError) <= 0.45)
+        if(AlgRockError<= 0.3)
             uvms.startGoDown = uvms.wsensorDistance;
             mission.phase = 3;
         end
@@ -39,7 +39,8 @@ switch mission.phase
         uvms.Amiss.v = 0;
         uvms.Amiss.mav = IncreasingBellShapedFunction(0, 0.5, 0, 1, norm(PosErrorLin));
         uvms.Amiss.l = 0;
-        uvms.Amiss.alr = IncreasingBellShapedFunction(0, 0.5, 0, 1, norm(AlgRockError));
+%         uvms.Amiss.alr = IncreasingBellShapedFunction(0, 0.5, 0, 1, AlgRockError);
+        uvms.Amiss.alr = 1;
     case 3 % landing with no arm
         uvms.Amiss.mu = 1;
         uvms.Amiss.ha = 1;

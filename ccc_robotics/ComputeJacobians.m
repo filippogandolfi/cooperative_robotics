@@ -68,4 +68,31 @@ else
 end
 uvms.Jha = [zeros(1,7) nphi'*[zeros(3) eye(3)]];
 
+%% Alignment x axis
+
+%vector joining the vehicle frame to the rock frame wrt to w
+w_bVector_vr = uvms.rock_center - uvms.wTv(1:3,4);
+% k su vehicle deve andare su world
+k = [0 0 1]';
+% projection in the inertial horizontal plane (third component = 0)
+proj_bVector_vr = (eye(3)-k*k')* w_bVector_vr; %i-kkt
+%unit vector joining the vehicle frame to the rock frame
+w_uVector_r = proj_bVector_vr / norm(proj_bVector_vr);
+
+%versor i of the vehicle frame
+i_vehicle = uvms.wTv(1:3,1:3)*[1 0 0]';
+
+%misaligment (rho) vector with ReducedVectorLemma
+uvms.misalignment = ReducedVersorLemma(w_uVector_r, i_vehicle/norm(i_vehicle));
+uvms.Vmisalignment = uvms.wTv(1:3,1:3)*uvms.misalignment;
+% Prof hint (we don't want nn)
+% theta = norm(uvms.misalignment);
+% unit_n = uvms.misalignment/theta;
+% Projection matrix on unit_n
+% proj_unit_n = unit_n * unit_n';
+
+% w b/a = unit_n*lambda*theta
+uvms.Jalr = [zeros(3,7) (1/norm(v_bVector_vr)^2)*skew(v_bVector_vr)*[1 0 0; 0 1 0;0 0 0]*uvms.wTv(1:3,1:3) eye(3)]; %[3x13] R rotation
+% uvms.Jalr = [zeros(3,7) (-1/norm(v_bVector_vr)^2)*skew(v_bVector_vr)*[1 0 0; 0 1 0;0 0 0] eye(3)]; %[3x13]
+%%
 end

@@ -50,7 +50,10 @@ uvms.q = [-0.0031 0 0.0128 -1.2460 0.0137 0.0853-pi/2 0.0137]';
 % [x y z r(rot_x) p(rot_y) y(rot_z)]
 % RPY angles are applied in the following sequence
 % R(rot_x, rot_y, rot_z) = Rz (rot_z) * Ry(rot_y) * Rx(rot_x)
-uvms.p = [8.5 38.5 -36 0 -0.06 0.5]'; 
+uvms.p = [10.5 35.5 -36 0 0 pi/2]'; 
+
+%w rock position saved in uvms
+uvms.rock_center = rock_center; % in world frame coordinates
 
 % defines the goal position for the end-effector/tool position task
 uvms.goalPosition = [12.2025   37.3748  -39.8860]';
@@ -116,6 +119,8 @@ for t = 0:deltat:end_time
     if (mod(t,0.1) == 0)
         t;
         mission.phase
+        uvms.misalignment
+        uvms.Amiss.alr
     end
 
     % enable this to have the simulation approximately evolving like real

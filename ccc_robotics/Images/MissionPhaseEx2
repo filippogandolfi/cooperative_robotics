@@ -11,13 +11,13 @@ case 1 %safe navigation
         uvms.Amiss.mav = IncreasingBellShapedFunction(0, 0.5, 0, 1, norm(PosErrorLin));
         %uvms.Amiss.l = DecreasingBellShapedFunction(0.5, 1, 0, 1, norm(PosErrorLin));
         uvms.Amiss.l=0;
-    case 2 % landing with no arm
+case 2 % landing with no arm
         uvms.Amiss.mu = 1;
         uvms.Amiss.ha = 1;
         uvms.Amiss.t = 0;
 %         uvms.Amiss.l = IncreasingBellShapedFunction(0.025, uvms.startGoDown-0.2, 0, 1, uvms.wsensorDistance);
 %         uvms.Amiss.l = 1;
-        uvms.Amiss.l = DecreasingBellShapedFunction(uvms.startGoDown-0.5, uvms.startGoDown+0.5, 0, 1, uvms.wsensorDistance);
+        uvms.Amiss.l = 1;
         uvms.Amiss.v = 0;
         uvms.Amiss.mav = 0;
 %         if(norm(PosErrorLin) > 0.5)

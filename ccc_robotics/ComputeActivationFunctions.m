@@ -32,4 +32,4 @@ uvms.A.v = uvms.Amiss.v*eye(6);
 
 % Allignment Rock
 % always active
-uvms.A.alr = uvms.Amiss.alr*eye(6);
+uvms.A.alr = uvms.Amiss.alr*eye(3);

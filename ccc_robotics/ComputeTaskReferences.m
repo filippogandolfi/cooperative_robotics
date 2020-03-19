@@ -31,11 +31,13 @@ uvms.xdot.mav;
 % reference for Landing control task
 uvms.xdot.l = 0.2*(uvms.dist_floor - uvms.wsensorDistance);
 % limit the requested velocities...
+% SATURIAMO!!!!!
 % uvms.xdot.mav(1:3) = Saturate(uvms.xdot.mav(1:3), 0.2);
 % uvms.xdot.mav(4:6) = Saturate(uvms.xdot.mav(4:6), 0.2);
 uvms.xdot.l;
 
-
-
 % reference for horizontal attitude
 uvms.xdot.ha = -0.1 * norm(uvms.phi); 
+
+% reference for alignment task 
+uvms.xdot.alr = -0.3*(uvms.misalignment); %TO-DO

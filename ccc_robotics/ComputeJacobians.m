@@ -39,13 +39,15 @@ uvms.Jt_v = [zeros(3) eye(3); eye(3) -skew(uvms.vTt(1:3,4))];
 uvms.Jt = [uvms.Jt_a uvms.Jt_v];
 
 %% Vehicle position task
-% uvms.bJe contains the arm end-effector Jacobian (6x7) wrt arm base
-% top three rows are angular velocities, bottom three linear velocities
+%Jacobian of the arm (in this case we don't need to control the arm so the
+%Jacobians is a zero matrix) 
+%Jv_a = Jacobian of the Vehicle regarding the Arm end-effector position
 uvms.Jv_a  = zeros(6,7);
-% vehicle contribution is simply a rigid body transformation from vehicle
-% frame to tool frame. Notice that linear and angular velocities are
-% swapped due to the different definitions of the task and control
-% variables
+%Now we initialize the Jv_v = Jacobian of the Vehicle regarding the vehicle
+%position)
+% NOTE: the jacobian is {ZEROS SOMETHING; SOMETHING ZEROS} because linear 
+% and angular velocities are swapped due to the different definitions of 
+% the task and control variables
 uvms.Jv_v = [zeros(3) uvms.wTv(1:3,1:3); uvms.wTv(1:3,1:3) zeros(3)];
 % juxtapose the two Jacobians to obtain the global one
 uvms.Jv = [uvms.Jv_a uvms.Jv_v];
@@ -92,7 +94,7 @@ uvms.Vmisalignment = uvms.wTv(1:3,1:3)*uvms.misalignment;
 % proj_unit_n = unit_n * unit_n';
 
 % w b/a = unit_n*lambda*theta
-uvms.Jalr = [zeros(3,7) (1/norm(v_bVector_vr)^2)*skew(v_bVector_vr)*[1 0 0; 0 1 0;0 0 0]*uvms.wTv(1:3,1:3) eye(3)]; %[3x13] R rotation
+uvms.Jalr = [zeros(3,7) (1/norm(w_bVector_vr)^2)*skew(w_bVector_vr)*[1 0 0; 0 1 0;0 0 0]*uvms.wTv(1:3,1:3) eye(3)]; %[3x13] R rotation
 % uvms.Jalr = [zeros(3,7) (-1/norm(v_bVector_vr)^2)*skew(v_bVector_vr)*[1 0 0; 0 1 0;0 0 0] eye(3)]; %[3x13]
 %%
 end

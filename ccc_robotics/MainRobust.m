@@ -56,13 +56,13 @@ uvms.p = [10.5 35.5 -36 0 0 pi/2]';
 uvms.rock_center = rock_center; % in world frame coordinates
 
 % defines the goal position for the end-effector/tool position task
-uvms.goalPosition = [12.2025   37.3748  -39.8860]';
+uvms.toolTargetPosition = [12.2025   37.3748  -39.8860]';
 uvms.wRg = rotation(0, 0, pi/2);
-uvms.wTg = [uvms.wRg uvms.goalPosition; 0 0 0 1];
+uvms.wTg = [uvms.wRg uvms.toolTargetPosition; 0 0 0 1];
 
 % defines the target (tg) position for the vehicle position task (1.1)
 uvms.targetPosition = [10.5 37.5 -38]';
-uvms.wRtg = rotation(0, -0.06, 0.5);
+uvms.wRtg = rotation(0, pi/2, 0);
 uvms.wTtg = [uvms.wRtg uvms.targetPosition; 0 0 0 1];
 
 % defines the tool control point (end effector - tool)
@@ -85,13 +85,19 @@ for t = 0:deltat:end_time
     Qp = eye(13); 
     % add all the other tasks here!
     % the sequence of iCAT_task calls defines the priority
-    [Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10); %Minimum Alt. Vehicle
-    [Qp, rhop] = iCAT_task(uvms.A.mu,   uvms.Jmu,   Qp, rhop, uvms.xdot.mu, 0.000001, 0.0001, 10); %Manipulability
-    [Qp, rhop] = iCAT_task(uvms.A.ha,   uvms.Jha,   Qp, rhop, uvms.xdot.ha, 0.0001,   0.01, 10); %Horizontal Attitude
+   %[Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10); %Minimum Alt. Vehicle
+   [Qp, rhop] = iCAT_task(uvms.A.mu,   uvms.Jmu,   Qp, rhop, uvms.xdot.mu, 0.000001, 0.0001, 10); %Manipulability
+   
     [Qp, rhop] = iCAT_task(uvms.A.t,    uvms.Jt,    Qp, rhop, uvms.xdot.t,  0.0001,   0.01, 10); %Tool
     %[Qp, rhop] = iCAT_task(uvms.A.alr,    uvms.Jalr,   Qp, rhop, uvms.xdot.alr, 0.000001, 0.0001, 10); %alignment rock
-    [Qp, rhop] = iCAT_task(uvms.A.l,    uvms.Jl,   Qp, rhop, uvms.xdot.l, 0.000001, 0.0001, 10); %landing
+  %  [Qp, rhop] = iCAT_task(uvms.A.l,    uvms.Jl,   Qp, rhop, uvms.xdot.l, 0.000001, 0.0001, 10); %landing
+  
+    [Qp, rhop] = iCAT_task(uvms.A.ha,   uvms.Jha,   Qp, rhop, uvms.xdot.ha, 0.0001,   0.01, 10); %Horizontal Attitude
+
+  
     [Qp, rhop] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp, rhop, uvms.xdot.v,  0.0001,   0.01, 10); %Vehicle position
+    
+  
     [Qp, rhop] = iCAT_task(eye(13),     eye(13),    Qp, rhop, zeros(13,1),  0.0001,   0.01, 10); % this task should be the last one
     
     % get the two variables for integration
@@ -116,11 +122,11 @@ for t = 0:deltat:end_time
     loop = loop + 1;
    
     % add debug prints here
-    if (mod(t,0.1) == 0)
-        t;
-        mission.phase
-        uvms.misalignment
-        uvms.Amiss.alr
+    if (mod(t,0.5) == 0)
+          t
+%         mission.phase
+%         uvms.misalignment
+%         uvms.Amiss.alr
     end
 
     % enable this to have the simulation approximately evolving like real

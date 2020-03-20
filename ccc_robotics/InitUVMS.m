@@ -31,7 +31,7 @@ uvms.jlmax  = [2.9;1.65;2.9;0.01;2.9;1.25;2.8];
 
 % MAV task distance limits
 delta = 0.50;
-uvms.d_mav = 1;
+uvms.d_mav = 5;
 uvms.dist_limit = uvms.d_mav+delta;
 
 % landing task distance limits

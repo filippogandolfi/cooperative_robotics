@@ -53,7 +53,8 @@ uvms.Jv_v = [zeros(3) uvms.wTv(1:3,1:3); uvms.wTv(1:3,1:3) zeros(3)];
 uvms.Jv = [uvms.Jv_a uvms.Jv_v];
 
 %% MAV task
-uvms.Jmav = [0 0 0 0 0 1]*uvms.Jv;
+uvms.Jmav = [0 0 0 0 0 1]*uvms.Jv; % it's 0 0 0 0 0 1 and not 0 0 1 0 0 0 because
+                                   % the first three componenet are RPY, the other three are XYZ
 
 %% landing task
 uvms.Jl = [0 0 0 0 0 1]*uvms.Jv;
@@ -86,7 +87,7 @@ i_vehicle = uvms.wTv(1:3,1:3)*[1 0 0]';
 
 %misaligment (rho) vector with ReducedVectorLemma
 uvms.misalignment = ReducedVersorLemma(w_uVector_r, i_vehicle/norm(i_vehicle));
-uvms.Vmisalignment = uvms.wTv(1:3,1:3)*uvms.misalignment;
+%uvms.Vmisalignment = uvms.wTv(1:3,1:3)*uvms.misalignment;
 % Prof hint (we don't want nn)
 % theta = norm(uvms.misalignment);
 % unit_n = uvms.misalignment/theta;
@@ -94,7 +95,9 @@ uvms.Vmisalignment = uvms.wTv(1:3,1:3)*uvms.misalignment;
 % proj_unit_n = unit_n * unit_n';
 
 % w b/a = unit_n*lambda*theta
-uvms.Jalr = [zeros(3,7) (1/norm(w_bVector_vr)^2)*skew(w_bVector_vr)*[1 0 0; 0 1 0;0 0 0]*uvms.wTv(1:3,1:3) eye(3)]; %[3x13] R rotation
-% uvms.Jalr = [zeros(3,7) (-1/norm(v_bVector_vr)^2)*skew(v_bVector_vr)*[1 0 0; 0 1 0;0 0 0] eye(3)]; %[3x13]
-%%
+uvms.Jalr = [zeros(3,7) (-1/norm(w_bVector_vr)^2)*skew(w_bVector_vr)*[1 0 0; 0 1 0;0 0 0]*uvms.wTv(1:3,1:3) eye(3)]; %[3x13] R rotation
+%% Joints Limits
+
+uvms.Jjl = [eye(7,7) zeros(7,6)];
+
 end

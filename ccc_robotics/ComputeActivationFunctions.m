@@ -79,3 +79,16 @@ uvms.A.alr = uvms.Amiss.alr*IncreasingBellShapedFunction(0.025, 0.1, 0, 1, AlgRo
 uvms.A.vNull = uvms.Amiss.vNull*eye(6,6);
 % WITHOUT MISSION PHASES
 %uvms.A.vNull = eye(6,6);
+
+%% JOINT LIMITS (es4)
+
+% WITH MISSION PHASES
+for i = 1:7
+uvms.A.jl(i,i) = uvms.Amiss.jl*(  DecreasingBellShapedFunction(uvms.jlmin(i), uvms.jl_active_min(i), 0, 1, uvms.q(i))...
+                           + IncreasingBellShapedFunction(uvms.jl_active_max(i), uvms.jlmax(i), 0, 1, uvms.q(i)));
+end
+% WITHOUT MISSION PHASES
+%for i = 1:7
+%uvms.A.jl(i,i) = (  DecreasingBellShapedFunction(uvms.jlmin(i), uvms.jl_active_min(i), 0, 1, uvms.q(i))...
+%             + IncreasingBellShapedFunction(uvms.jl_active_max(i), uvms.jlmax(i), 0, 1, uvms.q(i)));
+%end

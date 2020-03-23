@@ -6,7 +6,7 @@ close all
 
 % Simulation variables (integration and final time)
 deltat = 0.005;
-end_time = 35;
+end_time = 40;
 loop = 1;
 maxloops = ceil(end_time/deltat);
 
@@ -87,6 +87,7 @@ for t = 0:deltat:end_time
     % add all the other tasks here!
     % the sequence of iCAT_task calls defines the priority
     [Qp, rhop] = iCAT_task(uvms.A.vNull,    uvms.Jv,    Qp, rhop, uvms.xdot.vNull,  0.0001,   0.01, 10); %Null Vehicle velocity position
+    [Qp, rhop] = iCAT_task(uvms.A.jl,    uvms.Jjl,    Qp, rhop, uvms.xdot.jl,  0.0001,   0.01, 10); %Joint Limits
     [Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10); %Minimum Alt. Vehicle
     [Qp, rhop] = iCAT_task(uvms.A.mu,   uvms.Jmu,   Qp, rhop, uvms.xdot.mu, 0.000001, 0.0001, 10); %Manipulability
     [Qp, rhop] = iCAT_task(uvms.A.ha,   uvms.Jha,   Qp, rhop, uvms.xdot.ha, 0.0001,   0.01, 10); %Horizontal Attitude

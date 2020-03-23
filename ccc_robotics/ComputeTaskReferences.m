@@ -46,3 +46,14 @@ uvms.xdot.alr;
 %% reference for null velocity task 
 uvms.xdot.vNull = zeros(6,1);
 uvms.xdot.vNull;
+
+%% reference for Joint limit task
+for i = 1:7
+    
+    if (uvms.q(i) <= uvms.jl_mid(i))
+        uvms.xdot.jl(i,1) = 0.2*uvms.jl_active_min(i) - uvms.q(i);
+    else
+        uvms.xdot.jl(i,1) = 0.2*uvms.jl_active_max(i) - uvms.q(i);
+    end
+    
+end

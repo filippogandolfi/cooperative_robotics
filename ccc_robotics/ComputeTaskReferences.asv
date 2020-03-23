@@ -38,10 +38,28 @@ uvms.xdot.l;
 uvms.xdot.ha = -0.2 * norm(uvms.phi); 
 
 %% reference for alignment task 
-uvms.xdot.alr = -0.8*(uvms.misalignment);
-%uvms.xdot.alr = Saturate(uvms.xdot.alr, 0.2);
+uvms.xdot.alr = -0.4*(uvms.misalignment); %negative gain instead of 0-norm(uvms.misalignment)
+% limit the requested velocities...
+uvms.xdot.alr = Saturate(uvms.xdot.alr, 0.2);
 uvms.xdot.alr;
 
 %% reference for null velocity task 
 uvms.xdot.vNull = zeros(6,1);
 uvms.xdot.vNull;
+
+%% reference for Joint limit task
+uvms.jlmin  = [-2.9; -1.6; -2.9; -2.95; -2.9; -1.65; -2.8]; %[-166° -91° -166° -169° -166° -95° -161°]
+uvms.jlmax  = [ 2.9;  1.65; 2.9;  0.01;  2.9; 1.25; 2.8]; %[166° 95° 166° 1° 166° 72° 161°]
+uvms.jl_guard = zeros(7,1);
+uvms.jl_active_min = zeros(7,1);
+uvms.jl_active_max = zeros(7,1);
+uvms.jl_mid = zeros(7,1);
+for i = 1:7
+    
+    if (uvms.q(i) <= uvms.jl_mid(i))
+        uvms.xdot.jl(i,1) = 0.2*uvms.jl_active_min - uvms.q(i);
+    else
+        uvms.xdot.jl(i,1) = 0.2*uvms.jl_active_max - uvms.q(i);
+    end
+    
+end

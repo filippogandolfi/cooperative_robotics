@@ -26,8 +26,25 @@ uvms.rock_center = [];
 uvms.misalignment = [];
 
 % joint limits corresponding to the actual MARIS arm configuration
-uvms.jlmin  = [-2.9;-1.6;-2.9;-2.95;-2.9;-1.65;-2.8];
-uvms.jlmax  = [2.9;1.65;2.9;0.01;2.9;1.25;2.8];
+
+uvms.jlmin  = [-2.9; -1.6; -2.9; -2.95; -2.9; -1.65; -2.8]; 
+             %[-166°  -91° -166°  -169° -166°   -95° -161°]
+uvms.jlmax  = [ 2.9;  1.65; 2.9;  0.01;  2.9; 1.25; 2.8]; 
+             %[ 166°    95° 166°     1°  166°   72°  161°]
+
+uvms.jl_guard = zeros(7,1); % safe guard for joint limits in order to avoid to reach extrema
+uvms.jl_active_min = zeros(7,1); %upper guard
+uvms.jl_active_max = zeros(7,1); %lower guard
+uvms.jl_mid = zeros(7,1); %mid point between the upper and the lower guards
+
+for i = 1:7
+    
+    uvms.jl_guard(i) = ( abs(uvms.jlmin(i)) + abs(uvms.jlmax(i)) ) / 10;
+    uvms.jl_active_min(i) = uvms.jlmin(i) + uvms.jl_guard(i);
+    uvms.jl_active_max(i) = uvms.jlmax(i) - uvms.jl_guard(i);
+    
+    uvms.jl_mid(i) = ( abs(uvms.jlmin(i)) + abs(uvms.jlmax(i)) ) / 2;
+end
 
 % MAV task distance limits
 delta = 0.50;

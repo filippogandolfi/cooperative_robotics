@@ -5,8 +5,8 @@ AlgRockError = norm(uvms.misalignment);
 
 switch mission.phase
     case 1 %safe navigation
-        % mav, mu, ha, v
         uvms.Amiss.vNull = 0;
+        uvms.Amiss.jl = 1;
         uvms.Amiss.mav = 1;
         uvms.Amiss.mu = 1;
         uvms.Amiss.ha = 1;
@@ -20,6 +20,7 @@ switch mission.phase
         end
     case 2 %alignment to the rock
         uvms.Amiss.vNull = 0;
+        uvms.Amiss.jl = 1;
         uvms.Amiss.mav = 1;
         uvms.Amiss.mu = 1;
         uvms.Amiss.ha = 1;
@@ -33,6 +34,7 @@ switch mission.phase
         end
     case 3 % landing
         uvms.Amiss.vNull = 0;
+        uvms.Amiss.jl = 1;
         uvms.Amiss.mav = DecreasingBellShapedFunction(0, 0.2, 0, 1, mission.phase_time);
         uvms.Amiss.mu = 1;
         uvms.Amiss.ha = 1;

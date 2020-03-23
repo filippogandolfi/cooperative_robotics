@@ -29,6 +29,9 @@ plt.a(9, loop) = uvms.A.ha(1,1);
 plt.a(10, loop) = uvms.A.mav;
 plt.a(11, loop) = uvms.A.l;
 plt.a(12, loop) = uvms.A.alr(1,1);
+plt.a(13, loop) = uvms.A.vNull(1,1);
+plt.a(14, loop) = uvms.A.t(1,1);
+plt.a(15, loop) = uvms.A.v(1,1);
 plt.toolFrameError(:, loop) = uvms.toolFrameError;
 plt.totalError(:, loop) = uvms.totalError;
 

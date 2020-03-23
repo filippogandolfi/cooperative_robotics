@@ -6,7 +6,7 @@ close all
 
 % Simulation variables (integration and final time)
 deltat = 0.005;
-end_time = 30;
+end_time = 45;
 loop = 1;
 maxloops = ceil(end_time/deltat);
 
@@ -86,6 +86,7 @@ for t = 0:deltat:end_time
     Qp = eye(13);
     % add all the other tasks here!
     % the sequence of iCAT_task calls defines the priority
+    [Qp, rhop] = iCAT_task(uvms.A.vNull,    uvms.Jv,    Qp, rhop, uvms.xdot.vNull,  0.0001,   0.01, 10); %Null Vehicle velocity position
     [Qp, rhop] = iCAT_task(uvms.A.mav,   uvms.Jmav,   Qp, rhop, uvms.xdot.mav, 0.000001, 0.0001, 10); %Minimum Alt. Vehicle
     [Qp, rhop] = iCAT_task(uvms.A.mu,   uvms.Jmu,   Qp, rhop, uvms.xdot.mu, 0.000001, 0.0001, 10); %Manipulability
     [Qp, rhop] = iCAT_task(uvms.A.ha,   uvms.Jha,   Qp, rhop, uvms.xdot.ha, 0.0001,   0.01, 10); %Horizontal Attitude
@@ -105,7 +106,7 @@ for t = 0:deltat:end_time
     uvms.p = integrate_vehicle(uvms.p, uvms.p_dot, deltat);
     
     % check if the mission phase should be changed
-    mission.phase_time = t;
+    mission.phase_time = mission.phase_time + deltat;
     [uvms, mission] = UpdateMissionPhase(uvms, mission);
     
     
@@ -117,10 +118,11 @@ for t = 0:deltat:end_time
     loop = loop + 1;
    
     % add debug prints here
-    if (mod(t,0.05) == 0)
-        debug.t = t
+    if (mod(t,0.5) == 0)
+        debug.t = t 
         debug.phase = mission.phase
         debug.dist = uvms.wSensorDistance
+        debug.position = [uvms.p(1,1) uvms.p(2,1) uvms.p(3,1)]
         %norm(uvms.misalignment)
 
         %uvms.Amiss.alr
@@ -128,7 +130,7 @@ for t = 0:deltat:end_time
     
     % enable this to have the simulation approximately evolving like real
     % time. Remove to go as fast as possible
-    SlowdownToRealtime(deltat);
+    %SlowdownToRealtime(deltat);
 
 end
 

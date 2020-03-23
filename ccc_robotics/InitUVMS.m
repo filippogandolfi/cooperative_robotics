@@ -31,14 +31,13 @@ uvms.jlmax  = [2.9;1.65;2.9;0.01;2.9;1.25;2.8];
 
 % MAV task distance limits
 delta = 0.50;
-uvms.d_mav = 5;
+uvms.d_mav = 1;
 uvms.dist_limit = uvms.d_mav+delta;
 
 % landing task distance limits
 delta_landing = 0.15;
 d = 0;
 uvms.dist_floor = d+delta_landing;
-uvms.startGoDown = 0;
 % to be compute at each time step
 uvms.wTv = eye(4,4);
 uvms.wTt = eye(4,4);
@@ -93,18 +92,20 @@ uvms.A.ca = zeros(3,3);
 uvms.A.mav = zeros(1,1);
 uvms.A.l = 1;
 uvms.A.alr = zeros(1,1);
+uvms.A.vNull = zeros(6,6);
 
-uvms.Amiss.jl = 1;
-uvms.Amiss.mu = 1;
-uvms.Amiss.cc = 1;
-uvms.Amiss.ha = 1;
-uvms.Amiss.t = 1;
-uvms.Amiss.v = 1;
-uvms.Amiss.c = 1;
-uvms.Amiss.ca = 1;
-uvms.Amiss.mav = 1;
-uvms.Amiss.l = 1;
-uvms.Amiss.alr=0;
+uvms.Amiss.jl = 0;
+uvms.Amiss.mu = 0;
+uvms.Amiss.cc = 0;
+uvms.Amiss.ha = 0;
+uvms.Amiss.t = 0;
+uvms.Amiss.v = 0;
+uvms.Amiss.c = 0;
+uvms.Amiss.ca = 0;
+uvms.Amiss.mav = 0;
+uvms.Amiss.l = 0;
+uvms.Amiss.alr= 0;
+uvms.Amiss.vNull= 0;
 
 
 uvms.toolFrameError = zeros(6,1);

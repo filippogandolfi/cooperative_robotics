@@ -9,19 +9,7 @@ function [uvms] = ComputeActivationFunctions(uvms, mission)
 % This function is defined as follows
 % ymin, if x < xmin
 % ymax, if x > xmax
-%% MINIMUM ALTITUDE VEHICLE
 
-% WITH MISSION PHASES
-uvms.A.mav = uvms.Amiss.mav*DecreasingBellShapedFunction(uvms.d_mav, uvms.dist_limit, 0, 1, uvms.wSensorDistance);
-
-% WITHOUT MISSION PHASES
-%uvms.A.mav = DecreasingBellShapedFunction(uvms.d_mav, uvms.dist_limit, 0, 1, uvms.wSensorDistance);
-%% LANDING
-% WITH MISSION PHASES
- uvms.A.l = uvms.Amiss.l*1;
-
-% WITHOUT MISSION PHASES
-%uvms.A.l = uvms.A.l*1;
 %% MANIPULABILITY
 % if mu > 0.05, A = 0;
 % if mu < 0.02, A = 1;
@@ -64,7 +52,20 @@ uvms.A.v = uvms.Amiss.v*eye(6);
 % WITHOUT MISSION PHASES
 %uvms.A.v = eye(6);
 
-%% ALLIGNMENT ROCK
+%% MINIMUM ALTITUDE VEHICLE (es1)
+
+% WITH MISSION PHASES
+uvms.A.mav = uvms.Amiss.mav*DecreasingBellShapedFunction(uvms.d_mav, uvms.dist_limit, 0, 1, uvms.wSensorDistance);
+
+% WITHOUT MISSION PHASES
+%uvms.A.mav = DecreasingBellShapedFunction(uvms.d_mav, uvms.dist_limit, 0, 1, uvms.wSensorDistance);
+%% LANDING (es2)
+% WITH MISSION PHASES
+ uvms.A.l = uvms.Amiss.l*1;
+
+% WITHOUT MISSION PHASES
+%uvms.A.l = uvms.A.l*1;
+%% ALLIGNMENT ROCK (es3)
 % always active
 
 % WITH MISSION PHASES
@@ -72,3 +73,9 @@ uvms.A.alr = uvms.Amiss.alr*eye(3);
 % WITHOUT MISSION PHASES
 %uvms.A.alr = eye(3);
 
+%% VEHICLE NULL POSITION (es4)
+
+% WITH MISSION PHASES
+uvms.A.vNull = uvms.Amiss.vNull*eye(6,6);
+% WITHOUT MISSION PHASES
+%uvms.A.vNull = eye(6,6);

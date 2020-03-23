@@ -6,7 +6,7 @@ close all
 
 % Simulation variables (integration and final time)
 deltat = 0.005;
-end_time = 45;
+end_time = 35;
 loop = 1;
 maxloops = ceil(end_time/deltat);
 
@@ -116,22 +116,25 @@ for t = 0:deltat:end_time
     % collect data for plots
     plt = UpdateDataPlot(plt,uvms,t,loop);
     loop = loop + 1;
-   
+    
+    
+    [~, ToolErrorLin] = CartError(uvms.vTg , uvms.vTt);
+    [~, PosErrorLin] = CartError(uvms.wTtg, uvms.wTv);
+        
     % add debug prints here
-    if (mod(t,0.5) == 0)
-        debug.t = t 
+    if (mod(t,0.05) == 0)
+        debug.t = t
         debug.phase = mission.phase
         debug.dist = uvms.wSensorDistance
         debug.position = [uvms.p(1,1) uvms.p(2,1) uvms.p(3,1)]
-        %norm(uvms.misalignment)
-
-        %uvms.Amiss.alr
+        debug.Error = [norm(PosErrorLin) norm(uvms.misalignment) norm(ToolErrorLin)]
+        
     end
     
     % enable this to have the simulation approximately evolving like real
     % time. Remove to go as fast as possible
     %SlowdownToRealtime(deltat);
-
+    
 end
 
 fclose(uVehicle);

@@ -66,12 +66,12 @@ uvms.A.mav = uvms.Amiss.mav*DecreasingBellShapedFunction(uvms.d_mav, uvms.dist_l
 % WITHOUT MISSION PHASES
 %uvms.A.l = uvms.A.l*1;
 %% ALLIGNMENT ROCK (es3)
-% always active
+AlgRockError = norm(uvms.misalignment);
 
 % WITH MISSION PHASES
-uvms.A.alr = uvms.Amiss.alr*eye(3);
+uvms.A.alr = uvms.Amiss.alr*IncreasingBellShapedFunction(0.025, 0.1, 0, 1, AlgRockError)*eye(3,3);
 % WITHOUT MISSION PHASES
-%uvms.A.alr = eye(3);
+%uvms.A.alr = eye(3,3);
 
 %% VEHICLE NULL POSITION (es4)
 

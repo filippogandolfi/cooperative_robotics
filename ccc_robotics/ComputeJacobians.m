@@ -103,4 +103,7 @@ uvms.Jjl = [eye(7,7) zeros(7,6)];
 %% Manipulator Preferred Shape
 
 uvms.Jps = [eye(4,4) zeros(4,9)];
+
+%% Constrain vehcile velocity for TPIK2
+uvms.JvConstr = [zeros(6,7), eye(6)];
 end

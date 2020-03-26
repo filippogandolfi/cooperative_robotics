@@ -20,7 +20,7 @@ uvms.q_dot = [0 0 0 0 0 0 0]';
 uvms.q_ddot = [0 0 0 0 0 0 0]';
 uvms.p_dot = [0 0 0 0 0 0]';
 uvms.p_ddot = [0 0 0 0 0 0]';
-
+uvms.p_dot_feedback = [0 0 0 0 0 0]';
 %rock center
 uvms.rock_center = [];
 
@@ -106,6 +106,7 @@ uvms.xdot.ca = [];
 uvms.xdot.l = [];
 uvms.xdot.alr = [];
 uvms.xdot.ps = [];
+uvms.xdot.vConstr = [];
 
 uvms.A.jl = zeros(7,7);
 uvms.A.mu = 0;
@@ -120,6 +121,7 @@ uvms.A.l = 1;
 uvms.A.alr = zeros(1,1);
 uvms.A.vNull = zeros(6,6);
 uvms.A.ps =  zeros(4,4);
+uvms.A.vConstr = zeros(6,6);
 
 uvms.Amiss.jl = 0;
 uvms.Amiss.mu = 0;
@@ -134,6 +136,7 @@ uvms.Amiss.l = 0;
 uvms.Amiss.alr= 0;
 uvms.Amiss.vNull= 0;
 uvms.Amiss.ps = 0;
+uvms.Amiss.vConstr= 0;
 
 uvms.toolFrameError = zeros(6,1);
 uvms.totalError = zeros(6,1);

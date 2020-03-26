@@ -16,8 +16,8 @@ uvms.xdot.t(4:6) = Saturate(uvms.xdot.t(4:6), 0.2);
 [ang, lin] = CartError(uvms.wTtg, uvms.wTv);
 uvms.xdot.v = 0.4 * [ang; lin];
 % limit the requested velocities...
-uvms.xdot.v(1:3) = Saturate(uvms.xdot.v(1:3), 0.2);
-uvms.xdot.v(4:6) = Saturate(uvms.xdot.v(4:6), 0.2);
+uvms.xdot.v(1:3) = Saturate(uvms.xdot.v(1:3), 1);
+uvms.xdot.v(4:6) = Saturate(uvms.xdot.v(4:6), 1);
 uvms.xdot.v;
 
 %% reference for MAV control task
@@ -60,4 +60,6 @@ uvms.xdot.vNull;
     for i = 1:4
             uvms.xdot.ps(i,1) = 0.2*(uvms.prefShape(i) - uvms.q(i));
     end
+%% reference for vConstr
+uvms.xdot.vConstr = uvms.p_dot_feedback;
 end

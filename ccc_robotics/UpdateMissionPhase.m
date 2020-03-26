@@ -65,7 +65,7 @@ else
     if(strcmp(uvms.robotname, 'DexROV'))
         switch mission.phase
             case 1 %safe navigation
-                uvms.Amiss.vNull = 0;
+                uvms.Amiss.vConstr = 1;
                 uvms.Amiss.jl = 1;
                 uvms.Amiss.mu = 1;
                 uvms.Amiss.ha = 1;
@@ -77,11 +77,11 @@ else
                     mission.phase_time = 0;
                 end
             case 2
-                uvms.Amiss.vNull = IncreasingBellShapedFunction(0, 0.2, 0, 1, mission.phase_time);
+                uvms.Amiss.vConstr = 1;
                 uvms.Amiss.jl = 1;
                 uvms.Amiss.mu = 1;
                 uvms.Amiss.ha = 1;
-                uvms.Amiss.t = IncreasingBellShapedFunction(0.2, 0.4, 0, 1, mission.phase_time);
+                uvms.Amiss.t = IncreasingBellShapedFunction(0, 0.2, 0, 1, mission.phase_time);
                 uvms.Amiss.v = DecreasingBellShapedFunction(0, 0.2, 0, 1, mission.phase_time);
                 uvms.Amiss.ps = 1;
         end

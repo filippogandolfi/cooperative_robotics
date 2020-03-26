@@ -97,4 +97,6 @@ uvms.A.vNull = uvms.Amiss.vNull*eye(6,6);
 %% JOINT PREFERRED SHAPE (es5)
 uvms.A.ps = uvms.Amiss.ps*eye(4,4);
 
+%% CONSTRAIN VELOCITY TPIK 2
+uvms.A.vConstr = uvms.Amiss.vConstr*eye(6,6);
 end

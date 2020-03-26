@@ -100,4 +100,7 @@ uvms.Jalr = [zeros(3,7) (-1/norm(w_bVector_vr)^2)*skew(w_bVector_vr)*[1 0 0; 0 1
 
 uvms.Jjl = [eye(7,7) zeros(7,6)];
 
+%% Manipulator Preferred Shape
+
+uvms.Jps = [eye(4,4) zeros(4,9)];
 end

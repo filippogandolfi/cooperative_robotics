@@ -14,6 +14,8 @@ else
     end
 end
 
+uvms.robotname = robotname;
+
 uvms.q_dot = [0 0 0 0 0 0 0]';
 uvms.q_ddot = [0 0 0 0 0 0 0]';
 uvms.p_dot = [0 0 0 0 0 0]';
@@ -36,6 +38,11 @@ uvms.jl_guard = zeros(7,1); % safe guard for joint limits in order to avoid to r
 uvms.jl_active_min = zeros(7,1); %upper guard
 uvms.jl_active_max = zeros(7,1); %lower guard
 uvms.jl_mid = zeros(7,1); %mid point between the upper and the lower guards
+
+%Preferred manipulator shape
+
+uvms.prefShape  = [-0.0031; 1.2586; 0.0128; -1.2460]; 
+
 
 for i = 1:7
     
@@ -85,6 +92,7 @@ uvms.Jca = [];
 uvms.Jmav = [];
 uvms.Jl = [];
 uvms.Jalr = [];
+uvms.Jps = [];
 
 uvms.xdot.jl = [];
 uvms.xdot.mu = [];
@@ -97,7 +105,8 @@ uvms.xdot.c = [];
 uvms.xdot.ca = [];
 uvms.xdot.l = [];
 uvms.xdot.alr = [];
-    
+uvms.xdot.ps = [];
+
 uvms.A.jl = zeros(7,7);
 uvms.A.mu = 0;
 uvms.A.cc = zeros(1,1);
@@ -110,6 +119,7 @@ uvms.A.mav = zeros(1,1);
 uvms.A.l = 1;
 uvms.A.alr = zeros(1,1);
 uvms.A.vNull = zeros(6,6);
+uvms.A.ps =  zeros(4,4);
 
 uvms.Amiss.jl = 0;
 uvms.Amiss.mu = 0;
@@ -123,7 +133,7 @@ uvms.Amiss.mav = 0;
 uvms.Amiss.l = 0;
 uvms.Amiss.alr= 0;
 uvms.Amiss.vNull= 0;
-
+uvms.Amiss.ps = 0;
 
 uvms.toolFrameError = zeros(6,1);
 uvms.totalError = zeros(6,1);

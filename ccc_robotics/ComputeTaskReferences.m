@@ -35,25 +35,29 @@ uvms.xdot.l = Saturate(uvms.xdot.l, 0.2);
 uvms.xdot.l;
 
 %% reference for horizontal attitude
-uvms.xdot.ha = -0.2 * norm(uvms.phi); 
+uvms.xdot.ha = -0.2 * norm(uvms.phi);
 
-%% reference for alignment task 
+%% reference for alignment task
 uvms.xdot.alr = -0.4*(uvms.misalignment); %negative gain instead of 0-norm(uvms.misalignment)
 % limit the requested velocities...
 uvms.xdot.alr = Saturate(uvms.xdot.alr, 0.2);
 uvms.xdot.alr;
 
-%% reference for null velocity task 
+%% reference for null velocity task
 uvms.xdot.vNull = zeros(6,1);
 uvms.xdot.vNull;
 
 %% reference for Joint limit task
-for i = 1:7
-    
-    if (uvms.q(i) <= uvms.jl_mid(i))
-        uvms.xdot.jl(i,1) = 0.2*uvms.jl_active_min(i) - uvms.q(i);
-    else
-        uvms.xdot.jl(i,1) = 0.2*uvms.jl_active_max(i) - uvms.q(i);
+    for i = 1:7
+        if (uvms.q(i) <= uvms.jl_mid(i))
+            uvms.xdot.jl(i,1) = 0.2*(uvms.jl_active_min(i) - uvms.q(i));
+        else
+            uvms.xdot.jl(i,1) = 0.2*(uvms.jl_active_max(i) - uvms.q(i));
+        end
     end
     
+%% reference for manipulator preferred shape
+    for i = 1:4
+            uvms.xdot.ps(i,1) = 0.2*(uvms.prefShape(i) - uvms.q(i));
+    end
 end

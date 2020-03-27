@@ -34,7 +34,11 @@ figure(4);
 hplot = plot(plt.t, plt.a(8:15,:));
 set(hplot, 'LineWidth', 2);
 legend('Amu', 'Aha', 'Amav', 'Al', 'Aalr', 'AvNull','At', 'Av');
-    
+
+figure(5);
+hplot = plot(plt.t, plt.toolFrameError(:,:));
+set(hplot, 'LineWidth', 2);
+legend('ErrorWx', 'ErrorWy', 'ErrorWz', 'ErrorX', 'ErrorY', 'ErrorZ');
 
 
     

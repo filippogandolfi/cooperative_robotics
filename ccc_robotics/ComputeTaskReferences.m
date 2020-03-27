@@ -9,8 +9,8 @@ uvms.xdot.mu = 0.1 * (0.12 - uvms.mu);
 [ang, lin] = CartError(uvms.vTg , uvms.vTt);
 uvms.xdot.t = 0.4 * [ang; lin];
 % limit the requested velocities...
-uvms.xdot.t(1:3) = Saturate(uvms.xdot.t(1:3), 0.2);
-uvms.xdot.t(4:6) = Saturate(uvms.xdot.t(4:6), 0.2);
+%uvms.xdot.t(1:3) = Saturate(uvms.xdot.t(1:3), 0.4);
+%uvms.xdot.t(4:6) = Saturate(uvms.xdot.t(4:6), 0.4);
 
 %% reference for vehicle position control task
 [ang, lin] = CartError(uvms.wTtg, uvms.wTv);
@@ -58,8 +58,8 @@ uvms.xdot.vNull;
     
 %% reference for manipulator preferred shape
     for i = 1:4
-            uvms.xdot.ps(i,1) = 0.2*(uvms.prefShape(i) - uvms.q(i));
+            uvms.xdot.ps(i,1) = 0.5*(uvms.prefShape(i) - uvms.q(i));
     end
 %% reference for vConstr
-uvms.xdot.vConstr = uvms.p_dot_feedback;
+uvms.xdot.vConstr = 1*uvms.p_dot_feedback;
 end

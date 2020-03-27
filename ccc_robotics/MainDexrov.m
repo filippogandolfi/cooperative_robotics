@@ -117,7 +117,7 @@ for t = 0:deltat:end_time
     % Integration
     uvms.q = uvms.q + uvms.q_dot*deltat;
     % sinusoidal disturbance
-    uvms.disturbance = (0.15*[0 0 sin(t)]');
+    uvms.disturbance = (0.05*[0 0 sin(t)]');
     
     % beware: p_dot should be projected on <v>
     uvms.p_dot(1:3,1) = uvms.p_dot(1:3,1) + uvms.vTw(1:3, 1:3) * uvms.disturbance;
@@ -130,17 +130,20 @@ for t = 0:deltat:end_time
     % send packets to Unity viewer
     SendUdpPackets(uvms,wuRw,vRvu,uArm,uVehicle);
     
+    [angError, linError] = CartError(uvms.vTg , uvms.vTt);
+    uvms.toolFrameError = [angError' linError'];
+    
     % collect data for plots
     plt = UpdateDataPlot(plt,uvms,t,loop);
     loop = loop + 1;
     
-    [angError, linError] = CartError(uvms.wTg , uvms.wTt);
-   
+    
+    
     % add debug prints here
     if (mod(t,0.1) == 0)
         debug.t = t
         debug.phase = mission.phase
-        debug.Error = [round(angError',3) round(linError',3)]
+        debug.Error = [norm(angError) norm(linError)]
         debug.p = uvms.p'
         debug.q = uvms.q'
     end

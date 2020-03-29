@@ -37,4 +37,8 @@ plt.totalError(:, loop) = uvms.totalError;
 
 plt.toolx(:,loop) = uvms.wTt(1,4);
 plt.tooly(:,loop) = uvms.wTt(2,4);
+
+%joint limit
+plt.jlmin(:,loop) = uvms.jlmin;
+plt.jlmax(:,loop) = uvms.jlmax;
 end

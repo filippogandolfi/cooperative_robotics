@@ -6,7 +6,7 @@ close all
 
 % Simulation variables (integration and final time)
 deltat = 0.005;
-end_time = 45;
+end_time = 30;
 loop = 1;
 maxloops = ceil(end_time/deltat);
 
@@ -93,7 +93,7 @@ for t = 0:deltat:end_time
     [Qp, rhop] = iCAT_task(uvms.A.ps,    uvms.Jps,    Qp, rhop, uvms.xdot.ps,  0.0001,   0.01, 10); % Preferred Shape
     [Qp, rhop] = iCAT_task(eye(13),     eye(13),    Qp, rhop, zeros(13,1),  0.0001,   0.01, 10);    % this task should be the last one
     
-%% TPIK 2!
+% TPIK 2!
     rhop2 = zeros(13,1);
     Qp2 = eye(13); 
     
@@ -105,7 +105,7 @@ for t = 0:deltat:end_time
     [Qp2, rhop2] = iCAT_task(uvms.A.v,    uvms.Jv,    Qp2, rhop2, uvms.xdot.v,  0.0001,   0.01, 10); %Vehicle position
     [Qp2, rhop2] = iCAT_task(uvms.A.ps,    uvms.Jps,    Qp2, rhop2, uvms.xdot.ps,  0.0001,   0.01, 10); % Preferred Shape
     [Qp2, rhop2] = iCAT_task(eye(13),     eye(13),    Qp2, rhop2, zeros(13,1),  0.0001,   0.01, 10);    % this task should be the last one        
-    
+
 %%
     % updating the feedback for TPIK 2 with the p_dot for next loop
     uvms.p_dot_feedback = uvms.p_dot;
@@ -117,7 +117,7 @@ for t = 0:deltat:end_time
     % Integration
     uvms.q = uvms.q + uvms.q_dot*deltat;
     % sinusoidal disturbance
-    uvms.disturbance = (0.05*[0 0 sin(t)]');
+    uvms.disturbance = (0.1*[0 0 sin(t)]');
     
     % beware: p_dot should be projected on <v>
     uvms.p_dot(1:3,1) = uvms.p_dot(1:3,1) + uvms.vTw(1:3, 1:3) * uvms.disturbance;

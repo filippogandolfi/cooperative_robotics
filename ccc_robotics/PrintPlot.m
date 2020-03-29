@@ -39,9 +39,21 @@ figure(5);
 hplot = plot(plt.t, plt.toolFrameError(:,:));
 set(hplot, 'LineWidth', 2);
 legend('ErrorWx', 'ErrorWy', 'ErrorWz', 'ErrorX', 'ErrorY', 'ErrorZ');
+title ('Error with TPIK2');
+
+% Plot for joint limits
+figure(6);
+for i = 1:7
+    subplot(3,3,i);
+    plot(plt.t, plt.q(i,:),'LineWidth', 1,'color','yellow');
+    hold on;
+    plot(plt.t, plt.jlmin(i,:), '--','LineWidth', 0.5,'color','blue');
+    hold on;
+    plot(plt.t, plt.jlmax(i,:), '--','LineWidth', 0.5,'color','red');
+    title (['Joint ', num2str(i)]);
+end
 
 
-    
 
 end
 

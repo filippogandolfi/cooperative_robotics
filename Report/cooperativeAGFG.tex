@@ -46,7 +46,7 @@
     \cleardoublepage
 %%  \@mainmattertrue
   \pagenumbering{arabic}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \stackMath
 
 % Start documenti here
@@ -65,7 +65,7 @@
 
 \normalsize
 Authors: Alberto Grillo, Filippo Gandolfi\\
-EMAILs: --- filippo.gandolfi95@gmail.com \\
+EMAILs: --- albo.grillo@gmail.com, filippo.gandolfi95@gmail.com \\
 Date:  \\
 \end{center}
 \clearpage
@@ -150,14 +150,15 @@ Code for computing distance and misalignment: \\
     \label{graph_1_1}
 \end{figure}
 
-\subsubsection{Q2: What is the behaviour if the Horizontal Attitude is enabled or not? Try changing the initial or target orientation in terms of roll and pitch angles. Discuss the behaviour.}
-By default the Horizontal Attitude is enable and has higher priority than the vehicle position task. So, if the target position has pitch and roll different from zero, the robot don't perform that "vertical" position (Figure  \ref{fig:hane}). \\
+\subsubsection{Q2: What is the behaviour if the Horizontal Attitude is enabled or not? Try changing the initial or target orientation in terms of roll and pitch angles. Discuss the behaviour.} 
+By default the Horizontal Attitude is enable and has higher priority than the vehicle position task. This results in the UVMS trying to keep a horizontal orientation with respect to the sea floor (Figure  \ref{fig:hae}): if the target position has pitch and roll different from zero, the robot doesn’t perform the vertical position shown in (Figure  \ref{fig:hane}).
 When the horizontal attitude is not enabled, the UVMS trying to find the alignment between its frame and the goal one, without taking (of course) into account to stay in parallel with the seafloor. If the target position has pitch or roll, the robot will try to perform them.
 
 %%%%%%% near images %%%%%%% 
 \begin{figure}[htp]
 \centering
 \includegraphics[width=.6\textwidth]{HAenabled.png}\caption{Image of the SIM, Horizontal attitude enable, Robot is parallel with the seafloor}
+\label{fig:hae}
 \centering
 \includegraphics[width=.6\textwidth]{HANotenabled.png}\caption{Image of the SIM, Horizontal Attitude not enable, Robot is no more parallel with the seafloor}
 \label{fig:hane}
@@ -242,7 +243,7 @@ Task reference is computed as the difference between the minimum distance given 
 To achieve this task we perform the different minimum altitude, all with the same $k$ gain (equal to $0.2$), and the same $\Delta$ for the inequality nature of the problem (equal to $0.5 m$).
 
 \begin{itemize}
-    \item \textbf{10 m:} It seems no a reasonable value. The UVMS has initial position below this threshold, so it start floating to the surface very quickly (it is possible to notice this huge vertical velocity in the graph (Figure \ref{sidebyside_10}), $\dot{z}$). Of course, the task is not accomplished because the target position is so far.
+    \item \textbf{10 m:} It seems no a reasonable value. The UVMS has initial position below this threshold, so it start floating to the surface very quickly (it is possible to notice this huge vertical velocity in the graph (Figure \ref{sidebyside_10}), $\dot{z}$). Of course, the task is not accomplished because the target position is far from the threshold.
     \item \textbf{5 m:} The same as before, the activation is active at the first instant because again the initial position is below the minimum altitude. This control task is a safety one, so every time the UVMS is under the minimum altitude is active and it has the highest priority. Again, it seems no reasonable to perform such big gap with the seafloor (Reported graph, Figure \ref{sidebyside_5}).
     \item \textbf{1 m:} This time the problem is the opposite. The control task is no more active at the starting instant. The UVMS starts to accomplish the Vehicle Position Control task, when the seafloor present an hill the UVMS start to follow the pattern (Figure \ref{sidebyside_1}). However, there are some troubles during the navigation because the "noise" of the robot, with only 1 meter of distance (and no $\Delta$ that could prevent this), could touch the soil because the sensor it's on the center of the vehicle.
 \end{itemize}

@@ -124,13 +124,15 @@ The \textbf{Jacobian} for the vehicle position control task is the following one
 & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
 \end{bmatrix}
 \end{equation}
-\\ \\
-We compute the \textbf{task reference} applying the Cartesian error between the vehicle frame and the goal frame, both projected on the world frame.\\
-The misalignment between the two is computed by the Unit Vector Lemma.\\
-We multiply the final vector by a gain ($k$) factor.
+\\ 
+where ${^{w}\boldsymbol{R}_{v}}$ is the Rotation matrix from the vehicle frame to the world frame.
+\\
+We compute the \textbf{task reference} as:
 \begin{equation}
     ^{w}\dot{\overline{\boldsymbol{x}}}_{v\_g}=k\left(^{w} \boldsymbol{x}_{g}-^{w} \boldsymbol{x}_{v}\right)
 \end{equation}
+where we use the Cartesian error between the vehicle frame and the goal frame, both projected on the world frame, to compute the linear error, and then, the misalignment between the two is computed by the Unit Vector Lemma.\\
+We multiply the final vector by a gain ($k$) factor.
 
 %Gray box for defining code implemented or referred to
 \colorbox{mygray}{\parbox{0.9\textwidth}{
@@ -337,6 +339,8 @@ The task reference is computed as the difference between the seafloor and the me
 There are two major difference, the first one is that this task it isn't a safety task, it's a Action-Defining task. The Minimum Altitude it's used to avoid crash with the seafloor, the Landing task it's like the Vehicle Position task, and, as this one, it has low priority.
 The second big difference is that the Minimum altitude is an Inequality task rather than the Landing that is and equality. For this reason, as visible on the 
 
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[!h]
     \centering
     \begin{minipage}{0.50\textwidth}
@@ -350,7 +354,7 @@ The second big difference is that the Minimum altitude is an Inequality task rat
     \caption{Graph Landing}
     \end{minipage}
 \end{figure}
-
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
 
 \clearpage
 
@@ -366,23 +370,28 @@ Use a "safe waypoint navigation action" to reach the following position:
 When the position has been reached, land on the seafloor using the basic "landing" action.
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities.}
-\begin{center}
-\begin{tabular}{ | c | c | c |}
-\hline
- Control Task & Action A & Action B \\
- \hline
- MAV & Active & Inactive\\  
- Manipulabity & Active & Active\\
- Horizonatal Attitude & Active & Active\\
- Vehicle Position & Active & Inactive \\
- Landing & Inactive & Active\\
 
+We have two different actions, each one with the same hierarchy: 
+%%%%%% TABLE %%%%%%%%%
+\begin{center}
+\begin{tabular}{ | c | c | c | c |}
+\hline
+ Control Task & \texttt{Code name} & Action A & Action B \\
+\hline
+ Minimum Altitude Vehicle &  \texttt{mav} & Active & Inactive  \\  
+ Manipulabity &  \texttt{mu} & Active & Active  \\
+ Horizontal Attitude &  \texttt{ha} & Active & Active \\
+ Vehicle Position &  \texttt{v} &Active & Inactive \\
+ Landing & \texttt{l} &Inactive & Active \\
  \hline
 \end{tabular}
 \end{center}
+%%%%%% TABLE %%%%%%%%%
+
 
 %Gray box for defining code implemented or referred to
-\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
+\colorbox{mygray}
+{\parbox{0.9\textwidth}{Code for Exercise: \\
 \texttt{TO DO}\\
 \texttt{TO DO}
 }}
@@ -420,20 +429,23 @@ Then land, aligning to the nodule.
 Goal: Add an alignment task between the longitudinal axis of the vehicle ($x$ axis) and the nodule target. In particular, the $x$ axis of the vehicle should align to the projection, on the inertial horizontal plane, of the unit vector joining the vehicle frame to the nodule frame.
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Comment the behaviour.}
+
+%%%%%% TABLE %%%%%%%%%
 \begin{center}
-\begin{tabular}{ | c | c | c | c |}
+\begin{tabular}{ | c | c | c | c | c |}
 \hline
- Control Task & Action A & Action B & Action C \\
+ Control Task & \texttt{Code name} & Action A & Action B & Action C\\
  \hline
- MAV & Active & Active & Inactive \\  
- Manipulabity & Active & Active & Active  \\
- Horizonatal Attitude & Active & Active & Active\\
- Vehicle Position & Active & Inactive & Inactive \\
- Alignment to the rock & Inactive & Active & Active \\
- Landing & Inactive & Inactive & Active\\
+ Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive\\  
+ Manipulabity &  \texttt{mu} & Active & Active & Active\\
+ Horizontal Attitude &  \texttt{ha} & Active & Active & Active\\
+ Vehicle Position &  \texttt{v} &Active & Inactive & Inactive\\
+ Alignment to the rock & \texttt{alr} & Inactive & Active & Active \\
+ Landing & \texttt{l} &Inactive & Inactive & Active \\
  \hline
 \end{tabular}
 \end{center}
+%%%%%% TABLE %%%%%%%%%
 
 \begin{figure}[h]
     \centering
@@ -479,21 +491,23 @@ To manipulate as a fixed based manipulator, we need to constraint the vehicle to
 Goal: Add a constraint task that fixes the vehicle velocity to zero. Land on the seafloor. Try reaching the rock position with the end-effector, and observe that the vehicle does not move.
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}
+%%%%%% TABLE %%%%%%%%%
 \begin{center}
-\begin{tabular}{ | c | c | c | c | c |}
+\begin{tabular}{ | c | c | c | c | c | c |}
 \hline
- Control Task & Action A & Action B & Action C & Action D\\
+ Control Task & \texttt{Code name} & Action A & Action B & Action C & Action D\\
  \hline
- Vehicle Null Velocity & Inactive & Inactive & Inactive & Active\\
- MAV & Active & Active & Inactive & Inactive \\  
- Manipulabity & Active & Active & Active & Active  \\
- Horizontal Attitude & Active & Active & Active & Active\\
- Vehicle Position & Active & Inactive & Inactive & Inactive\\
- Alignment to the rock & Inactive & Active & Active & Inactive \\
- Landing & Inactive & Inactive & Active & Inactive\\
+ Vehicle Null Velocity & \texttt{vNull} & Inactive & Inactive & Inactive & Active\\
+ Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive & Inactive \\  
+ Manipulabity &  \texttt{mu} & Active & Active & Active & Active  \\
+ Horizontal Attitude &  \texttt{ha} & Active & Active & Active & Active\\
+ Vehicle Position &  \texttt{v} &Active & Inactive & Inactive & Inactive\\
+ Alignment to the rock & \texttt{alr} & Inactive & Active & Active & Inactive \\
+ Landing & \texttt{l} &Inactive & Inactive & Active & Inactive\\
  \hline
 \end{tabular}
 \end{center}
+%%%%%% TABLE %%%%%%%%%
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{Landing.png}
@@ -563,19 +577,21 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
 
 \subsubsection{Q3: What is the difference between having or not having this objective?}
 
-\begin{figure}[!h]
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htp]
     \centering
-    \begin{minipage}{0.40\textwidth}
-    \includegraphics[scale=0.4]{comment.png}
-    \caption{Preferred Shape Task Active}
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.37]{comment.png}
+    \caption{Not having}
     \end{minipage}
 \hfill
     \centering
-    \begin{minipage}{0.40\textwidth}
-    \includegraphics[scale=0.4]{uncomment.png}
-    \caption{Preferred Shape Task Inactive}
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.3]{uncomment.png}
+    \caption{Having}
     \end{minipage}
 \end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
 
 \clearpage
 
@@ -597,6 +613,9 @@ Goal: modify the control part to implement the parallel arm-vehicle coordination
 
 \subsubsection{Q1: Which tasks did you introduce to implement the parallel coordination scheme?}
 
+vConstraint - Nel TPIK2.
+
+Non è coordinato senza il TPIK 2 , non reagisce ai cambi dovuti al 
 \subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
 
 
@@ -622,5 +641,4 @@ Goal: modify the control part to implement the parallel arm-vehicle coordination
 
 
 \end{document}
-
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  27 MAR 2020 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  29 MAR 2020 15:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -536,15 +536,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--120
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--131
-
- []
-
 <task1_1.jpg, id=13, 552.0625pt x 391.4625pt>
 File: task1_1.jpg Graphic file (type jpg)
 <use task1_1.jpg>
-Package pdftex.def Info: task1_1.jpg  used on input line 146.
+Package pdftex.def Info: task1_1.jpg  used on input line 148.
 (pdftex.def)             Requested size: 276.03056pt x 195.73076pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -555,21 +550,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <HAenabled.png, id=25, 962.59625pt x 720.6925pt>
 File: HAenabled.png Graphic file (type png)
 <use HAenabled.png>
-Package pdftex.def Info: HAenabled.png  used on input line 158.
+Package pdftex.def Info: HAenabled.png  used on input line 160.
 (pdftex.def)             Requested size: 266.14978pt x 199.26324pt.
 <HANotenabled.png, id=26, 957.5775pt x 720.6925pt>
 File: HANotenabled.png Graphic file (type png)
 <use HANotenabled.png>
-Package pdftex.def Info: HANotenabled.png  used on input line 160.
+Package pdftex.def Info: HANotenabled.png  used on input line 162.
 (pdftex.def)             Requested size: 266.14978pt x 200.30795pt.
  [3 <./task1_1.jpg>] [4 <./HAenabled.png> <./HANotenabled.png>]
 <1_metro_img.png, id=33, 774.895pt x 458.71375pt>
 File: 1_metro_img.png Graphic file (type png)
 <use 1_metro_img.png>
-Package pdftex.def Info: 1_metro_img.png  used on input line 229.
+Package pdftex.def Info: 1_metro_img.png  used on input line 231.
 (pdftex.def)             Requested size: 309.95251pt x 183.48224pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
 
  []
 
@@ -579,20 +574,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 237--237
 <10_metri_graph.png, id=38, 664.4825pt x 498.86375pt>
 File: 10_metri_graph.png Graphic file (type png)
 <use 10_metri_graph.png>
-Package pdftex.def Info: 10_metri_graph.png  used on input line 251.
+Package pdftex.def Info: 10_metri_graph.png  used on input line 253.
 (pdftex.def)             Requested size: 221.78923pt x 166.50572pt.
 <5_metri_graph.png, id=39, 657.45625pt x 494.84875pt>
 File: 5_metri_graph.png Graphic file (type png)
 <use 5_metri_graph.png>
-Package pdftex.def Info: 5_metri_graph.png  used on input line 254.
+Package pdftex.def Info: 5_metri_graph.png  used on input line 256.
 (pdftex.def)             Requested size: 221.78923pt x 166.93251pt.
 <1_metro_graph.png, id=40, 661.47125pt x 496.85625pt>
 File: 1_metro_graph.png Graphic file (type png)
 <use 1_metro_graph.png>
-Package pdftex.def Info: 1_metro_graph.png  used on input line 257.
+Package pdftex.def Info: 1_metro_graph.png  used on input line 259.
 (pdftex.def)             Requested size: 221.78923pt x 166.59381pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--274
+Underfull \hbox (badness 10000) in paragraph at lines 273--276
 
  []
 
@@ -601,7 +596,7 @@ tro_graph.png>]
 <Landing.png, id=52, 561.09625pt x 338.26375pt>
 File: Landing.png Graphic file (type png)
 <use Landing.png>
-Package pdftex.def Info: Landing.png  used on input line 302.
+Package pdftex.def Info: Landing.png  used on input line 304.
 (pdftex.def)             Requested size: 224.43452pt x 135.30309pt.
  [8
 
@@ -609,18 +604,18 @@ Package pdftex.def Info: Landing.png  used on input line 302.
 <MAVGraph.png, id=57, 421.575pt x 316.18124pt>
 File: MAVGraph.png Graphic file (type png)
 <use MAVGraph.png>
-Package pdftex.def Info: MAVGraph.png  used on input line 343.
+Package pdftex.def Info: MAVGraph.png  used on input line 347.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
 <LandingGraph.png, id=58, 421.575pt x 316.18124pt>
 File: LandingGraph.png Graphic file (type png)
 <use LandingGraph.png>
-Package pdftex.def Info: LandingGraph.png  used on input line 349.
+Package pdftex.def Info: LandingGraph.png  used on input line 353.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
  [9 <./MAVGraph.png (PNG copy)> <./LandingGraph.png (PNG copy)>]
 <smooth_mission_phase.png, id=62, 781.92125pt x 588.1975pt>
 File: smooth_mission_phase.png Graphic file (type png)
 <use smooth_mission_phase.png>
-Package pdftex.def Info: smooth_mission_phase.png  used on input line 399.
+Package pdftex.def Info: smooth_mission_phase.png  used on input line 408.
 (pdftex.def)             Requested size: 234.57819pt x 176.4606pt.
  [10
 
@@ -628,22 +623,22 @@ Package pdftex.def Info: smooth_mission_phase.png  used on input line 399.
 <Es3Graph.png, id=67, 674.52pt x 504.88625pt>
 File: Es3Graph.png Graphic file (type png)
 <use Es3Graph.png>
-Package pdftex.def Info: Es3Graph.png  used on input line 440.
+Package pdftex.def Info: Es3Graph.png  used on input line 452.
 (pdftex.def)             Requested size: 269.80322pt x 201.95091pt.
 <1Navigation.png, id=68, 702.625pt x 429.10312pt>
 File: 1Navigation.png Graphic file (type png)
 <use 1Navigation.png>
-Package pdftex.def Info: 1Navigation.png  used on input line 448.
+Package pdftex.def Info: 1Navigation.png  used on input line 460.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
 <2Allign.png, id=69, 702.625pt x 429.10312pt>
 File: 2Allign.png Graphic file (type png)
 <use 2Allign.png>
-Package pdftex.def Info: 2Allign.png  used on input line 450.
+Package pdftex.def Info: 2Allign.png  used on input line 462.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
 <3Land.png, id=70, 702.625pt x 429.10312pt>
 File: 3Land.png Graphic file (type png)
 <use 3Land.png>
-Package pdftex.def Info: 3Land.png  used on input line 452.
+Package pdftex.def Info: 3Land.png  used on input line 464.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
  [11
 
@@ -651,34 +646,24 @@ Package pdftex.def Info: 3Land.png  used on input line 452.
 [12 <./1Navigation.png> <./2Allign.png> <./3Land.png>] [13]
 File: Landing.png Graphic file (type png)
 <use Landing.png>
-Package pdftex.def Info: Landing.png  used on input line 499.
+Package pdftex.def Info: Landing.png  used on input line 513.
 (pdftex.def)             Requested size: 224.43452pt x 135.30309pt.
  [14
 
 ] [15
 
 ]
-<comment.png, id=91, 775.89874pt x 586.19pt>
+<comment.png, id=91, 521.44812pt x 384.93813pt>
 File: comment.png Graphic file (type png)
 <use comment.png>
-Package pdftex.def Info: comment.png  used on input line 569.
-(pdftex.def)             Requested size: 310.354pt x 234.47185pt.
-
-Overfull \hbox (132.92532pt too wide) in paragraph at lines 569--570
-[][] 
- []
-
-<uncomment.png, id=92, 780.9175pt x 585.18625pt>
+Package pdftex.def Info: comment.png  used on input line 584.
+(pdftex.def)             Requested size: 192.93279pt x 142.42487pt.
+<uncomment.png, id=92, 656.95438pt x 416.05438pt>
 File: uncomment.png Graphic file (type png)
 <use uncomment.png>
-Package pdftex.def Info: uncomment.png  used on input line 575.
-(pdftex.def)             Requested size: 312.36147pt x 234.07034pt.
-
-Overfull \hbox (134.93279pt too wide) in paragraph at lines 575--576
-[][] 
- []
-
-[16
+Package pdftex.def Info: uncomment.png  used on input line 590.
+(pdftex.def)             Requested size: 197.08783pt x 124.81728pt.
+ [16
 
  <./comment.png> <./uncomment.png>] [17
 
@@ -690,10 +675,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5934 strings out of 492162
- 83253 string characters out of 6125292
+ 5935 strings out of 492162
+ 83261 string characters out of 6125292
  174866 words of memory out of 5000000
- 10152 multiletter control sequences out of 15000+600000
+ 10153 multiletter control sequences out of 15000+600000
  10764 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,10n,42p,907b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -709,7 +694,7 @@ local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (19 pages, 7776443 bytes).
+Output written on cooperativeAGFG.pdf (19 pages, 7011431 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream

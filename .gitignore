@@ -1,2 +1,7 @@
 
 .DS_Store
+*.aux
+.DS_Store
+*.gz
+*.log
+*.aux

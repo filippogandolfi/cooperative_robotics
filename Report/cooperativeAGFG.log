@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  29 MAR 2020 16:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  31 MAR 2020 12:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -434,7 +434,10 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 LaTeX Warning: Label `images_2_3_1' multiply defined.
 
 
-LaTeX Warning: Label `images_2_3_1' multiply defined.
+LaTeX Warning: Label `fig:411_arm' multiply defined.
+
+
+LaTeX Warning: Label `fig:411_vehicle' multiply defined.
 
 )
 \openout1 = `cooperativeAGFG.aux'.
@@ -555,16 +558,16 @@ Package pdftex.def Info: HAenabled.png  used on input line 160.
 <HANotenabled.png, id=26, 957.5775pt x 720.6925pt>
 File: HANotenabled.png Graphic file (type png)
 <use HANotenabled.png>
-Package pdftex.def Info: HANotenabled.png  used on input line 162.
+Package pdftex.def Info: HANotenabled.png  used on input line 163.
 (pdftex.def)             Requested size: 266.14978pt x 200.30795pt.
  [3 <./task1_1.jpg>] [4 <./HAenabled.png> <./HANotenabled.png>]
 <1_metro_img.png, id=33, 774.895pt x 458.71375pt>
 File: 1_metro_img.png Graphic file (type png)
 <use 1_metro_img.png>
-Package pdftex.def Info: 1_metro_img.png  used on input line 231.
+Package pdftex.def Info: 1_metro_img.png  used on input line 232.
 (pdftex.def)             Requested size: 309.95251pt x 183.48224pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
+Underfull \hbox (badness 10000) in paragraph at lines 240--240
 
  []
 
@@ -574,20 +577,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 239--239
 <10_metri_graph.png, id=38, 664.4825pt x 498.86375pt>
 File: 10_metri_graph.png Graphic file (type png)
 <use 10_metri_graph.png>
-Package pdftex.def Info: 10_metri_graph.png  used on input line 253.
+Package pdftex.def Info: 10_metri_graph.png  used on input line 254.
 (pdftex.def)             Requested size: 221.78923pt x 166.50572pt.
 <5_metri_graph.png, id=39, 657.45625pt x 494.84875pt>
 File: 5_metri_graph.png Graphic file (type png)
 <use 5_metri_graph.png>
-Package pdftex.def Info: 5_metri_graph.png  used on input line 256.
+Package pdftex.def Info: 5_metri_graph.png  used on input line 257.
 (pdftex.def)             Requested size: 221.78923pt x 166.93251pt.
 <1_metro_graph.png, id=40, 661.47125pt x 496.85625pt>
 File: 1_metro_graph.png Graphic file (type png)
 <use 1_metro_graph.png>
-Package pdftex.def Info: 1_metro_graph.png  used on input line 259.
+Package pdftex.def Info: 1_metro_graph.png  used on input line 260.
 (pdftex.def)             Requested size: 221.78923pt x 166.59381pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--276
+Underfull \hbox (badness 10000) in paragraph at lines 274--277
 
  []
 
@@ -596,7 +599,7 @@ tro_graph.png>]
 <Landing.png, id=52, 561.09625pt x 338.26375pt>
 File: Landing.png Graphic file (type png)
 <use Landing.png>
-Package pdftex.def Info: Landing.png  used on input line 304.
+Package pdftex.def Info: Landing.png  used on input line 305.
 (pdftex.def)             Requested size: 224.43452pt x 135.30309pt.
  [8
 
@@ -604,18 +607,18 @@ Package pdftex.def Info: Landing.png  used on input line 304.
 <MAVGraph.png, id=57, 421.575pt x 316.18124pt>
 File: MAVGraph.png Graphic file (type png)
 <use MAVGraph.png>
-Package pdftex.def Info: MAVGraph.png  used on input line 347.
+Package pdftex.def Info: MAVGraph.png  used on input line 348.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
 <LandingGraph.png, id=58, 421.575pt x 316.18124pt>
 File: LandingGraph.png Graphic file (type png)
 <use LandingGraph.png>
-Package pdftex.def Info: LandingGraph.png  used on input line 353.
+Package pdftex.def Info: LandingGraph.png  used on input line 354.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
  [9 <./MAVGraph.png (PNG copy)> <./LandingGraph.png (PNG copy)>]
 <smooth_mission_phase.png, id=62, 781.92125pt x 588.1975pt>
 File: smooth_mission_phase.png Graphic file (type png)
 <use smooth_mission_phase.png>
-Package pdftex.def Info: smooth_mission_phase.png  used on input line 408.
+Package pdftex.def Info: smooth_mission_phase.png  used on input line 409.
 (pdftex.def)             Requested size: 234.57819pt x 176.4606pt.
  [10
 
@@ -623,62 +626,143 @@ Package pdftex.def Info: smooth_mission_phase.png  used on input line 408.
 <Es3Graph.png, id=67, 674.52pt x 504.88625pt>
 File: Es3Graph.png Graphic file (type png)
 <use Es3Graph.png>
-Package pdftex.def Info: Es3Graph.png  used on input line 452.
+Package pdftex.def Info: Es3Graph.png  used on input line 453.
 (pdftex.def)             Requested size: 269.80322pt x 201.95091pt.
 <1Navigation.png, id=68, 702.625pt x 429.10312pt>
 File: 1Navigation.png Graphic file (type png)
 <use 1Navigation.png>
-Package pdftex.def Info: 1Navigation.png  used on input line 460.
+Package pdftex.def Info: 1Navigation.png  used on input line 461.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
 <2Allign.png, id=69, 702.625pt x 429.10312pt>
 File: 2Allign.png Graphic file (type png)
 <use 2Allign.png>
-Package pdftex.def Info: 2Allign.png  used on input line 462.
+Package pdftex.def Info: 2Allign.png  used on input line 463.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
 <3Land.png, id=70, 702.625pt x 429.10312pt>
 File: 3Land.png Graphic file (type png)
 <use 3Land.png>
-Package pdftex.def Info: 3Land.png  used on input line 464.
+Package pdftex.def Info: 3Land.png  used on input line 465.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
  [11
 
  <./Es3Graph.png>]
 [12 <./1Navigation.png> <./2Allign.png> <./3Land.png>] [13]
-File: Landing.png Graphic file (type png)
-<use Landing.png>
-Package pdftex.def Info: Landing.png  used on input line 513.
-(pdftex.def)             Requested size: 224.43452pt x 135.30309pt.
+<41_armmoveswhilestopvehiclevel.png, id=85, 668.4975pt x 262.9825pt>
+File: 41_armmoveswhilestopvehiclevel.png Graphic file (type png)
+<use 41_armmoveswhilestopvehiclevel.png>
+Package pdftex.def Info: 41_armmoveswhilestopvehiclevel.png  used on input line
+ 517.
+(pdftex.def)             Requested size: 266.14978pt x 104.70558pt.
+<41_finalphase_zerovelocities.png, id=86, 669.50125pt x 504.88625pt>
+File: 41_finalphase_zerovelocities.png Graphic file (type png)
+<use 41_finalphase_zerovelocities.png>
+Package pdftex.def Info: 41_finalphase_zerovelocities.png  used on input line 5
+20.
+(pdftex.def)             Requested size: 266.14978pt x 200.71828pt.
  [14
 
-] [15
+ <./41_armmoveswhilestopvehiclevel.png> <./41_finalphase_zerovelocities.png>] [
+15] [16
 
 ]
-<comment.png, id=91, 521.44812pt x 384.93813pt>
+<comment.png, id=98, 521.44812pt x 384.93813pt>
 File: comment.png Graphic file (type png)
 <use comment.png>
-Package pdftex.def Info: comment.png  used on input line 584.
+Package pdftex.def Info: comment.png  used on input line 590.
 (pdftex.def)             Requested size: 192.93279pt x 142.42487pt.
-<uncomment.png, id=92, 656.95438pt x 416.05438pt>
+<uncomment.png, id=99, 656.95438pt x 416.05438pt>
 File: uncomment.png Graphic file (type png)
 <use uncomment.png>
-Package pdftex.def Info: uncomment.png  used on input line 590.
+Package pdftex.def Info: uncomment.png  used on input line 596.
 (pdftex.def)             Requested size: 197.08783pt x 124.81728pt.
- [16
 
- <./comment.png> <./uncomment.png>] [17
+[17
 
-] [18
+ <./comment.png> <./uncomment.png>] [18
 
-] (./cooperativeAGFG.aux)
+]
+<1_wout_TPIK2.png, id=109, 645.41125pt x 485.815pt>
+File: 1_wout_TPIK2.png Graphic file (type png)
+<use 1_wout_TPIK2.png>
+Package pdftex.def Info: 1_wout_TPIK2.png  used on input line 629.
+(pdftex.def)             Requested size: 133.07489pt x 100.16351pt.
+<1_w_TPIK2.png, id=110, 502.87875pt x 381.425pt>
+File: 1_w_TPIK2.png Graphic file (type png)
+<use 1_w_TPIK2.png>
+Package pdftex.def Info: 1_w_TPIK2.png  used on input line 632.
+(pdftex.def)             Requested size: 133.07489pt x 100.93163pt.
+File: 1_wout_TPIK2.png Graphic file (type png)
+<use 1_wout_TPIK2.png>
+Package pdftex.def Info: 1_wout_TPIK2.png  used on input line 640.
+(pdftex.def)             Requested size: 177.42868pt x 133.55135pt.
+File: 1_w_TPIK2.png Graphic file (type png)
+<use 1_w_TPIK2.png>
+Package pdftex.def Info: 1_w_TPIK2.png  used on input line 645.
+(pdftex.def)             Requested size: 177.42868pt x 134.57164pt.
+
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 639--648
+[]$[]$   $[]$ 
+ []
+
+<2_wout_TPIK2.png, id=111, 645.41125pt x 492.84125pt>
+File: 2_wout_TPIK2.png Graphic file (type png)
+<use 2_wout_TPIK2.png>
+Package pdftex.def Info: 2_wout_TPIK2.png  used on input line 652.
+(pdftex.def)             Requested size: 177.42868pt x 135.48286pt.
+<2_w_TPIK2.png, id=112, 505.89pt x 379.4175pt>
+File: 2_w_TPIK2.png Graphic file (type png)
+<use 2_w_TPIK2.png>
+Package pdftex.def Info: 2_w_TPIK2.png  used on input line 657.
+(pdftex.def)             Requested size: 177.42868pt x 133.0702pt.
+
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 651--660
+[]$[]$   $[]$ 
+ []
+
+<3_wout_TPIK2.png, id=113, 643.40375pt x 485.815pt>
+File: 3_wout_TPIK2.png Graphic file (type png)
+<use 3_wout_TPIK2.png>
+Package pdftex.def Info: 3_wout_TPIK2.png  used on input line 664.
+(pdftex.def)             Requested size: 177.42868pt x 133.96648pt.
+<3_w_TPIK2.png, id=114, 505.89pt x 381.425pt>
+File: 3_w_TPIK2.png Graphic file (type png)
+<use 3_w_TPIK2.png>
+Package pdftex.def Info: 3_w_TPIK2.png  used on input line 669.
+(pdftex.def)             Requested size: 177.42868pt x 133.77428pt.
+
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 663--672
+[]$[]$   $[]$ 
+ []
+
+<4_wout_TPIK2.png, id=115, 645.41125pt x 486.81876pt>
+File: 4_wout_TPIK2.png Graphic file (type png)
+<use 4_wout_TPIK2.png>
+Package pdftex.def Info: 4_wout_TPIK2.png  used on input line 676.
+(pdftex.def)             Requested size: 177.42868pt x 133.82729pt.
+<4_w_TPIK2.png, id=116, 504.88625pt x 378.41376pt>
+File: 4_w_TPIK2.png Graphic file (type png)
+<use 4_w_TPIK2.png>
+Package pdftex.def Info: 4_w_TPIK2.png  used on input line 681.
+(pdftex.def)             Requested size: 177.42868pt x 132.98378pt.
+
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 675--684
+[]$[]$   $[]$ 
+ []
+
+[19
+
+ <./1_wout_TPIK2.png> <./1_w_TPIK2.png>] [20 <./2_wout_TPIK2.png> <./2_w_TPIK2.
+png> <./3_wout_TPIK2.png> <./3_w_TPIK2.png> <./4_wout_TPIK2.png> <./4_w_TPIK2.p
+ng>] (./cooperativeAGFG.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5935 strings out of 492162
- 83261 string characters out of 6125292
- 174866 words of memory out of 5000000
- 10153 multiletter control sequences out of 15000+600000
+ 6000 strings out of 492162
+ 84609 string characters out of 6125292
+ 174914 words of memory out of 5000000
+ 10208 multiletter control sequences out of 15000+600000
  10764 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,10n,42p,907b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -694,10 +778,10 @@ local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (19 pages, 7011419 bytes).
+Output written on cooperativeAGFG.pdf (21 pages, 9356177 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 170 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

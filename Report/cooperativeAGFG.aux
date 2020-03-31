@@ -8,6 +8,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.3}Q3: Swap the priorities between Horizontal Attitude and the Vehicle Position control task. Discuss the behaviour.}{3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.4}Q4: What is the behaviour if the Tool Position control task is active and what if it is disabled? Which of the settings should be used for a Safe Waypoint Navigation action?}{3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Image of the SIM, Horizontal attitude enable, Robot is parallel with the seafloor}}{4}\protected@file@percent }
+\newlabel{fig:hae}{{2}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Image of the SIM, Horizontal Attitude not enable, Robot is no more parallel with the seafloor}}{4}\protected@file@percent }
 \newlabel{fig:hane}{{3}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Adding a safety minimum altitude control objective}{5}\protected@file@percent }
@@ -52,24 +53,46 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4}Exercise 4: Implementing a Fixed-base Manipulation Action}{14}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Adding non-reactive tasks}{14}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}{14}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Implemented basic "Landing" action}}{14}\protected@file@percent }
-\newlabel{images_2_3_1}{{16}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Q2: What is the Jacobian relationship for the Vehicle Null Velocity task? How was the task reference computed?}{14}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Q3: Suppose the vehicle floating, i.e. not landed on the seafloor. What would happen, if due to currents, the vehicle moves?}{14}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Adding a joint limit task}{15}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}{15}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Q2: What is the Jacobian relationship for the Joint Limits task? How was the task reference computed?}{15}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Exercise 5: Floating Manipulation}{16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Adding an optimization control objective}{16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the optimization task?}{16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}{16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Q3: What is the difference between having or not having this objective?}{16}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Not having}}{16}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Having}}{16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Adding mission phases}{17}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Q1: Report the unified hierarchy of tasks used and their priorities. Which task is active in which phase/action?}{17}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Q2: What is the difference with the previous simulation (still in exercise 5), where only one action was used?}{17}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}{18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Adding the parallel arm-vehicle coordination scheme}{18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Q1: Which tasks did you introduce to implement the parallel coordination scheme?}{18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Q2: What happens if the sinusoidal disturbance becomes too big?}{18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Arm joints start moving when reached task 4}}{14}\protected@file@percent }
+\newlabel{fig:411_arm}{{16}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Vehicle has zero velocities when task 3 is finished}}{14}\protected@file@percent }
+\newlabel{fig:411_vehicle}{{17}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Q2: What is the Jacobian relationship for the Vehicle Null Velocity task? How was the task reference computed?}{15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Q3: Suppose the vehicle floating, i.e. not landed on the seafloor. What would happen, if due to currents, the vehicle moves?}{15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Adding a joint limit task}{16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}{16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Q2: What is the Jacobian relationship for the Joint Limits task? How was the task reference computed?}{16}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Exercise 5: Floating Manipulation}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Adding an optimization control objective}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the optimization task?}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Q3: What is the difference between having or not having this objective?}{17}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Not having}}{17}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Having}}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Adding mission phases}{18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Q1: Report the unified hierarchy of tasks used and their priorities. Which task is active in which phase/action?}{18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Q2: What is the difference with the previous simulation (still in exercise 5), where only one action was used?}{18}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}{19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Adding the parallel arm-vehicle coordination scheme}{19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Q1: Which tasks did you introduce to implement the parallel coordination scheme?}{19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Arm joints start moving when reached task 4}}{19}\protected@file@percent }
+\newlabel{fig:411_arm}{{20}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Vehicle has zero velocities when task 3 is finished}}{19}\protected@file@percent }
+\newlabel{fig:411_vehicle}{{21}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Joint limits: without TPIK2}}{19}\protected@file@percent }
+\newlabel{JL_wout_TPIK2}{{22}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Joint limits: with TPIK2}}{19}\protected@file@percent }
+\newlabel{JL_w_TPIK2}{{23}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Q2: What happens if the sinusoidal disturbance becomes too big?}{19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Joint limits: without TPIK2}}{20}\protected@file@percent }
+\newlabel{JL_wout_TPIK2}{{24}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Joint limits: with TPIK2}}{20}\protected@file@percent }
+\newlabel{JL_w_TPIK2}{{25}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Joint limits: without TPIK2}}{20}\protected@file@percent }
+\newlabel{JL_wout_TPIK2}{{26}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Joint limits: with TPIK2}}{20}\protected@file@percent }
+\newlabel{JL_w_TPIK2}{{27}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Joint limits: without TPIK2}}{20}\protected@file@percent }
+\newlabel{JL_wout_TPIK2}{{28}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Joint limits: with TPIK2}}{20}\protected@file@percent }
+\newlabel{JL_w_TPIK2}{{29}{20}}

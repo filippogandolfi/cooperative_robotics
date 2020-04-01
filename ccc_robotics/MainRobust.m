@@ -71,9 +71,10 @@ uvms.eTt = eye(4);
 
 tic
 for t = 0:deltat:end_time
+    
     % update all the involved variables
     uvms = UpdateTransforms(uvms);
-    uvms = ComputeJacobians(uvms);
+    uvms = ComputeJacobians(uvms);    
     uvms = ComputeTaskReferences(uvms, mission);
     uvms = ComputeActivationFunctions(uvms, mission);
     

@@ -69,7 +69,7 @@ uvms.A.mav = uvms.Amiss.mav*DecreasingBellShapedFunction(uvms.d_mav, uvms.dist_l
 AlgRockError = norm(uvms.misalignment);
 
 % WITH MISSION PHASES
-uvms.A.alr = uvms.Amiss.alr*IncreasingBellShapedFunction(0.025, 0.1, 0, 1, AlgRockError)*eye(3,3);
+uvms.A.alr = uvms.Amiss.alr*IncreasingBellShapedFunction(0, 0.07, 0, 1, AlgRockError);
 % WITHOUT MISSION PHASES
 %uvms.A.alr = eye(3,3);
 

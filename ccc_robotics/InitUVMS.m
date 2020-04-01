@@ -26,6 +26,7 @@ uvms.rock_center = [];
 
 %misaligment
 uvms.misalignment = [];
+uvms.nmisalignment = [];
 
 % joint limits corresponding to the actual MARIS arm configuration
 
@@ -109,7 +110,7 @@ uvms.xdot.ps = [];
 uvms.xdot.vConstr = [];
 
 uvms.A.jl = zeros(7,7);
-uvms.A.mu = 0;
+uvms.A.mu = zeros(1,1);
 uvms.A.cc = zeros(1,1);
 uvms.A.ha = zeros(1,1);
 uvms.A.t = zeros(6,6);
@@ -117,7 +118,7 @@ uvms.A.v = zeros(6,6);
 uvms.A.c = [];
 uvms.A.ca = zeros(3,3);
 uvms.A.mav = zeros(1,1);
-uvms.A.l = 1;
+uvms.A.l = zeros(1,1);
 uvms.A.alr = zeros(1,1);
 uvms.A.vNull = zeros(6,6);
 uvms.A.ps =  zeros(4,4);

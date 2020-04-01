@@ -9,7 +9,7 @@ if (strcmp(uvms.robotname,'Robust' ))
         case 1 %safe navigation
             uvms.Amiss.vNull = 0;
             uvms.Amiss.jl = 1;
-            uvms.Amiss.mav = 1;
+            uvms.Amiss.mav = IncreasingBellShapedFunction(0.1, 0.15, 0, 1, mission.phase_time);
             uvms.Amiss.mu = 1;
             uvms.Amiss.ha = 1;
             uvms.Amiss.alr = 0;
@@ -30,7 +30,7 @@ if (strcmp(uvms.robotname,'Robust' ))
             uvms.Amiss.l = 0;
             uvms.Amiss.t = 0;
             uvms.Amiss.v = DecreasingBellShapedFunction(0, 0.2, 0, 1, mission.phase_time);
-            if(AlgRockError < 0.1)
+            if(AlgRockError < 0.07)
                 mission.phase = 3;
                 mission.phase_time = 0;
             end

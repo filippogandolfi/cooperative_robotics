@@ -115,13 +115,19 @@ for t = 0:deltat:end_time
     % send packets to Unity viewer
     SendUdpPackets(uvms,wuRw,vRvu,uArm,uVehicle);
     
+    
+    [~, PosErrorLin] = CartError(uvms.wTtg, uvms.wTv);
+    [~, ToolErrorLin] = CartError(uvms.vTg , uvms.vTt);
+    
+    uvms.normVehicleFrameError = norm(PosErrorLin);    
+    uvms.normAlignmentError = norm(uvms.misalignment);
+    uvms.normToolFrameError = norm(ToolErrorLin);
+    
     % collect data for plots
     plt = UpdateDataPlot(plt,uvms,t,loop);
     loop = loop + 1;
     
     
-    [~, ToolErrorLin] = CartError(uvms.vTg , uvms.vTt);
-    [~, PosErrorLin] = CartError(uvms.wTtg, uvms.wTv);
         
     % add debug prints here
     if (mod(t,0.05) == 0)
@@ -129,7 +135,7 @@ for t = 0:deltat:end_time
         debug.phase = mission.phase
         debug.dist = uvms.wSensorDistance
         debug.position = [uvms.p(1,1) uvms.p(2,1) uvms.p(3,1)]
-        debug.Error = [norm(PosErrorLin) norm(uvms.misalignment) norm(ToolErrorLin)]
+        debug.Error = [uvms.normVehicleFrameError uvms.normAlignmentError uvms.normToolFrameError]
         
     end
     
@@ -138,10 +144,10 @@ for t = 0:deltat:end_time
     %SlowdownToRealtime(deltat);
     
 end
-
+name = uvms.robotname;
 fclose(uVehicle);
 fclose(uArm);
 
-PrintPlot(plt);
+PrintPlot(plt,name);
 
 end

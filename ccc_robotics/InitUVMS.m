@@ -140,5 +140,8 @@ uvms.Amiss.ps = 0;
 uvms.Amiss.vConstr= 0;
 
 uvms.toolFrameError = zeros(6,1);
-uvms.totalError = zeros(6,1);
+uvms.normVehicleFrameError = zeros(3,1);    
+uvms.normAlignmentError = zeros(3,1); 
+uvms.normToolFrameError = zeros(3,1);
+
 end

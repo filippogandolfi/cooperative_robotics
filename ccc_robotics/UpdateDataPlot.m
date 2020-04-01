@@ -32,8 +32,13 @@ plt.a(12, loop) = uvms.A.alr(1,1);
 plt.a(13, loop) = uvms.A.vNull(1,1);
 plt.a(14, loop) = uvms.A.t(1,1);
 plt.a(15, loop) = uvms.A.v(1,1);
+
+plt.Error(1,loop) = uvms.normVehicleFrameError ;
+plt.Error(2,loop) = uvms.normAlignmentError;
+plt.Error(3,loop) = uvms.normToolFrameError;
+
+
 plt.toolFrameError(:, loop) = uvms.toolFrameError;
-plt.totalError(:, loop) = uvms.totalError;
 
 plt.toolx(:,loop) = uvms.wTt(1,4);
 plt.tooly(:,loop) = uvms.wTt(2,4);

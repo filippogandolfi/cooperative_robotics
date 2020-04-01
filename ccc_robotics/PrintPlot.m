@@ -1,4 +1,4 @@
-function [ ] = PrintPlot( plt )
+function [ ] = PrintPlot( plt, name)
 
 % some predefined plots
 % you can add your own
@@ -36,11 +36,17 @@ set(hplot, 'LineWidth', 2);
 legend('Amu', 'Aha', 'Amav', 'Al', 'Aalr', 'AvNull','At', 'Av');
 
 figure(5);
-hplot = plot(plt.t, plt.toolFrameError(:,:));
-set(hplot, 'LineWidth', 2);
-legend('ErrorWx', 'ErrorWy', 'ErrorWz', 'ErrorX', 'ErrorY', 'ErrorZ');
-title ('Error with TPIK2');
-
+if (strcmp(name,'Robust' ))
+    hplot = plot(plt.t, plt.Error(:,:));
+    set(hplot, 'LineWidth', 2);
+    legend('normVehicleError', 'normAlignmentError', 'normToolFrameError');
+    title ('Error');    
+else %DEXROV
+    hplot = plot(plt.t, plt.toolFrameError(:,:));
+    set(hplot, 'LineWidth', 2);
+    legend('ErrorWx', 'ErrorWy', 'ErrorWz', 'ErrorX', 'ErrorY', 'ErrorZ');
+    title ('Error with TPIK2');
+end
 % Plot for joint limits
 figure(6);
 for i = 1:7

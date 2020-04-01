@@ -19,8 +19,8 @@ function [plt] = InitDataPlot( maxloops)
 
     plt.a = zeros(11, maxloops);
 
-    plt.virtualFrameError = zeros(6, maxloops);
+    plt.Error = zeros(3, maxloops);
+    
     plt.toolFrameError = zeros(6, maxloops);
-    plt.totalError = zeros(6, maxloops);
 end
 

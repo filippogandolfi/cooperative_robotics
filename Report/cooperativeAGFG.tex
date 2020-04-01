@@ -298,7 +298,7 @@ The new hierarchy of tasks is:
 	\item Horizontal attitude
 	\item Landing
 \end{itemize}
-Landing [R, E, AD], is the new task. It has the same priority as the Vehicle position task.
+Landing [R, E, AD], is the new task. It is a Action Defining task, so it has the same priority as the Vehicle position task.
 The task Minimum Altitude is not enable now, because (of course) we need, only, to land.
 \begin{figure}[h]
     \centering
@@ -382,11 +382,14 @@ We have two different actions, each one with the same hierarchy:
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Inactive  \\  
  Manipulabity &  \texttt{mu} & Active & Active  \\
  Horizontal Attitude &  \texttt{ha} & Active & Active \\
- Vehicle Position &  \texttt{v} &Active & Inactive \\
  Landing & \texttt{l} &Inactive & Active \\
+ Vehicle Position &  \texttt{v} &Active & Inactive \\
  \hline
 \end{tabular}
 \end{center}
+
+Action A, perform the safe waypoint navigation. All the safety task are enable. \\
+Action B, the robot need simply to land, it just performs the previous exercise task, of course, we need to inactivate the Minimum Altitude. 
 %%%%%% TABLE %%%%%%%%%
 
 
@@ -440,18 +443,21 @@ Goal: Add an alignment task between the longitudinal axis of the vehicle ($x$ ax
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive\\  
  Manipulabity &  \texttt{mu} & Active & Active & Active\\
  Horizontal Attitude &  \texttt{ha} & Active & Active & Active\\
- Vehicle Position &  \texttt{v} &Active & Inactive & Inactive\\
  Alignment to the rock & \texttt{alr} & Inactive & Active & Active \\
  Landing & \texttt{l} &Inactive & Inactive & Active \\
+ Vehicle Position &  \texttt{v} &Active & Inactive & Inactive\\
  \hline
 \end{tabular}
 \end{center}
 %%%%%% TABLE %%%%%%%%%
 
+Alignment to rock [R, I, P], it is a Prerequisite task, so it has higher priority than the Action Defining tasks. Inequality, because we admit an $value$. 
+Action A, again, a safe waypoint navigation with all the safety tasks enable. \\
+Action B, it is the action that performs the alignment to the rock, with all the safety task enable. The alignment to tock is not disable in Action C, because, while the UVMS starts landing, we disable smoothly the alignment. In this case, while the robot is performing the landing, it continue to rotate to optimize the orientation.
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{311_ppdot.png}
-    \caption{Final graph exercise}
+    \caption{Positions and velocities during the three actions.}
     \label{graphes3}
 \end{figure}
 
@@ -502,10 +508,10 @@ Goal: Add a constraint task that fixes the vehicle velocity to zero. Land on the
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive & Inactive \\  
  Manipulabity &  \texttt{mu} & Active & Active & Active & Active  \\
  Horizontal Attitude &  \texttt{ha} & Active & Active & Active & Active\\
- Tool  &  \texttt{t} & Inactive & Inactive & Inactive & Active\\
- Vehicle Position &  \texttt{v} &Active & Inactive & Inactive & Inactive\\
  Alignment to the rock & \texttt{alr} & Inactive & Active & Active & Inactive \\
  Landing & \texttt{l} &Inactive & Inactive & Active & Inactive\\
+ Tool  &  \texttt{t} & Inactive & Inactive & Inactive & Active\\
+ Vehicle Position &  \texttt{v} &Active & Inactive & Inactive & Inactive\\
  \hline
 \end{tabular}
 \end{center}
@@ -555,10 +561,10 @@ Goal: Add a joint limits avoidance task. Land on the seafloor. Try reaching the 
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive & Inactive \\  
  Manipulabity &  \texttt{mu} & Active & Active & Active & Active  \\
  Horizontal Attitude &  \texttt{ha} & Active & Active & Active & Active\\
- Tool  &  \texttt{t} & Inactive & Inactive & Inactive & Active\\
- Vehicle Position &  \texttt{v} &Active & Inactive & Inactive & Inactive\\
  Alignment to the rock & \texttt{alr} & Inactive & Active & Active & Inactive \\
  Landing & \texttt{l} &Inactive & Inactive & Active & Inactive\\
+ Tool  &  \texttt{t} & Inactive & Inactive & Inactive & Active\\
+ Vehicle Position &  \texttt{v} &Active & Inactive & Inactive & Inactive\\
  \hline
 \end{tabular}
 \end{center}

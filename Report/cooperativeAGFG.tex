@@ -502,6 +502,7 @@ Goal: Add a constraint task that fixes the vehicle velocity to zero. Land on the
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive & Inactive \\  
  Manipulabity &  \texttt{mu} & Active & Active & Active & Active  \\
  Horizontal Attitude &  \texttt{ha} & Active & Active & Active & Active\\
+ Tool  &  \texttt{t} & Inactive & Inactive & Inactive & Active\\
  Vehicle Position &  \texttt{v} &Active & Inactive & Inactive & Inactive\\
  Alignment to the rock & \texttt{alr} & Inactive & Active & Active & Inactive \\
  Landing & \texttt{l} &Inactive & Inactive & Active & Inactive\\
@@ -509,13 +510,17 @@ Goal: Add a constraint task that fixes the vehicle velocity to zero. Land on the
 \end{tabular}
 \end{center}
 %%%%%% TABLE %%%%%%%%%
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.4]{Landing.png}
-    \caption{Implemented basic "Landing" action}
-    \label{images_2_3_1}
-\end{figure}
 
+%%%%%%% near images %%%%%%% 
+\begin{figure}[htp]
+\centering
+\includegraphics[width=.6\textwidth]{41_armmoveswhilestopvehiclevel.png}\caption{Arm joints start moving when reached task 4}
+\centering
+\label{fig:411_arm}
+\includegraphics[width=.6\textwidth]{41_finalphase_zerovelocities.png}\caption{Vehicle has zero velocities when task 3 is finished}
+\label{fig:411_vehicle}
+\end{figure}
+%%%%%%% %%%%%%%%%% %%%%%%% 
 \subsubsection{Q2: What is the Jacobian relationship for the Vehicle Null Velocity task? How was the task reference computed?}
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
@@ -617,6 +622,67 @@ Goal: modify the control part to implement the parallel arm-vehicle coordination
 vConstraint - Nel TPIK2.
 
 Non è coordinato senza il TPIK 2 , non reagisce ai cambi dovuti al 
+
+%%%%%%% near images %%%%%%% 
+\begin{figure}[htp]
+\centering
+\includegraphics[width=.3\textwidth]{1_wout_TPIK2.png}\caption{Arm joints start moving when reached task 4}
+\centering
+\label{fig:411_arm}
+\includegraphics[width=.3\textwidth]{1_w_TPIK2.png}\caption{Vehicle has zero velocities when task 3 is finished}
+\label{fig:411_vehicle}
+\end{figure}
+%%%%%%% %%%%%%%%%% %%%%%%% 
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth} 
+\includegraphics[width=\textwidth]{1_wout_TPIK2.png} 
+\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{1_w_TPIK2.png}
+\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
+\end{minipage}  
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth} 
+\includegraphics[width=\textwidth]{2_wout_TPIK2.png} 
+\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{2_w_TPIK2.png}
+\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
+\end{minipage}  
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth} 
+\includegraphics[width=\textwidth]{3_wout_TPIK2.png} 
+\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{3_w_TPIK2.png}
+\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
+\end{minipage}  
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth} 
+\includegraphics[width=\textwidth]{4_wout_TPIK2.png} 
+\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{4_w_TPIK2.png}
+\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
+\end{minipage}  
+\end{figure}
+
 \subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
 
 

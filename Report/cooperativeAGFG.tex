@@ -485,14 +485,18 @@ COPIARE JACOBIANA
 \subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?}
 
 \subsubsection{Q4: After the landing is accomplished, what happens if you try to move the end-effector? Is the distance to the nodule sufficient to reach it with the end-effector? Comment the observed behaviour.}
+The tool could reach the center of the nodule, however, we notice that the vehicle moves to help the arm to achieve the desired position. It is clear that, to avoid this problem, we need to perform a non-reactive task to constraint the vehicle not move, as we will do in the next exercise \ref{subsec:non-react}. 
 
-Ci arriva ma il vehicle lo aiuta un po' invece che sta femmo.
-A quanto pare serve una non-reactive task che lo tengo fermo li .
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{insert-image-here.jpg}
+    \caption{314}
+    \label{graphes3}
+\end{figure}
 
 \clearpage
 \section{Exercise 4: Implementing a Fixed-base Manipulation Action}
-\subsection{Adding non-reactive tasks}
+\subsection{Adding non-reactive tasks} \label{subsec:non-react}
 To manipulate as a fixed based manipulator, we need to constraint the vehicle to not move, otherwise the tool frame position task will make the vehicle move.
 
 Goal: Add a constraint task that fixes the vehicle velocity to zero. Land on the seafloor. Try reaching the rock position with the end-effector, and observe that the vehicle does not move.
@@ -525,8 +529,10 @@ Goal: Add a constraint task that fixes the vehicle velocity to zero. Land on the
 \label{fig:411_arm}
 \includegraphics[width=.6\textwidth]{411_ppdot.png}\caption{Vehicle has zero velocities when task 3 is finished}
 \label{fig:411_vehicle}
+\includegraphics[width=.6\textwidth]{411_Errors.png}\caption{Vehicle has zero velocities when task 3 is finished}
+\label{fig:411_errors}
 \end{figure}
-%%%%%%% %%%%%%%%%% %%%%%%% 
+%%%%%%% %%%%%%%%%% %%%%%%%
 \subsubsection{Q2: What is the Jacobian relationship for the Vehicle Null Velocity task? How was the task reference computed?}
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}

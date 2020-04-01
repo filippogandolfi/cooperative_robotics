@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  1 APR 2020 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  1 APR 2020 15:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -429,11 +429,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(./cooperativeAGFG.aux
-
-LaTeX Warning: Label `images_2_3_1' multiply defined.
-
-)
+No file cooperativeAGFG.aux.
 \openout1 = `cooperativeAGFG.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -448,7 +444,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -541,6 +536,12 @@ Package pdftex.def Info: 111_ppdot.jpg  used on input line 148.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+LaTeX Warning: Reference `fig:hae' on page 2 undefined on input line 154.
+
+
+LaTeX Warning: Reference `fig:hane' on page 2 undefined on input line 154.
+
 [2
 
 ]
@@ -565,9 +566,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 240--240
 
  []
 
+
+LaTeX Warning: Reference `sidebyside_10' on page 5 undefined on input line 246.
+
+
 [5
 
 ]
+
+LaTeX Warning: Reference `sidebyside_5' on page 6 undefined on input line 247.
+
+
+LaTeX Warning: Reference `sidebyside_1' on page 6 undefined on input line 248.
+
 <123_MAV10m_ppdot.png, id=38, 664.4825pt x 498.86375pt>
 File: 123_MAV10m_ppdot.png Graphic file (type png)
 <use 123_MAV10m_ppdot.png>
@@ -639,97 +650,112 @@ Package pdftex.def Info: 312_Land.png  used on input line 471.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
  [12
 
- <./311_ppdot.png>] [13 <./312_Nav.png> <./312_Alr.png> <./312_Land.png>] [14]
-<411_q.png, id=88, 668.4975pt x 262.9825pt>
+ <./311_ppdot.png>] [13 <./312_Nav.png> <./312_Alr.png> <./312_Land.png>]
+
+LaTeX Warning: Reference `subsec:non-react' on page 14 undefined on input line 
+488.
+
+<insert-image-here.jpg, id=85, 200.75pt x 200.75pt>
+File: insert-image-here.jpg Graphic file (type jpg)
+<use insert-image-here.jpg>
+Package pdftex.def Info: insert-image-here.jpg  used on input line 492.
+(pdftex.def)             Requested size: 80.29857pt x 80.29857pt.
+[14 <./insert-image-here.jpg>]
+<411_q.png, id=89, 668.4975pt x 262.9825pt>
 File: 411_q.png Graphic file (type png)
 <use 411_q.png>
-Package pdftex.def Info: 411_q.png  used on input line 523.
+Package pdftex.def Info: 411_q.png  used on input line 527.
 (pdftex.def)             Requested size: 266.14978pt x 104.70558pt.
-<411_ppdot.png, id=89, 605.26125pt x 455.7025pt>
+<411_ppdot.png, id=90, 605.26125pt x 455.7025pt>
 File: 411_ppdot.png Graphic file (type png)
 <use 411_ppdot.png>
-Package pdftex.def Info: 411_ppdot.png  used on input line 526.
+Package pdftex.def Info: 411_ppdot.png  used on input line 530.
 (pdftex.def)             Requested size: 266.14978pt x 200.38455pt.
+<411_Errors.png, id=91, 603.75563pt x 453.695pt>
+File: 411_Errors.png Graphic file (type png)
+<use 411_Errors.png>
+Package pdftex.def Info: 411_Errors.png  used on input line 532.
+(pdftex.def)             Requested size: 266.14978pt x 200.00024pt.
  [15
 
- <./411_q.png> <./411_ppdot.png>] [16] [17
+] [16 <./411_q.png> <./411_ppdot.png> <./411_Errors.png>] [17
 
 ]
-<513_comment.png, id=101, 521.44812pt x 384.93813pt>
+<513_comment.png, id=104, 521.44812pt x 384.93813pt>
 File: 513_comment.png Graphic file (type png)
 <use 513_comment.png>
-Package pdftex.def Info: 513_comment.png  used on input line 626.
+Package pdftex.def Info: 513_comment.png  used on input line 632.
 (pdftex.def)             Requested size: 192.93279pt x 142.42487pt.
-<513_uncomment.png, id=102, 656.95438pt x 416.05438pt>
+<513_uncomment.png, id=105, 656.95438pt x 416.05438pt>
 File: 513_uncomment.png Graphic file (type png)
 <use 513_uncomment.png>
-Package pdftex.def Info: 513_uncomment.png  used on input line 632.
+Package pdftex.def Info: 513_uncomment.png  used on input line 638.
 (pdftex.def)             Requested size: 197.08783pt x 124.81728pt.
  [18
 
 ] [19 <./513_comment.png> <./513_uncomment.png>]
-<522_1_wout_TPIK2.png, id=112, 645.41125pt x 485.815pt>
+<522_1_wout_TPIK2.png, id=115, 645.41125pt x 485.815pt>
 File: 522_1_wout_TPIK2.png Graphic file (type png)
 <use 522_1_wout_TPIK2.png>
-Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 670.
+Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 676.
 (pdftex.def)             Requested size: 177.42868pt x 133.55135pt.
-<522_1_w_TPIK2.png, id=113, 502.87875pt x 381.425pt>
+<522_1_w_TPIK2.png, id=116, 502.87875pt x 381.425pt>
 File: 522_1_w_TPIK2.png Graphic file (type png)
 <use 522_1_w_TPIK2.png>
-Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 675.
+Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 681.
 (pdftex.def)             Requested size: 177.42868pt x 134.57164pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 669--678
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 675--684
 []$[]$   $[]$ 
  []
 
-<522_2_wout_TPIK2.png, id=114, 643.40375pt x 484.30937pt>
+<522_2_wout_TPIK2.png, id=117, 643.40375pt x 484.30937pt>
 File: 522_2_wout_TPIK2.png Graphic file (type png)
 <use 522_2_wout_TPIK2.png>
-Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 682.
+Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 688.
 (pdftex.def)             Requested size: 177.42868pt x 133.55128pt.
-<522_2_w_TPIK2.png, id=115, 505.89pt x 379.4175pt>
+<522_2_w_TPIK2.png, id=118, 505.89pt x 379.4175pt>
 File: 522_2_w_TPIK2.png Graphic file (type png)
 <use 522_2_w_TPIK2.png>
-Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 687.
+Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 693.
 (pdftex.def)             Requested size: 177.42868pt x 133.0702pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 681--690
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 687--696
 []$[]$   $[]$ 
  []
 
-<522_3_wout_TPIK2.png, id=116, 643.40375pt x 485.815pt>
+<522_3_wout_TPIK2.png, id=119, 643.40375pt x 485.815pt>
 File: 522_3_wout_TPIK2.png Graphic file (type png)
 <use 522_3_wout_TPIK2.png>
-Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 694.
+Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 700.
 (pdftex.def)             Requested size: 177.42868pt x 133.96648pt.
 
-Underfull \hbox (badness 1742) in paragraph at lines 695--695
-[]\OT1/cmr/m/n/10 Figure 24: Zoomed Er-ror: with-out
+Underfull \hbox (badness 1742) in paragraph at lines 701--701
+[]\OT1/cmr/m/n/10 Figure 26: Zoomed Er-ror: with-out
  []
 
-<522_3_w_TPIK2.png, id=117, 505.89pt x 381.425pt>
+<522_3_w_TPIK2.png, id=120, 505.89pt x 381.425pt>
 File: 522_3_w_TPIK2.png Graphic file (type png)
 <use 522_3_w_TPIK2.png>
-Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 699.
+Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 705.
 (pdftex.def)             Requested size: 177.42868pt x 133.77428pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 693--702
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 699--708
 []$[]$   $[]$ 
  []
 
-<522_4_wout_TPIK2.png, id=118, 645.41125pt x 486.81876pt>
+<522_4_wout_TPIK2.png, id=121, 645.41125pt x 486.81876pt>
 File: 522_4_wout_TPIK2.png Graphic file (type png)
 <use 522_4_wout_TPIK2.png>
-Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 706.
+Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 712.
 (pdftex.def)             Requested size: 177.42868pt x 133.82729pt.
-<522_4_w_TPIK2.png, id=119, 504.88625pt x 378.41376pt>
+<522_4_w_TPIK2.png, id=122, 504.88625pt x 378.41376pt>
 File: 522_4_w_TPIK2.png Graphic file (type png)
 <use 522_4_w_TPIK2.png>
-Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 711.
+Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 717.
 (pdftex.def)             Requested size: 177.42868pt x 132.98378pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 705--714
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 711--720
 []$[]$   $[]$ 
  []
 
@@ -741,14 +767,17 @@ ut_TPIK2.png> <./522_4_w_TPIK2.png>] [22
 
 ] (./cooperativeAGFG.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 6007 strings out of 492162
- 84809 string characters out of 6125292
- 174974 words of memory out of 5000000
- 10214 multiletter control sequences out of 15000+600000
+ 6019 strings out of 492162
+ 85051 string characters out of 6125292
+ 174749 words of memory out of 5000000
+ 10226 multiletter control sequences out of 15000+600000
  10764 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,10n,42p,907b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -764,10 +793,10 @@ local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (23 pages, 9170579 bytes).
+Output written on cooperativeAGFG.pdf (23 pages, 9467362 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
+ 179 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 

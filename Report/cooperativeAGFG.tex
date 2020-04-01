@@ -145,7 +145,7 @@ Code for computing distance and misalignment: \\
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{111_ppdot.jpg}
+    \includegraphics[scale=0.5]{111_ppdot.png}
     \caption{Resulted Graph for the first task}
     \label{graph_1_1}
 \end{figure}
@@ -184,7 +184,7 @@ Initialize the vehicle at the position:
 \end{displaymath} 
 Choose as target point for the vehicle position the following one:
 \begin{displaymath}
-\begin{bmatrix} 50 & -12.5 & -33 & 0 & 0 & \pi/2 \end{bmatrix}^\top
+\begin{bmatrix} 50 & -12.5 & -33 & 0 & 0 &-\pi/2 \end{bmatrix}^\top
 \end{displaymath}
 
 Goal: Implement a task to control the altitude from the seafloor. Check that at all times the minimum distance from the seafloor is guaranteed.
@@ -248,19 +248,48 @@ To achieve this task we perform the different minimum altitude, all with the sam
     \item \textbf{1 m:} This time the problem is the opposite. The control task is no more active at the starting instant. The UVMS starts to accomplish the Vehicle Position Control task, when the seafloor present an hill the UVMS start to follow the pattern (Figure \ref{sidebyside_1}). However, there are some troubles during the navigation because the "noise" of the robot, with only 1 meter of distance (and no $\Delta$ that could prevent this), could touch the soil because the sensor it's on the center of the vehicle.
 \end{itemize}
 
-%%%%%%% near images %%%%%%% 
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.5\textwidth]{123_MAV10m_ppdot.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 10m distance}
-\label{sidebyside_10}
-\centering
-\includegraphics[width=.5\textwidth]{123_MAV5m_ppdot.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 5m distance}
-\label{sidebyside_5}
-\centering
-\includegraphics[width=.5\textwidth]{123_MAV1m_ppdot.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 1m distance}
-\label{sidebyside_1}
+%%%%%%%% MINI PAGE IMAGES 10 m %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{123_10m_ppdot.png}
+\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 10m threshold}\label{10m_ppdot} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.43\textwidth}  
+\includegraphics[width=\textwidth]{123_10m_A.png}
+\caption{Positions and Velocity with medium}\label{10m_A} 
+\end{minipage} 
 \end{figure}
-%%%%%%% %%%%%%%%%% %%%%%%% 
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+%%%%%%%% MINI PAGE IMAGES 5 m %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{123_5m_ppdot.png}
+\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 10m threshold}\label{5m_ppdot} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.43\textwidth}  
+\includegraphics[width=\textwidth]{123_5m_A.png}
+\caption{Positions and Velocity with medium}\label{5m_A} 
+\end{minipage} 
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+%%%%%%%% MINI PAGE IMAGES 1 m %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{123_1m_ppdot.png}
+\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 1m threshold}\label{1m_ppdot} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{123_1m_A.png}
+\caption{Positions and Velocity with medium}\label{1m_A} 
+\end{minipage} 
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
 
 \subsubsection{Q4: How was the sensor distance processed?}
  
@@ -322,11 +351,12 @@ As before the Jacobian take into account only the z component (using the pre-mul
 
 The task reference is computed as the difference between the seafloor and the measured distance projected on the world frame:
 \begin{equation}
-    ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k(seafloor - ^w d_{sensor})) %delta CONTROLLARE PERCHè IL SENSORE MISURA LA DISTANZA CON IL FONDALE QUINDI DOVREBBE ESSERE 0!!!
+    ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((seafloor + safeguard) - ^w d_{sensor})) %delta CONTROLLARE PERCHè IL SENSORE MISURA LA DISTANZA CON IL FONDALE QUINDI DOVREBBE ESSERE 0!!!
 \end{equation}
 \begin{itemize}
     \item $k$ is the control gain.
-    \item $seafloor$ is simply 0 (where is the seafloor in which we will land).
+    \item $seafloor$ is simply 0.
+    \item $safeguard$ is set to 0.15m  to avoid interpenetration between UVMS and the seafloor.
     \item $^w d_{sensor}$ is the distance vector measured by the sensor and projected on the world frame.
 \end{itemize} 
 
@@ -338,7 +368,7 @@ The task reference is computed as the difference between the seafloor and the me
 
 \subsubsection{Q3: how does this task differs from a minimum altitude control task?}
 There are two major difference, the first one is that this task it isn't a safety task, it's a Action-Defining task. The Minimum Altitude it's used to avoid crash with the seafloor, the Landing task it's like the Vehicle Position task, and, as this one, it has low priority.
-The second big difference is that the Minimum altitude is an Inequality task rather than the Landing that is and equality. For this reason, as visible on the 
+The second big difference is that the Minimum altitude is an Inequality task rather than the Landing that is and equality. For this reason, as visible on the graphs below (Figure \ref{213}), MAV is active when we are under the imposed threshold, Landing is active only when is called and stay active until we touch the seafloor.
 
 
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
@@ -347,6 +377,7 @@ The second big difference is that the Minimum altitude is an Inequality task rat
     \begin{minipage}{0.50\textwidth}
     \includegraphics[scale=0.5]{213_MAV_A.png}
     \caption{Graph MAV}
+    \label{213}
     \end{minipage}
 \hfill
     \centering
@@ -403,7 +434,7 @@ Action B, the robot need simply to land, it just performs the previous exercise 
 \subsubsection{Q2: How did you implement the transition from one action to the other?}
 From Action A to Action B, we compute the cartesian error between the goal position and the actual. When the error is below our threshold (0.15m) the mission phase changes. 
 
-When we want to Inactivate a running task, we perform a Decreasing Bell Shape function in order to perform a smooth transition (like Minimum Altitude and Vehicle Position task, both Inactivated in the same method). In the same way, we also perform an Increasing Bell Shape function to perform a smooth activation of the Landing task. We perform the bell shaped function based on the mission phase time, this help us to fix the time when we switch from an Action to the other one, and perform shape from 0 to 0.5 seconds, to avoid spike to the motors.
+When we want to Inactivate a running task, we perform a Decreasing Bell Shape function in order to perform a smooth transition (like Minimum Altitude and Vehicle Position task, both Inactivated in the same method). In the same way, we also perform an Increasing Bell Shape function to perform a smooth activation of the Landing task. We perform the bell shaped function based on the mission phase time, this help us to fix the time when we switch from an Action to the other one, and perform shape from 0 to 0.2 seconds, to avoid spike to the motors.
 
 We found this more adeguate that the previous attempt, in which we performed the shape based on the error distance.
 
@@ -489,6 +520,8 @@ COPIARE JACOBIANA
 	\item Big = 1.2
 \end{itemize}
 
+Fra big e medium non c'è grande differenza, se non che nel medium ha comportamenti meno intensi e più smooth e nel caso di implementazione reale è meglio. Da notare che per le velocities, la saturazione ci mette una pezza. 
+Very small, troppo lento, non riesce a cambiare di fase, i tempi si allungano ma diventa ingestibile. 
 
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
@@ -528,7 +561,7 @@ COPIARE JACOBIANA
 \begin{figure}[htpb] 
 \begin{minipage}{0.40\textwidth}  
 \includegraphics[width=\textwidth]{313_s_Errors.png}
-\caption{Errors with medium}\label{err_w_s} 
+\caption{Errors with small}\label{err_w_s} 
 \end{minipage}  
 \hspace{0.2\textwidth} 
 \begin{minipage}{0.40\textwidth}  
@@ -538,7 +571,7 @@ COPIARE JACOBIANA
 \hspace{0.2\textwidth} 
 \begin{minipage}{0.40\textwidth}  
 \includegraphics[width=\textwidth]{313_b_Errors.png}
-\caption{Errors with medium}\label{err_w_b} 
+\caption{Errors with big}\label{err_w_b} 
 \end{minipage}
 \end{figure}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%

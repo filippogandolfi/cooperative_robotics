@@ -145,7 +145,7 @@ Code for computing distance and misalignment: \\
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{task1_1.jpg}
+    \includegraphics[scale=0.5]{111_ppdot.jpg}
     \caption{Resulted Graph for the first task}
     \label{graph_1_1}
 \end{figure}
@@ -157,10 +157,10 @@ When the horizontal attitude is not enabled, the UVMS trying to find the alignme
 %%%%%%% near images %%%%%%% 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=.6\textwidth]{HAenabled.png}\caption{Image of the SIM, Horizontal attitude enable, Robot is parallel with the seafloor}
+\includegraphics[width=.6\textwidth]{112_HAenabled.png}\caption{Image of the SIM, Horizontal attitude enable, Robot is parallel with the seafloor}
 \label{fig:hae}
 \centering
-\includegraphics[width=.6\textwidth]{HANotenabled.png}\caption{Image of the SIM, Horizontal Attitude not enable, Robot is no more parallel with the seafloor}
+\includegraphics[width=.6\textwidth]{112_HANotenabled.png}\caption{Image of the SIM, Horizontal Attitude not enable, Robot is no more parallel with the seafloor}
 \label{fig:hane}
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%% 
@@ -229,7 +229,7 @@ Task reference is computed as the difference between the minimum distance given 
 
 \begin{figure}[t]
     \centering
-    \includegraphics[scale=0.4]{1_metro_img.png}
+    \includegraphics[scale=0.4]{122_MAV1m.png}
     \caption{Image of the SIM, Minimum Altitude Vehicle set to 0.5m, Robot is following the seafloor}
     \label{images_2_1}
 \end{figure}
@@ -251,13 +251,13 @@ To achieve this task we perform the different minimum altitude, all with the sam
 %%%%%%% near images %%%%%%% 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=.5\textwidth]{10_metri_graph.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 10m distance}
+\includegraphics[width=.5\textwidth]{123_MAV10m_ppdot.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 10m distance}
 \label{sidebyside_10}
 \centering
-\includegraphics[width=.5\textwidth]{5_metri_graph.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 5m distance}
+\includegraphics[width=.5\textwidth]{123_MAV5m_ppdot.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 5m distance}
 \label{sidebyside_5}
 \centering
-\includegraphics[width=.5\textwidth]{1_metro_graph.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 1m distance}
+\includegraphics[width=.5\textwidth]{123_MAV1m_ppdot.png}\caption{Resulted graph during the Minimum Altitude Vehicle task imposed 1m distance}
 \label{sidebyside_1}
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%% 
@@ -302,7 +302,7 @@ Landing [R, E, AD], is the new task. It has the same priority as the Vehicle pos
 The task Minimum Altitude is not enable now, because (of course) we need, only, to land.
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{Landing.png}
+    \includegraphics[scale=0.4]{211_Landing.png}
     \caption{Implemented basic "Landing" action}
     \label{images_2_3_1}
 \end{figure}
@@ -345,13 +345,13 @@ The second big difference is that the Minimum altitude is an Inequality task rat
 \begin{figure}[!h]
     \centering
     \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.5]{MAVGraph.png}
+    \includegraphics[scale=0.5]{213_MAV_A.png}
     \caption{Graph MAV}
     \end{minipage}
 \hfill
     \centering
     \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.5]{LandingGraph.png}
+    \includegraphics[scale=0.5]{213_Landing_A.png}
     \caption{Graph Landing}
     \end{minipage}
 \end{figure}
@@ -406,7 +406,7 @@ We found this more adeguate that the previous attempt, in which we performed the
 
 \begin{figure}[hb]
     \centering
-    \includegraphics[scale=0.3]{smooth_mission_phase.png}
+    \includegraphics[scale=0.3]{222_smooth_ppdot.png}
     \caption{Zoom of the smooth change}
     \label{images_2_3_1}
 \end{figure}
@@ -450,7 +450,7 @@ Goal: Add an alignment task between the longitudinal axis of the vehicle ($x$ ax
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{Es3Graph.png}
+    \includegraphics[scale=0.4]{311_ppdot.png}
     \caption{Final graph exercise}
     \label{graphes3}
 \end{figure}
@@ -458,11 +458,11 @@ Goal: Add an alignment task between the longitudinal axis of the vehicle ($x$ ax
 %%%%%%% near images %%%%%%% 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=.6\textwidth]{1Navigation.png}\caption{Action A: Navigation till the target position}
+\includegraphics[width=.6\textwidth]{312_Nav.png}\caption{Action A: Navigation till the target position}
 \centering
-\includegraphics[width=0.6\textwidth]{2Allign.png}\caption{Action B: Alignment with the rock center}
+\includegraphics[width=0.6\textwidth]{312_Alr.png}\caption{Action B: Alignment with the rock center}
 \centering
-\includegraphics[width=.6\textwidth]{3Land.png}\caption{Action C: Landing, final action}
+\includegraphics[width=.6\textwidth]{312_Land.png}\caption{Action C: Landing, final action}
 \label{fig:missionphase3}
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%% 
@@ -514,10 +514,10 @@ Goal: Add a constraint task that fixes the vehicle velocity to zero. Land on the
 %%%%%%% near images %%%%%%% 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=.6\textwidth]{41_armmoveswhilestopvehiclevel.png}\caption{Arm joints start moving when reached task 4}
+\includegraphics[width=.6\textwidth]{411_q.png}\caption{Arm joints start moving when reached task 4}
 \centering
 \label{fig:411_arm}
-\includegraphics[width=.6\textwidth]{41_finalphase_zerovelocities.png}\caption{Vehicle has zero velocities when task 3 is finished}
+\includegraphics[width=.6\textwidth]{411_ppdot.png}\caption{Vehicle has zero velocities when task 3 is finished}
 \label{fig:411_vehicle}
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%% 
@@ -544,6 +544,26 @@ Goal: Add a joint limits avoidance task. Land on the seafloor. Try reaching the 
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}
 
+%%%%%% TABLE %%%%%%%%%
+\begin{center}
+\begin{tabular}{ | c | c | c | c | c | c |}
+\hline
+ Control Task & \texttt{Code name} & Action A & Action B & Action C & Action D\\
+ \hline
+ Vehicle Null Velocity & \texttt{vNull} & Inactive & Inactive & Inactive & Active\\
+ % Joint Limit & \texttt{jl} & 
+ Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive & Inactive \\  
+ Manipulabity &  \texttt{mu} & Active & Active & Active & Active  \\
+ Horizontal Attitude &  \texttt{ha} & Active & Active & Active & Active\\
+ Tool  &  \texttt{t} & Inactive & Inactive & Inactive & Active\\
+ Vehicle Position &  \texttt{v} &Active & Inactive & Inactive & Inactive\\
+ Alignment to the rock & \texttt{alr} & Inactive & Active & Active & Inactive \\
+ Landing & \texttt{l} &Inactive & Inactive & Active & Inactive\\
+ \hline
+\end{tabular}
+\end{center}
+%%%%%% TABLE %%%%%%%%%
+
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Limits task? How was the task reference computed?}
 
 %%%%%%% Jacobian Matrix %%%%%%% 
@@ -569,6 +589,16 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the optimization task?}
 
+\begin{itemize}
+\item Joint Limit 
+\item Manipulabity 
+\item Horizontal Attitude 
+\item Vehicle Position
+\item Preferred Shape
+\end {itemize}
+
+
+
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}
 
 %%%%%%% Jacobian Matrix %%%%%%% 
@@ -587,13 +617,13 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
 \begin{figure}[htp]
     \centering
     \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.37]{comment.png}
+    \includegraphics[scale=0.37]{513_comment.png}
     \caption{Not having}
     \end{minipage}
 \hfill
     \centering
     \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.3]{uncomment.png}
+    \includegraphics[scale=0.3]{513_uncomment.png}
     \caption{Having}
     \end{minipage}
 \end{figure}
@@ -608,7 +638,76 @@ Goal: introduce mission phases in the floating manipulation scenario. Observe th
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Which task is active in which phase/action?}
 
+%%%%%% TABLE %%%%%%%%%
+\begin{center}
+\begin{tabular}{ | c | c | c | c |}
+\hline
+ Control Task & \texttt{Code name} & Action A & Action B \\
+ \hline
+ Vehicle Null Velocity & \texttt{vNull} & Inactive & Active \\
+ Joint Limit & \texttt{jl} & Active & Active \\
+ Manipulabity &  \texttt{mu} & Active & Active\\
+ Horizontal Attitude &  \texttt{ha} & Active & Active \\
+ Tool  &  \texttt{t} & Inactive & Active\\
+ Vehicle Position &  \texttt{v} &Active & Inactive\\
+ Preferred Shape & \texttt{ps} & Active & Active\\
+ \hline
+\end{tabular}
+\end{center}
+%%%%%% TABLE %%%%%%%%%
+
 \subsubsection{Q2: What is the difference with the previous simulation (still in exercise 5), where only one action was used?}
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth} 
+\includegraphics[width=\textwidth]{522_1_wout_TPIK2.png} 
+\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{522_1_w_TPIK2.png}
+\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
+\end{minipage}  
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth} 
+\includegraphics[width=\textwidth]{522_2_wout_TPIK2.png} 
+\caption[Errors: without TPIK2]{Errors: without TPIK2}\label{Error_wout_TPIK2} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{522_2_w_TPIK2.png}
+\caption[Errors: with TPIK2]{Errors: with TPIK2}\label{Error_w_TPIK2} 
+\end{minipage}  
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth} 
+\includegraphics[width=\textwidth]{522_3_wout_TPIK2.png} 
+\caption[Zoomed Error: without TPIK2]{Zoomed Error: without TPIK2}\label{zoomed_error_wout_TPIK2} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{522_3_w_TPIK2.png}
+\caption[Zoomed Error: with TPIK2]{Zoomed Error: with TPIK2}\label{zoomed_error_w_TPIK2} 
+\end{minipage}  
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth} 
+\includegraphics[width=\textwidth]{522_4_wout_TPIK2.png} 
+\caption[Joints configurations and velocities: without TPIK2]{Joints configurations and velocities: without TPIK2}\label{Jqandqdot_wout_TPIK2} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{522_4_w_TPIK2.png}
+\caption[Joints configurations and velocities: with TPIK2]{Joints configurations and velocities: with TPIK2}\label{Jqandqdot_w_TPIK2} 
+\end{minipage}  
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \clearpage
 \section{Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}
@@ -622,66 +721,6 @@ Goal: modify the control part to implement the parallel arm-vehicle coordination
 vConstraint - Nel TPIK2.
 
 Non è coordinato senza il TPIK 2 , non reagisce ai cambi dovuti al 
-
-%%%%%%% near images %%%%%%% 
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.3\textwidth]{1_wout_TPIK2.png}\caption{Arm joints start moving when reached task 4}
-\centering
-\label{fig:411_arm}
-\includegraphics[width=.3\textwidth]{1_w_TPIK2.png}\caption{Vehicle has zero velocities when task 3 is finished}
-\label{fig:411_vehicle}
-\end{figure}
-%%%%%%% %%%%%%%%%% %%%%%%% 
-
-%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-\begin{figure}[htpb] 
-\begin{minipage}{0.40\textwidth} 
-\includegraphics[width=\textwidth]{1_wout_TPIK2.png} 
-\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
-\end{minipage} 
-\hspace{0.2\textwidth} 
-\begin{minipage}{0.40\textwidth}  
-\includegraphics[width=\textwidth]{1_w_TPIK2.png}
-\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
-\end{minipage}  
-\end{figure}
-%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-\begin{figure}[htpb] 
-\begin{minipage}{0.40\textwidth} 
-\includegraphics[width=\textwidth]{2_wout_TPIK2.png} 
-\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
-\end{minipage} 
-\hspace{0.2\textwidth} 
-\begin{minipage}{0.40\textwidth}  
-\includegraphics[width=\textwidth]{2_w_TPIK2.png}
-\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
-\end{minipage}  
-\end{figure}
-%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-\begin{figure}[htpb] 
-\begin{minipage}{0.40\textwidth} 
-\includegraphics[width=\textwidth]{3_wout_TPIK2.png} 
-\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
-\end{minipage} 
-\hspace{0.2\textwidth} 
-\begin{minipage}{0.40\textwidth}  
-\includegraphics[width=\textwidth]{3_w_TPIK2.png}
-\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
-\end{minipage}  
-\end{figure}
-%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-\begin{figure}[htpb] 
-\begin{minipage}{0.40\textwidth} 
-\includegraphics[width=\textwidth]{4_wout_TPIK2.png} 
-\caption[Joint limits: without TPIK2]{Joint limits: without TPIK2}\label{JL_wout_TPIK2} 
-\end{minipage} 
-\hspace{0.2\textwidth} 
-\begin{minipage}{0.40\textwidth}  
-\includegraphics[width=\textwidth]{4_w_TPIK2.png}
-\caption[Joint limits: with TPIK2]{Joint limits: with TPIK2}\label{JL_w_TPIK2} 
-\end{minipage}  
-\end{figure}
 
 \subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
 

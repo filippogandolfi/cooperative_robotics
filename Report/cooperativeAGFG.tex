@@ -483,14 +483,74 @@ Action B, it is the action that performs the alignment to the rock, with all the
 COPIARE JACOBIANA
 
 \subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?}
+\begin{itemize}
+	\item Very Small = 0.1
+	\item Medium = 0.6
+	\item Big = 1.2
+\end{itemize}
+
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_s_ppdot.png}
+\caption{Positions and Velocity with small}\label{ppdot_w_s} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_m_ppdot.png}
+\caption{Positions and Velocity with medium}\label{ppdot_w_m} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_b_ppdot.png}
+\caption{Positions and Velocity with big}\label{ppdot_w_b} 
+\end{minipage}
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_s_Activation.png}
+\caption{Activations with very small}\label{act_w_s} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_m_Activation.png}
+\caption{Activations with medium}\label{act_w_m} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_b_Activation.png}
+\caption{Activations with big}\label{act_w_b} 
+\end{minipage}
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_s_Errors.png}
+\caption{Errors with medium}\label{err_w_s} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_m_Errors.png}
+\caption{Errors with medium}\label{err_w_m} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{313_b_Errors.png}
+\caption{Errors with medium}\label{err_w_b} 
+\end{minipage}
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
 
 \subsubsection{Q4: After the landing is accomplished, what happens if you try to move the end-effector? Is the distance to the nodule sufficient to reach it with the end-effector? Comment the observed behaviour.}
 The tool could reach the center of the nodule, however, we notice that the vehicle moves to help the arm to achieve the desired position. It is clear that, to avoid this problem, we need to perform a non-reactive task to constraint the vehicle not move, as we will do in the next exercise \ref{subsec:non-react}. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{insert-image-here.jpg}
-    \caption{314}
+    \includegraphics[scale=0.4]{314_ppdot.png}
+    \caption{Visible that when tool starts move, vehicle helps it}
     \label{graphes3}
 \end{figure}
 

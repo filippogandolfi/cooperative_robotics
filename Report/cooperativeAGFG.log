@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  1 APR 2020 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  2 APR 2020 17:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -439,18 +439,18 @@ LaTeX Warning: Label `graphes3' multiply defined.
 )
 \openout1 = `cooperativeAGFG.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -508,39 +508,36 @@ Package caption Info: End \AtBeginDocument code.
 
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
-6.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 8
+0.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
  [1
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 115--120
-
- []
-
 <111_ppdot.png, id=13, 603.25375pt x 455.7025pt>
 File: 111_ppdot.png Graphic file (type png)
 <use 111_ppdot.png>
-Package pdftex.def Info: 111_ppdot.png  used on input line 148.
+Package pdftex.def Info: 111_ppdot.png  used on input line 156.
 (pdftex.def)             Requested size: 301.62613pt x 227.85068pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -550,342 +547,333 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <112_HAenabled.png, id=26, 962.59625pt x 720.6925pt>
 File: 112_HAenabled.png Graphic file (type png)
 <use 112_HAenabled.png>
-Package pdftex.def Info: 112_HAenabled.png  used on input line 160.
+Package pdftex.def Info: 112_HAenabled.png  used on input line 168.
 (pdftex.def)             Requested size: 266.14978pt x 199.26324pt.
 <112_HANotenabled.png, id=27, 957.5775pt x 720.6925pt>
 File: 112_HANotenabled.png Graphic file (type png)
 <use 112_HANotenabled.png>
-Package pdftex.def Info: 112_HANotenabled.png  used on input line 163.
+Package pdftex.def Info: 112_HANotenabled.png  used on input line 171.
 (pdftex.def)             Requested size: 266.14978pt x 200.30795pt.
  [3 <./111_ppdot.png>] [4 <./112_HAenabled.png> <./112_HANotenabled.png>]
 <122_MAV1m.png, id=35, 774.895pt x 458.71375pt>
 File: 122_MAV1m.png Graphic file (type png)
 <use 122_MAV1m.png>
-Package pdftex.def Info: 122_MAV1m.png  used on input line 232.
+Package pdftex.def Info: 122_MAV1m.png  used on input line 240.
 (pdftex.def)             Requested size: 309.95251pt x 183.48224pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
 
  []
-
-
-LaTeX Warning: Reference `sidebyside_10' on page 5 undefined on input line 246.
-
 
 [5
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 268--271
 
-LaTeX Warning: Reference `sidebyside_5' on page 6 undefined on input line 247.
-
-
-LaTeX Warning: Reference `sidebyside_1' on page 6 undefined on input line 248.
+ []
 
 <123_10m_ppdot.png, id=39, 605.26125pt x 454.69875pt>
 File: 123_10m_ppdot.png Graphic file (type png)
 <use 123_10m_ppdot.png>
-Package pdftex.def Info: 123_10m_ppdot.png  used on input line 254.
+Package pdftex.def Info: 123_10m_ppdot.png  used on input line 281.
 (pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
 <123_10m_A.png, id=40, 605.26125pt x 454.69875pt>
 File: 123_10m_A.png Graphic file (type png)
 <use 123_10m_A.png>
-Package pdftex.def Info: 123_10m_A.png  used on input line 259.
+Package pdftex.def Info: 123_10m_A.png  used on input line 286.
 (pdftex.def)             Requested size: 190.73549pt x 143.28636pt.
 
-Underfull \hbox (badness 1902) in paragraph at lines 260--260
+Underfull \hbox (badness 1902) in paragraph at lines 287--287
 []\OT1/cmr/m/n/10 Figure 6: Po-si-tions and Ve-loc-ity with
  []
 
 
-Overfull \hbox (17.74446pt too wide) in paragraph at lines 253--262
+Overfull \hbox (17.74446pt too wide) in paragraph at lines 280--289
 []$[]$   $[]$ 
  []
 
 <123_5m_ppdot.png, id=41, 464.73625pt x 351.3125pt>
 File: 123_5m_ppdot.png Graphic file (type png)
 <use 123_5m_ppdot.png>
-Package pdftex.def Info: 123_5m_ppdot.png  used on input line 268.
+Package pdftex.def Info: 123_5m_ppdot.png  used on input line 295.
 (pdftex.def)             Requested size: 177.42868pt x 134.12195pt.
 <123_5m_A.png, id=42, 462.72874pt x 349.305pt>
 File: 123_5m_A.png Graphic file (type png)
 <use 123_5m_A.png>
-Package pdftex.def Info: 123_5m_A.png  used on input line 273.
+Package pdftex.def Info: 123_5m_A.png  used on input line 300.
 (pdftex.def)             Requested size: 190.73549pt x 143.98347pt.
 
-Underfull \hbox (badness 1902) in paragraph at lines 274--274
+Underfull \hbox (badness 1902) in paragraph at lines 301--301
 []\OT1/cmr/m/n/10 Figure 8: Po-si-tions and Ve-loc-ity with
  []
 
 
-Overfull \hbox (17.74446pt too wide) in paragraph at lines 267--276
+Overfull \hbox (17.74446pt too wide) in paragraph at lines 294--303
 []$[]$   $[]$ 
  []
 
 <123_1m_ppdot.png, id=43, 461.725pt x 348.30125pt>
 File: 123_1m_ppdot.png Graphic file (type png)
 <use 123_1m_ppdot.png>
-Package pdftex.def Info: 123_1m_ppdot.png  used on input line 282.
+Package pdftex.def Info: 123_1m_ppdot.png  used on input line 309.
 (pdftex.def)             Requested size: 177.42868pt x 133.84395pt.
 <123_1m_A.png, id=44, 464.73625pt x 350.30875pt>
 File: 123_1m_A.png Graphic file (type png)
 <use 123_1m_A.png>
-Package pdftex.def Info: 123_1m_A.png  used on input line 287.
+Package pdftex.def Info: 123_1m_A.png  used on input line 314.
 (pdftex.def)             Requested size: 177.42868pt x 133.73875pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 281--290
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 308--317
 []$[]$   $[]$ 
  []
 
-[6 <./122_MAV1m.png> <./123_10m_ppdot.png> <./123_10m_A.png>] [7 <./123_5m_ppdo
+[6 <./122_MAV1m.png>] [7 <./123_10m_ppdot.png> <./123_10m_A.png> <./123_5m_ppdo
 t.png> <./123_5m_A.png> <./123_1m_ppdot.png> <./123_1m_A.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 303--306
-
- []
-
-[8]
-<211_Landing.png, id=62, 561.09625pt x 338.26375pt>
+<211_Landing.png, id=59, 561.09625pt x 338.26375pt>
 File: 211_Landing.png Graphic file (type png)
 <use 211_Landing.png>
-Package pdftex.def Info: 211_Landing.png  used on input line 334.
+Package pdftex.def Info: 211_Landing.png  used on input line 345.
 (pdftex.def)             Requested size: 224.43452pt x 135.30309pt.
- [9
+ [8
 
  <./211_Landing.png>]
-<213_MAV_A.png, id=67, 421.575pt x 316.18124pt>
+<213_MAV_A.png, id=64, 421.575pt x 316.18124pt>
 File: 213_MAV_A.png Graphic file (type png)
 <use 213_MAV_A.png>
-Package pdftex.def Info: 213_MAV_A.png  used on input line 378.
+Package pdftex.def Info: 213_MAV_A.png  used on input line 389.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
-<213_Landing_A.png, id=68, 421.575pt x 316.18124pt>
+<213_Landing_A.png, id=65, 421.575pt x 316.18124pt>
 File: 213_Landing_A.png Graphic file (type png)
 <use 213_Landing_A.png>
-Package pdftex.def Info: 213_Landing_A.png  used on input line 385.
+Package pdftex.def Info: 213_Landing_A.png  used on input line 396.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
- [10 <./213_MAV_A.png (PNG copy)> <./213_Landing_A.png (PNG copy)>]
-<222_smooth_ppdot.png, id=72, 781.92125pt x 588.1975pt>
+ [9 <./213_MAV_A.png (PNG copy)> <./213_Landing_A.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 445--445
+
+ []
+
+<222_smooth_ppdot.png, id=69, 781.92125pt x 588.1975pt>
 File: 222_smooth_ppdot.png Graphic file (type png)
 <use 222_smooth_ppdot.png>
-Package pdftex.def Info: 222_smooth_ppdot.png  used on input line 443.
-(pdftex.def)             Requested size: 234.57819pt x 176.4606pt.
- [11
+Package pdftex.def Info: 222_smooth_ppdot.png  used on input line 453.
+(pdftex.def)             Requested size: 195.47983pt x 147.04901pt.
+[10
 
-] [12 <./222_smooth_ppdot.png>]
-<311_ppdot.png, id=81, 602.25pt x 453.695pt>
+ <./222_smooth_ppdot.png>]
+<311_ppdot.png, id=74, 602.25pt x 453.695pt>
 File: 311_ppdot.png Graphic file (type png)
 <use 311_ppdot.png>
-Package pdftex.def Info: 311_ppdot.png  used on input line 490.
-(pdftex.def)             Requested size: 240.89572pt x 181.47478pt.
-<312_Nav.png, id=82, 702.625pt x 429.10312pt>
+Package pdftex.def Info: 311_ppdot.png  used on input line 504.
+(pdftex.def)             Requested size: 180.67639pt x 136.10954pt.
+<312_Nav.png, id=75, 702.625pt x 429.10312pt>
 File: 312_Nav.png Graphic file (type png)
 <use 312_Nav.png>
-Package pdftex.def Info: 312_Nav.png  used on input line 498.
+Package pdftex.def Info: 312_Nav.png  used on input line 520.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
-<312_Alr.png, id=83, 702.625pt x 429.10312pt>
+<312_Alr.png, id=76, 702.625pt x 429.10312pt>
 File: 312_Alr.png Graphic file (type png)
 <use 312_Alr.png>
-Package pdftex.def Info: 312_Alr.png  used on input line 500.
+Package pdftex.def Info: 312_Alr.png  used on input line 522.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
-<312_Land.png, id=84, 702.625pt x 429.10312pt>
+<312_Land.png, id=77, 702.625pt x 429.10312pt>
 File: 312_Land.png Graphic file (type png)
 <use 312_Land.png>
-Package pdftex.def Info: 312_Land.png  used on input line 502.
+Package pdftex.def Info: 312_Land.png  used on input line 524.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
- [13
+ [11
 
- <./311_ppdot.png>]
-[14 <./312_Nav.png> <./312_Alr.png> <./312_Land.png>]
-<313_s_ppdot.png, id=95, 605.26125pt x 456.70625pt>
+ <./311_ppdot.png>] [12 <./312_Nav.png> <./312_Alr.png> <./312_Land.png>]
+<313_s_ppdot.png, id=89, 605.26125pt x 456.70625pt>
 File: 313_s_ppdot.png Graphic file (type png)
 <use 313_s_ppdot.png>
-Package pdftex.def Info: 313_s_ppdot.png  used on input line 529.
+Package pdftex.def Info: 313_s_ppdot.png  used on input line 547.
 (pdftex.def)             Requested size: 177.42868pt x 133.87698pt.
-<313_m_ppdot.png, id=96, 603.25375pt x 454.69875pt>
+<313_m_ppdot.png, id=90, 603.25375pt x 454.69875pt>
 File: 313_m_ppdot.png Graphic file (type png)
 <use 313_m_ppdot.png>
-Package pdftex.def Info: 313_m_ppdot.png  used on input line 534.
+Package pdftex.def Info: 313_m_ppdot.png  used on input line 552.
 (pdftex.def)             Requested size: 177.42868pt x 133.73254pt.
-<313_b_ppdot.png, id=97, 605.26125pt x 454.69875pt>
+<313_b_ppdot.png, id=91, 605.26125pt x 454.69875pt>
 File: 313_b_ppdot.png Graphic file (type png)
 <use 313_b_ppdot.png>
-Package pdftex.def Info: 313_b_ppdot.png  used on input line 539.
+Package pdftex.def Info: 313_b_ppdot.png  used on input line 557.
 (pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 528--542
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 546--560
 []$[]$   $[]$
  []
 
-<313_s_Activation.png, id=98, 605.26125pt x 454.69875pt>
+<313_s_Activation.png, id=92, 605.26125pt x 454.69875pt>
 File: 313_s_Activation.png Graphic file (type png)
 <use 313_s_Activation.png>
-Package pdftex.def Info: 313_s_Activation.png  used on input line 546.
+Package pdftex.def Info: 313_s_Activation.png  used on input line 564.
 (pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
-<313_m_Activation.png, id=99, 604.2575pt x 454.69875pt>
+<313_m_Activation.png, id=93, 604.2575pt x 454.69875pt>
 File: 313_m_Activation.png Graphic file (type png)
 <use 313_m_Activation.png>
-Package pdftex.def Info: 313_m_Activation.png  used on input line 551.
+Package pdftex.def Info: 313_m_Activation.png  used on input line 569.
 (pdftex.def)             Requested size: 177.42868pt x 133.51053pt.
-<313_b_Activation.png, id=100, 604.2575pt x 454.69875pt>
+<313_b_Activation.png, id=94, 604.2575pt x 454.69875pt>
 File: 313_b_Activation.png Graphic file (type png)
 <use 313_b_Activation.png>
-Package pdftex.def Info: 313_b_Activation.png  used on input line 556.
+Package pdftex.def Info: 313_b_Activation.png  used on input line 574.
 (pdftex.def)             Requested size: 177.42868pt x 133.51053pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 545--559
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 563--577
 []$[]$   $[]$
  []
 
-<313_s_Errors.png, id=101, 605.26125pt x 455.7025pt>
+<313_s_Errors.png, id=95, 605.26125pt x 455.7025pt>
 File: 313_s_Errors.png Graphic file (type png)
 <use 313_s_Errors.png>
-Package pdftex.def Info: 313_s_Errors.png  used on input line 563.
+Package pdftex.def Info: 313_s_Errors.png  used on input line 581.
 (pdftex.def)             Requested size: 177.42868pt x 133.58275pt.
-<313_m_Errors.png, id=102, 605.26125pt x 453.695pt>
+<313_m_Errors.png, id=96, 605.26125pt x 453.695pt>
 File: 313_m_Errors.png Graphic file (type png)
 <use 313_m_Errors.png>
-Package pdftex.def Info: 313_m_Errors.png  used on input line 568.
+Package pdftex.def Info: 313_m_Errors.png  used on input line 586.
 (pdftex.def)             Requested size: 177.42868pt x 132.99428pt.
-<313_b_Errors.png, id=103, 605.26125pt x 455.7025pt>
+<313_b_Errors.png, id=97, 605.26125pt x 455.7025pt>
 File: 313_b_Errors.png Graphic file (type png)
 <use 313_b_Errors.png>
-Package pdftex.def Info: 313_b_Errors.png  used on input line 573.
+Package pdftex.def Info: 313_b_Errors.png  used on input line 591.
 (pdftex.def)             Requested size: 177.42868pt x 133.58275pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 562--576
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 580--594
 []$[]$   $[]$
  []
 
-<314_ppdot.png, id=104, 604.2575pt x 454.69875pt>
+[13
+
+ <./313_s_ppdot.png> <./313_m_ppdot.png> <./313_b_ppdot.png>] [14 <./313_s_Acti
+vation.png> <./313_m_Activation.png> <./313_b_Activation.png> <./313_s_Errors.p
+ng> <./313_m_Errors.png> <./313_b_Errors.png>]
+<314_ppdot.png, id=113, 604.2575pt x 454.69875pt>
 File: 314_ppdot.png Graphic file (type png)
 <use 314_ppdot.png>
-Package pdftex.def Info: 314_ppdot.png  used on input line 585.
+Package pdftex.def Info: 314_ppdot.png  used on input line 603.
 (pdftex.def)             Requested size: 241.69872pt x 181.87627pt.
+ [15
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[15 <./313_s_ppdot.png> <./313_m_ppdot.png> <./313_b_ppdot.png>] [16 <./313_s_A
-ctivation.png> <./313_m_Activation.png> <./313_b_Activation.png> <./313_s_Error
-s.png> <./313_m_Errors.png> <./313_b_Errors.png>] [17 <./314_ppdot.png>]
-<411_q.png, id=124, 668.4975pt x 262.9825pt>
+ <./314_ppdot.png>]
+<411_q.png, id=118, 668.4975pt x 262.9825pt>
 File: 411_q.png Graphic file (type png)
 <use 411_q.png>
-Package pdftex.def Info: 411_q.png  used on input line 620.
+Package pdftex.def Info: 411_q.png  used on input line 650.
 (pdftex.def)             Requested size: 266.14978pt x 104.70558pt.
-<411_ppdot.png, id=125, 605.26125pt x 455.7025pt>
+<411_ppdot.png, id=119, 605.26125pt x 455.7025pt>
 File: 411_ppdot.png Graphic file (type png)
 <use 411_ppdot.png>
-Package pdftex.def Info: 411_ppdot.png  used on input line 623.
+Package pdftex.def Info: 411_ppdot.png  used on input line 653.
 (pdftex.def)             Requested size: 266.14978pt x 200.38455pt.
-<411_Errors.png, id=126, 603.75563pt x 453.695pt>
+<411_Errors.png, id=120, 603.75563pt x 453.695pt>
 File: 411_Errors.png Graphic file (type png)
 <use 411_Errors.png>
-Package pdftex.def Info: 411_Errors.png  used on input line 625.
+Package pdftex.def Info: 411_Errors.png  used on input line 655.
 (pdftex.def)             Requested size: 266.14978pt x 200.00024pt.
 
-[18
+[16
 
-] [19 <./411_q.png> <./411_ppdot.png> <./411_Errors.png>] [20
+] [17 <./411_q.png> <./411_ppdot.png> <./411_Errors.png>] [18
 
 ]
-<513_comment.png, id=140, 521.44812pt x 384.93813pt>
+<513_comment.png, id=134, 521.44812pt x 384.93813pt>
 File: 513_comment.png Graphic file (type png)
 <use 513_comment.png>
-Package pdftex.def Info: 513_comment.png  used on input line 725.
+Package pdftex.def Info: 513_comment.png  used on input line 768.
 (pdftex.def)             Requested size: 192.93279pt x 142.42487pt.
-<513_uncomment.png, id=141, 656.95438pt x 416.05438pt>
+<513_uncomment.png, id=135, 656.95438pt x 416.05438pt>
 File: 513_uncomment.png Graphic file (type png)
 <use 513_uncomment.png>
-Package pdftex.def Info: 513_uncomment.png  used on input line 731.
+Package pdftex.def Info: 513_uncomment.png  used on input line 774.
 (pdftex.def)             Requested size: 197.08783pt x 124.81728pt.
- [21
+ [19
 
-] [22 <./513_comment.png> <./513_uncomment.png>]
-<522_1_wout_TPIK2.png, id=150, 645.41125pt x 485.815pt>
+] [20 <./513_comment.png> <./513_uncomment.png>]
+<522_1_wout_TPIK2.png, id=144, 645.41125pt x 485.815pt>
 File: 522_1_wout_TPIK2.png Graphic file (type png)
 <use 522_1_wout_TPIK2.png>
-Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 769.
+Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 812.
 (pdftex.def)             Requested size: 177.42868pt x 133.55135pt.
-<522_1_w_TPIK2.png, id=151, 502.87875pt x 381.425pt>
+<522_1_w_TPIK2.png, id=145, 502.87875pt x 381.425pt>
 File: 522_1_w_TPIK2.png Graphic file (type png)
 <use 522_1_w_TPIK2.png>
-Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 774.
+Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 817.
 (pdftex.def)             Requested size: 177.42868pt x 134.57164pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 768--777
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 811--820
 []$[]$   $[]$ 
  []
 
-<522_2_wout_TPIK2.png, id=152, 643.40375pt x 484.30937pt>
+<522_2_wout_TPIK2.png, id=146, 643.40375pt x 484.30937pt>
 File: 522_2_wout_TPIK2.png Graphic file (type png)
 <use 522_2_wout_TPIK2.png>
-Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 781.
+Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 824.
 (pdftex.def)             Requested size: 177.42868pt x 133.55128pt.
-<522_2_w_TPIK2.png, id=153, 505.89pt x 379.4175pt>
+<522_2_w_TPIK2.png, id=147, 505.89pt x 379.4175pt>
 File: 522_2_w_TPIK2.png Graphic file (type png)
 <use 522_2_w_TPIK2.png>
-Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 786.
+Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 829.
 (pdftex.def)             Requested size: 177.42868pt x 133.0702pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 780--789
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 823--832
 []$[]$   $[]$ 
  []
 
-<522_3_wout_TPIK2.png, id=154, 643.40375pt x 485.815pt>
+<522_3_wout_TPIK2.png, id=148, 643.40375pt x 485.815pt>
 File: 522_3_wout_TPIK2.png Graphic file (type png)
 <use 522_3_wout_TPIK2.png>
-Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 793.
+Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 836.
 (pdftex.def)             Requested size: 177.42868pt x 133.96648pt.
 
-Underfull \hbox (badness 1742) in paragraph at lines 794--794
+Underfull \hbox (badness 1742) in paragraph at lines 837--837
 []\OT1/cmr/m/n/10 Figure 38: Zoomed Er-ror: with-out
  []
 
-<522_3_w_TPIK2.png, id=155, 505.89pt x 381.425pt>
+<522_3_w_TPIK2.png, id=149, 505.89pt x 381.425pt>
 File: 522_3_w_TPIK2.png Graphic file (type png)
 <use 522_3_w_TPIK2.png>
-Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 798.
+Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 841.
 (pdftex.def)             Requested size: 177.42868pt x 133.77428pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 792--801
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 835--844
 []$[]$   $[]$ 
  []
 
-<522_4_wout_TPIK2.png, id=156, 645.41125pt x 486.81876pt>
+<522_4_wout_TPIK2.png, id=150, 645.41125pt x 486.81876pt>
 File: 522_4_wout_TPIK2.png Graphic file (type png)
 <use 522_4_wout_TPIK2.png>
-Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 805.
+Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 848.
 (pdftex.def)             Requested size: 177.42868pt x 133.82729pt.
-<522_4_w_TPIK2.png, id=157, 504.88625pt x 378.41376pt>
+<522_4_w_TPIK2.png, id=151, 504.88625pt x 378.41376pt>
 File: 522_4_w_TPIK2.png Graphic file (type png)
 <use 522_4_w_TPIK2.png>
-Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 810.
+Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 853.
 (pdftex.def)             Requested size: 177.42868pt x 132.98378pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 804--813
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 847--856
 []$[]$   $[]$ 
  []
 
-[23
+[21
 
  <./522_1_wout_TPIK2.png> <./522_1_w_TPIK2.png> <./522_2_wout_TPIK2.png> <./522
-_2_w_TPIK2.png>] [24 <./522_3_wout_TPIK2.png> <./522_3_w_TPIK2.png> <./522_4_wo
-ut_TPIK2.png> <./522_4_w_TPIK2.png>] [25
+_2_w_TPIK2.png>] [22 <./522_3_wout_TPIK2.png> <./522_3_w_TPIK2.png> <./522_4_wo
+ut_TPIK2.png> <./522_4_w_TPIK2.png>] [23
 
 ] (./cooperativeAGFG.aux)
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6109 strings out of 492162
- 86503 string characters out of 6125292
- 175120 words of memory out of 5000000
- 10303 multiletter control sequences out of 15000+600000
+ 6114 strings out of 492162
+ 86505 string characters out of 6125292
+ 178189 words of memory out of 5000000
+ 10308 multiletter control sequences out of 15000+600000
  10764 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,42p,907b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,42p,907b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -898,10 +886,10 @@ local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (26 pages, 12073816 bytes).
+Output written on cooperativeAGFG.pdf (24 pages, 12076861 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 208 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

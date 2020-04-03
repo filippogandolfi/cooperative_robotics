@@ -730,23 +730,20 @@ With this Jacobian we are sure that each joint apply the limit constraints only 
 We compute the \textbf{task reference} as:
 
 %%%%%
-	%\begin{center}
-	%	\large
-	%	$\boldsymbol{J}_{jLimits} =
-	%	\begin{bmatrix}
-	%	\underset{7\times7}{\boldsymbol{I}} & \underset{7\times6}{\boldsymbol{0}}
-	%	\end{bmatrix}$
-	%\end{center}
-	%Seen that each joint influences obviously only itself for the joint limit task.\\
+\begin{equation}
+\large
+\boldsymbol{J}_{jLimits} =
+\begin{bmatrix}
+\underset{7\times7}{\boldsymbol{I}} & \underset{7\times6}{\boldsymbol{0}}
+\end{bmatrix}
+\end{equation}
+	Seen that each joint influences obviously only itself for the joint limit task.\\
 	
-	\vspace{5px}
-	\begin{equation}
-		\dot{\bar{x}}_{jointLimit,i} = k
-		\begin{equation}
-		x_{activationMin,i} - x_{q,i},& \text{if } x_{q,i}\leq mid_i\\
-		x_{activationMax,i} - x_{q,i},& \text{if } x_{q,i} > mid_i
-		\end{equation}	
-	\end{equation}
+%\begin{equation}
+%\dot{\bar{x}}_{jointLimit,i} = k
+%	x_{activationMin,i} - x_{q,i},& \text{if } x_{q,i}\leq mid_i\\
+%	x_{activationMax,i} - x_{q,i},& \text{if } x_{q,i} > mid_i
+%\end{equation}
 		%$\dot{\bar{\boldsymbol{x}}}_{jointLimit} = \begin{bmatrix} {\dot{\bar{x}}_{jLimits,1},}&{\dots,}&{\dot{\bar{x}}_{jLimits,7}} \end{bmatrix}^T $\\
 		%\vspace{10px}
 		% $
@@ -775,12 +772,12 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the optimization task?}
 
 The new hierarchy of tasks is:
-\begin{enumeration} 
+\begin{itemize} 
 	\item Manipulability
 	\item Horizontal attitude
         \item Tool
         \item Preferred Shape 
-\end{enumeration}
+\end{itemize}
 
 \textbf{Preferred Shape [NR, I, O]} is an optimization task. For this reason, it is placed at the end of the hierarchy which means that it has the lowest priority and it is accomplished only if all the other tasks has been already satisfied. 
 

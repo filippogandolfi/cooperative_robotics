@@ -760,7 +760,7 @@ We compute the \textbf{task reference} as:
 \clearpage
 \section{Exercise 5: Floating Manipulation}
 \subsection{Adding an optimization control objective}
-Use the DexROV simulation for this exercise. 
+Use the DexROV simulation for this exercise .
 
 The goal is to try to optimize the joint positions, if possible, to keep the first four joints in a "preferred shape", represented by the following vector
 \begin{displaymath}
@@ -783,6 +783,7 @@ The new hierarchy of tasks is:
 
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}
 
+We decided to implement this task as a vector one, thus the Jacobian is a 4-by-13 matrix:
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
 \boldsymbol{J}_{vehNull}=
@@ -792,10 +793,20 @@ The new hierarchy of tasks is:
     \end{bmatrix}
 \end{equation}
 %%%%%%% %%%%%%% %%%%%%% %%%%%%% 
-The jacobian has four rows since it is required to control only the first fuor joints.
-The task reference is computed as the difference between the desired configuration for the first four joints and the actual configuration. 
-\subsubsection{Q3: What is the difference between having or not having this objective?}
+The Jacobian has four rows since it is required to control just the first fuor joints. Since each joint affects only itself (similarly to the joint limits task), the non-zero part of the Jacobian is a 4-by-4 identity matrix. 
 
+We compute the \textbf{task reference} as the difference between the desired joint configuration and the actual one :
+\begin{equation}
+   \dot{\overline{\boldsymbol{x}}}_{prefShape} = k(x_{prefShape} - x_{q}) %delta
+\end{equation}
+\begin{itemize}
+    \item $k$ is the control gain.
+    \item $x_{prefShape}$ is the desired configuration of the first four joints.
+    \item $x_{q}$ is the actual configuration of the first four joints.
+\end{itemize} 
+
+\subsubsection{Q3: What is the difference between having or not having this objective?} %FICCARE COLLEGAMENTO IMMAGINI
+In this specific case the UVMS goal is to align the end-effector frame to the goal frame which is located slightly above the pipe. Since no explicit goal for the vehicle was given, we have used just the tool task (which is able to move the vehicle as well) in order reach the goal directly. Nevertheless, since we have just one mission phase the end-effector moves in order to achieve the goal as soon as possible, leading to a "stretched" shape (FIGURE 32). If we add the preferred shape constraint as defined in the above mentioned task, we can maintain the desired end-effector configuration, even with just one mission phase (FIGURE 33). As we can see in FIGURE 34 e 35, when the preferred shape task is active the joints are in a more natural shape, which is also further from the joint limits.
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htp]
     \centering
@@ -810,7 +821,23 @@ The task reference is computed as the difference between the desired configurati
     \caption{Having}
     \end{minipage}
 \end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.37]{513_comment.png}
+    \caption{Not having}
+    \end{minipage}
+\hfill
+    \centering
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.3]{513_uncomment.png}
+    \caption{Having}
+    \end{minipage}
+\end{figure}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+
 
 \clearpage
 

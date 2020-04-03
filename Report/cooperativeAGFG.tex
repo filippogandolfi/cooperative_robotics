@@ -16,6 +16,7 @@
 \usepackage{multirow}
 \usepackage{epstopdf}
 \usepackage{stackengine} 
+\usepackage{cases}
 \usepackage[caption=false,font=footnotesize]{subfig}
 
 
@@ -728,39 +729,31 @@ The Jacobian for the Joint Limit task is:
 With this Jacobian we are sure that each joint apply the limit constraints only itself and not on the other ones.
 \\
 We compute the \textbf{task reference} as:
-
+%\begin{equation}
+%    ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((seafloor + safeguard) - ^w d_{sensor})) %delta
+%\end{equation}
 %%%%%
-	%\begin{center}
-	%	\large
-	%	$\boldsymbol{J}_{jLimits} =
-	%	\begin{bmatrix}
-	%	\underset{7\times7}{\boldsymbol{I}} & \underset{7\times6}{\boldsymbol{0}}
-	%	\end{bmatrix}$
-	%\end{center}
-	%Seen that each joint influences obviously only itself for the joint limit task.\\
-	
-	\vspace{5px}
-	\begin{equation}
-		\dot{\bar{x}}_{jointLimit,i} = k
-		\begin{equation}
-		x_{activationMin,i} - x_{q,i},& \text{if } x_{q,i}\leq mid_i\\
-		x_{activationMax,i} - x_{q,i},& \text{if } x_{q,i} > mid_i
-		\end{equation}	
-	\end{equation}
-		%$\dot{\bar{\boldsymbol{x}}}_{jointLimit} = \begin{bmatrix} {\dot{\bar{x}}_{jLimits,1},}&{\dots,}&{\dot{\bar{x}}_{jLimits,7}} \end{bmatrix}^T $\\
-		%\vspace{10px}
-		% $
-	where:
-	\begin{description}
+\begin{equation}
+\dot{\overline{x}}_{jointLimit,i} = k
+%\begin{cases}
+%	x_{activationMin,i} - x_{q,i},& \text{if } x_{q,i}\leq mid_i\\
+%	x_{activationMax,i} - x_{q,i},& \text{if } x_{q,i} > mid_i
+%\end{cases}
+\end{equation}
+
+
+where:
+\begin{description}
 		\item $i = 1,\dots,7$ is the $i$-th joint.
 		\item $x_{q,i}$ is the $i$ joint position ($q$)
 		\item $ActivationMin$ and $ActivationMax$ are the $10\%$ of the limit imposed for each joint.
 		\item $mid_i = \dfrac{x_{activationMin,i} + x_{activationMax,i}}{2}\; $ is the middle point between the Minimum Activation and the Maximum.
 		\item $k$ is the gain
-	\end{description}
-	We use the Min and Max in order to be able to activate the joint limit when the joint arrives near the minimum guard ($ActivationMin$) or near the maximum ones ($ActivationMax$).
-%%%%%%%%%
+\end{description}
+We use the Min and Max in order to be able to activate the joint limit when the joint arrives near the minimum guard ($ActivationMin$) or near the maximum ones ($ActivationMax$).
+%%%%%%%%
 \clearpage
+
 \section{Exercise 5: Floating Manipulation}
 \subsection{Adding an optimization control objective}
 Use the DexROV simulation for this exercise. 

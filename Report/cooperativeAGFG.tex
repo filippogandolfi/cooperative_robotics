@@ -806,7 +806,7 @@ We compute the \textbf{task reference} as the difference between the desired joi
 \end{itemize} 
 
 \subsubsection{Q3: What is the difference between having or not having this objective?} %FICCARE COLLEGAMENTO IMMAGINI
-In this specific case the UVMS goal is to align the end-effector frame to the goal frame which is located slightly above the pipe. Since no explicit goal for the vehicle was given, we have used just the tool task (which is able to move the vehicle as well) in order reach the goal directly. Nevertheless, since we have just one mission phase the end-effector moves in order to achieve the goal as soon as possible, leading to a "stretched" shape (FIGURE 32). If we add the preferred shape constraint as defined in the above mentioned task, we can maintain the desired end-effector configuration, even with just one mission phase (FIGURE 33). As we can see in FIGURE 34 e 35, when the preferred shape task is active the joints are in a more natural shape, which is also further from the joint limits.
+In this specific case the UVMS goal is to align the end-effector frame to the goal frame which is located slightly above the pipe. Since no explicit goal for the vehicle was given, we have used just the tool task (which is able to move the vehicle as well) in order reach the goal directly. Nevertheless, since we have just one mission phase the manipulator moves in order to achieve the goal as soon as possible, leading to a "stretched" shape (FIGURE 32). If we add the preferred shape constraint as defined in the above mentioned task, we can maintain the desired end-effector configuration, even with just one mission phase (FIGURE 33). As we can see in FIGURE 34 and 35, when the preferred shape task is active the joints are in a more natural shape, which is also further from the joint limits.
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htp]
     \centering
@@ -837,7 +837,8 @@ In this specific case the UVMS goal is to align the end-effector frame to the go
 \end{figure}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 
-
+FIGURE 34 
+FIGURE 35
 
 \clearpage
 
@@ -866,7 +867,46 @@ Goal: introduce mission phases in the floating manipulation scenario. Observe th
 \end{center}
 %%%%%% TABLE %%%%%%%%%
 
+% FICCARE IMMAGINI
 \subsubsection{Q2: What is the difference with the previous simulation (still in exercise 5), where only one action was used?}
+In the previous simulation it was not possible to constrain the vehicle velocities to zero, in order to allow a safe manipulation. By adding a safe navigation phase it is possible to use the vehicle position task to move the UVMS to a position slightly above the pipe, then constrain vehicle velocities in order to allow the manipulator to reach the goal frame by activating the tool task. Moreover, this results in a smoother behavior as it shown in figure 36 and 37.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+FIGURE 36 
+FIGURE 37
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+\begin{figure}[htp]
+    \centering
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.37]{513_comment.png}
+    \caption{Not having}
+    \end{minipage}
+\hfill
+    \centering
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.3]{513_uncomment.png}
+    \caption{Having}
+    \end{minipage}
+\end{figure}
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+\clearpage
+\section{Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}
+\subsection{Adding the parallel arm-vehicle coordination scheme}
+Let us now see how the two different subsystems (arm and vehicle) can be properly coordinate. Introduce in the simulation a sinusoidal velocity disturbance acting on the vehicle, and assume the actual vehicle velocity measurable. To do so, add a constant (in the inertial frame) velocity vector to the reference vehicle velocity before integrating it in the simulator. 
+
+Goal: modify the control part to implement the parallel arm-vehicle coordination scheme. Observe that, even with a disturbance acting on the vehicle, the end-effector can stay in the required constant position.
+
+\subsubsection{Q1: Which tasks did you introduce to implement the parallel coordination scheme?}
+
+vConstraint - Nel TPIK2.
+
+Non è coordinato senza il TPIK 2 , non reagisce ai cambi dovuti al 
+
+\subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
 
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
@@ -916,25 +956,6 @@ Goal: introduce mission phases in the floating manipulation scenario. Observe th
 \caption[Joints configurations and velocities: with TPIK2]{Joints configurations and velocities: with TPIK2}\label{Jqandqdot_w_TPIK2} 
 \end{minipage}  
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\clearpage
-\section{Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}
-\subsection{Adding the parallel arm-vehicle coordination scheme}
-Let us now see how the two different subsystems (arm and vehicle) can be properly coordinate. Introduce in the simulation a sinusoidal velocity disturbance acting on the vehicle, and assume the actual vehicle velocity measurable. To do so, add a constant (in the inertial frame) velocity vector to the reference vehicle velocity before integrating it in the simulator. 
-
-Goal: modify the control part to implement the parallel arm-vehicle coordination scheme. Observe that, even with a disturbance acting on the vehicle, the end-effector can stay in the required constant position.
-
-\subsubsection{Q1: Which tasks did you introduce to implement the parallel coordination scheme?}
-
-vConstraint - Nel TPIK2.
-
-Non è coordinato senza il TPIK 2 , non reagisce ai cambi dovuti al 
-
-\subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
-
-
 
 %\begin{figure}[t]
 %	\centering

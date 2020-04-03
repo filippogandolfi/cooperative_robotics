@@ -740,15 +740,15 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the optimization task?}
 
-\begin{itemize}
-\item Joint Limit 
-\item Manipulabity 
-\item Horizontal Attitude 
-\item Vehicle Position
-\item Preferred Shape
-\end {itemize}
+The new hierarchy of tasks is:
+\begin{enumeration} 
+	\item Manipulability
+	\item Horizontal attitude
+        \item Tool
+        \item Preferred Shape 
+\end{enumeration}
 
-
+\textbf{Preferred Shape [NR, I, O]} is an optimization task. For this reason, it is placed at the end of the hierarchy which means that it has the lowest priority and it is accomplished only if all the other tasks has been already satisfied. 
 
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}
 
@@ -761,7 +761,8 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
     \end{bmatrix}
 \end{equation}
 %%%%%%% %%%%%%% %%%%%%% %%%%%%% 
-
+The jacobian has four rows since it is required to control only the first fuor joints.
+The task reference is computed as the difference between the desired configuration for the first four joints and the actual configuration. 
 \subsubsection{Q3: What is the difference between having or not having this objective?}
 
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%

@@ -69,7 +69,7 @@
 
 \normalsize
 Authors: Alberto Grillo, Filippo Gandolfi\\
-EMAILs: --- albo.grillo@gmail.com, filippo.gandolfi95@gmail.com \\
+EMAILs: --- albogrillo@gmail.com, filippo.gandolfi95@gmail.com ---\\
 Date:  \\
 \end{center}
 \clearpage
@@ -105,18 +105,21 @@ Goal: Implement a vehicle position control task, and test that the vehicle reach
 
 
 \subsubsection{Q1: Report the hierarchy of task used and their priorities. What is the Jacobian relationship for the Vehicle Position control task? How was the task reference computed?}
-The \textbf{hierarchy of the tasks}, in order of priority:
-\begin{enumerate}
-    \item Manipulability 
-    \item Horizontal Attitude
-    \item Vehicle Position
-\end{enumerate}
+
 We use the following notation to characterize each task:
 \begin{itemize}
     \item R/NR, reactive or non-reactive.
     \item I/E, inequality or equality.
     \item C/S/P/AD/O, constraint, safety, prerequisite, action-defining, optimization.
 \end{itemize}
+
+The \textbf{hierarchy of the tasks}, in order of priority:
+\begin{enumerate}
+    \item Manipulability 
+    \item Horizontal Attitude
+    \item Vehicle Position
+\end{enumerate}
+
 \begin{description}
 	\item \textbf{Manipulability} [R, I, P], it's used in order to prevent dangerous position of the robot arm. 
 	\item \textbf{Horizontal Attitude} [R, I, S], it's fundamental for being sure the robot it's parallel with the seafloor. 
@@ -633,7 +636,7 @@ We have four different actions, with this hierarchy and activations:
 \end{center}
 %%%%%% TABLE %%%%%%%%%
 \begin{description}
-\item \textbf{Vehicle Null Velocity} [NR, E, O], it is a prerequisite task, so it has higher priority than the Action Defining tasks. Optimizazion.  \doubt
+\item \textbf{Vehicle Null Velocity} [NR, E, C], it is a prerequisite task, so it has higher priority than the Action Defining tasks. Optimizazion.  \doubt
 \item \textbf{Tool} [R, E, AD], it is an Action Definition task, that enable the arm to reach the tool target position. 
 \end{description}
 

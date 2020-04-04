@@ -734,16 +734,23 @@ We compute the \textbf{task reference} as:
 %\end{equation}
 %%%%%
 \begin{equation}
-\dot{\overline{x}}_{jointLimit,i} = k
+\large
+\boldsymbol{J}_{jLimits} =
+\begin{bmatrix}
+\underset{7\times7}{\boldsymbol{I}} & \underset{7\times6}{\boldsymbol{0}}
+\end{bmatrix}
+\end{equation}
+	Seen that each joint influences obviously only itself for the joint limit task.\\
+	
+%\dot{\overline{x}}_{jointLimit,i} = k
 %\begin{cases}
 %	x_{activationMin,i} - x_{q,i},& \text{if } x_{q,i}\leq mid_i\\
 %	x_{activationMax,i} - x_{q,i},& \text{if } x_{q,i} > mid_i
 %\end{cases}
-\end{equation}
+%\end{equation}
 
-
-where:
-\begin{description}
+	where:
+	\begin{description}
 		\item $i = 1,\dots,7$ is the $i$-th joint.
 		\item $x_{q,i}$ is the $i$ joint position ($q$)
 		\item $ActivationMin$ and $ActivationMax$ are the $10\%$ of the limit imposed for each joint.
@@ -756,7 +763,7 @@ We use the Min and Max in order to be able to activate the joint limit when the 
 
 \section{Exercise 5: Floating Manipulation}
 \subsection{Adding an optimization control objective}
-Use the DexROV simulation for this exercise. 
+Use the DexROV simulation for this exercise .
 
 The goal is to try to optimize the joint positions, if possible, to keep the first four joints in a "preferred shape", represented by the following vector
 \begin{displaymath}
@@ -767,18 +774,19 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the optimization task?}
 
-\begin{itemize}
-\item Joint Limit 
-\item Manipulabity 
-\item Horizontal Attitude 
-\item Vehicle Position
-\item Preferred Shape
-\end {itemize}
+The new hierarchy of tasks is:
+\begin{itemize} 
+	\item Manipulability
+	\item Horizontal attitude
+        \item Tool
+        \item Preferred Shape 
+\end{itemize}
 
-
+\textbf{Preferred Shape [NR, I, O]} is an optimization task. For this reason, it is placed at the end of the hierarchy which means that it has the lowest priority and it is accomplished only if all the other tasks has been already satisfied. 
 
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}
 
+We decided to implement this task as a vector one, thus the Jacobian is a 4-by-13 matrix:
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
 \boldsymbol{J}_{vehNull}=
@@ -788,9 +796,20 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
     \end{bmatrix}
 \end{equation}
 %%%%%%% %%%%%%% %%%%%%% %%%%%%% 
+The Jacobian has four rows since it is required to control just the first fuor joints. Since each joint affects only itself (similarly to the joint limits task), the non-zero part of the Jacobian is a 4-by-4 identity matrix. 
 
-\subsubsection{Q3: What is the difference between having or not having this objective?}
+We compute the \textbf{task reference} as the difference between the desired joint configuration and the actual one :
+\begin{equation}
+   \dot{\overline{\boldsymbol{x}}}_{prefShape} = k(x_{prefShape} - x_{q}) %delta
+\end{equation}
+\begin{itemize}
+    \item $k$ is the control gain.
+    \item $x_{prefShape}$ is the desired configuration of the first four joints.
+    \item $x_{q}$ is the actual configuration of the first four joints.
+\end{itemize} 
 
+\subsubsection{Q3: What is the difference between having or not having this objective?} %FICCARE COLLEGAMENTO IMMAGINI
+In this specific case the UVMS goal is to align the end-effector frame to the goal frame which is located slightly above the pipe. Since no explicit goal for the vehicle was given, we have used just the tool task (which is able to move the vehicle as well) in order reach the goal directly. Nevertheless, since we have just one mission phase the manipulator moves in order to achieve the goal as soon as possible, leading to a "stretched" shape (FIGURE 32). If we add the preferred shape constraint as defined in the above mentioned task, we can maintain the desired end-effector configuration, even with just one mission phase (FIGURE 33). As we can see in FIGURE 34 and 35, when the preferred shape task is active the joints are in a more natural shape, which is also further from the joint limits.
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htp]
     \centering
@@ -805,7 +824,24 @@ Goal: Add an optimization objective to keep the first four joints of the manipul
     \caption{Having}
     \end{minipage}
 \end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.37]{513_comment.png}
+    \caption{Not having}
+    \end{minipage}
+\hfill
+    \centering
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.3]{513_uncomment.png}
+    \caption{Having}
+    \end{minipage}
+\end{figure}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+FIGURE 34 
+FIGURE 35
 
 \clearpage
 
@@ -834,7 +870,46 @@ Goal: introduce mission phases in the floating manipulation scenario. Observe th
 \end{center}
 %%%%%% TABLE %%%%%%%%%
 
+% FICCARE IMMAGINI
 \subsubsection{Q2: What is the difference with the previous simulation (still in exercise 5), where only one action was used?}
+In the previous simulation it was not possible to constrain the vehicle velocities to zero, in order to allow a safe manipulation. By adding a safe navigation phase it is possible to use the vehicle position task to move the UVMS to a position slightly above the pipe, then constrain vehicle velocities in order to allow the manipulator to reach the goal frame by activating the tool task. Moreover, this results in a smoother behavior as it shown in figure 36 and 37.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+FIGURE 36 
+FIGURE 37
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+\begin{figure}[htp]
+    \centering
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.37]{513_comment.png}
+    \caption{Not having}
+    \end{minipage}
+\hfill
+    \centering
+    \begin{minipage}{0.50\textwidth}
+    \includegraphics[scale=0.3]{513_uncomment.png}
+    \caption{Having}
+    \end{minipage}
+\end{figure}
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+\clearpage
+\section{Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}
+\subsection{Adding the parallel arm-vehicle coordination scheme}
+Let us now see how the two different subsystems (arm and vehicle) can be properly coordinate. Introduce in the simulation a sinusoidal velocity disturbance acting on the vehicle, and assume the actual vehicle velocity measurable. To do so, add a constant (in the inertial frame) velocity vector to the reference vehicle velocity before integrating it in the simulator. 
+
+Goal: modify the control part to implement the parallel arm-vehicle coordination scheme. Observe that, even with a disturbance acting on the vehicle, the end-effector can stay in the required constant position.
+
+\subsubsection{Q1: Which tasks did you introduce to implement the parallel coordination scheme?}
+
+vConstraint - Nel TPIK2.
+
+Non è coordinato senza il TPIK 2 , non reagisce ai cambi dovuti al 
+
+\subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
 
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
@@ -884,25 +959,6 @@ Goal: introduce mission phases in the floating manipulation scenario. Observe th
 \caption[Joints configurations and velocities: with TPIK2]{Joints configurations and velocities: with TPIK2}\label{Jqandqdot_w_TPIK2} 
 \end{minipage}  
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\clearpage
-\section{Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}
-\subsection{Adding the parallel arm-vehicle coordination scheme}
-Let us now see how the two different subsystems (arm and vehicle) can be properly coordinate. Introduce in the simulation a sinusoidal velocity disturbance acting on the vehicle, and assume the actual vehicle velocity measurable. To do so, add a constant (in the inertial frame) velocity vector to the reference vehicle velocity before integrating it in the simulator. 
-
-Goal: modify the control part to implement the parallel arm-vehicle coordination scheme. Observe that, even with a disturbance acting on the vehicle, the end-effector can stay in the required constant position.
-
-\subsubsection{Q1: Which tasks did you introduce to implement the parallel coordination scheme?}
-
-vConstraint - Nel TPIK2.
-
-Non è coordinato senza il TPIK 2 , non reagisce ai cambi dovuti al 
-
-\subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
-
-
 
 %\begin{figure}[t]
 %	\centering

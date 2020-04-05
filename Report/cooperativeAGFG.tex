@@ -16,6 +16,7 @@
 \usepackage{multirow}
 \usepackage{epstopdf}
 \usepackage{stackengine} 
+\usepackage{cases}
 \usepackage[caption=false,font=footnotesize]{subfig}
 
 
@@ -110,9 +111,11 @@ We use the following notation to characterize each task:
 \begin{itemize}
     \item R/NR, reactive or non-reactive.
     \item I/E, inequality or equality.
-    \item C/S/P/AD/O, constraint, safety, prerequisite, action-defining, optimization.
+    \item C/S/P/AD/O, constraint, safety, prerequisite, action-defining, optimization. This characterization give the priority to each task, constraint task will have the highest priority, optimization the lowest.
 \end{itemize}
 
+\noindent
+\vspace{5px}
 The \textbf{hierarchy of the tasks}, in order of priority:
 \begin{enumerate}
     \item Manipulability 
@@ -120,14 +123,16 @@ The \textbf{hierarchy of the tasks}, in order of priority:
     \item Vehicle Position
 \end{enumerate}
 
+\noindent
 \begin{description}
-	\item \textbf{Manipulability} [R, I, P], it's used in order to prevent dangerous position of the robot arm. 
-	\item \textbf{Horizontal Attitude} [R, I, S], it's fundamental for being sure the robot it's parallel with the seafloor. 
-	\item \textbf{Vehicle Position} [R, I, AD], what the system really do. Action-defining task, so, lower hierarchy. This is the first task we implement, the goal is to perform velocity to enable the robot to reach the desired position.
+	\item \textbf{Manipulability} [R, I, P], it is used in order to prevent dangerous arm position.
+	\item \textbf{Horizontal Attitude} [R, I, S], it is fundamental for being sure the robot it is parallel with the seafloor. 
+	\item \textbf{Vehicle Position} [R, I, AD], what the system really do. It is an action-defining task, so, it has lower hierarchy. This is the first task we implemented, the goal is to compute velocities to enable the robot to reach the desired position.
 \end{description}
 
-
-The \textbf{Jacobian} for the vehicle position control task is the following one:
+\noindent
+\vspace{5px}
+The \textbf{Jacobian} relationship for the \textit{Vehicle Position} control task is the following one:
 \begin{equation}
     \boldsymbol{J}_v = \begin{bmatrix}
  & \underset{3\times3}{\boldsymbol{0}} & \underset{3\times3}{^{w}\boldsymbol{R}_{v}} \\
@@ -137,21 +142,22 @@ The \textbf{Jacobian} for the vehicle position control task is the following one
 \end{equation}
 \\ 
 where ${^{w}\boldsymbol{R}_{v}}$ is the Rotation matrix from the vehicle frame to the world frame.
-\\
+
+\noindent
+\vspace{5px}
 We compute the \textbf{task reference} as:
 \begin{equation}
     ^{w}\dot{\overline{\boldsymbol{x}}}_{v\_g}=k\left(^{w} \boldsymbol{x}_{g}-^{w} \boldsymbol{x}_{v}\right)
 \end{equation}
-where we use the Cartesian error between the vehicle frame and the goal frame, both projected on the world frame, to compute the linear error, and then, the misalignment between the two is computed by the Unit Vector Lemma.\\
-We multiply the final vector by a gain ($k$) factor.
+where we use the Cartesian error between the vehicle frame and the goal frame, both projected on the world frame, to compute the linear error, and then, the misalignment between the two is computed by the Versor Lemma. We multiply the final vector by a gain ($k$) factor.
 
 %Gray box for defining code implemented or referred to
 \colorbox{mygray}{\parbox{0.9\textwidth}{
 Code for Jacobian definition and computation: \\
-\texttt{ComputeJacobian -> Vehicle Position Task}\\
+\texttt{ComputeJacobian}\\
 Code for computing distance and misalignment: \\
 \texttt{simulation script -> CartError} \\
-\texttt{simulation script -> UniteVersorLemma}
+\texttt{simulation script -> UnitVersorLemma}
 }}
 
 \begin{figure}[!h]
@@ -161,31 +167,32 @@ Code for computing distance and misalignment: \\
     \label{graph_1_1}
 \end{figure}
 
-\subsubsection{Q2: What is the behaviour if the Horizontal Attitude is enabled or not? Try changing the initial or target orientation in terms of roll and pitch angles. Discuss the behaviour.} 
-By default the Horizontal Attitude is enable and has higher priority than the vehicle position task. This results in the UVMS trying to keep a horizontal orientation with respect to the sea floor (Figure  \ref{fig:hae}): if the target position has pitch and roll different from zero, the robot doesn’t perform the vertical position shown in (Figure  \ref{fig:hane}).
-When the horizontal attitude is not enabled, the UVMS trying to find the alignment between its frame and the goal one, without taking (of course) into account to stay in parallel with the seafloor. If the target position has pitch or roll, the robot will try to perform them.
+\subsubsection{Q2: What is the behavior if the Horizontal Attitude is enabled or not? Try changing the initial or target orientation in terms of roll and pitch angles. Discuss the behavior.} 
+By default the \textit{Horizontal Attitude} is enable and it has higher priority than the \textit{Vehicle Position} task. 
+This makes in the UVMS trying to keep an horizontal orientation with respect to the world frame(Figure  \ref{fig:hae}): if the target position has pitch and roll different from zero, the robot doesn’t perform this vertical position, as shown during the simulation(Figure  \ref{fig:hane}).
+When the \textit{Horizontal Attitude} is not enable, the UVMS try to find the alignment between its own frame and the goal one, without taking (of course) into account to stay in an horizontal position. If the target position has pitch or roll, the robot will try to perform them.
 
 %%%%%%% near images %%%%%%% 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=.6\textwidth]{112_HAenabled.png}\caption{Image of the SIM, Horizontal attitude enable, Robot is parallel with the seafloor}
+\includegraphics[width=.6\textwidth]{112_HAenabled.png}\caption{Images from the simulator, \textit{Horizontal Attitude} enable, the robot is parallel with the seafloor}
 \label{fig:hae}
+\vspace{5px}
 \centering
-\includegraphics[width=.6\textwidth]{112_HANotenabled.png}\caption{Image of the SIM, Horizontal Attitude not enable, Robot is no more parallel with the seafloor}
+\includegraphics[width=.6\textwidth]{112_HANotenabled.png}\caption{Images from the simulator, \textit{Horizontal Attitude} not enable, the robot is no more parallel with the seafloor}
 \label{fig:hane}
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%% 
 
 \subsubsection{Q3: Swap the priorities between Horizontal Attitude and the Vehicle Position control task. Discuss the behaviour.}
 The problem is the same as before. This time with the priorities switched, if the target, again, as roll or pitch, the robot will try to achieve this orientation. 
-So, if we switched the position we will have the same performance as if we disable the Horizontal Attitude task.\\
-In the end, it's not usefull to switch the position and it's wrong because the Horizontal Attitude is a Safety Task, so it's, every time, more important (so high priority)than a AD task. 
+So, if we change the hierarchy, we will have the same performance as if we disable the \textit{Horizontal Attitude} task.\\
+In the end, it is not useful to switch the position and it is wrong because the \textit{Horizontal Attitude} is a safety task, so it is, every time, more important (so high priority) than an action-defining task. 
 
-\subsubsection{Q4: What is the behaviour if the Tool Position control task is active and what if it is disabled? Which of the settings should be used for a Safe Waypoint Navigation action?}
-If the Tool Position Control task is enable, the vehicle could not reach the desidered position. If it's enable ad it as higher priority than the Vehicle Position Control task, the robot try to achieve the goal position for the arm, not the ones referred to the vehicle it self. \\
+\subsubsection{Q4: What is the behavior if the Tool Position control task is active and what if it is disabled? Which of the settings should be used for a Safe Waypoint Navigation action?}
+If the \textit{Tool Position} control task is enable, the vehicle could not reach the desired position. If it is enable and it has higher priority than the \textit{Vehicle Position} control task, the robot try to achieve the goal position for the arm, not the ones referred to the vehicle it self. \\
 For this reason we split the goal position in two different, the first for the body of the vehicle and another one for the tool. For this particular exercise we didn't use a arm goal position. \\
-However, we continue to use the Manipulability task, in order to maintain a safe position for the arm. % HA SENSO PARLARNE QUI?
-
+However, we continue to use the \textit{Manipulability} task, in order to maintain a safe position for the arm, during the navigation.
 \clearpage
 
 \subsection{Adding a safety minimum altitude control objective}
@@ -201,15 +208,21 @@ Choose as target point for the vehicle position the following one:
 Goal: Implement a task to control the altitude from the seafloor. Check that at all times the minimum distance from the seafloor is guaranteed.
 
 \subsubsection{Q1: Report the hierarchy of task used and their priorities. Comment how you choose the priority level for the minimum altitude.}
-The new hierarchy of tasks is:
-\begin{itemize}
-	\item Minimum altitude
+
+\noindent
+\vspace{5px}
+The new \textbf{hierarchy} of tasks is:
+\begin{enumerate}
+	\item Minimum Altitude
 	\item Manipulability
-	\item Horizontal attitude
-	\item Vehicle position
-\end{itemize}
-The news task implemented: \\
-Minimum Altitude [R,I,S], it has high priority because it's a safety task, UVM must avoid crashes with the seafloor.
+	\item Horizontal Attitude
+	\item Vehicle Position
+\end{enumerate}
+
+\noindent
+\vspace{5px}
+The new task implemented: \\
+\textbf{Minimum Altitude} [R,I,S], it is a safety task, so it has high priority. This task improve to the UVMS the ability to avoid crashes with the seafloor.
 
 \subsubsection{Q2: What is the Jacobian relationship for the Minimum Altitude control task? How was the task reference computed?}
 We need to control the movement along the $z$ axis, so we use the same Jacobian of the vehicle position, but selecting only the component related to the $z$ axis.
@@ -226,23 +239,27 @@ We need to control the movement along the $z$ axis, so we use the same Jacobian 
 \end{equation}
 %%%%%%% %%%%%%% %%%%%%% %%%%%%% 
 
-Note that in order to select the desired component we used the vector [0 0 0 0 0 1] because the control variable uses a the convention [R P Y X Y Z].
-\\
-We compute the \textbf{task reference} as the difference between the minimum distance given from the operator and the measured distance vector projected on the world frame:
+Note that in order to select the desired component we used the vector [0 0 0 0 0 1] because the control variable uses a the convention [Roll Pitch Yaw X Y Z].
+
+\noindent
+\vspace{5px}
+We compute the \textbf{task reference} as: 
 \begin{equation}
     ^{w}\dot{\overline{\boldsymbol{x}}}_{mav} = k((d_{limit}+\Delta)- ^w d_{sensor})) %delta
 \end{equation}
+where:
 \begin{itemize}
     \item $k$ is the control gain.
     \item $d_{limit}$ is the desired minimum distance from the seafloor.
     \item $ \Delta $ is the safety distance at which the activation of the task triggers.
     \item $^w d_{sensor}$ is the distance vector measured by the sensor and projected on the world frame.
 \end{itemize} 
+We compute the difference between the minimum distance given from the operator and the measured distance by the sensor projected on the world frame.
 
 \begin{figure}[t]
     \centering
     \includegraphics[scale=0.4]{122_MAV1m.png}
-    \caption{Image of the SIM, Minimum Altitude Vehicle set to 0.5m, Robot is following the seafloor}
+    \caption{Image from the simulator, the minimum altitude is set to $0.5m$, the robot is following the seafloor}
     \label{images_2_1}
 \end{figure}
 
@@ -251,27 +268,28 @@ We compute the \textbf{task reference} as the difference between the minimum dis
 \texttt{Compute Task Reference -> MAV Control}\\
 }}
 
-\subsubsection{Q3: Try imposing a minimum altitude of 1, 5, 10 m respectively. What is the behaviour?}
-To achieve this task we perform the different minimum altitude, all with the same $k$ gain (equal to $0.2$), and the same $\Delta$ for the inequality nature of the problem (equal to $0.5 m$).
+\subsubsection{Q3: Try imposing a minimum altitude of 1, 5, 10 m respectively. What is the behavior?}
+To achieve this task we perform the different minimum altitude, all with the same $k$ gain (equal to $0.2$), and with the same $\Delta$ for the inequality nature of the problem (equal to $0.5 m$).
 
 \begin{itemize}
-    \item \textbf{10 m:} It seems no a reasonable value. The UVMS has initial position below this threshold, so it start floating to the surface very quickly (it is possible to notice this huge vertical velocity in the graph (Figure \ref{10m_ppdot}), $\dot{z}$). Of course, the task is not accomplished because the target position is far from the threshold.
-    \item \textbf{5 m:} The same as before, the activation is active at the first instant because again the initial position is below the minimum altitude. This control task is a safety one, so every time the UVMS is under the minimum altitude is active and it has the highest priority. Again, it seems no reasonable to perform such big gap with the seafloor (Reported graph, Figure \ref{5m_ppdot}).
-    \item \textbf{1 m:} This time the problem is the opposite. The control task is no more active at the starting instant. The UVMS starts to accomplish the Vehicle Position Control task, when the seafloor present an hill the UVMS start to follow the pattern (Figure \ref{1m_ppdot}). However, there are some troubles during the navigation because the "noise" of the robot, with only 1 meter of distance (and no $\Delta$ that could prevent this), could touch the soil because the sensor it's on the center of the vehicle.
+    \item \textbf{10 m:} It seems no a reasonable value. The UVMS has initial position below this threshold, so it start floating to the surface very quickly (it is possible to notice this huge vertical velocity $\dot{z}$, in the graph (Figure \ref{10m_ppdot})). Of course, the task is not accomplished because the target position is far from the threshold.
+    \item \textbf{5 m:} The same as before, the activation is active at the first instant because again the initial position is below the minimum altitude. This control task is a safety one, so every time the UVMS is under the minimum altitude, the activation is active and it has the highest priority. Again, it seems no reasonable to perform such big gap with the seafloor (Reported graph, Figure \ref{5m_ppdot}).
+    \item \textbf{1 m:} This time the problem is the opposite. The control task is no more active at the starting instant. The UVMS starts to accomplish the \textit{Vehicle Position} task, when the seafloor present an hill the UVMS start to follow the pattern (Figure \ref{1m_ppdot}). However, there are some troubles during the navigation because the "noise" of the robot, with only 1 meter of distance (and no $\Delta$ that could prevent this), could touch the soil because the sensor it is on the center of the vehicle.
 \end{itemize}
 
 \subsubsection{Q4: How was the sensor distance processed?}
  
- ${^{v}d_{sensor}}$ is the distance vector measured by the sensor, so we need to projected it on the world frame, to do this we apply a rotation:
+ ${^{v}d_{sensor}}$ is the distance vector measured by the sensor, so we need to projected it on the world frame, to do this we apply The Rotation matrix as:
  
  %ESPRESSIONE DEL MOTHERFUCKER SENSOR DISTANCE ON THE WORLD FRAME
  \begin{equation}
      {^{w}\boldsymbol{d}_{sensor}} = {^{w}\boldsymbol{R}_{v}} {^{v}\boldsymbol{d}_{sensor}}
  \end{equation}
  
+ \noindent
  Again we are only interested on the $z$ axis. The $\boldsymbol{d}_{sensor}$ are the vectors build as:
  $\begin{bmatrix}0 & 0 & d_{seafloor} \end{bmatrix}^\top$
-\\
+\\ 
 
  %Gray box for defining code implemented or referred to
 \colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
@@ -333,16 +351,24 @@ Initialize the vehicle at the position:
 Goal: add a control task to regulate the altitude to zero.
 
 \subsubsection{Q1: Report the hierarchy of task used and their priorities. Comment how you choose the priority level for the altitude control task.}
-The new hierarchy of tasks is:
+
+\noindent
+\vspace{5px}
+The new \textbf{hierarchy} of tasks is:
 \begin{enumerate}
 	\item Manipulability
 	\item Horizontal attitude
 	\item Landing
 \end{enumerate}
+
+\noindent
+\vspace{2px}
 \begin{description}
-\item \textbf{Landing} [R, E, AD], is the new task. It is a Action Defining task, so it has the same priority as the Vehicle position task.
+\item \textbf{Landing} [R, E, AD], it is the new task. It is a Action Defining task, so it has the same priority as the \textit{Vehicle Position} task.
 \end{description}
-The task Minimum Altitude is not enable now, because (of course) we need, only, to land.
+
+\noindent
+The task \textit{Minimum Altitude} is not enable now, because (of course) we need, to land and the UVMS needs to go below the fixed minimum altitude threshold.
 
 \begin{figure}[h]
     \centering
@@ -353,6 +379,9 @@ The task Minimum Altitude is not enable now, because (of course) we need, only, 
 
 \subsubsection{Q2: What is the Jacobian relationship for the Altitude control task? How was the task reference computed?}
 
+\noindent
+\vspace{5px}
+The Jacobian relationship for the Landing is:
 \begin{equation}
 \boldsymbol{J}_{land}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 1
 \end{bmatrix}
@@ -362,17 +391,20 @@ The task Minimum Altitude is not enable now, because (of course) we need, only, 
      & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
     \end{bmatrix}
 \end{equation}
-As before the Jacobian take into account only the z component (using the pre-multiplication with the [0 0 0 0 0 1] matrix). 
-\\
+As before the Jacobian take into account only the $z$ component (using the pre-multiplication with the [0 0 0 0 0 1] matrix).
+ 
+\noindent
+\vspace{5px}
 We compute the \textbf{task reference} as as the difference between the seafloor and the measured distance projected on the world frame:
 
 \begin{equation}
     ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((seafloor + safeguard) - ^w d_{sensor})) %delta
 \end{equation}
+where:
 \begin{itemize}
     \item $k$ is the control gain.
     \item $seafloor$ is simply 0.
-    \item $safeguard$ is set to 0.15m  to avoid interpenetration between UVMS and the seafloor.
+    \item $safeguard$ is set to $0.15m$  to avoid interpenetration between UVMS and the seafloor.
     \item $^w d_{sensor}$ is the distance vector measured by the sensor and projected on the world frame.
 \end{itemize} 
 
@@ -383,9 +415,8 @@ We compute the \textbf{task reference} as as the difference between the seafloor
 }}
 
 \subsubsection{Q3: how does this task differs from a minimum altitude control task?}
-There are two major difference, the first one is that this task it isn't a safety task, it's a Action-Defining task. The Minimum Altitude it's used to avoid crash with the seafloor, the Landing task it's like the Vehicle Position task, and, as this one, it has low priority.
-The second big difference is that the Minimum altitude is an Inequality task rather than the Landing that is and equality. For this reason, as visible on the graphs below (Figure \ref{213}), MAV is active when we are under the imposed threshold, Landing is active only when is called and stay active until we touch the seafloor.
-
+There are two major difference, the first one is that this task it is not a safety task, it is a action-defining one. The \textit{Minimum Altitude} it is used to avoid crashes with the seafloor, the \textit{Landing} task it is like the \textit{Vehicle Position} task, and, as this last one, it has low priority.\\
+The second big difference is that the \textit{Minimum Altitude} is an inequality task rather than the \textit{Landing} that is and equality. For this reason, as visible on the graphs below (Figure \ref{213}), MAV is active when we are under the imposed threshold, \textit{Landing} is active only when is called and it stay like this until we touch the seafloor.
 
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[!h]
@@ -419,7 +450,7 @@ When the position has been reached, land on the seafloor using the basic "landin
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities.}
 
-We have two different actions, with this hierarchy and activations: 
+We have two different actions, with this \textbf{hierarchy} and activations: 
 %%%%%% TABLE %%%%%%%%%
 \begin{center}
 \begin{tabular}{ | c | c | c | c |}
@@ -437,7 +468,7 @@ We have two different actions, with this hierarchy and activations:
 
 \begin{description}
 \item Action A, perform the safe waypoint navigation. All the safety task are enable. 
-\item Action B, the robot need simply to land, it just performs the previous exercise task, of course, we need to inactivate the Minimum Altitude.
+\item Action B, the robot need simply to land, it just performs the previous exercise task. Of course, we need to inactivate the Minimum Altitude.
 \end{description}
  
 %%%%%% TABLE %%%%%%%%%
@@ -450,9 +481,10 @@ We have two different actions, with this hierarchy and activations:
 }}
 
 \subsubsection{Q2: How did you implement the transition from one action to the other?}
-From Action A to Action B, we compute the cartesian error between the goal position and the actual. When the error is below our threshold (0.15m) the mission phase changes. 
 
-When we want to Inactivate a running task, we perform a Decreasing Bell Shape function in order to perform a smooth transition (like Minimum Altitude and Vehicle Position task, both Inactivated in the same method). In the same way, we also perform an Increasing Bell Shape function to perform a smooth activation of the Landing task. We perform the bell shaped function based on the mission phase time, this help us to fix the time when we switch from an Action to the other one, and perform shape from 0 to 0.2 seconds, to avoid spike to the motors.
+From Action A to Action B, we compute the cartesian error between the goal position and the vehicle. When the error is below our threshold ($0.15m$) the mission phase changes. 
+
+When we want to inactivate a running task, we perform a Decreasing Bell Shape function, referred to mission phase time, in order to perform a smooth transition (like \textit{Minimum Altitude} and \textit{Vehicle Position} task, both inactivated in the same method). In the same way, we also perform an Increasing Bell Shape function to perform a smooth activation of the \textit{Landing} task. We perform all this functions based on the mission phase time, this help us to fix the time when we switch from an Action to the other one, and perform shape from $0$ to $0.2$ seconds, to avoid spike to the motors.
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=0.25]{222_smooth_ppdot.png}
@@ -461,9 +493,6 @@ When we want to Inactivate a running task, we perform a Decreasing Bell Shape fu
 \end{figure}
 
 We found this more adeguate that the previous attempt, in which we performed the shape based on the error distance.
-
-
- 
 \clearpage
 
 \section{Exercise 3: Improve the “Landing” Action}
@@ -482,7 +511,7 @@ Then land, aligning to the nodule.
 
 Goal: Add an alignment task between the longitudinal axis of the vehicle ($x$ axis) and the nodule target. In particular, the $x$ axis of the vehicle should align to the projection, on the inertial horizontal plane, of the unit vector joining the vehicle frame to the nodule frame.
 
-\subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Comment the behaviour.}
+\subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Comment the behavior.}
 We have three different actions, with this hierarchy and activations:
 %%%%%% TABLE %%%%%%%%%
 \begin{center}
@@ -493,15 +522,18 @@ We have three different actions, with this hierarchy and activations:
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive\\  
  Manipulabity &  \texttt{mu} & Active & Active & Active\\
  Horizontal Attitude &  \texttt{ha} & Active & Active & Active\\
- Alignment to the rock & \texttt{alr} & Inactive & Active & Active \\
+ Alignment to the Rock & \texttt{alr} & Inactive & Active & Active \\
  Landing & \texttt{l} &Inactive & Inactive & Active \\
  Vehicle Position &  \texttt{v} &Active & Inactive & Inactive\\
  \hline
 \end{tabular}
 \end{center}
 %%%%%% TABLE %%%%%%%%%
+\vspace{5px}
+\noindent
+The new task is:
 \begin{description}
-\item \textbf{Alignment to rock} [R, I, P], it is a prerequisite task, so it has higher priority than the Action Defining tasks. Inequality, because we admit an $value$.  \ocio 
+\item \textbf{Alignment to the Rock} [R, I, P], it is a prerequisite task, so it has higher priority than the action-defining tasks. Inequality, because we admit a $\Delta$ of errors equal to $value$.   \ocio 
 \end{description}
 
 \begin{figure}[h]
@@ -514,7 +546,7 @@ We have three different actions, with this hierarchy and activations:
 \begin{description}
 	\item Action A, again, a safe waypoint navigation with all the safety tasks enable (Figure \ref{311a}). 
 	\item Action B, it is the action that performs the alignment to the rock, with all the safety task enable (Figure \ref{311b}). 
-	\item Action C, alignment to the nodule is not disable because, while the UVMS starts landing, we disable smoothly the alignment. In this case, while the robot is performing the landing, it continue to rotate to optimize the orientation (Figure \ref{311c}).
+	\item Action C, \textit{Alignment to the Rock} is not disable because, while the UVMS starts landing, we disable smoothly the alignment. In this case, while the robot is performing the landing, it continue to rotate to optimize the orientation (Figure \ref{311c}).
 \end{description}
 
 
@@ -523,11 +555,14 @@ We have three different actions, with this hierarchy and activations:
 \begin{figure}[htp]
 \centering
 \includegraphics[width=.6\textwidth]{312_Nav.png}\caption{Action A: Navigation till the target position}\label{311a}
+\vspace{5px}
 \centering
 \includegraphics[width=0.6\textwidth]{312_Alr.png}\caption{Action B: Alignment with the rock center}\label{311b}
+\vspace{5px}
 \centering
 \includegraphics[width=.6\textwidth]{312_Land.png}\caption{Action C: Landing, final action}\label{311c}
 \label{fig:missionphase3}
+\vspace{5px}
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%% 
 \clearpage
@@ -538,14 +573,14 @@ COPIARE JACOBIANA \ocio
 \subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?} \no
 We performed tests with different gain values for the task reference:
 \begin{itemize}
-	\item Very Small = $0,1$
-	\item Medium = $0,6$
-	\item Big = $1,2$
+	\item Very Small = $0.1$
+	\item Medium = $0.6$
+	\item Big = $1.2$
 \end{itemize}
-First, looking at the positions and velocities graphs, it is clear that between the medium (Figure \ref{ppdot_w_m}) and the big gain (Figure \ref{ppdot_w_b}) there are no such important differences, it's only clear that with the big gain that transition between the two phases are not so smooth as for the medium one. Of course, the saturation helps the case with the big gain to not perform a too high velocity. 
-For the very small gain, the resulted graph is very different (Figure \ref{ppdot_w_s}), because it's clear that the very low velocity performed during the allignment doesn't help to reach the desidered posiiton. In our 30 seconds simulation is impossible for the UVMS to allign correctly. However, also improving the simulation time, it's clear that it is too slow to accomplish our goal.
+First, looking at positions and velocities graphs, it is clear that between the medium (Figure \ref{ppdot_w_m}) and the big gain (Figure \ref{ppdot_w_b}) there are no such important differences, with the big gain that transition between the two phases are not so smooth as for the medium one. Of course, the saturation helps the case with the big gain to not perform a too high velocity. 
+For the very small gain, the resulted graph is very different (Figure \ref{ppdot_w_s}), becausethe very low velocity performed during the alignment doesn't help to reach the desired position. In our 30 seconds simulation is impossible for the UVMS to align correctly. However, also improving the simulation time, it is normal that it is too slow to accomplish our goal.
 
-From the point of view of the activations and the errors, there aren't different results than before. Medium and big gain graphs are very similar (almost identical) and the very small gain graph confirm the previous senteces.
+From the point of view of the activations and the errors, there are not different results than before. Medium and big gain graphs are very similar (almost identical) and the very small gain graph confirm the previous sentences.
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
 \begin{minipage}{0.40\textwidth}  
@@ -600,8 +635,8 @@ From the point of view of the activations and the errors, there aren't different
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 
 \clearpage 
-\subsubsection{Q4: After the landing is accomplished, what happens if you try to move the end-effector? Is the distance to the nodule sufficient to reach it with the end-effector? Comment the observed behaviour.}\label{ex3}
-The tool could reach the center of the nodule, however, we notice that the vehicle moves to help the arm to achieve the desired position. It is clear that, to avoid this problem, we need to perform a non-reactive task to constraint the vehicle not move, as we will do in the next exercise \ref{subsec:non-react}. 
+\subsubsection{Q4: After the landing is accomplished, what happens if you try to move the end-effector? Is the distance to the nodule sufficient to reach it with the end-effector? Comment the observed behavior.}\label{ex3}
+The tool could reach the center of the nodule, however, we notice that the vehicle moves to ``help'' the arm to achieve the desired position. It is clear that, to avoid this problem, we need to perform a non-reactive task to constraint the vehicle not move, as we will do in the next exercise \ref{subsec:non-react}. 
 
 \begin{figure}[h]
     \centering
@@ -638,15 +673,15 @@ We have four different actions, with this hierarchy and activations:
 \end{center}
 %%%%%% TABLE %%%%%%%%%
 \begin{description}
-\item \textbf{Vehicle Null Velocity} [NR, E, C], it is a prerequisite task, so it has higher priority than the Action Defining tasks. Optimizazion.  \doubt
-\item \textbf{Tool} [R, E, AD], it is an Action Definition task, that enable the arm to reach the tool target position. 
+\item \textbf{Vehicle Null Velocity} [NR, E, C], it is a constraint task, so it has higher priority than all the other tasks. The goal of the task is to block the motors.
+\item \textbf{Tool Position} [R, E, AD], it is an Action Definition task, that enable the arm to reach the tool target position. 
 \end{description}
 
 \begin{description}
 	\item Action A, safe waypoint navigation with all the safety task activated
 	\item Action B, alignment to the nodule with all the safety task activated
 	\item Action C, landing and final rotation to be aligned with the rock
-	\item Action D, now it is. performed the new Vehicle Null Velocity task, that disable the UVMS' motors, to prevent movement. The only movement will be the extension of the arm to reach the desired target tool position. 
+	\item Action D, the new one. Here it is enable the new \texit{Vehicle Null Velocity} task, that disable the UVMS' motors, to prevent movement. The only movement will be the extension of the arm to reach the desired target tool position. 
 \end{description}
 
 %%%%%%% near images %%%%%%% 
@@ -679,7 +714,7 @@ The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Posit
 The velocity will not change during the activation of this task because it is a Non-Reactive.
 
 \subsubsection{Q3: Suppose the vehicle floating, i.e. not landed on the seafloor. What would happen, if due to currents, the vehicle moves?}
-The Vehicle Null task cannot take in position the UVMS, it doesn't take into account disturbances, it only put velocities to zero, so it is not able to "contrastare" the current. \ocio In this scenario, the robot will start follow the current and it will go to a wrong position. The arm will continue to try to reach the desired position, but in the previous exercise \ref{ex3} the vehicle could help the arm to be able to arrive to the target, now the zero velocity has higher priority, so the vehicle could not help. 
+The Vehicle Null task cannot take in position the UVMS, it doesn't take into account disturbances, it only put velocities to zero, so it is not able to contrast currents. In this scenario, the robot will start follow the current and it will go to a wrong position. The arm will continue to try to reach the desired position, and because it is not landed, the \textit{Vehicle Null Velocity} is not active, so the Tool Position try to achieve its goal and bring back all the vehicle. If the currents are not too strong it could reach again the position. Different from the previous exercise \ref{ex3}, in which the vehicle could not help the arm to be able to arrive to the target, now it could ``help''. \ocio
 \clearpage
 
 \subsection{Adding a joint limit task}
@@ -710,10 +745,10 @@ We have four different actions, with this hierarchy and activations:
 %%%%%% TABLE %%%%%%%%%
 
 \begin{description}
-\item \textbf{Joint Limit} [R, I, S], it is a safety task, so it has higher priority than the other Action Defining tasks. It is able to control that the joints don't operate over their prefixed threshold. \ocio
+\item \textbf{Joint Limit} [R, I, S], it is a safety task, so it has higher priority than the other action-defining tasks. It is able to control that the joints don't operate over their prefixed threshold. \ocio
 \end{description}
 
-The actions are the same as before, the only difference is that Joint Limit is always active because it is a safety task. However, it is useful when the robot perform the final action. 
+The actions are the same as before, the only difference is that Joint Limit is always active because it is a safety task. However, it is important when the robot perform the final action. 
 
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Limits task? How was the task reference computed?}
 The Jacobian for the Joint Limit task is:
@@ -728,7 +763,9 @@ The Jacobian for the Joint Limit task is:
 With this Jacobian we are sure that each joint apply the limit constraints only itself and not on the other ones.
 \\
 We compute the \textbf{task reference} as:
-
+%\begin{equation}
+%    ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((seafloor + safeguard) - ^w d_{sensor})) %delta
+%\end{equation}
 %%%%%
 \begin{equation}
 \large
@@ -739,14 +776,13 @@ We compute the \textbf{task reference} as:
 \end{equation}
 	Seen that each joint influences obviously only itself for the joint limit task.\\
 	
-%\begin{equation}
-%\dot{\bar{x}}_{jointLimit,i} = k
+%\dot{\overline{x}}_{jointLimit,i} = k
+%\begin{cases}
 %	x_{activationMin,i} - x_{q,i},& \text{if } x_{q,i}\leq mid_i\\
 %	x_{activationMax,i} - x_{q,i},& \text{if } x_{q,i} > mid_i
+%\end{cases}
 %\end{equation}
-		%$\dot{\bar{\boldsymbol{x}}}_{jointLimit} = \begin{bmatrix} {\dot{\bar{x}}_{jLimits,1},}&{\dots,}&{\dot{\bar{x}}_{jLimits,7}} \end{bmatrix}^T $\\
-		%\vspace{10px}
-		% $
+
 	where:
 	\begin{description}
 		\item $i = 1,\dots,7$ is the $i$-th joint.
@@ -754,10 +790,11 @@ We compute the \textbf{task reference} as:
 		\item $ActivationMin$ and $ActivationMax$ are the $10\%$ of the limit imposed for each joint.
 		\item $mid_i = \dfrac{x_{activationMin,i} + x_{activationMax,i}}{2}\; $ is the middle point between the Minimum Activation and the Maximum.
 		\item $k$ is the gain
-	\end{description}
-	We use the Min and Max in order to be able to activate the joint limit when the joint arrives near the minimum guard ($ActivationMin$) or near the maximum ones ($ActivationMax$).
-%%%%%%%%%
+\end{description}
+We use the Min and Max in order to be able to activate the joint limit when the joint arrives near the minimum guard ($ActivationMin$) or near the maximum ones ($ActivationMax$).
+%%%%%%%%
 \clearpage
+
 \section{Exercise 5: Floating Manipulation}
 \subsection{Adding an optimization control objective}
 Use the DexROV simulation for this exercise .

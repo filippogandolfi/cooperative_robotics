@@ -6,3 +6,7 @@
 *.log
 *.aux
 *.blg
+*.synctex(busy)
+*.aux
+*.aux
+*.bbl

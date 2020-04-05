@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.4.2)  3 APR 2020 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.4.2)  4 APR 2020 22:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -900,72 +900,72 @@ Package pdftex.def Info: 513_uncomment.png  used on input line 889.
 <522_1_wout_TPIK2.png, id=151, 645.41125pt x 485.815pt>
 File: 522_1_wout_TPIK2.png Graphic file (type png)
 <use 522_1_wout_TPIK2.png>
-Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 914.
+Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 924.
 (pdftex.def)             Requested size: 177.42868pt x 133.55135pt.
 <522_1_w_TPIK2.png, id=152, 502.87875pt x 381.425pt>
 File: 522_1_w_TPIK2.png Graphic file (type png)
 <use 522_1_w_TPIK2.png>
-Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 919.
+Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 929.
 (pdftex.def)             Requested size: 177.42868pt x 134.57164pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 913--922
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 923--932
 []$[]$   $[]$ 
  []
 
 <522_2_wout_TPIK2.png, id=153, 643.40375pt x 484.30937pt>
 File: 522_2_wout_TPIK2.png Graphic file (type png)
 <use 522_2_wout_TPIK2.png>
-Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 926.
+Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 936.
 (pdftex.def)             Requested size: 177.42868pt x 133.55128pt.
 <522_2_w_TPIK2.png, id=154, 505.89pt x 379.4175pt>
 File: 522_2_w_TPIK2.png Graphic file (type png)
 <use 522_2_w_TPIK2.png>
-Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 931.
+Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 941.
 (pdftex.def)             Requested size: 177.42868pt x 133.0702pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 925--934
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 935--944
 []$[]$   $[]$ 
  []
 
 <522_3_wout_TPIK2.png, id=155, 643.40375pt x 485.815pt>
 File: 522_3_wout_TPIK2.png Graphic file (type png)
 <use 522_3_wout_TPIK2.png>
-Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 938.
+Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 948.
 (pdftex.def)             Requested size: 177.42868pt x 133.96648pt.
 
-Underfull \hbox (badness 1742) in paragraph at lines 939--939
+Underfull \hbox (badness 1742) in paragraph at lines 949--949
 []\OT1/cmr/m/n/10 Figure 42: Zoomed Er-ror: with-out
  []
 
 <522_3_w_TPIK2.png, id=156, 505.89pt x 381.425pt>
 File: 522_3_w_TPIK2.png Graphic file (type png)
 <use 522_3_w_TPIK2.png>
-Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 943.
+Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 953.
 (pdftex.def)             Requested size: 177.42868pt x 133.77428pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 937--946
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 947--956
 []$[]$   $[]$ 
  []
 
 <522_4_wout_TPIK2.png, id=157, 645.41125pt x 486.81876pt>
 File: 522_4_wout_TPIK2.png Graphic file (type png)
 <use 522_4_wout_TPIK2.png>
-Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 950.
+Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 960.
 (pdftex.def)             Requested size: 177.42868pt x 133.82729pt.
 <522_4_w_TPIK2.png, id=158, 504.88625pt x 378.41376pt>
 File: 522_4_w_TPIK2.png Graphic file (type png)
 <use 522_4_w_TPIK2.png>
-Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 955.
+Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 965.
 (pdftex.def)             Requested size: 177.42868pt x 132.98378pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 949--958
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 959--968
 []$[]$   $[]$ 
  []
 
 [22
 
- <./522_1_wout_TPIK2.png> <./522_1_w_TPIK2.png> <./522_2_wout_TPIK2.png> <./522
-_2_w_TPIK2.png>] [23 <./522_3_wout_TPIK2.png> <./522_3_w_TPIK2.png> <./522_4_wo
+ <./522_1_wout_TPIK2.png> <./522_1_w_TPIK2.png>] [23 <./522_2_wout_TPIK2.png> <
+./522_2_w_TPIK2.png> <./522_3_wout_TPIK2.png> <./522_3_w_TPIK2.png> <./522_4_wo
 ut_TPIK2.png> <./522_4_w_TPIK2.png>] (./cooperativeAGFG.aux)
 
 LaTeX Font Warning: Size substitutions with differences
@@ -976,10 +976,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5844 strings out of 492616
- 83843 string characters out of 6129482
+ 5843 strings out of 492616
+ 83835 string characters out of 6129482
  176077 words of memory out of 5000000
- 9573 multiletter control sequences out of 15000+600000
+ 9572 multiletter control sequences out of 15000+600000
  19508 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,10n,38p,907b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -999,7 +999,7 @@ ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (24 pages, 12114813 bytes).
+Output written on cooperativeAGFG.pdf (24 pages, 12116301 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams

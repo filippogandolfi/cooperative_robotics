@@ -39,12 +39,12 @@ uvms.Jt_v = [zeros(3) eye(3); eye(3) -skew(uvms.vTt(1:3,4))];
 uvms.Jt = [uvms.Jt_a uvms.Jt_v];
 
 %% Vehicle position task
-%Jacobian of the arm (in this case we don't need to control the arm so the
-%Jacobians is a zero matrix) 
-%Jv_a = Jacobian of the Vehicle regarding the Arm end-effector position
+% Jacobian of the arm (in this case we don't need to control the arm so the
+% Jacobians is a zero matrix) 
+% Jv_a = Jacobian of the Vehicle regarding the Arm end-effector position
 uvms.Jv_a  = zeros(6,7);
-%Now we initialize the Jv_v = Jacobian of the Vehicle regarding the vehicle
-%position)
+% Now we initialize the Jv_v = Jacobian of the Vehicle regarding the vehicle
+% position)
 % NOTE: the jacobian is {ZEROS SOMETHING; SOMETHING ZEROS} because linear 
 % and angular velocities are swapped due to the different definitions of 
 % the task and control variables
@@ -70,28 +70,28 @@ else
 end
 uvms.Jha = [zeros(1,7) nphi'*[zeros(3) eye(3)]];
 
-%% Alignment x axis
-%versor i of the vehicle frame
+%% Alignment x axis 
+% versor i of the vehicle frame
 i_vehicle = uvms.wTv(1:3,1:3)*[1 0 0]';
 
-%vector joining the vehicle frame to the rock frame wrt to w
+% vector joining the vehicle frame to the rock frame wrt to w
 w_bVector_vr = uvms.rock_center - uvms.wTv(1:3,4);
 % k su vehicle deve andare su world
 k = [0 0 1]';
 % projection in the inertial horizontal plane (third component = 0)
 proj_bVector_vr = (eye(3)-k*k')* w_bVector_vr; %i-kkt
-%unit vector joining the vehicle frame to the rock frame
+% unit vector joining the vehicle frame to the rock frame
 w_uVector_r = proj_bVector_vr / norm(proj_bVector_vr);
 
 
-%misaligment (rho) vector with ReducedVectorLemma
+% misaligment (rho) vector with ReducedVectorLemma
 uvms.misalignment = ReducedVersorLemma(w_uVector_r, i_vehicle/norm(i_vehicle));
 if (norm(uvms.misalignment) > 0)
     uvms.nmisalignment = uvms.misalignment/norm(uvms.misalignment);
 else
     uvms.nmisalignment = [0 0 0]';
 end
-%uvms.Vmisalignment = uvms.wTv(1:3,1:3)*uvms.misalignment;
+% uvms.Vmisalignment = uvms.wTv(1:3,1:3)*uvms.misalignment;
 % Prof hint (we don't want nn)
 % theta = norm(uvms.misalignment);
 % unit_n = uvms.misalignment/theta;
@@ -101,27 +101,10 @@ end
 % w b/a = unit_n*lambda*theta
 uvms.Jalr = uvms.nmisalignment'*[zeros(3,7) (-1/norm(proj_bVector_vr)^2)*skew(w_uVector_r)*[1 0 0; 0 1 0;0 0 0]*uvms.wTv(1:3,1:3) uvms.wTv(1:3,1:3)]; %[3x13] R rotation
 
-%% Adding an alignment to target control objective Jacobian (es 3)
-% w_vehicleX = uvms.wTv(1:3,1:3) * [1 0 0]';
-% w_distRockV = uvms.rock_center - uvms.wTv(1:3,4);
-% w_distRockVProjxy = w_distRockV - [0 0 1] * w_distRockV * [0 0 1]';
-% n_w_distRockVProjxy = w_distRockVProjxy/ norm(w_distRockVProjxy);
-% uvms.phi_alRock = ReducedVersorLemma(w_distRockVProjxy, w_vehicleX);
-% if (norm(uvms.phi_alRock) > 0)
-%     nphi_alRock = uvms.phi_alRock/norm(uvms.phi_alRock);
-% else
-%     nphi_alRock = [0 0 0]';
-% end
-% JalRock_dist = ((1/(norm(w_distRockVProjxy)^2))*skew(n_w_distRockVProjxy)*...
-%     (eye(3)-[0 0 1]'*[0 0 1])*[zeros(3,7),uvms.wTv(1:3,1:3),zeros(3)]);
-% JalRock_xVeh = [zeros(3,10),uvms.wTv(1:3,1:3)];
-% uvms.JalRock = - JalRock_dist + JalRock_xVeh;
 %% Joints Limits
-
 uvms.Jjl = [eye(7,7) zeros(7,6)];
 
 %% Manipulator Preferred Shape
-
 uvms.Jps = [eye(4,4) zeros(4,9)];
 
 %% Constrain vehcile velocity for TPIK2

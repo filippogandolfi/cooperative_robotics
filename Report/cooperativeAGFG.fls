@@ -1,0 +1,339 @@
+PWD /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report
+INPUT /usr/local/texlive/2019/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/cooperativeAGFG.tex
+OUTPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/cooperativeAGFG.log
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/makeidx.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/makeidx.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/numberedblock/numberedblock.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/numberedblock/numberedblock.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/verbatimbox/verbatimbox.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/verbatimbox/verbatimbox.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/readarray/readarray.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/readarray/readarray.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/listofitems/listofitems.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/listofitems/listofitems.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/listofitems/listofitems.tex
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/pifont.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/pifont.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/upzd.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/upzd.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/upsy.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/upsy.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/cancel/cancel.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/cancel/cancel.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/grfext/grfext.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/grfext/grfext.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/stackengine/stackengine.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/stackengine/stackengine.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/cases/cases.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/cases/cases.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/subfig/subfig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/subfig/subfig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/cooperativeAGFG.aux
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/cooperativeAGFG.aux
+OUTPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/cooperativeAGFG.aux
+INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
+OUTPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/cooperativeAGFG.pdf
+INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/111_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/111_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/111_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/112_HAenabled.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/112_HAenabled.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/112_HAenabled.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/112_HANotenabled.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/112_HANotenabled.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/112_HANotenabled.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/122_MAV1m.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/122_MAV1m.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/122_MAV1m.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_10m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_10m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_10m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_10m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_10m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_10m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_5m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_5m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_5m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_5m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_5m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_5m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_1m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_1m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_1m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_1m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_1m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/123_1m_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/211_Landing.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/211_Landing.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/211_Landing.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/213_MAV_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/213_MAV_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/213_MAV_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/213_Landing_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/213_Landing_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/213_Landing_A.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/222_smooth_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/222_smooth_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/222_smooth_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/311_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/311_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/311_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Nav.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Nav.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Nav.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Alr.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Alr.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Alr.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Land.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Land.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/312_Land.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_Activation.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_s_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_m_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/313_b_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/314_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/314_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/314_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_q.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_q.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_q.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_ppdot.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_Errors.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/411_Errors.png
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_comment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_comment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_comment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_uncomment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_uncomment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_uncomment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_comment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_comment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_uncomment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_uncomment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_comment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_comment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_uncomment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/513_uncomment.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_1_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_1_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_1_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_1_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_1_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_1_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_2_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_2_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_2_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_2_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_2_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_2_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_3_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_3_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_3_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_3_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_3_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_3_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_4_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_4_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_4_wout_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_4_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_4_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/522_4_w_TPIK2.png
+INPUT /Users/Filippo/OneDrive - unige.it/GitHub/cooperative_robotics/Report/cooperativeAGFG.aux
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb

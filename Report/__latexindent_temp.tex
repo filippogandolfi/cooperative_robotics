@@ -681,7 +681,7 @@ We have four different actions, with this hierarchy and activations:
 	\item Action A, safe waypoint navigation with all the safety task activated
 	\item Action B, alignment to the nodule with all the safety task activated
 	\item Action C, landing and final rotation to be aligned with the rock
-	\item Action D, the new one. Here it is enable the new \textit{Vehicle Null Velocity} task, that disable the UVMS' motors, to prevent movement. The only movement will be the extension of the arm to reach the desired target tool position.
+	\item Action D, the new one. Here it is enable the new \textit{Vehicle Null Velocity} task, that disable the UVMS' motors, to prevent movement. The only movement will be the extension of the arm to reach the desired target tool position. 
 \end{description}
 
 %%%%%%% near images %%%%%%% 
@@ -938,23 +938,13 @@ Let us now see how the two different subsystems (arm and vehicle) can be properl
 Goal: modify the control part to implement the parallel arm-vehicle coordination scheme. Observe that, even with a disturbance acting on the vehicle, the end-effector can stay in the required constant position.
 
 \subsubsection{Q1: Which tasks did you introduce to implement the parallel coordination scheme?}
-In order to implement an arm-vehicle coordination scheme, we implemented two optimizations (TPIK1 and TPIK2) running in parallel. Given an action $A$ the scheme works as follow:
 
-\begin{enumerate}
-\item TPIK1 is the same of the previous exercises. It considers the vehicle and the manipulator as a fully controllable system. Therefore, when the hierarchy of task corresponding to the action $A$ is solved, we take the reference for the vehicle velocities while we discard the joints velocities one.
-\item TPIK2 is equal to TPIK1 plus an additional task at the top of the hierarchy. This task is a non-reactive one and it is used to constrain the vehicle velocities. The Jacobian for this task is:
-\begin{equation}
-\boldsymbol{J}_{vConstr}=
-    \begin{bmatrix}
-     \underset{6\times7}{\boldsymbol{0}} & \underset{6\times6}{\boldsymbol{I}} \\
-    \end{bmatrix}
-\end{equation}
-Its reference is the vector of the vehicle velocities computed by TPIK1 at the previous step. In a real world case, the reference would be the vector of the measured vehicle velocities, but, since we are working in a simulation environment, we are allowed to use the ones computed by the algorithm in the previous loop iteration.
-Therefore, TPIK2 provides the optimal joints velocities by taking into account the "real" movement of the vehicle, which is different from the one computed by the algorithm because of the sinusoidal disturbance.
-\end{enumerate}
+vConstraint - Nel TPIK2.
+
+Non è coordinato senza il TPIK 2 , non reagisce ai cambi dovuti al 
 
 \subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
-The vehicle and the manipulator try to compensate the disturbances. This means that if the gain is high enough and the amplitude of the disturbance is not too big, they are fast enough to reduce the error at the price of a smooth behaviour. Nevertheless when the amplitude of the sinusoidal disturbance becomes too big, they are not able to follow and to minimize the error, resulting in a sinusoidal behavior visible on the related plot (AGGIUNGERE IMMAGINI)??.
+
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
 \begin{minipage}{0.40\textwidth} 
@@ -1025,4 +1015,3 @@ The vehicle and the manipulator try to compensate the disturbances. This means t
 
 
 \end{document}
-

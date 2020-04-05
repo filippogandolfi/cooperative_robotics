@@ -134,6 +134,7 @@ The \textbf{hierarchy of the tasks}, in order of priority:
 \vspace{5px}
 The \textbf{Jacobian} relationship for the \textit{Vehicle Position} control task is the following one:
 \begin{equation}
+\large
     \boldsymbol{J}_v = \begin{bmatrix}
  & \underset{3\times3}{\boldsymbol{0}} & \underset{3\times3}{^{w}\boldsymbol{R}_{v}} \\
 \underset{6\times7}{\boldsymbol{0}} \\
@@ -147,6 +148,7 @@ where ${^{w}\boldsymbol{R}_{v}}$ is the Rotation matrix from the vehicle frame t
 \vspace{5px}
 We compute the \textbf{task reference} as:
 \begin{equation}
+\large
     ^{w}\dot{\overline{\boldsymbol{x}}}_{v\_g}=k\left(^{w} \boldsymbol{x}_{g}-^{w} \boldsymbol{x}_{v}\right)
 \end{equation}
 where we use the Cartesian error between the vehicle frame and the goal frame, both projected on the world frame, to compute the linear error, and then, the misalignment between the two is computed by the Versor Lemma. We multiply the final vector by a gain ($k$) factor.
@@ -229,6 +231,7 @@ We need to control the movement along the $z$ axis, so we use the same Jacobian 
 
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
+\large
 \boldsymbol{J}_{mav}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 1
 \end{bmatrix}
     \begin{bmatrix}
@@ -245,6 +248,7 @@ Note that in order to select the desired component we used the vector [0 0 0 0 0
 \vspace{5px}
 We compute the \textbf{task reference} as: 
 \begin{equation}
+\large
     ^{w}\dot{\overline{\boldsymbol{x}}}_{mav} = k((d_{limit}+\Delta)- ^w d_{sensor})) %delta
 \end{equation}
 where:
@@ -283,6 +287,7 @@ To achieve this task we perform the different minimum altitude, all with the sam
  
  %ESPRESSIONE DEL MOTHERFUCKER SENSOR DISTANCE ON THE WORLD FRAME
  \begin{equation}
+ \large
      {^{w}\boldsymbol{d}_{sensor}} = {^{w}\boldsymbol{R}_{v}} {^{v}\boldsymbol{d}_{sensor}}
  \end{equation}
  
@@ -383,6 +388,7 @@ The task \textit{Minimum Altitude} is not enable now, because (of course) we nee
 \vspace{5px}
 The Jacobian relationship for the Landing is:
 \begin{equation}
+\large
 \boldsymbol{J}_{land}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 1
 \end{bmatrix}
     \begin{bmatrix}
@@ -398,6 +404,7 @@ As before the Jacobian take into account only the $z$ component (using the pre-m
 We compute the \textbf{task reference} as as the difference between the seafloor and the measured distance projected on the world frame:
 
 \begin{equation}
+\large
     ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((seafloor + safeguard) - ^w d_{sensor})) %delta
 \end{equation}
 where:
@@ -568,9 +575,21 @@ The new task is:
 \clearpage
 
 \subsubsection{Q2: What is the Jacobian relationship for the Alignment to Target control task? How was the task reference computed?} \
-COPIARE JACOBIANA \ocio
 
-\subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?} \no
+\begin{equation}
+\large
+\begin{aligned}
+&\boldsymbol{J}_{alr}={^w}{\boldsymbol{n}_\varphi}^{\prime}\left[\underset{3 x 7}{\boldsymbol{0}}, \boldsymbol{\Phi} \cdot {^w} \boldsymbol{R}_{v},{^w} \boldsymbol{R}_{v}\right]\\
+&\boldsymbol{\Phi}=-\frac{1}{\left\|{^w}\boldsymbol{d}_{v, r}^{2}\right\|}\left({^w}\boldsymbol{d}_{v, r} \wedge\right)\left[\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{array}\right]
+\end{aligned}
+\end{equation}
+ \ocio
+
+\subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?} 
 We performed tests with different gain values for the task reference:
 \begin{itemize}
 	\item Very Small = $0.1$
@@ -701,6 +720,7 @@ The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Posit
 
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
+\large
 \boldsymbol{J}_{vehNull}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0
 \end{bmatrix}
     \begin{bmatrix}
@@ -754,6 +774,7 @@ The actions are the same as before, the only difference is that Joint Limit is a
 The Jacobian for the Joint Limit task is:
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
+\large
 \boldsymbol{J}_{jointLimit}=
     \begin{bmatrix}
      \underset{7\times 7}{\boldsymbol{I}} & \underset{7\times6}{\boldsymbol{0}} \\
@@ -763,32 +784,22 @@ The Jacobian for the Joint Limit task is:
 With this Jacobian we are sure that each joint apply the limit constraints only itself and not on the other ones.
 \\
 We compute the \textbf{task reference} as:
-%\begin{equation}
-%    ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((seafloor + safeguard) - ^w d_{sensor})) %delta
-%\end{equation}
-%%%%%
+Seen that each joint influences obviously only itself for the joint limit task.\\
+%%%%%%%%%%%%	
 \begin{equation}
 \large
-\boldsymbol{J}_{jLimits} =
-\begin{bmatrix}
-\underset{7\times7}{\boldsymbol{I}} & \underset{7\times6}{\boldsymbol{0}}
-\end{bmatrix}
+\dot{\overline{x}}_{jointLimit,i} =k \left\{\begin{array}{ll}
+x_{activationMin,i}-x_{q, i} & \text { if } x_{q, i} \leq mid_{i} \\
+x_{activationMax,i}-x_{q, i} & \text { if } x_{q, i}>mid_{i}
+\end{array}\right.
 \end{equation}
-	Seen that each joint influences obviously only itself for the joint limit task.\\
-	
-%\dot{\overline{x}}_{jointLimit,i} = k
-%\begin{cases}
-%	x_{activationMin,i} - x_{q,i},& \text{if } x_{q,i}\leq mid_i\\
-%	x_{activationMax,i} - x_{q,i},& \text{if } x_{q,i} > mid_i
-%\end{cases}
-%\end{equation}
-
+%%%%%%%%%%%%%
 	where:
 	\begin{description}
 		\item $i = 1,\dots,7$ is the $i$-th joint.
 		\item $x_{q,i}$ is the $i$ joint position ($q$)
 		\item $ActivationMin$ and $ActivationMax$ are the $10\%$ of the limit imposed for each joint.
-		\item $mid_i = \dfrac{x_{activationMin,i} + x_{activationMax,i}}{2}\; $ is the middle point between the Minimum Activation and the Maximum.
+		\item $mid_i = \dfrac{x_{ActivationMin,i} + x_{ActivationMax,i}}{2}\; $ is the middle point between the Minimum Activation and the Maximum.
 		\item $k$ is the gain
 \end{description}
 We use the Min and Max in order to be able to activate the joint limit when the joint arrives near the minimum guard ($ActivationMin$) or near the maximum ones ($ActivationMax$).
@@ -823,17 +834,20 @@ The new hierarchy of tasks is:
 We decided to implement this task as a vector one, thus the Jacobian is a 4-by-13 matrix:
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
+\large
 \boldsymbol{J}_{vehNull}=
 \begin{bmatrix}-0.0031 & 1.2586 & 0.0128 & -1.2460 \end{bmatrix}^\top
     \begin{bmatrix}
      \underset{4\times4}{\boldsymbol{I}} & \underset{4\times9}{\boldsymbol{0}} \\
     \end{bmatrix}
 \end{equation}
-%%%%%%% %%%%%%% %%%%%%% %%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%
 The Jacobian has four rows since it is required to control just the first fuor joints. Since each joint affects only itself (similarly to the joint limits task), the non-zero part of the Jacobian is a 4-by-4 identity matrix. 
 
 We compute the \textbf{task reference} as the difference between the desired joint configuration and the actual one :
+
 \begin{equation}
+\large
    \dot{\overline{\boldsymbol{x}}}_{prefShape} = k(x_{prefShape} - x_{q}) %delta
 \end{equation}
 \begin{itemize}
@@ -971,6 +985,7 @@ In order to implement an arm-vehicle coordination scheme, we implemented two opt
 \item TPIK1 is the same of the previous exercises. It considers the vehicle and the manipulator as a fully controllable system. Therefore, when the hierarchy of task corresponding to the action $A$ is solved, we take the reference for the vehicle velocities while we discard the joints velocities one.
 \item TPIK2 is equal to TPIK1 plus an additional task at the top of the hierarchy. This task is a non-reactive one and it is used to constrain the vehicle velocities. The Jacobian for this task is:
 \begin{equation}
+\large
 \boldsymbol{J}_{vConstr}=
     \begin{bmatrix}
      \underset{6\times7}{\boldsymbol{0}} & \underset{6\times6}{\boldsymbol{I}} \\

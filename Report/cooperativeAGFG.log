@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  5 APR 2020 18:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  5 APR 2020 18:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1041,10 +1041,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6234 strings out of 492162
- 88271 string characters out of 6125292
+ 6233 strings out of 492162
+ 88254 string characters out of 6125292
  179518 words of memory out of 5000000
- 10406 multiletter control sequences out of 15000+600000
+ 10405 multiletter control sequences out of 15000+600000
  19854 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,13n,42p,901b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1065,7 +1065,7 @@ live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (27 pages, 13428885 bytes).
+Output written on cooperativeAGFG.pdf (27 pages, 13428449 bytes).
 PDF statistics:
  247 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams

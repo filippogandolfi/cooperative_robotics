@@ -154,13 +154,13 @@ We compute the \textbf{task reference} as:
 where we use the Cartesian error between the vehicle frame and the goal frame, both projected on the world frame, to compute the linear error, and then, the misalignment between the two is computed by the Versor Lemma. We multiply the final vector by a gain ($k$) factor.
 
 %Gray box for defining code implemented or referred to
-\colorbox{mygray}{\parbox{0.9\textwidth}{
-Code for Jacobian definition and computation: \\
-\texttt{ComputeJacobian}\\
-Code for computing distance and misalignment: \\
-\texttt{simulation script -> CartError} \\
-\texttt{simulation script -> UnitVersorLemma}
-}}
+%\colorbox{mygray}{\parbox{0.9\textwidth}{
+%Code for Jacobian definition and computation: \\
+%\texttt{ComputeJacobian}\\
+%Code for computing distance and misalignment: \\
+%\texttt{simulation script -> CartError} \\
+%\texttt{simulation script -> UnitVersorLemma}
+%}}
 
 \begin{figure}[!h]
     \centering
@@ -267,10 +267,10 @@ We compute the difference between the minimum distance given from the operator a
     \label{images_2_1}
 \end{figure}
 
-%Gray box for defining code implemented or referred to
-\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
-\texttt{Compute Task Reference -> MAV Control}\\
-}}
+%%Gray box for defining code implemented or referred to
+%\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
+%\texttt{Compute Task Reference -> MAV Control}\\
+%}}
 
 \subsubsection{Q3: Try imposing a minimum altitude of 1, 5, 10 m respectively. What is the behavior?}
 To achieve this task we perform the different minimum altitude, all with the same $k$ gain (equal to $0.2$), and with the same $\Delta$ for the inequality nature of the problem (equal to $0.5 m$).
@@ -278,7 +278,7 @@ To achieve this task we perform the different minimum altitude, all with the sam
 \begin{itemize}
     \item \textbf{10 m:} It seems no a reasonable value. The UVMS has initial position below this threshold, so it start floating to the surface very quickly (it is possible to notice this huge vertical velocity $\dot{z}$, in the graph (Figure \ref{10m_ppdot})). Of course, the task is not accomplished because the target position is far from the threshold.
     \item \textbf{5 m:} The same as before, the activation is active at the first instant because again the initial position is below the minimum altitude. This control task is a safety one, so every time the UVMS is under the minimum altitude, the activation is active and it has the highest priority. Again, it seems no reasonable to perform such big gap with the seafloor (Reported graph, Figure \ref{5m_ppdot}).
-    \item \textbf{1 m:} This time the problem is the opposite. The control task is no more active at the starting instant. The UVMS starts to accomplish the \textit{Vehicle Position} task, when the seafloor present an hill the UVMS start to follow the pattern (Figure \ref{1m_ppdot}). However, there are some troubles during the navigation because the "noise" of the robot, with only 1 meter of distance (and no $\Delta$ that could prevent this), could touch the soil because the sensor it is on the center of the vehicle.
+    \item \textbf{1 m:} This time the problem is the opposite. The control task is no more active at the starting instant. The UVMS starts to accomplish the \textit{Vehicle Position} task, when the seafloor present an hill the UVMS start to follow the pattern (Figure \ref{1m_ppdot}). However, there are some troubles during the navigation because the "nose" of the robot, with only 1 meter of distance (and no $\Delta$ that could prevent this), could touch the soil because the sensor it is on the center of the vehicle.
 \end{itemize}
 
 \subsubsection{Q4: How was the sensor distance processed?}
@@ -296,11 +296,11 @@ To achieve this task we perform the different minimum altitude, all with the sam
  $\begin{bmatrix}0 & 0 & d_{seafloor} \end{bmatrix}^\top$
 \\ 
 
- %Gray box for defining code implemented or referred to
-\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
-\texttt{TO DO}\\
-\texttt{TO DO}
-}}
+% %Gray box for defining code implemented or referred to
+%\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
+%\texttt{TO DO}\\
+%\texttt{TO DO}
+%}}
 
 %%%%%%%% MINI PAGE IMAGES 10 m %%%%%%%%
 \begin{figure}[htpb] 
@@ -415,11 +415,11 @@ where:
     \item $^w d_{sensor}$ is the distance vector measured by the sensor and projected on the world frame.
 \end{itemize} 
 
-%Gray box for defining code implemented or referred to
-\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
-\texttt{TO DO}\\
-\texttt{TO DO}
-}}
+%%Gray box for defining code implemented or referred to
+%\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
+%\texttt{TO DO}\\
+%\texttt{TO DO}
+%}}
 
 \subsubsection{Q3: how does this task differs from a minimum altitude control task?}
 There are two major difference, the first one is that this task it is not a safety task, it is a action-defining one. The \textit{Minimum Altitude} it is used to avoid crashes with the seafloor, the \textit{Landing} task it is like the \textit{Vehicle Position} task, and, as this last one, it has low priority.\\
@@ -481,11 +481,11 @@ We have two different actions, with this \textbf{hierarchy} and activations:
 %%%%%% TABLE %%%%%%%%%
 
 
-%Gray box for defining code implemented or referred to
-\colorbox{mygray}
-{\parbox{0.9\textwidth}{Code for Exercise: \\
-\texttt{ComputeMissionPhase}\\
-}}
+%%Gray box for defining code implemented or referred to
+%\colorbox{mygray}
+%{\parbox{0.9\textwidth}{Code for Exercise: \\
+%\texttt{ComputeMissionPhase}\\
+%}}
 
 \subsubsection{Q2: How did you implement the transition from one action to the other?}
 
@@ -540,7 +540,7 @@ We have three different actions, with this hierarchy and activations:
 \noindent
 The new task is:
 \begin{description}
-\item \textbf{Alignment to the Rock} [R, I, P], it is a prerequisite task, so it has higher priority than the action-defining tasks. Inequality, because we admit a $\Delta$ of errors equal to $value$.   \ocio 
+\item \textbf{Alignment to the Rock} [R, I, P], it is a prerequisite task, so it has higher priority than the action-defining tasks. Inequality, because we admit a $\Delta$ of errors equal to $0.07$.   \ocio 
 \end{description}
 
 \begin{figure}[h]

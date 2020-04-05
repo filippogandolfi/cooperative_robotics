@@ -843,39 +843,59 @@ We compute the \textbf{task reference} as the difference between the desired joi
 \end{itemize} 
 
 \subsubsection{Q3: What is the difference between having or not having this objective?} %FICCARE COLLEGAMENTO IMMAGINI
-In this specific case the UVMS goal is to align the end-effector frame to the goal frame which is located slightly above the pipe. Since no explicit goal for the vehicle was given, we have used just the tool task (which is able to move the vehicle as well) in order reach the goal directly. Nevertheless, since we have just one mission phase the manipulator moves in order to achieve the goal as soon as possible, leading to a "stretched" shape (FIGURE 32). If we add the preferred shape constraint as defined in the above mentioned task, we can maintain the desired end-effector configuration, even with just one mission phase (FIGURE 33). As we can see in FIGURE 34 and 35, when the preferred shape task is active the joints are in a more natural shape, which is also further from the joint limits.
-%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-\begin{figure}[htp]
-    \centering
-    \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.37]{513_comment.png}
-    \caption{Not having}
-    \end{minipage}
-\hfill
-    \centering
-    \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.3]{513_uncomment.png}
-    \caption{Having}
-    \end{minipage}
+In this specific case the UVMS goal is to align the end-effector frame to the goal frame which is located slightly above the pipe. Since no explicit goal for the vehicle was given, we have used just the tool task (which is able to move the vehicle as well) in order reach the goal directly. Nevertheless, since we have just one mission phase the manipulator moves in order to achieve the goal as soon as possible, leading to a "stretched" shape (Figure \ref{513_nh1}). If we add the preferred shape constraint as defined in the above mentioned task, we can maintain the desired end-effector configuration, even with just one mission phase (Figure \ref{513_h1}). As we can see in the figures below (Figure \ref{513_nh2} and Figure \ref{513_h2}), when the preferred shape task is active the joints are in a more natural shape, which is also further from the joint limits.
+%%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+%\begin{figure}[htp]
+%    \centering
+%    \begin{minipage}{0.50\textwidth}
+%    \includegraphics[scale=0.37]{513_comment.png}
+%    \caption{Not having}
+%    \end{minipage}
+%\hfill
+%    \centering
+%    \begin{minipage}{0.50\textwidth}
+%    \includegraphics[scale=0.3]{513_uncomment.png}
+%    \caption{Having}
+%    \end{minipage}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htp]
+%    \centering
+%    \begin{minipage}{0.50\textwidth}
+%    \includegraphics[scale=0.4]{513_jointlimits.png}
+%    \caption{Not having}
+%    \end{minipage}
+%\hfill
+%    \centering
+%    \begin{minipage}{0.50\textwidth}
+%    \includegraphics[scale=0.4]{513_woutPS_jointLimits.png}
+%    \caption{Having}
+%    \end{minipage}
+%\end{figure}
+%%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{513_uncomment.png}
+\caption{Simulation with Mission Phase}\label{513_nh1} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{513_jointlimits.png}
+\caption{Joints Limits with Mission Phase}\label{513_h1} 
+\end{minipage} 
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{513_comment.png}
+\caption{Simulation without Mission Phase}\label{513_nh2} 
+\end{minipage}
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{513_woutPS_jointLimits.png}
+\caption{Joints Limits without Mission Phase}\label{513_h2} 
+\end{minipage}
 \end{figure}
 
-\begin{figure}[htp]
-    \centering
-    \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.37]{513_comment.png}
-    \caption{Not having}
-    \end{minipage}
-\hfill
-    \centering
-    \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.3]{513_uncomment.png}
-    \caption{Having}
-    \end{minipage}
-\end{figure}
-%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-
-FIGURE 34 
-FIGURE 35
 
 \clearpage
 
@@ -906,30 +926,37 @@ Goal: introduce mission phases in the floating manipulation scenario. Observe th
 
 % FICCARE IMMAGINI
 \subsubsection{Q2: What is the difference with the previous simulation (still in exercise 5), where only one action was used?}
-In the previous simulation it was not possible to constrain the vehicle velocities to zero, in order to allow a safe manipulation. By adding a safe navigation phase it is possible to use the vehicle position task to move the UVMS to a position slightly above the pipe, then constrain vehicle velocities in order to allow the manipulator to reach the goal frame by activating the tool task. Moreover, this results in a smoother behavior as it shown in figure 36 and 37.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-FIGURE 36 
-FIGURE 37
+In the previous simulation it was not possible to constrain the vehicle velocities to zero, in order to allow a safe manipulation. By adding a safe navigation phase it is possible to use the vehicle position task to move the UVMS to a position slightly above the pipe, then constrain vehicle velocities in order to allow the manipulator to reach the goal frame by activating the tool task. Moreover, this results in a smoother behavior as it shown in the figures below (Figure \ref{522_n1} and \ref{522_n2}).
 
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 
-\begin{figure}[htp]
-    \centering
-    \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.37]{513_comment.png}
-    \caption{Not having}
-    \end{minipage}
-\hfill
-    \centering
-    \begin{minipage}{0.50\textwidth}
-    \includegraphics[scale=0.3]{513_uncomment.png}
-    \caption{Having}
-    \end{minipage}
+%\begin{figure}[htp]
+%    \centering
+%    \begin{minipage}{0.50\textwidth}
+%    \includegraphics[scale=0.4]{522_wout_MP.png}
+%    \caption{Not having}
+%    \end{minipage}
+%\hfill
+%    \centering
+%    \begin{minipage}{0.50\textwidth}
+%    \includegraphics[scale=0.4]{522_w_MP.png}
+%    \caption{Having}
+%    \end{minipage}
+%\end{figure}
+
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{522_wout_MP.png}
+\caption{Simulation with Mission Phase}\label{522_n1} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{522_w_MP.png}
+\caption{Joints Limits with Mission Phase}\label{522_n2} 
+\end{minipage} 
 \end{figure}
-
-%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-
 \clearpage
 \section{Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}
 \subsection{Adding the parallel arm-vehicle coordination scheme}
@@ -1011,8 +1038,6 @@ The vehicle and the manipulator try to compensate the disturbances. This means t
 %	\caption{(a) TRIDENT UVMS (b) MARIS UVMS.}\label{fig:uvms_examples}
 %\end{figure}
 
-
-		
 %		\begin{figure}[b]
 %			\centering
 %			\subfloat[]{\frame{\includegraphics[keepaspectratio,height=3cm]{trident1.eps}}} 
@@ -1022,7 +1047,6 @@ The vehicle and the manipulator try to compensate the disturbances. This means t
 %			\caption{Sequence of snapshots taken from the onboard camera during the TRIDENT final experiments.}
 %			\label{fig_tri_trial_maiorca_img}
 %		\end{figure}
-
 
 \end{document}
 

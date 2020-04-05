@@ -10,3 +10,5 @@
 *.aux
 *.aux
 *.bbl
+*.fls
+*.fdb_latexmk

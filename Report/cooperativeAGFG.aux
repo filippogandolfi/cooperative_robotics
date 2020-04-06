@@ -1,11 +1,11 @@
 \relax 
-\@writefile{toc}{\contentsline {section}{\numberline {1}Exercise 1: Implement a “Safe Waypoint Navigation” Action.}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Exercise 1: Implement a \IeC {\textquotedblleft }Safe Waypoint Navigation\IeC {\textquotedblright } Action.}{2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Adding a vehicle position control objective}{2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}Q1: Report the hierarchy of task used and their priorities. What is the Jacobian relationship for the Vehicle Position control task? How was the task reference computed?}{2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Position and velocities plot for the first task}}{3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Position and velocity plot for the first task}}{3}\protected@file@percent }
 \newlabel{graph_1_1}{{1}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.2}Q2: What is the behavior if the Horizontal Attitude is enabled or not? Try changing the initial or target orientation in terms of roll and pitch angles. Discuss the behavior.}{3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.3}Q3: Swap the priorities between Horizontal Attitude and the Vehicle Position control task. Discuss the behaviour.}{3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.3}Q3: Swap the priorities between Horizontal Attitude and the Vehicle Position control task. Discuss the behavior.}{3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textit  {Horizontal Attitude} enabled, the robot is parallel with the seafloor.}}{4}\protected@file@percent }
 \newlabel{fig:hae}{{2}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textit  {Horizontal Attitude} not enabled, the robot is not parallel with the seafloor.}}{4}\protected@file@percent }
@@ -14,19 +14,125 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Adding a safety minimum altitude control objective}{5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}Q1: Report the hierarchy of task used and their priorities. Comment how you choose the priority level for the minimum altitude.}{5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2}Q2: What is the Jacobian relationship for the Minimum Altitude control task? How was the task reference computed?}{5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Minimum altitude is enable and the robot is following the seafloor}}{6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Minimum altitude is enabled and the robot is following the seafloor}}{6}\protected@file@percent }
 \newlabel{images_2_1}{{4}{6}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.3}Q3: Try imposing a minimum altitude of 1, 5, 10 m respectively. What is the behavior?}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.4}Q4: How was the sensor distance processed?}{6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Position and velocities during the Minimum Altitude Vehicle task imposed 10m threshold}}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Position and velocity plot with Minimum Altitude threshold of 10m}}{7}\protected@file@percent }
 \newlabel{10m_ppdot}{{5}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Positions and Velocity with medium}}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Activation plot (threshold 10m) }}{7}\protected@file@percent }
 \newlabel{10m_A}{{6}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Position and velocities during the Minimum Altitude Vehicle task imposed 10m threshold}}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Position and velocity plot with Minimum Altitude threshold of 5m}}{7}\protected@file@percent }
 \newlabel{5m_ppdot}{{7}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Positions and Velocity with medium}}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Activation plot (threshold 5m) }}{7}\protected@file@percent }
 \newlabel{5m_A}{{8}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Position and velocities during the Minimum Altitude Vehicle task imposed 1m threshold}}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Position and velocity plot with Minimum Altitude threshold of 1m}}{7}\protected@file@percent }
 \newlabel{1m_ppdot}{{9}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Positions and Velocity with medium}}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Activation plot (threshold 1m) }}{7}\protected@file@percent }
 \newlabel{1m_A}{{10}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Exercise 2: Implement a Basic \IeC {\textquotedblleft }Landing\IeC {\textquotedblright } Action.}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Adding an altitude control objective}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Q1: Report the hierarchy of task used and their priorities. Comment how you choose the priority level for the altitude control task.}{8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Implemented basic \textit  {Landing} action}}{8}\protected@file@percent }
+\newlabel{images_2_3_1}{{11}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Q2: What is the Jacobian relationship for the Altitude control task? How was the task reference computed?}{8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Q3: how does this task differs from a minimum altitude control task?}{9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Graph MAV}}{9}\protected@file@percent }
+\newlabel{213}{{12}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Graph Landing}}{9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Adding mission phases and change of action}{10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Q1: Report the unified hierarchy of tasks used and their priorities.}{10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Q2: How did you implement the transition from one action to the other?}{10}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Zoom of the smooth change}}{10}\protected@file@percent }
+\newlabel{images_2_3_1}{{14}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Exercise 3: Improve the \IeC {\textquotedblleft }Landing\IeC {\textquotedblright } Action}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Adding an alignment to target control objective}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Q1: Report the unified hierarchy of tasks used and their priorities. Comment the behavior.}{11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Positions and velocities during the three actions.}}{11}\protected@file@percent }
+\newlabel{graphes3}{{15}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Action A: Navigation till the target position}}{12}\protected@file@percent }
+\newlabel{311a}{{16}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Action B: Alignment with the rock center}}{12}\protected@file@percent }
+\newlabel{311b}{{17}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Action C: Landing, final action}}{12}\protected@file@percent }
+\newlabel{311c}{{18}{12}}
+\newlabel{fig:missionphase3}{{18}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Q2: What is the Jacobian relationship for the Alignment to Target control task? How was the task reference computed?}{13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?}{13}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Positions and Velocity with small gain}}{14}\protected@file@percent }
+\newlabel{ppdot_w_s}{{19}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Positions and Velocity with medium gain}}{14}\protected@file@percent }
+\newlabel{ppdot_w_m}{{20}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Positions and Velocity with big gain}}{14}\protected@file@percent }
+\newlabel{ppdot_w_b}{{21}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Activations with very small gain}}{14}\protected@file@percent }
+\newlabel{act_w_s}{{22}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Activations with medium gain}}{14}\protected@file@percent }
+\newlabel{act_w_m}{{23}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Activations with big gain}}{14}\protected@file@percent }
+\newlabel{act_w_b}{{24}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Errors with small}}{15}\protected@file@percent }
+\newlabel{err_w_s}{{25}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Errors with medium}}{15}\protected@file@percent }
+\newlabel{err_w_m}{{26}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Errors with big}}{15}\protected@file@percent }
+\newlabel{err_w_b}{{27}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.4}Q4: After the landing is accomplished, what happens if you try to move the end-effector? Is the distance to the nodule sufficient to reach it with the end-effector? Comment the observed behavior.}{16}\protected@file@percent }
+\newlabel{ex3}{{3.1.4}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Visible that when tool starts move, vehicle helps it}}{16}\protected@file@percent }
+\newlabel{graphes3}{{28}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Exercise 4: Implementing a Fixed-base Manipulation Action}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Adding non-reactive tasks}{17}\protected@file@percent }
+\newlabel{subsec:non-react}{{4.1}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Q2: What is the Jacobian relationship for the Vehicle Null Velocity task? How was the task reference computed?}{17}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Arm joints start moving when reached task 4}}{18}\protected@file@percent }
+\newlabel{fig:411_arm}{{29}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Vehicle has zero velocities when task 3 is finished}}{18}\protected@file@percent }
+\newlabel{fig:411_vehicle}{{30}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Vehicle has zero velocities when task 3 is finished}}{18}\protected@file@percent }
+\newlabel{fig:411_errors}{{31}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Q3: Suppose the vehicle floating, i.e. not landed on the seafloor. What would happen, if due to currents, the vehicle moves?}{19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Adding a joint limit task}{20}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}{20}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Q2: What is the Jacobian relationship for the Joint Limits task? How was the task reference computed?}{20}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Exercise 5: Floating Manipulation}{21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Adding an optimization control objective}{21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the optimization task?}{21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}{21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Q3: What is the difference between having or not having this objective?}{21}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Simulation with Mission Phase}}{22}\protected@file@percent }
+\newlabel{513_nh1}{{32}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Joints Limits with Mission Phase}}{22}\protected@file@percent }
+\newlabel{513_h1}{{33}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Simulation without Mission Phase}}{22}\protected@file@percent }
+\newlabel{513_nh2}{{34}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces Joints Limits without Mission Phase}}{22}\protected@file@percent }
+\newlabel{513_h2}{{35}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Adding mission phases}{23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Q1: Report the unified hierarchy of tasks used and their priorities. Which task is active in which phase/action?}{23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Q2: What is the difference with the previous simulation (still in exercise 5), where only one action was used?}{23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces Simulation with Mission Phase}}{23}\protected@file@percent }
+\newlabel{522_n1}{{36}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces Joints Limits with Mission Phase}}{23}\protected@file@percent }
+\newlabel{522_n2}{{37}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Exercise 6: Floating Manipulation with Arm-Vehicle Coordination Scheme}{24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Adding the parallel arm-vehicle coordination scheme}{24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Q1: Which tasks did you introduce to implement the parallel coordination scheme?}{24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Q2: What happens if the sinusoidal disturbance becomes too big?}{24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces Joint limits: without TPIK2}}{24}\protected@file@percent }
+\newlabel{JL_wout_TPIK2}{{38}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {39}{\ignorespaces Joint limits: with TPIK2}}{24}\protected@file@percent }
+\newlabel{JL_w_TPIK2}{{39}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {40}{\ignorespaces Errors: without TPIK2}}{25}\protected@file@percent }
+\newlabel{Error_wout_TPIK2}{{40}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {41}{\ignorespaces Errors: with TPIK2}}{25}\protected@file@percent }
+\newlabel{Error_w_TPIK2}{{41}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {42}{\ignorespaces Zoomed Error: without TPIK2}}{25}\protected@file@percent }
+\newlabel{zoomed_error_wout_TPIK2}{{42}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {43}{\ignorespaces Zoomed Error: with TPIK2}}{25}\protected@file@percent }
+\newlabel{zoomed_error_w_TPIK2}{{43}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {44}{\ignorespaces Joints configurations and velocities: without TPIK2}}{25}\protected@file@percent }
+\newlabel{Jqandqdot_wout_TPIK2}{{44}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {45}{\ignorespaces Joints configurations and velocities: with TPIK2}}{25}\protected@file@percent }
+\newlabel{Jqandqdot_w_TPIK2}{{45}{25}}

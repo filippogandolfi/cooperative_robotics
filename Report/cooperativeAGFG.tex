@@ -89,291 +89,26 @@ Date:  \\
 \clearpage
 
 
-%\section{Exercise 1: Implement a “Safe Waypoint Navigation” Action.}
-%
-%\subsection{Adding a vehicle position control objective}
-%Initialize the vehicle far away from the seafloor. An example position could be
-%\begin{displaymath}
-%\begin{bmatrix} 10.5 & 35.5 & -36 & 0 & 0 & \pi/2\end{bmatrix}^\top
-%\end{displaymath} 
-%Give a target position that is also sufficiently away from the seafloor, e.g.,
-%\begin{displaymath}
-%\begin{bmatrix} 10.5 & 37.5 & -38 & 0 & 0 & 0 \end{bmatrix}^\top
-%\end{displaymath}
-%
-%Goal: Implement a vehicle position control task, and test that the vehicle reaches the required position and orientation.
-%
-%
-%
-%\subsubsection{Q1: Report the hierarchy of task used and their priorities. What is the Jacobian relationship for the Vehicle Position control task? How was the task reference computed?}
-%
-%We use the following notation to characterize each task:
-%\begin{itemize}
-%    \item R/NR, reactive or non-reactive.
-%    \item I/E, inequality or equality.
-%    \item C/S/P/AD/O, constraint, safety, prerequisite, action-defining, optimization. This characterization gives the priority to each task, constraint task will have the highest priority, optimization the lowest.
-%\end{itemize}
-%
-%\noindent
-%\vspace{5px}
-%The \textbf{hierarchy of the tasks}, in order of priority:
-%\begin{enumerate}
-%    \item Manipulability 
-%    \item Horizontal Attitude
-%    \item Vehicle Position
-%\end{enumerate}
-%
-%\noindent
-%\begin{description}
-%	\item \textbf{Manipulability} [R, I, P], it is used to maintain arm dexterity above a certain threshold.
-%	\item \textbf{Horizontal Attitude} [R, I, S], it is fundamental to keep the vehicle horizontal with respect to absolute world frame. 
-%	\item \textbf{Vehicle Position} [R, I, AD], it is an action-defining task, therefore it has lower priority. This is the first task we implemented, the goal of this task is to compute velocities to align the vehicle frame with the desired goal frame, within a certain bound.
-%\end{description}
-%
-%\noindent
-%\vspace{5px}
-%The \textbf{Jacobian} relationship for the \textit{Vehicle Position} control task is the following one:
-%\begin{equation}
-%\large
-%    \boldsymbol{J}_v = \begin{bmatrix}
-% & \underset{3\times3}{\boldsymbol{0}} & \underset{3\times3}{^{w}\boldsymbol{R}_{v}} \\
-%\underset{6\times7}{\boldsymbol{0}} \\
-%& \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
-%\end{bmatrix}
-%\end{equation}
-%\\ 
-%where ${^{w}\boldsymbol{R}_{v}}$ is the rotation matrix from the vehicle frame to the world frame.
-%Notice that, in this task, we use the control variable with this convention [Roll Pitch Yaw X Y Z].
-%
-%\noindent
-%\vspace{5px}
-%We compute the \textbf{task reference} as:
-%\begin{equation}
-%\large
-%    ^{w}\dot{\overline{\boldsymbol{x}}}_{v\_g}=k\left(^{w} \boldsymbol{x}_{g}-^{w} \boldsymbol{x}_{v}\right)
-%\end{equation}
-%where:
-%\begin{itemize}
-%\item We compute the Cartesian error between the vehicle and the goal frame, both projected on the world frame:
-%\begin{equation}
-%    {^w} \boldsymbol{x}_{g} - {^w}\boldsymbol{x}_{v} = [\boldsymbol{\rho}, e_{x}, e_{y}, e_{z}]^\top
-%\end{equation}
-%\boldsymbol{$\rho$} is the misalignment vector obtained with the Versor Lemma, while $e_{x}, e_{y}, e_{z}$ are the components of the linear error. 
-%\item $k$ is the control gain.
-%\end{itemize}
-%%Gray box for defining code implemented or referred to
-%%\colorbox{mygray}{\parbox{0.9\textwidth}{
-%%Code for Jacobian definition and computation: \\
-%%\texttt{ComputeJacobian}\\
-%%Code for computing distance and misalignment: \\
-%%\texttt{simulation script -> CartError} \\
-%%\texttt{simulation script -> UnitVersorLemma}
-%%}}
-%
-%\begin{figure}[!h]
-%    \centering
-%    \includegraphics[scale=0.5]{111_ppdot.png}
-%    \caption{Position and velocities plot for the first task}
-%    \label{graph_1_1}
-%\end{figure}
-%
-%\subsubsection{Q2: What is the behavior if the Horizontal Attitude is enabled or not? Try changing the initial or target orientation in terms of roll and pitch angles. Discuss the behavior.} 
-%By default the \textit{Horizontal Attitude} is enable and it has higher priority than the \textit{Vehicle Position} task. 
-%This results in the UVMS prioritizing the maintaining of a horizontal orientation attitude over the pitch and roll alignment (Figure  \ref{fig:hae}). \\
-%When the \textit{Horizontal Attitude} is not enable, the UVMS tries to achieve the alignment between its own frame and the goal one, without taking (of course) into account to maintain the horizontal orientation attitude (Figure  \ref{fig:hane}).
-%
-%\subsubsection{Q3: Swap the priorities between Horizontal Attitude and the Vehicle Position control task. Discuss the behaviour.}
-%The problem is the same as before. With the priorities swapped, if the target has roll or pitch different from zero, the vehicle will try to achieve such orientation. \\
-%Therefore, when we change the priorities, the behavior observed during the simulation is almost the same as when we disable the \textit{Horizontal Attitude} task  (Figure  \ref{fig:hane}).\\
-%Moreover, swapping the priority is wrong because the \textit{Horizontal Attitude} is a safety task, which should have higher priority than an action-defining task. 
-%\clearpage
-%
-%%%%%%%% near images %%%%%%% 
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[width=.5\textwidth]{112_HAenabled.png}\caption{\textit{Horizontal Attitude} enabled, the robot is parallel with the seafloor.}
-%\label{fig:hae}
-%\vspace{5px}
-%\centering
-%\includegraphics[width=.5\textwidth]{112_HANotenabled.png}\caption{\textit{Horizontal Attitude} not enabled, the robot is not parallel with the seafloor.}
-%\label{fig:hane}
-%\end{figure}
-%%%%%%%% %%%%%%%%%% %%%%%%% 
-%
-%
-%\subsubsection{Q4: What is the behavior if the Tool Position control task is active and what if it is disabled? Which of the settings should be used for a Safe Waypoint Navigation action?}
-%If \textit{Tool Position} control task is enable and it has higher priority than the \textit{Vehicle Position} control task, the UVMS tries to achieve the goal position with the arm. \\
-%For this reason, we defined two different goal position, the first for the vehicle and the other one for the end-effector. \\
-%The settings we used for the Safe Waypoint Navigation are:
-%\begin{itemize}
-%\item enable \textit{Manipulability} to avoid loss of dexterity,
-%\item enable \textit{Horizontal Attitude},
-%\item use the \textit{Vehicle Position} to reach the vehicle desired position,
-%\item enable the \textit{Tool Position} only when the safe position is reached, to avoid that this task drags the vehicle in a not safe way. 
-%\end{itemize}
-%\clearpage
-%
-%\subsection{Adding a safety minimum altitude control objective}
-%Initialize the vehicle at the position:
-%\begin{displaymath}
-%\begin{bmatrix} 48.5 & 11.5 & -33 & 0 & 0 &-\pi/2\end{bmatrix}^\top
-%\end{displaymath} 
-%Choose as target point for the vehicle position the following one:
-%\begin{displaymath}
-%\begin{bmatrix} 50 & -12.5 & -33 & 0 & 0 &-\pi/2 \end{bmatrix}^\top
-%\end{displaymath}
-%
-%Goal: Implement a task to control the altitude from the seafloor. Check that at all times the minimum distance from the seafloor is guaranteed.
-%
-%\subsubsection{Q1: Report the hierarchy of task used and their priorities. Comment how you choose the priority level for the minimum altitude.}
-%
-%\noindent
-%\vspace{5px}
-%The new \textbf{hierarchy} of tasks is:
-%\begin{enumerate}
-%	\item Minimum Altitude
-%	\item Manipulability
-%	\item Horizontal Attitude
-%	\item Vehicle Position
-%\end{enumerate}
-%
-%\noindent
-%\vspace{5px}
-%The new task implemented: \\
-%\textbf{Minimum Altitude} [R,I,S], it is a safety task, so it has high priority. This task improves to the UVMS the ability to avoid collitions with the seafloor.
-%
-%\subsubsection{Q2: What is the Jacobian relationship for the Minimum Altitude control task? How was the task reference computed?}
-%We need to control the movement along the $z$ axis, so we use the same Jacobian of the vehicle position, but selecting only the component related to the $z$ axis.
-%
-%%%%%%%% Jacobian Matrix %%%%%%% 
-%\begin{equation}
-%\large
-%\boldsymbol{J}_{mav}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 1
-%\end{bmatrix}
-%    \begin{bmatrix}
-%     & \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
-%     \underset{ 6\times 7}{\boldsymbol{0}} \\
-%     & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
-%    \end{bmatrix}
-%\end{equation}
-%%%%%%%% %%%%%%% %%%%%%% %%%%%%% 
-%
-%Again, notice that in order to select the desired component we used the vector [0 0 0 0 0 1] because the control variable uses the convention [Roll Pitch Yaw X Y Z].
-%
-%\noindent
-%\vspace{5px}
-%We compute the \textbf{task reference} as: 
-%\begin{equation}
-%\large
-%    ^{w}\dot{\overline{\boldsymbol{x}}}_{mav} = k((d_{limit}+\Delta)- {^w}d_{sensor})) %delta
-%\end{equation}
-%where:
-%\begin{itemize}
-%    \item $k$ is the control gain.
-%    \item $d_{limit}$ is the desired minimum distance from the seafloor.
-%    \item $ \Delta $ is the safety distance at which the activation of the task starts to trigger.
-%    \item $^w d_{sensor}$ is the third component  of the distance vector, measured by the sensor and projected on the world frame.
-%\end{itemize} 
-%
-%\begin{figure}[t]
-%    \centering
-%    \includegraphics[scale=0.4]{122_MAV1m.png}
-%    \caption{Minimum altitude is enable and the robot is following the seafloor}
-%    \label{images_2_1}
-%\end{figure}
-%
-%%%Gray box for defining code implemented or referred to
-%%\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
-%%\texttt{Compute Task Reference -> MAV Control}\\
-%%}}
-%
-%\subsubsection{Q3: Try imposing a minimum altitude of 1, 5, 10 m respectively. What is the behavior?}
-%In order to test this task we ran the simulation with different values for the minimum altitude, all with the same $k$ gain (equal to $0.2$).
-%
-%\begin{itemize}
-%    \item \textbf{10 m:} The UVMS has initial position below this threshold, so it starts floating towards the surface very quickly (it is possible also to notice this huge vertical velocity $\dot{z}$, in the graph (Figure \ref{10m_ppdot})). 
-%    Of course, the task is not accomplished because the target position is far from the threshold, therefore, this value does not seem a reasonable one. % 
-%    \item \textbf{5 m:} Again, the task is triggered immediately, because the initial position is below the minimum altitude value. This control task is a safety one, so every time the UVMS is under the minimum altitude, the activation is enabled and it has the highest priority. 
-%    Again, it seems not a reasonable value. (Figure \ref{5m_ppdot}).
-%    \item \textbf{1 m:} The control task is no more active at the starting instant. The UVMS starts to accomplish the \textit{Vehicle Position} task and, when the seafloor presents an hill, the vehicle starts to follow its shape (Figure \ref{1m_ppdot}). 
-%\end{itemize}
-%However, there could be some troubles during the navigation if the seafloor has a steep slope: the front of the vehicle could collide with the soil, because the sensor is placed in the center of the vehicle.
-%
-%
-%\subsubsection{Q4: How was the sensor distance processed?}
-% 
-% Since we are interested only in the component along the $z$ axis, the $\boldsymbol{d}_{sensor}$ vector is build as:
-% $\begin{bmatrix}0 & 0 & d_{seafloor} \end{bmatrix}^\top$
-% 
-% However, ${^{v}\boldsymbol{d}_{sensor}}$ is the distance vector measured by the sensor, projected on the vehicle frame. Since we need to project it on the world frame, we apply the following rotation matrix:
-% 
-% \begin{equation}
-% \large
-%     {^{w}\boldsymbol{d}_{sensor}} = {^{w}\boldsymbol{R}_{v}} {^{v}\boldsymbol{d}_{sensor}}
-% \end{equation}
-%
-%
-%% %Gray box for defining code implemented or referred to
-%%\colorbox{mygray}{\parbox{0.9\textwidth}{Code for Exercise: \\
-%%\texttt{TO DO}\\
-%%\texttt{TO DO}
-%%}}
-%
-%%%%%%%%% MINI PAGE IMAGES 10 m %%%%%%%%
-%\begin{figure}[htpb] 
-%\begin{minipage}{0.40\textwidth}  
-%\includegraphics[width=\textwidth]{123_10m_ppdot.png}
-%\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 10m threshold}\label{10m_ppdot} 
-%\end{minipage}  
-%\hspace{0.2\textwidth} 
-%\begin{minipage}{0.43\textwidth}  
-%\includegraphics[width=\textwidth]{123_10m_A.png}
-%\caption{Positions and Velocity with medium}\label{10m_A} 
-%\end{minipage} 
-%\end{figure}
-%%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-%
-%%%%%%%%% MINI PAGE IMAGES 5 m %%%%%%%%
-%\begin{figure}[htpb] 
-%\begin{minipage}{0.40\textwidth}  
-%\includegraphics[width=\textwidth]{123_5m_ppdot.png}
-%\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 10m threshold}\label{5m_ppdot} 
-%\end{minipage}  
-%\hspace{0.2\textwidth} 
-%\begin{minipage}{0.43\textwidth}  
-%\includegraphics[width=\textwidth]{123_5m_A.png}
-%\caption{Positions and Velocity with medium}\label{5m_A} 
-%\end{minipage} 
-%\end{figure}
-%%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-%
-%%%%%%%%% MINI PAGE IMAGES 1 m %%%%%%%%
-%\begin{figure}[htpb] 
-%\begin{minipage}{0.40\textwidth}  
-%\includegraphics[width=\textwidth]{123_1m_ppdot.png}
-%\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 1m threshold}\label{1m_ppdot} 
-%\end{minipage}  
-%\hspace{0.2\textwidth} 
-%\begin{minipage}{0.40\textwidth}  
-%\includegraphics[width=\textwidth]{123_1m_A.png}
-%\caption{Positions and Velocity with medium}\label{1m_A} 
-%\end{minipage} 
-%\end{figure}
-%%%%%%%%% MINI PAGE IMAGES %%%%%%%%
-%
-\clearpage
+\section{Exercise 1: Implement a “Safe Waypoint Navigation” Action.}
 
-\section{Exercise 2: Implement a Basic “Landing” Action.}
-\subsection{Adding an altitude control objective}
-Initialize the vehicle at the position:
+\subsection{Adding a vehicle position control objective}
+Initialize the vehicle far away from the seafloor. An example position could be
 \begin{displaymath}
-\begin{bmatrix} 10.5 & 37.5 & -38 & 0 & -0.06 & 0.5 \end{bmatrix}^\top
+\begin{bmatrix} 10.5 & 35.5 & -36 & 0 & 0 & \pi/2\end{bmatrix}^\top
 \end{displaymath} 
+Give a target position that is also sufficiently away from the seafloor, e.g.,
+\begin{displaymath}
+\begin{bmatrix} 10.5 & 37.5 & -38 & 0 & 0 & 0 \end{bmatrix}^\top
+\end{displaymath}
 
-Goal: add a control task to regulate the altitude to zero.
+Goal: Implement a vehicle position control task, and test that the vehicle reaches the required position and orientation.
 
+
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 
 \subsubsection{Q1: Report the hierarchy of task used and their priorities. What is the Jacobian relationship for the Vehicle Position control task? How was the task reference computed?}
 
@@ -386,6 +121,7 @@ We use the following notation to characterize each task:
 
 \noindent
 The \textbf{hierarchy of the tasks}, in order of priority:
+<<<<<<< HEAD
 =======
 \subsubsection{Q1: Report the hierarchy of task used and their priorities. Comment how you choose the priority level for the altitude control task.}
 
@@ -400,17 +136,19 @@ The new \textbf{hierarchy} of tasks is:
 \vspace{5px}
 The new \textbf{hierarchy} of tasks is:
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 \begin{enumerate}
-	\item Manipulability
-	\item Horizontal attitude
-	\item Landing
+    \item Manipulability 
+    \item Horizontal Attitude
+    \item Vehicle Position
 \end{enumerate}
 
-<<<<<<< Updated upstream
 \begin{description}
 	\item \textbf{Manipulability} [R, I, P], it's used in order to prevent dangerous position of the robot arm. 
 	\item \textbf{Horizontal Attitude} [R, I, S], it's fundamental for being sure the robot it's parallel with the seafloor. 
 	\item \textbf{Vehicle Position} [R, I, AD], what the system really do. Action-defining task, so, lower hierarchy. This is the first task we implement, the goal is to perform velocity to enable the robot to reach the desired position.
+<<<<<<< HEAD
 =======
 \noindent
 \vspace{2px}
@@ -420,18 +158,24 @@ The new \textbf{hierarchy} of tasks is:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 \end{description}
 
 \vspace{10px}
 \noindent
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 The \textbf{Jacobian} for the vehicle position control task is the following one:
 \begin{equation}
     \boldsymbol{J}_v = \begin{bmatrix}
  & \underset{3\times3}{\boldsymbol{0}} & \underset{3\times3}{^{w}\boldsymbol{R}_{v}} \\
 \underset{6\times7}{\boldsymbol{0}} \\
 & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+<<<<<<< HEAD
 =======
 The task \textit{Minimum Altitude} is not enable now, because (of course) we need, to land and the UVMS needs to go below the fixed minimum altitude threshold.
 
@@ -470,15 +214,15 @@ The Jacobian relationship for the Landing is:
 \large
 \boldsymbol{J}_{land}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 1
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 \end{bmatrix}
-    \begin{bmatrix}
-     & \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
-     \underset{6\times 7}{\boldsymbol{0}} \\
-     & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
-    \end{bmatrix}
 \end{equation}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 \\ 
 where ${^{w}\boldsymbol{R}_{v}}$ is the Rotation matrix from the vehicle frame to the world frame.
 
@@ -499,13 +243,8 @@ Code for computing distance and misalignment: \\
 \texttt{simulation script -> CartError} \\
 \texttt{simulation script -> UniteVersorLemma}
 }}
-=======
-As before the Jacobian take into account only the $z$ component (using the pre-multiplication with the [0 0 0 0 0 1] matrix).
- 
-\noindent
-\vspace{5px}
-We compute the \textbf{task reference} as as the difference between the seafloor and the measured distance projected on the world frame:
 
+<<<<<<< HEAD
 \begin{equation}
 \large
     ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((seafloor + safeguard) - ^w d_{sensor})) %delta
@@ -543,9 +282,10 @@ The second big difference is that the \textit{Minimum Altitude} is an inequality
 
 <<<<<<< Updated upstream
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 \begin{figure}[!h]
     \centering
-<<<<<<< Updated upstream
     \includegraphics[scale=0.5]{111_ppdot.png}
     \caption{Resulted Graph for the first task}
     \label{graph_1_1}
@@ -575,6 +315,7 @@ In the end, it's not usefull to switch the position and it's wrong because the \
 If the \textit{Tool Position} task is enable, the vehicle could not reach the desired position. If it's enable ad it as higher priority than the \textit{Vehicle Position} task, the robot try to achieve the goal position for the arm, not the ones referred to the vehicle it self. \\
 For this reason we split the goal position in two different, the first for the body of the vehicle and another one for the tool. For this particular exercise we didn't use a arm goal position. \\
 However, we continue to use the \textit{Manipulability} task, in order to maintain a safe position for the arm. 
+<<<<<<< HEAD
 =======
     \begin{minipage}{0.50\textwidth}
     \includegraphics[scale=0.5]{213_MAV_A.png}
@@ -614,23 +355,29 @@ The second big difference is that the \textit{Minimum Altitude} is an inequality
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 \clearpage
 
-\subsection{Adding mission phases and change of action}
+\subsection{Adding a safety minimum altitude control objective}
 Initialize the vehicle at the position:
 \begin{displaymath}
-\begin{bmatrix} 8.5 & 38.5 & -36 & 0 & -0.06 & 0.5 \end{bmatrix}^\top
+\begin{bmatrix} 48.5 & 11.5 & -33 & 0 & 0 &-\pi/2\end{bmatrix}^\top
 \end{displaymath} 
-Use a "safe waypoint navigation action" to reach the following position: 
+Choose as target point for the vehicle position the following one:
 \begin{displaymath}
-\begin{bmatrix} 10.5 & 37.5 & -38 & 0 & -0.06 & 0.5 \end{bmatrix}^\top
-\end{displaymath} 
-When the position has been reached, land on the seafloor using the basic "landing" action.
+\begin{bmatrix} 50 & -12.5 & -33 & 0 & 0 &-\pi/2 \end{bmatrix}^\top
+\end{displaymath}
 
-\subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities.}
+Goal: Implement a task to control the altitude from the seafloor. Check that at all times the minimum distance from the seafloor is guaranteed.
 
+\subsubsection{Q1: Report the hierarchy of task used and their priorities. Comment how you choose the priority level for the minimum altitude.}
+
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 \vspace{10px}
 \noindent
 The new \textbf{hierarchy} of tasks is:
@@ -645,6 +392,7 @@ The new \textbf{hierarchy} of tasks is:
 \noindent
 The new task implemented: \\
 \textbf{Minimum Altitude} [R,I,S], it has high priority because it's a safety task, UVM must avoid crashes with the seafloor.
+<<<<<<< HEAD
 =======
 We have two different actions, with this \textbf{hierarchy} and activations: 
 %%%%%% TABLE %%%%%%%%%
@@ -688,9 +436,12 @@ We have two different actions, with this \textbf{hierarchy} and activations:
 %%%%%% TABLE %%%%%%%%%
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 
+\subsubsection{Q2: What is the Jacobian relationship for the Minimum Altitude control task? How was the task reference computed?}
+We need to control the movement along the $z$ axis, so we use the same Jacobian of the vehicle position, but selecting only the component related to the $z$ axis.
 
-<<<<<<< Updated upstream
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
 \boldsymbol{J}_{mav}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 1
@@ -717,22 +468,9 @@ We compute the \textbf{task reference} as the difference between the minimum dis
     \item $ \Delta $ is the safety distance at which the activation of the task triggers.
     \item $^w d_{sensor}$ is the distance vector measured by the sensor and projected on the world frame.
 \end{itemize} 
-=======
-%%Gray box for defining code implemented or referred to
-%\colorbox{mygray}
-%{\parbox{0.9\textwidth}{Code for Exercise: \\
-%\texttt{ComputeMissionPhase}\\
-%}}
 
-\subsubsection{Q2: How did you implement the transition from one action to the other?}
-
-From Action A to Action B, we compute the cartesian error between the goal position and the vehicle. When the error is below our threshold ($0.15m$) the mission phase changes. 
->>>>>>> Stashed changes
-
-When we want to inactivate a running task, we perform a Decreasing Bell Shape function, referred to mission phase time, in order to perform a smooth transition (like \textit{Minimum Altitude} and \textit{Vehicle Position} task, both inactivated in the same method). In the same way, we also perform an Increasing Bell Shape function to perform a smooth activation of the \textit{Landing} task. We perform all this functions based on the mission phase time, this help us to fix the time when we switch from an Action to the other one, and perform shape from $0$ to $0.2$ seconds, to avoid spike to the motors.
-\begin{figure}[!htb]
+\begin{figure}[t]
     \centering
-<<<<<<< Updated upstream
     \includegraphics[scale=0.4]{122_MAV1m.png}
     \caption{Image from the simulator, the minimum altitude is set to $0.5m$, the robot is following the seafloor}
     \label{images_2_1}
@@ -770,225 +508,67 @@ To achieve this task we perform the different minimum altitude, all with the sam
 \texttt{TO DO}\\
 \texttt{TO DO}
 }}
-=======
-    \includegraphics[scale=0.25]{222_smooth_ppdot.png}
-    \caption{Zoom of the smooth change}
-    \label{images_2_3_1}
-\end{figure}
 
-We found this more adeguate that the previous attempt, in which we performed the shape based on the error distance.
-\clearpage
-
-\section{Exercise 3: Improve the “Landing” Action}
-\subsection{Adding an alignment to target control objective}
-If we use the landing action, there is no guarantee that we land in from of the nodule/rock. We need to add additional constraints to make the vehicle face the nodule. The position of the rock is contained in the variable \texttt{rock\_center}. 
-
-Initialize the vehicle at the position:
-\begin{displaymath}
-\begin{bmatrix} 8.5 & 38.5 & -36 & 0 & -0.06 & 0.5 \end{bmatrix}^\top
-\end{displaymath} 
-Use a "safe waypoint navigation action" to reach the following position: 
-\begin{displaymath}
-\begin{bmatrix} 10.5 & 37.5 & -38 & 0 & -0.06 & 0.5 \end{bmatrix}^\top
-\end{displaymath} 
-Then land, aligning to the nodule.
-
-Goal: Add an alignment task between the longitudinal axis of the vehicle ($x$ axis) and the nodule target. In particular, the $x$ axis of the vehicle should align to the projection, on the inertial horizontal plane, of the unit vector joining the vehicle frame to the nodule frame.
-
-\subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Comment the behavior.}
-We have three different actions, with this hierarchy and activations:
-%%%%%% TABLE %%%%%%%%%
-\begin{center}
-\begin{tabular}{ | c | c | c | c | c |}
-\hline
- Control Task & \texttt{Code name} & Action A & Action B & Action C\\
- \hline
- Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive\\  
- Manipulabity &  \texttt{mu} & Active & Active & Active\\
- Horizontal Attitude &  \texttt{ha} & Active & Active & Active\\
- Alignment to the Rock & \texttt{alr} & Inactive & Active & Active \\
- Landing & \texttt{l} &Inactive & Inactive & Active \\
- Vehicle Position &  \texttt{v} &Active & Inactive & Inactive\\
- \hline
-\end{tabular}
-\end{center}
-%%%%%% TABLE %%%%%%%%%
-\vspace{5px}
-\noindent
-The new task is:
-\begin{description}
-\item \textbf{Alignment to the Rock} [R, I, P], it is a prerequisite task, so it has higher priority than the action-defining tasks. Inequality, because we admit a $\Delta$ of errors equal to $0.07$.   \ocio 
-\end{description}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.3]{311_ppdot.png}
-    \caption{Positions and velocities during the three actions.}
-    \label{graphes3}
-\end{figure}
-
-\begin{description}
-	\item Action A, again, a safe waypoint navigation with all the safety tasks enable (Figure \ref{311a}). 
-	\item Action B, it is the action that performs the alignment to the rock, with all the safety task enable (Figure \ref{311b}). 
-	\item Action C, \textit{Alignment to the Rock} is not disable because, while the UVMS starts landing, we disable smoothly the alignment. In this case, while the robot is performing the landing, it continue to rotate to optimize the orientation (Figure \ref{311c}).
-\end{description}
-
-
-
-%%%%%%% near images %%%%%%% 
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.6\textwidth]{312_Nav.png}\caption{Action A: Navigation till the target position}\label{311a}
-\vspace{5px}
-\centering
-\includegraphics[width=0.6\textwidth]{312_Alr.png}\caption{Action B: Alignment with the rock center}\label{311b}
-\vspace{5px}
-\centering
-\includegraphics[width=.6\textwidth]{312_Land.png}\caption{Action C: Landing, final action}\label{311c}
-\label{fig:missionphase3}
-\vspace{5px}
-\end{figure}
-%%%%%%% %%%%%%%%%% %%%%%%% 
-\clearpage
-
-\subsubsection{Q2: What is the Jacobian relationship for the Alignment to Target control task? How was the task reference computed?} \
-
-%\begin{equation}
-%\large
-%\begin{aligned}
-%&\boldsymbol{J}_{alr}={^w}{\boldsymbol{n}_\varphi}^{\prime}\left[\underset{3 x 7}{\boldsymbol{0}}, \boldsymbol{\Phi} \cdot {^w} \boldsymbol{R}_{v},{^w} \boldsymbol{R}_{v}\right]\\
-%&\boldsymbol{\Phi}=-\frac{1}{\left\|{^w}\boldsymbol{d}_{v, r}^{2}\right\|}\left({^w}\boldsymbol{d}_{v, r} \wedge\right)\left[\begin{array}{lll}
-%1 & 0 & 0 \\
-%0 & 1 & 0 \\
-%0 & 0 & 0
-%\end{array}\right]
-%\end{aligned}
-%\end{equation}
-% \ocio
-
-
-\begin{equation}
-\large
-D_{w}(\boldsymbol \rho)=\boldsymbol J_{alr} \boldsymbol \dot{q}
-\end{equation}
-
-\begin{equation}
-\large
-D_{w}(\boldsymbol \rho)={^w}\boldsymbol n_{\rho} \dot\theta+\underbrace{\theta D_{w} {^w}{\boldsymbol n_{\rho}}}_{orthogonal}
-\end{equation}
-
-We are not interested on the orthogonal components so we can ignore them.
-
-Regarding the first part of the equation,
-\begin{equation}
-\large
-\dot{\theta}={^w}\boldsymbol{\omega}_{v} - {^w}{\boldsymbol\omega_{{rock}}}
-\end{equation}
-
-\begin{equation}
-\large
-D_w(\boldsymbol \rho)={^w}\boldsymbol n_\rho\left({^w}{\boldsymbol \omega}_{v}-{^w}{\boldsymbol \omega_{rock}}\right)
-\end{equation}
-
-We need to describe ${^w}{\boldsymbol{\omega}}_{v} \text{ and } \boldsymbol{\omega}_{rock} \text{ in term of } \boldsymbol{\dot{q}} $
-
-\begin{equation}
-\large
-{^w}\boldsymbol \omega_{v} = 
-\underbrace{
-    \begin{bmatrix}
-     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}}\\
-    \end{bmatrix}
-}_{\boldsymbol J_{vehicle}}
-\dot{\boldsymbol{q}}
-\end{equation}
-
-\begin{equation}
-\large
-{^w}{\boldsymbol v}_{v}={^w}\boldsymbol \omega_{rock} \wedge {^w} \boldsymbol d
-\end{equation}
-
-\begin{equation}
-\large
-{^w}\boldsymbol w_{rock}=\frac{1}{\left\|{^w} \boldsymbol d^{2}\right\|}\left[{^w}{\boldsymbol d} \wedge\right] {{^w}{\boldsymbol v_{v}}}
-\end{equation}
-
-\noindent
-We are interested only on the $x$ and $y$ component of ${^w}{\boldsymbol v_{v}}$, to do this we premultiply, like this:
-
-\begin{equation}
-\large
-{^w}\boldsymbol w_{rock}=\frac{1}{\left\|{^w} \boldsymbol d^{2}\right\|}\left[{^w}{\boldsymbol d} \wedge\right]\left[\begin{array}{lll}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 0
-\end{array}\right] {^w}{\boldsymbol v_{v}}
-\end{equation}
-
-\begin{equation}
-\large
-{^w}\boldsymbol v_{v} = 
-    \begin{bmatrix}
-     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
-    \end{bmatrix}  
-\end{equation}
-
-\begin{equation}
-\large
-{^w}\boldsymbol w_{rock}=
-\underbrace{
-\frac{1}{\left\|{^w} \boldsymbol d^{2}\right\|}\left[{^w}{\boldsymbol d} \wedge\right]\left[\begin{array}{lll}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 0
-\end{array}\right]
-    \begin{bmatrix}
-     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
-    \end{bmatrix}
-}_{\boldsymbol J_{rock}}
-    \dot{\boldsymbol{q}}
-\end{equation}
-
-
-\begin{equation}
-\large
-\boldsymbol J_{\text {alr }}={^w}{\boldsymbol n_{\rho}}[{ \boldsymbol J_{vehicle} - \boldsymbol J_{rock}}]
-\end{equation}
-
-
-
->>>>>>> Stashed changes
-
-
-
-
-\subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?} 
-We performed tests with different gain values for the task reference:
-\begin{itemize}
-	\item Very Small = $0.1$
-	\item Medium = $0.6$
-	\item Big = $1.2$
-\end{itemize}
-First, looking at positions and velocities graphs, it is clear that between the medium (Figure \ref{ppdot_w_m}) and the big gain (Figure \ref{ppdot_w_b}) there are no such important differences, with the big gain that transition between the two phases are not so smooth as for the medium one. Of course, the saturation helps the case with the big gain to not perform a too high velocity. 
-For the very small gain, the resulted graph is very different (Figure \ref{ppdot_w_s}), becausethe very low velocity performed during the alignment doesn't help to reach the desired position. In our 30 seconds simulation is impossible for the UVMS to align correctly. However, also improving the simulation time, it is normal that it is too slow to accomplish our goal.
-
-From the point of view of the activations and the errors, there are not different results than before. Medium and big gain graphs are very similar (almost identical) and the very small gain graph confirm the previous sentences.
-%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+%%%%%%%% MINI PAGE IMAGES 10 m %%%%%%%%
 \begin{figure}[htpb] 
 \begin{minipage}{0.40\textwidth}  
-\includegraphics[width=\textwidth]{313_s_ppdot.png}
-\caption{Positions and Velocity with small gain}\label{ppdot_w_s} 
+\includegraphics[width=\textwidth]{123_10m_ppdot.png}
+\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 10m threshold}\label{10m_ppdot} 
 \end{minipage}  
 \hspace{0.2\textwidth} 
-\begin{minipage}{0.40\textwidth}  
-\includegraphics[width=\textwidth]{313_m_ppdot.png}
-\caption{Positions and Velocity with medium gain}\label{ppdot_w_m} 
+\begin{minipage}{0.43\textwidth}  
+\includegraphics[width=\textwidth]{123_10m_A.png}
+\caption{Positions and Velocity with medium}\label{10m_A} 
 \end{minipage} 
+<<<<<<< HEAD
 \hspace{0.2\textwidth} 
 \begin{minipage}{0.40\textwidth}  
 \includegraphics[width=\textwidth]{313_b_ppdot.png}
 \caption{Positions and Velocity with big gain}\label{ppdot_w_b} 
 =======
+=======
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+%%%%%%%% MINI PAGE IMAGES 5 m %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{123_5m_ppdot.png}
+\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 10m threshold}\label{5m_ppdot} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.43\textwidth}  
+\includegraphics[width=\textwidth]{123_5m_A.png}
+\caption{Positions and Velocity with medium}\label{5m_A} 
+\end{minipage} 
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+%%%%%%%% MINI PAGE IMAGES 1 m %%%%%%%%
+\begin{figure}[htpb] 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{123_1m_ppdot.png}
+\caption{Position and velocities during the Minimum Altitude Vehicle task imposed 1m threshold}\label{1m_ppdot} 
+\end{minipage}  
+\hspace{0.2\textwidth} 
+\begin{minipage}{0.40\textwidth}  
+\includegraphics[width=\textwidth]{123_1m_A.png}
+\caption{Positions and Velocity with medium}\label{1m_A} 
+\end{minipage} 
+\end{figure}
+%%%%%%%% MINI PAGE IMAGES %%%%%%%%
+
+\clearpage
+
+\section{Exercise 2: Implement a Basic “Landing” Action.}
+\subsection{Adding an altitude control objective}
+Initialize the vehicle at the position:
+\begin{displaymath}
+\begin{bmatrix} 10.5 & 37.5 & -38 & 0 & -0.06 & 0.5 \end{bmatrix}^\top
+\end{displaymath} 
+
+Goal: add a control task to regulate the altitude to zero.
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 
 
 %%Gray box for defining code implemented or referred to
@@ -1751,6 +1331,7 @@ We compute the \textbf{task reference} as:
 %	x_{activationMin,i} - x_{q,i},& \text{if } x_{q,i}\leq mid_i\\
 %	x_{activationMax,i} - x_{q,i},& \text{if } x_{q,i} > mid_i
 %\end{cases}
+<<<<<<< HEAD
 
 \section{Exercise 4: Implementing a Fixed-base Manipulation Action}
 \subsection{Adding non-reactive tasks} \label{subsec:non-react}
@@ -2078,6 +1659,9 @@ In order to implement an arm-vehicle coordination scheme, we implemented two opt
      \underset{6\times7}{\boldsymbol{0}} & \underset{6\times6}{\boldsymbol{I}} \\
     \end{bmatrix}
 \end{equation}
+=======
+%\end{equation}
+>>>>>>> parent of c3c9316... Eqaution exercise 3 done
 
 	where:
 	\begin{description}

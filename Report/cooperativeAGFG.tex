@@ -602,18 +602,98 @@ The new task is:
 
 \subsubsection{Q2: What is the Jacobian relationship for the Alignment to Target control task? How was the task reference computed?} \
 
+The Jacobian relationshio for the Alignment starts from here:
+
 \begin{equation}
 \large
-\begin{aligned}
-&\boldsymbol{J}_{alr}={^w}{\boldsymbol{n}_\varphi}^{\prime}\left[\underset{3 x 7}{\boldsymbol{0}}, \boldsymbol{\Phi} \cdot {^w} \boldsymbol{R}_{v},{^w} \boldsymbol{R}_{v}\right]\\
-&\boldsymbol{\Phi}=-\frac{1}{\left\|{^w}\boldsymbol{d}_{v, r}^{2}\right\|}\left({^w}\boldsymbol{d}_{v, r} \wedge\right)\left[\begin{array}{lll}
+D_{w}(\boldsymbol \rho)=\boldsymbol J_{alr} \boldsymbol \dot{q}
+\end{equation}
+
+Where defining $\boldsymbol J_{alr} $ is our goal.
+
+We know that:
+\begin{equation}
+\large
+D_{w}(\boldsymbol \rho)={^w}\boldsymbol n_{\rho} \dot\theta+\underbrace{\theta D_{w} {^w}{\boldsymbol n_{\rho}}}_{orthogonal}
+\end{equation}
+
+We are not interested on the orthogonal components so we can ignore them.
+
+Regarding the first part of the equation,
+\begin{equation}
+\large
+\dot{\theta}={^w}\boldsymbol{\omega}_{v} - {^w}{\boldsymbol\omega_{{rock}}}
+\end{equation}
+
+\begin{equation}
+\large
+D_w(\boldsymbol \rho)={^w}\boldsymbol n_\rho\left({^w}{\boldsymbol \omega}_{v}-{^w}{\boldsymbol \omega_{rock}}\right)
+\end{equation}
+
+We need to describe ${^w}{\boldsymbol{\omega}}_{v} \text{ and } \boldsymbol{\omega}_{rock} \text{ in term of } \boldsymbol{\dot{q}} $
+
+\begin{equation}
+\large
+{^w}\boldsymbol \omega_{v} = 
+\underbrace{
+    \begin{bmatrix}
+     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}}\\
+    \end{bmatrix}
+}_{\boldsymbol J_{vehicle}}
+\dot{\boldsymbol{q}}
+\end{equation}
+
+\begin{equation}
+\large
+{^w}{\boldsymbol v}_{v}={^w}\boldsymbol \omega_{rock} \wedge {^w} \boldsymbol d
+\end{equation}
+
+\begin{equation}
+\large
+{^w}\boldsymbol w_{rock}=\frac{1}{\left\|{^w} \boldsymbol d^{2}\right\|}\left[{^w}{\boldsymbol d} \wedge\right] {{^w}{\boldsymbol v_{v}}}
+\end{equation}
+
+\noindent
+We are interested only on the $x$ and $y$ component of ${^w}{\boldsymbol v_{v}}$, to do this we premultiply, like this:
+
+\begin{equation}
+\large
+{^w}\boldsymbol w_{rock}=\frac{1}{\left\|{^w} \boldsymbol d^{2}\right\|}\left[{^w}{\boldsymbol d} \wedge\right]\left[\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{array}\right] {^w}{\boldsymbol v_{v}}
+\end{equation}
+
+\begin{equation}
+\large
+{^w}\boldsymbol v_{v} = 
+    \begin{bmatrix}
+     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+    \end{bmatrix}  
+\end{equation}
+
+\begin{equation}
+\large
+{^w}\boldsymbol w_{rock}=
+\underbrace{
+\frac{1}{\left\|{^w} \boldsymbol d^{2}\right\|}\left[{^w}{\boldsymbol d} \wedge\right]\left[\begin{array}{lll}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 0
 \end{array}\right]
-\end{aligned}
+    \begin{bmatrix}
+     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+    \end{bmatrix}
+}_{\boldsymbol J_{rock}}
+    \dot{\boldsymbol{q}}
 \end{equation}
- \ocio
+
+
+\begin{equation}
+\large
+\boldsymbol J_{\text {alr }}={^w}{\boldsymbol n_{\rho}}[{ \boldsymbol J_{vehicle} - \boldsymbol J_{rock}}]
+\end{equation}
 
 \subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?} 
 We performed tests with different gain values for the task reference:

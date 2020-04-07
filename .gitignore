@@ -12,3 +12,5 @@
 *.bbl
 *.fls
 *.fdb_latexmk
+Report/.DS_Store
+*.log

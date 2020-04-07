@@ -514,9 +514,9 @@ We have two different actions, with this \textbf{hierarchy} and the following ac
 
 \subsubsection{Q2: How did you implement the transition from one action to the other?}
 
-The transition between Action A and Action B is triggered by the achievement of the vehicle target position. We compute the cartesian error between the goal frame and the vehicle frame and, when the error is below the given threshold (in this case $0.1m$), the mission phase changes. 
+The transition between Action A and Action B is triggered by the achievement of the vehicle target position. We compute the cartesian error between the goal frame and the vehicle frame, the mission phase changes when the error is below the given threshold (in this case $0.1m$). 
 
-When we want to deactivate a running task, we use a Decreasing Bell Shape function in order to perform a smooth transition. In this case, the \textit{Minimum Altitude} and \textit{Vehicle Position} tasks are both deactivated at the start of the second phase. In a similar way, when we want to activate a task, we use an Increasing Bell Shape function to perform a smooth transition, as we do for the \textit{Landing} task. 
+When we want to disable a running task, we use a Decreasing Bell Shape function in order to perform a smooth transition. In this case, the \textit{Minimum Altitude} and \textit{Vehicle Position} tasks are both deactivated at the start of the second phase. In a similar way, when we want to activate a task, we use an Increasing Bell Shape function to perform a smooth transition, as we do for the \textit{Landing} task. 
 We compute the slope of such functions based on the mission phase time: this help us to fix the time interval (in our case, $0.2$ seconds) in which the vehicle switches from an Action to the other and let us achieve a smooth shape, avoiding discontinuities in the actuation of the motors.
 \begin{figure}[!htb]
     \centering
@@ -627,20 +627,17 @@ Regarding the first part of the equation,
 
 \begin{equation}
 \large
-D_w(\boldsymbol \rho)={^w}\boldsymbol n_\rho\left({^w}{\boldsymbol \omega}_{v}-{^w}{\boldsymbol \omega_{rock}}\right)
+D_w(\boldsymbol \rho)={^w}\boldsymbol n_\rho^\top \left({^w}{\boldsymbol \omega}_{v}-{^w}{\boldsymbol \omega_{rock}}\right)
 \end{equation}
 
 We need to describe ${^w}{\boldsymbol{\omega}}_{v} \text{ and } \boldsymbol{\omega}_{rock} \text{ in term of } \boldsymbol{\dot{q}} $
 
 \begin{equation}
 \large
-{^w}\boldsymbol \omega_{v} = 
-\underbrace{
+{\boldsymbol J_{vehicle}} = 
     \begin{bmatrix}
      \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}}\\
     \end{bmatrix}
-}_{\boldsymbol J_{vehicle}}
-\dot{\boldsymbol{q}}
 \end{equation}
 
 \begin{equation}
@@ -665,18 +662,31 @@ We are interested only on the $x$ and $y$ component of ${^w}{\boldsymbol v_{v}}$
 \end{array}\right] {^w}{\boldsymbol v_{v}}
 \end{equation}
 
-\begin{equation}
-\large
-{^w}\boldsymbol v_{v} = 
-    \begin{bmatrix}
-     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
-    \end{bmatrix}  
-\end{equation}
+%\begin{equation}
+%\large
+%{^w}\boldsymbol v_{v} = 
+%    \begin{bmatrix}
+%     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+%    \end{bmatrix}  
+%\end{equation}
+
+%\begin{equation}
+%\large
+%{^w}\boldsymbol w_{rock}=
+%\frac{1}{\left\|{^w} \boldsymbol d^{2}\right\|}\left[{^w}{\boldsymbol d} \wedge\right]\left[\begin{array}{lll}
+%1 & 0 & 0 \\
+%0 & 1 & 0 \\
+%0 & 0 & 0
+%\end{array}\right]
+%    \begin{bmatrix}
+%     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & {3\times 3}{\boldsymbol{0}} \\
+%    \end{bmatrix}
+%\end{equation}
+
 
 \begin{equation}
 \large
-{^w}\boldsymbol w_{rock}=
-\underbrace{
+{\boldsymbol J_{rock}} =
 \frac{1}{\left\|{^w} \boldsymbol d^{2}\right\|}\left[{^w}{\boldsymbol d} \wedge\right]\left[\begin{array}{lll}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
@@ -685,14 +695,11 @@ We are interested only on the $x$ and $y$ component of ${^w}{\boldsymbol v_{v}}$
     \begin{bmatrix}
      \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
     \end{bmatrix}
-}_{\boldsymbol J_{rock}}
-    \dot{\boldsymbol{q}}
 \end{equation}
-
 
 \begin{equation}
 \large
-\boldsymbol J_{\text {alr }}={^w}{\boldsymbol n_{\rho}}[{ \boldsymbol J_{vehicle} - \boldsymbol J_{rock}}]
+\boldsymbol J_{\text {alr }}={^w}{\boldsymbol n_{\rho}^\top}[{ \boldsymbol J_{vehicle} - \boldsymbol J_{rock}}]
 \end{equation}
 
 \subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?} 

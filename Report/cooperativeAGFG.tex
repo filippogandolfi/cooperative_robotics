@@ -434,7 +434,7 @@ where:
 \begin{itemize}
     \item $k$ is the control gain.
     \item $d_{landing}$ is the distance from the seafloor, in this case is obviously $0$.
-    \item $\Delta_{safeguard}$ is set to $0.15m$  to avoid interpenetration between UVMS and the seafloor.
+    \item $\Delta_{safeguard}$ is set to $0.17m$  to avoid interpenetration between UVMS and the seafloor.
     \item $^w d_{sensor}$ is the component along the $z$ axis of the distance vector measured by the sensor and projected on the world frame.
 \end{itemize} 
 
@@ -555,7 +555,7 @@ We have three different actions, with the following \textbf{hierarchy} and activ
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive\\  
  Manipulabity &  \texttt{mu} & Active & Active & Active\\
  Horizontal Attitude &  \texttt{ha} & Active & Active & Active\\
- Alignment to the Rock & \texttt{alr} & Inactive & Active & Active \\
+ \textbf{Alignment to the Rock}  & \texttt{alr} & Inactive & Active & Active \\
  Landing & \texttt{l} &Inactive & Inactive & Active \\
  Vehicle Position &  \texttt{v} &Active & Inactive & Inactive\\
  \hline
@@ -564,7 +564,7 @@ We have three different actions, with the following \textbf{hierarchy} and activ
 %%%%%% TABLE %%%%%%%%%
 \vspace{5px}
 \noindent
-The new task is:
+
 \begin{description}
 \item \textbf{Alignment to the Rock} [R, I, P]: it is a prerequisite task, therefore it has higher priority than the action-defining tasks. Inequality, because we admit a range of error equal to $0.07$.   \ocio 
 \end{description}
@@ -625,18 +625,13 @@ Regarding the first part of the equation,
 \dot{\theta}={^w}\boldsymbol{\omega}_{v} - {^w}{\boldsymbol\omega_{{rock}}}
 \end{equation}
 
-\begin{equation}
-\large
-D_w(\boldsymbol \rho)={^w}\boldsymbol n_\rho^\top \left({^w}{\boldsymbol \omega}_{v}-{^w}{\boldsymbol \omega_{rock}}\right)
-\end{equation}
-
-By describing  ${^w}{\boldsymbol{\omega}}_{v} \text{ in terms of } \boldsymbol{\dot{y}} $, we obtain the following Jacobian
+By describing  ${^w}{\boldsymbol{\omega}}_{v} \text{ in terms of } \boldsymbol{\dot{y}} $, we can deduce the following Jacobian
 
 \begin{equation}
 \large
 {\boldsymbol J_{vehicle}} = 
     \begin{bmatrix}
-     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}}\\
+     \underset{3\times 10}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}}\\
     \end{bmatrix}
 \end{equation}
 
@@ -685,7 +680,7 @@ Since we are interested only in the $x$ and $y$ component of ${^w}{\boldsymbol v
 %    \end{bmatrix}
 %\end{equation}
 
-From the last equation, we obtain the following Jacobian
+From the last equation, we deduce the following Jacobian
 
 \begin{equation}
 \large
@@ -696,7 +691,7 @@ From the last equation, we obtain the following Jacobian
 0 & 0 & 0
 \end{array}\right]
     \begin{bmatrix}
-     \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+     \underset{3\times 7}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
     \end{bmatrix}
 \end{equation}
 
@@ -704,8 +699,21 @@ The resulting Jacobian is obtained by substitution and it is equal to
 
 \begin{equation}
 \large
-\boldsymbol J_{\text {alr }}={^w}{\boldsymbol n_{\rho}^\top}[{ \boldsymbol J_{vehicle} - \boldsymbol J_{rock}}]
+\boldsymbol J_{\text {alr}}={^w}{\boldsymbol n_{\rho}^\top}[{ \boldsymbol J_{vehicle} - \boldsymbol J_{rock}}]
 \end{equation}
+
+We compute the \textbf{task reference} as:
+
+\begin{equation}
+\large
+    \dot{\overline{\boldsymbol{x}}}_{alr} = k( 0 - \left\| ^w \boldsymbol \rho \right\|) %delta
+\end{equation}
+where:
+\begin{itemize}
+    \item $k$ is the control gain.
+    \item $\left\| ^w \boldsymbol \rho \right\|$ is the norm of the misalignment vector, in this case we want it to be $0$.
+\end{itemize} 
+
 
 \subsubsection{Q3: Try changing the gain of the alignment task. Try at least three different values, where one is very small. What is the observed behaviour?} 
 We performed tests with different gain values for the task reference:
@@ -797,13 +805,13 @@ We have four different actions, with the following \textbf{hierarchy} and activa
 \hline
  Control Task & \texttt{Code name} & Action A & Action B & Action C & Action D\\
  \hline
- Vehicle Null Velocity & \texttt{vNull} & Inactive & Inactive & Inactive & Active\\
+ \textbf{Vehicle Null Velocity} & \texttt{vNull} & Inactive & Inactive & Inactive & Active\\
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive & Inactive \\  
  Manipulabity &  \texttt{mu} & Active & Active & Active & Active  \\
  Horizontal Attitude &  \texttt{ha} & Active & Active & Active & Active\\
  Alignment to the rock & \texttt{alr} & Inactive & Active & Active & Inactive \\
  Landing & \texttt{l} &Inactive & Inactive & Active & Inactive\\
- Tool  &  \texttt{t} & Inactive & Inactive & Inactive & Active\\
+ \textbf{Tool Position}  &  \texttt{t} & Inactive & Inactive & Inactive & Active\\
  Vehicle Position &  \texttt{v} &Active & Inactive & Inactive & Inactive\\
  \hline
 \end{tabular}
@@ -818,30 +826,30 @@ We have four different actions, with the following \textbf{hierarchy} and activa
 	\item Action A, safe waypoint navigation with all the safety task activated
 	\item Action B, alignment to the nodule with all the safety task activated
 	\item Action C, landing and smooth rotation to be aligned with the rock
-	\item Action D, manipulator actuation after landing. Here it is enable the new \textit{Vehicle Null Velocity} task, that disable the UVMS' motors, to prevent movement. The only movement will be the extension of the arm to reach the desired target tool position.
+	\item Action D, manipulator actuation after landing. Here the new \textit{Vehicle Null Velocity} task is enabled, preventing UVMS movements. The only movement will be the extension of the manipulator to reach the desired target tool position.
 \end{description}
 
 %%%%%%% near images %%%%%%% 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=.6\textwidth]{411_q.png}\caption{Arm joints start moving when reached task 4}
+
+\includegraphics[width=.6\textwidth]{411_Errors.png}\caption{The error plot during the different phases (vertical green lines}
+\label{fig:411_errors}
+\includegraphics[width=.6\textwidth]{411_q.png}\caption{Arm joints start moving when Action D is triggered}
 \centering
 \label{fig:411_arm}
-\includegraphics[width=.6\textwidth]{411_ppdot.png}\caption{Vehicle has zero velocities when task 3 is finished}
+\includegraphics[width=.6\textwidth]{411_ppdot.png}\caption{Vehicle has zero velocities when Action C is finished}
 \label{fig:411_vehicle}
-\includegraphics[width=.6\textwidth]{411_Errors.png}\caption{Vehicle has zero velocities when task 3 is finished}
-\label{fig:411_errors}
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%%
 \subsubsection{Q2: What is the Jacobian relationship for the Vehicle Null Velocity task? How was the task reference computed?}
-The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Position, but this time we need to fix the velocity of the UVMS to zero, thus we premultiply it for the zeros vector. % CI VA IL TRASPOSTO? BE SURE DI OGNI MATRIX COME é FATTA
+
+The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Position:
 
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
 \large
-\boldsymbol{J}_{vehNull}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0
-\end{bmatrix}
-    \begin{bmatrix}
+\boldsymbol{J}_{vehNull}=    \begin{bmatrix}
      & \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
      \underset{6\times 7}{\boldsymbol{0}} \\
      & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
@@ -849,10 +857,20 @@ The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Posit
 \end{equation}
 %%%%%%% %%%%%%% %%%%%%% %%%%%%% 
 
-The velocity will not change during the activation of this task because it is a Non-Reactive.
+Since we do not want the vehicle to move, \textbf{task reference} is a zero vector defined as : 
+
+\begin{equation}
+\large
+   \dot{\overline{\boldsymbol{x}}}_{vNull} =  \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0 \end{bmatrix}^{T}
+\end{equation}
+This task will not change during the whole simulation because it is a Non-Reactive task.
 
 \subsubsection{Q3: Suppose the vehicle floating, i.e. not landed on the seafloor. What would happen, if due to currents, the vehicle moves?}
-The Vehicle Null task cannot take in position the UVMS, it doesn't take into account disturbances, it only put velocities to zero, therefore it is not able to contrast currents. In this scenario, the robot will start follow the current and it will go to a wrong position. The arm will continue to try to reach the desired position, and because it is not landed, the \textit{Vehicle Null Velocity} is not active, thus the Tool Position try to achieve its goal and bring back all the vehicle. If the currents are not too strong it could reach again the position. Different from the previous exercise \ref{ex3}, in which the vehicle could not help the arm to be able to arrive to the target, now it could ``help''. \ocio
+The \textit{Vehicle Null} only puts vehicle velocities to zero, therefore it is not able to compensate disturbances. In a similar scenario, the robot will be influenced by the currents: if the disturbance is not too big, the robot is able to arrive to the desired position and to land. However, when the \textit{Vehicle Null} task is triggered in Action D, the UVMS will start drifting, losing the target. The arm will keep trying to reach the desired position stretching as much as possible.
+
+
+With a check on the position error during the mission phase update, it is possible to return to Action A in order to achieve again the desired position.
+
 \clearpage
 
 \subsection{Adding a joint limit task}
@@ -861,7 +879,7 @@ Let us now constrain the arm with the actual joint limits. The vector variables 
 Goal: Add a joint limits avoidance task. Land on the seafloor. Try reaching the rock position with the end-effector, and observe that the vehicle does not move and that all the joints are within their limits.
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}
-We have four different actions, with this hierarchy and activations:
+We have four different actions, with the following \textbf{hierarchy} and activations:
 %%%%%% TABLE %%%%%%%%%
 \begin{center}
 \begin{tabular}{ | c | c | c | c | c | c |}
@@ -869,7 +887,7 @@ We have four different actions, with this hierarchy and activations:
  Control Task & \texttt{Code name} & Action A & Action B & Action C & Action D\\
  \hline
  Vehicle Null Velocity & \texttt{vNull} & Inactive & Inactive & Inactive & Active\\
- Joint Limit & \texttt{jl} & Active & Active & Active & Active \\
+ \textbf{Joint Limit} & \texttt{jl} & Active & Active & Active & Active \\
  Minimum Altitude Vehicle &  \texttt{mav} & Active & Active & Inactive & Inactive \\  
  Manipulabity &  \texttt{mu} & Active & Active & Active & Active  \\
  Horizontal Attitude &  \texttt{ha} & Active & Active & Active & Active\\
@@ -883,10 +901,10 @@ We have four different actions, with this hierarchy and activations:
 %%%%%% TABLE %%%%%%%%%
 
 \begin{description}
-\item \textbf{Joint Limit} [R, I, S], it is a safety task, thus it has higher priority than the other action-defining tasks. It is able to control that the joints don't operate over their prefixed threshold. \ocio
+\item \textbf{Joint Limit} [R, I, S]: it is a safety task, thus it has higher priority than the other action-defining tasks. It is able to control that the joints don't operate over their prefixed threshold. \ocio
 \end{description}
 
-The actions are the same as before, the only difference is that Joint Limit is always active because it is a safety task. However, it is important when the robot perform the final action. 
+The actions are the same as before, the only difference is that Joint Limit is always active because it is a safety task. However, it is important when the manipulator performs the final action. 
 
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Limits task? How was the task reference computed?}
 The Jacobian for the Joint Limit task is:
@@ -899,10 +917,9 @@ The Jacobian for the Joint Limit task is:
     \end{bmatrix}
 \end{equation}
 %%%%%%% %%%%%%% %%%%%%% %%%%%%% 
-With this Jacobian we are sure that each joint apply the limit constraints only itself and not on the other ones.
+With this Jacobian we are sure that each of the seven joint moves itself within defined limits.
 \\
 We compute the \textbf{task reference} as:
-Seen that each joint influences obviously only itself for the joint limit task.\\
 %%%%%%%%%%%%	
 \begin{equation}
 \large
@@ -920,7 +937,7 @@ x_{activationMax,i}-x_{q, i} & \text { if } x_{q, i}>mid_{i}
 		\item $mid_i = \dfrac{x_{ActivationMin,i} + x_{ActivationMax,i}}{2}\; $ is the middle point between the Minimum Activation and the Maximum.
 		\item $k$ is the gain
 \end{description}
-We use the Min and Max in order to be able to activate the joint limit when the joint arrives near the minimum guard ($ActivationMin$) or near the maximum ones ($ActivationMax$).
+We use the Min and Max in order to be able to activate the joint limit when the joint arrives near the minimum guard ($ActivationMin$) or near the maximum one ($ActivationMax$).
 %%%%%%%%
 \clearpage
 
@@ -945,7 +962,7 @@ The new hierarchy of tasks is:
         \item Preferred Shape 
 \end{itemize}
 
-\textbf{Preferred Shape} [NR, I, O] is an optimization task. For this reason, it is placed at the end of the hierarchy which means that it has the lowest priority and it is accomplished only if all the other tasks has been already satisfied. 
+\textbf{Preferred Shape} [NR, I, O]: it is an optimization task. For this reason, it is placed at the end of the hierarchy which means that it has the lowest priority and it is accomplished only if all the other tasks has been already satisfied. 
 
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}
 
@@ -1037,7 +1054,7 @@ Let us now structure the mission in more than one phase. In the first phase, exp
 Goal: introduce mission phases in the floating manipulation scenario. Observe the difference.
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Which task is active in which phase/action?}
-
+We have two different actions, with the following \textbf{hierarchy} and activations:
 %%%%%% TABLE %%%%%%%%%
 \begin{center}
 \begin{tabular}{ | c | c | c | c |}

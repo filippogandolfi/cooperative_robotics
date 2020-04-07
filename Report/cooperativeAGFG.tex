@@ -940,11 +940,11 @@ The new hierarchy of tasks is:
         \item Preferred Shape 
 \end{itemize}
 
-\textbf{Preferred Shape [NR, I, O]} is an optimization task. For this reason, it is placed at the end of the hierarchy which means that it has the lowest priority and it is accomplished only if all the other tasks has been already satisfied. 
+\textbf{Preferred Shape} [NR, I, O] is an optimization task. For this reason, it is placed at the end of the hierarchy which means that it has the lowest priority and it is accomplished only if all the other tasks has been already satisfied. 
 
 \subsubsection{Q2: What is the Jacobian relationship for the Joint Preferred Shape task? How was the task reference computed?}
 
-We decided to implement this task as a vector one, thus the Jacobian is a 4-by-13 matrix:
+We decided to implement this task as a vector one, thus the \textbf{Jacobian} is a $4\times13$ matrix:
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
 \large
@@ -955,17 +955,17 @@ We decided to implement this task as a vector one, thus the Jacobian is a 4-by-1
     \end{bmatrix}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%
-The Jacobian has four rows since it is required to control just the first fuor joints. Since each joint affects only itself (similarly to the joint limits task), the non-zero part of the Jacobian is a 4-by-4 identity matrix. 
+The Jacobian has four rows since it is required to control just the first four joints. Since each joint affects only itself (similarly to the joint limits task), the non-zero part of the Jacobian is a $4\times4$ identity matrix. 
 
-We compute the \textbf{task reference} as the difference between the desired joint configuration and the actual one :
+We compute the \textbf{task reference} as the difference between the desired joint configuration and the actual one:
 
 \begin{equation}
 \large
-   \dot{\overline{\boldsymbol{x}}}_{prefShape} = k(x_{prefShape} - x_{q}) %delta
+   \dot{\overline{\boldsymbol{x}}}_{\operatorname{prefShape}} = k(x_{\operatorname{prefShape}} - x_{q}) %delta
 \end{equation}
 \begin{itemize}
     \item $k$ is the control gain.
-    \item $x_{prefShape}$ is the desired configuration of the first four joints.
+    \item $x_{\operatorname{prefShape}}$ is the desired configuration of the first four joints.
     \item $x_{q}$ is the actual configuration of the first four joints.
 \end{itemize} 
 

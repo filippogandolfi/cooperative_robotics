@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  7 APR 2020 11:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  7 APR 2020 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -432,7 +432,14 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(./cooperativeAGFG.aux)
+(./cooperativeAGFG.aux
+
+LaTeX Warning: Label `images_2_3_1' multiply defined.
+
+
+LaTeX Warning: Label `graphes3' multiply defined.
+
+)
 \openout1 = `cooperativeAGFG.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
@@ -615,17 +622,7 @@ File: 111_ppdot.png Graphic file (type png)
 <use 111_ppdot.png>
 Package pdftex.def Info: 111_ppdot.png  used on input line 175.
 (pdftex.def)             Requested size: 301.62613pt x 227.85068pt.
-
-
-LaTeX Warning: Reference `fig:hae' on page 3 undefined on input line 182.
-
-
-LaTeX Warning: Reference `fig:hane' on page 3 undefined on input line 183.
-
-
-LaTeX Warning: Reference `fig:hane' on page 3 undefined on input line 187.
-
-[3 <./111_ppdot.png>]
+ [3 <./111_ppdot.png>]
 <112_HAenabled.png, id=34, 962.59625pt x 720.6925pt>
 File: 112_HAenabled.png Graphic file (type png)
 <use 112_HAenabled.png>
@@ -650,18 +647,9 @@ File: 122_MAV1m.png Graphic file (type png)
 <use 122_MAV1m.png>
 Package pdftex.def Info: 122_MAV1m.png  used on input line 280.
 (pdftex.def)             Requested size: 309.95251pt x 183.48224pt.
-
-LaTeX Warning: Reference `10m_ppdot' on page 5 undefined on input line 294.
-
 [5
 
 ]
-
-LaTeX Warning: Reference `5m_ppdot' on page 6 undefined on input line 297.
-
-
-LaTeX Warning: Reference `1m_ppdot' on page 6 undefined on input line 298.
-
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 308.
 
@@ -734,9 +722,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--451
 
  []
 
-
-LaTeX Warning: Reference `213' on page 9 undefined on input line 451.
-
 <213_MAV_A.png, id=68, 421.575pt x 316.18124pt>
 File: 213_MAV_A.png Graphic file (type png)
 <use 213_MAV_A.png>
@@ -761,16 +746,6 @@ File: 311_ppdot.png Graphic file (type png)
 <use 311_ppdot.png>
 Package pdftex.def Info: 311_ppdot.png  used on input line 574.
 (pdftex.def)             Requested size: 180.67639pt x 136.10954pt.
-
-
-LaTeX Warning: Reference `311a' on page 11 undefined on input line 580.
-
-
-LaTeX Warning: Reference `311b' on page 11 undefined on input line 581.
-
-
-LaTeX Warning: Reference `311c' on page 11 undefined on input line 582.
-
 <312_Nav.png, id=80, 702.625pt x 429.10312pt>
 File: 312_Nav.png Graphic file (type png)
 <use 312_Nav.png>
@@ -786,7 +761,7 @@ File: 312_Land.png Graphic file (type png)
 <use 312_Land.png>
 Package pdftex.def Info: 312_Land.png  used on input line 596.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
-[11
+ [11
 
  <./311_ppdot.png>] [12 <./312_Nav.png> <./312_Alr.png> <./312_Land.png>]
 
@@ -818,15 +793,6 @@ LaTeX Font Warning: Command \large invalid in math mode on input line 688.
 
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 701.
-
-
-LaTeX Warning: Reference `ppdot_w_m' on page 13 undefined on input line 712.
-
-
-LaTeX Warning: Reference `ppdot_w_b' on page 13 undefined on input line 712.
-
-
-LaTeX Warning: Reference `ppdot_w_s' on page 13 undefined on input line 713.
 
 <313_s_ppdot.png, id=94, 605.26125pt x 456.70625pt>
 File: 313_s_ppdot.png Graphic file (type png)
@@ -893,16 +859,12 @@ Overfull \hbox (4.43765pt too wide) in paragraph at lines 752--766
 ] [14 <./313_s_ppdot.png> <./313_m_ppdot.png> <./313_b_ppdot.png>] [15 <./313_s
 _Activation.png> <./313_m_Activation.png> <./313_b_Activation.png> <./313_s_Err
 ors.png> <./313_m_Errors.png> <./313_b_Errors.png>]
-
-LaTeX Warning: Reference `subsec:non-react' on page 16 undefined on input line 
-771.
-
 <314_ppdot.png, id=122, 604.2575pt x 454.69875pt>
 File: 314_ppdot.png Graphic file (type png)
 <use 314_ppdot.png>
 Package pdftex.def Info: 314_ppdot.png  used on input line 775.
 (pdftex.def)             Requested size: 241.69872pt x 181.87627pt.
-[16
+ [16
 
  <./314_ppdot.png>]
 <411_q.png, id=127, 668.4975pt x 262.9825pt>
@@ -923,9 +885,6 @@ Package pdftex.def Info: 411_Errors.png  used on input line 827.
 
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 836.
-
-
-LaTeX Warning: Reference `ex3' on page 17 undefined on input line 850.
 
 [17
 
@@ -949,18 +908,6 @@ LaTeX Font Warning: Command \large invalid in math mode on input line 950.
 
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 963.
-
-
-LaTeX Warning: Reference `513_nh1' on page 21 undefined on input line 973.
-
-
-LaTeX Warning: Reference `513_h1' on page 21 undefined on input line 973.
-
-
-LaTeX Warning: Reference `513_nh2' on page 21 undefined on input line 973.
-
-
-LaTeX Warning: Reference `513_h2' on page 21 undefined on input line 973.
 
 <513_uncomment.png, id=146, 656.95438pt x 416.05438pt>
 File: 513_uncomment.png Graphic file (type png)
@@ -1001,12 +948,6 @@ Overfull \hbox (4.43765pt too wide) in paragraph at lines 1005--1024
 
 ] [22 <./513_uncomment.png> <./513_jointlimits.png> <./513_comment.png> <./513_
 woutPS_jointLimits.png>]
-
-LaTeX Warning: Reference `522_n1' on page 23 undefined on input line 1056.
-
-
-LaTeX Warning: Reference `522_n2' on page 23 undefined on input line 1056.
-
 <522_wout_MP.png, id=160, 728.7225pt x 549.05125pt>
 File: 522_wout_MP.png Graphic file (type png)
 <use 522_wout_MP.png>
@@ -1108,20 +1049,17 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.5pt have occurred.
 
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  6233 strings out of 492162
  88254 string characters out of 6125292
- 179044 words of memory out of 5000000
+ 179517 words of memory out of 5000000
  10405 multiletter control sequences out of 15000+600000
  19854 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,42p,907b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,42p,901b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1140,7 +1078,7 @@ e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (26 pages, 13435444 bytes).
+Output written on cooperativeAGFG.pdf (26 pages, 13436115 bytes).
 PDF statistics:
  248 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams

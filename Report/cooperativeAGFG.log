@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  7 APR 2020 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  7 APR 2020 12:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -967,70 +967,70 @@ Overfull \hbox (4.43765pt too wide) in paragraph at lines 1077--1086
 
  <./522_wout_MP.png> <./522_w_MP.png>]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 1101.
+LaTeX Font Warning: Command \large invalid in math mode on input line 1102.
 
 <522_1_wout_TPIK2.png, id=167, 645.41125pt x 485.815pt>
 File: 522_1_wout_TPIK2.png Graphic file (type png)
 <use 522_1_wout_TPIK2.png>
-Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 1116.
+Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 1117.
 (pdftex.def)             Requested size: 177.42868pt x 133.55135pt.
 <522_1_w_TPIK2.png, id=168, 502.87875pt x 381.425pt>
 File: 522_1_w_TPIK2.png Graphic file (type png)
 <use 522_1_w_TPIK2.png>
-Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 1121.
+Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 1122.
 (pdftex.def)             Requested size: 177.42868pt x 134.57164pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1115--1124
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1116--1125
 []$[]$   $[]$ 
  []
 
 <522_2_wout_TPIK2.png, id=169, 643.40375pt x 484.30937pt>
 File: 522_2_wout_TPIK2.png Graphic file (type png)
 <use 522_2_wout_TPIK2.png>
-Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 1128.
+Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 1129.
 (pdftex.def)             Requested size: 177.42868pt x 133.55128pt.
 <522_2_w_TPIK2.png, id=170, 505.89pt x 379.4175pt>
 File: 522_2_w_TPIK2.png Graphic file (type png)
 <use 522_2_w_TPIK2.png>
-Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 1133.
+Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 1134.
 (pdftex.def)             Requested size: 177.42868pt x 133.0702pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1127--1136
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1128--1137
 []$[]$   $[]$ 
  []
 
 <522_3_wout_TPIK2.png, id=171, 643.40375pt x 485.815pt>
 File: 522_3_wout_TPIK2.png Graphic file (type png)
 <use 522_3_wout_TPIK2.png>
-Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 1140.
+Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 1141.
 (pdftex.def)             Requested size: 177.42868pt x 133.96648pt.
 
-Underfull \hbox (badness 1742) in paragraph at lines 1141--1141
+Underfull \hbox (badness 1742) in paragraph at lines 1142--1142
 []\OT1/cmr/m/n/10 Figure 42: Zoomed Er-ror: with-out
  []
 
 <522_3_w_TPIK2.png, id=172, 505.89pt x 381.425pt>
 File: 522_3_w_TPIK2.png Graphic file (type png)
 <use 522_3_w_TPIK2.png>
-Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 1145.
+Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 1146.
 (pdftex.def)             Requested size: 177.42868pt x 133.77428pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1139--1148
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1140--1149
 []$[]$   $[]$ 
  []
 
 <522_4_wout_TPIK2.png, id=173, 645.41125pt x 486.81876pt>
 File: 522_4_wout_TPIK2.png Graphic file (type png)
 <use 522_4_wout_TPIK2.png>
-Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 1152.
+Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 1153.
 (pdftex.def)             Requested size: 177.42868pt x 133.82729pt.
 <522_4_w_TPIK2.png, id=174, 504.88625pt x 378.41376pt>
 File: 522_4_w_TPIK2.png Graphic file (type png)
 <use 522_4_w_TPIK2.png>
-Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 1157.
+Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 1158.
 (pdftex.def)             Requested size: 177.42868pt x 132.98378pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1151--1160
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1152--1161
 []$[]$   $[]$ 
  []
 
@@ -1054,7 +1054,7 @@ Here is how much of TeX's memory you used:
  10405 multiletter control sequences out of 15000+600000
  19854 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,42p,901b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,42p,901b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1073,7 +1073,7 @@ e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (26 pages, 13436127 bytes).
+Output written on cooperativeAGFG.pdf (26 pages, 13436312 bytes).
 PDF statistics:
  248 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams

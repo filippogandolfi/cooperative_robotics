@@ -1097,6 +1097,7 @@ In order to implement an arm-vehicle coordination scheme, we implemented two opt
 \begin{enumerate}
 \item TPIK1 is the same of the previous exercises. It considers the vehicle and the manipulator as a fully controllable system. Therefore, when the hierarchy of task corresponding to the action $A$ is solved, we take the reference for the vehicle velocities while we discard the joints velocities one.
 \item TPIK2 is equal to TPIK1 plus an additional task at the top of the hierarchy. This task is a non-reactive one and it is used to constrain the vehicle velocities. The Jacobian for this task is:
+\vspace{5px}
 \begin{equation}
 \large
 \boldsymbol{J}_{vConstr}=
@@ -1109,7 +1110,7 @@ Therefore, TPIK2 provides the optimal joints velocities by taking into account t
 \end{enumerate}
 
 \subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
-The vehicle and the manipulator try to compensate the disturbances. This means that if the gain is high enough and the amplitude of the disturbance is not too big, they are fast enough to reduce the error at the price of a smooth behaviour. Nevertheless when the amplitude of the sinusoidal disturbance becomes too big, they are not able to follow and to minimize the error, resulting in a sinusoidal behavior visible on the related plot (AGGIUNGERE IMMAGINI)??.
+The vehicle and the manipulator try to compensate the disturbances. This means that if the gain is high enough and the amplitude of the disturbance is not too big, they are fast enough to reduce the error at the price of a smooth behaviour. Nevertheless when the amplitude of the sinusoidal disturbance becomes too big, they are not able to follow and to minimize the error, resulting in a sinusoidal behavior visible on the related plot (without TPIK2 images: \ref{JL_wout_TPIK2}, \ref{Error_wout_TPIK2}, \ref{zoomed_error_wout_TPIK2}, \ref{Jqandqdot_wout_TPIK2}; with TPIK2 images: \ref{JL_w_TPIK2}, \ref{Error_w_TPIK2}, \ref{zoomed_error_w_TPIK2}, \ref{Jqandqdot_w_TPIK2}).
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
 \begin{minipage}{0.40\textwidth} 

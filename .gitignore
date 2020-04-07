@@ -14,3 +14,4 @@
 *.fdb_latexmk
 Report/.DS_Store
 *.log
+*.aux

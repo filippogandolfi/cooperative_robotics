@@ -125,9 +125,9 @@ The \textbf{hierarchy of the tasks}, in order of priority:
 
 \noindent
 \begin{description}
-	\item \textbf{Manipulability} [R, I, P], it is used to maintain arm dexterity above a certain threshold.
-	\item \textbf{Horizontal Attitude} [R, I, S], it is fundamental to keep the vehicle horizontal with respect to absolute world frame. 
-	\item \textbf{Vehicle Position} [R, I, AD], it is an action-defining task, therefore it has lower priority. This is the first task we implemented, the goal of this task is to compute velocities to align the vehicle frame with the desired goal frame, within a certain bound.
+	\item \textbf{Manipulability} [R, I, P]: it is used to maintain arm dexterity above a certain threshold.
+	\item \textbf{Horizontal Attitude} [R, I, S]: it is fundamental to keep the vehicle horizontal with respect to absolute world frame. 
+	\item \textbf{Vehicle Position} [R, I, AD]: it is an action-defining task, therefore it has lower priority. This is the first task we implemented, the goal of this task is to compute velocities to align the vehicle frame with the desired goal frame, within a certain bound.
 \end{description}
 
 \noindent
@@ -240,10 +240,10 @@ The new \textbf{hierarchy} of tasks is:
 \noindent
 \vspace{5px}
 The new task implemented: \\
-\textbf{Minimum Altitude} [R, I, S], it is a safety task, so it has high priority. This task improves to the UVMS the ability to avoid collisions with the seafloor.
+\textbf{Minimum Altitude} [R, I, S]: it is a safety task, thus it has high priority. This task improves to the UVMS the ability to avoid collisions with the seafloor.
 
 \subsubsection{Q2: What is the Jacobian relationship for the Minimum Altitude control task? How was the task reference computed?}
-We need to control the movement along the $z$ axis, so we use the same Jacobian of the \textit{Vehicle Position}, but selecting only the component related to the $z$ axis.
+We need to control the movement along the $z$ axis, therefore we use the same Jacobian of the \textit{Vehicle Position}, but selecting only the component related to the $z$ axis.
 
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
@@ -291,9 +291,9 @@ where:
 In order to test this task we ran the simulation with different values for the minimum altitude, all with the same $k$ gain (equal to $0.2$).
 
 \begin{itemize}
-    \item \textbf{10 m:} The UVMS has initial position below this threshold, so it starts floating towards the surface very quickly (it is possible also to notice this huge vertical velocity $\dot{z}$, in the graph (Figure \ref{10m_ppdot})). 
+    \item \textbf{10 m:} The UVMS has initial position below this threshold, thus it starts floating towards the surface very quickly (it is possible also to notice this huge vertical velocity $\dot{z}$, in the graph (Figure \ref{10m_ppdot})). 
     Of course, the task is not accomplished because the target position is far from the threshold, therefore, this value does not seem a reasonable one. % 
-    \item \textbf{5 m:} Again, the task is triggered immediately, because the initial position is below the minimum altitude value. This control task is a safety one, so every time the UVMS is under the minimum altitude, the activation is enabled and it has the highest priority. 
+    \item \textbf{5 m:} Again, the task is triggered immediately, because the initial position is below the minimum altitude value. This control task is a safety one, therefore every time the UVMS is under the minimum altitude, the activation is enabled and it has the highest priority. 
     Again, it seems not a reasonable value. (Figure \ref{5m_ppdot}).
     \item \textbf{1 m:} The control task is no more active at the starting instant. The UVMS starts to accomplish the \textit{Vehicle Position} task and, when the seafloor presents an hill, the vehicle starts to follow its shape (Figure \ref{1m_ppdot}). 
 \end{itemize}
@@ -392,7 +392,7 @@ The new \textbf{hierarchy} of tasks is:
 \noindent
 \vspace{2px}
 \begin{description}
-\item \textbf{Landing} [R, E, AD], it is the new task. It is an Action Defining task, so it has the same level of priority of the \textit{Vehicle Position}.
+\item \textbf{Landing} [R, E, AD]: it is the new task. It is an Action Defining task, thus it has the same level of priority of the \textit{Vehicle Position}.
 \end{description}
 
 \noindent
@@ -545,7 +545,7 @@ Then land, aligning to the nodule.
 Goal: Add an alignment task between the longitudinal axis of the vehicle ($x$ axis) and the nodule target. In particular, the $x$ axis of the vehicle should align to the projection, on the inertial horizontal plane, of the unit vector joining the vehicle frame to the nodule frame.
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Comment the behavior.}
-We have three different actions, with this hierarchy and activations:
+We have three different actions, with the following \textbf{hierarchy} and activations:
 %%%%%% TABLE %%%%%%%%%
 \begin{center}
 \begin{tabular}{ | c | c | c | c | c |}
@@ -566,7 +566,7 @@ We have three different actions, with this hierarchy and activations:
 \noindent
 The new task is:
 \begin{description}
-\item \textbf{Alignment to the Rock} [R, I, P], it is a prerequisite task, so it has higher priority than the action-defining tasks. Inequality, because we admit a $\Delta$ of errors equal to $0.07$.   \ocio 
+\item \textbf{Alignment to the Rock} [R, I, P]: it is a prerequisite task, therefore it has higher priority than the action-defining tasks. Inequality, because we admit a range of error equal to $0.07$.   \ocio 
 \end{description}
 
 \begin{figure}[h]
@@ -577,9 +577,9 @@ The new task is:
 \end{figure}
 
 \begin{description}
-	\item Action A, again, a safe waypoint navigation with all the safety tasks enabled (Figure \ref{311a}). 
-	\item Action B, it is the action that performs the alignment to the rock, with all the safety task enabled (Figure \ref{311b}). 
-	\item Action C, \textit{Alignment to the Rock} is not disable because, while the UVMS starts landing, we disable smoothly the alignment. In this case, while the robot is performing the landing, it continue to rotate to optimize the orientation (Figure \ref{311c}).
+	\item Action A, as before, is a safe waypoint navigation with all the safety tasks enabled (Figure \ref{311a}). 
+	\item Action B is the action that performs the alignment to the rock, with all the safety task enabled (Figure \ref{311b}). 
+	\item Action C performs the safe landing on the seafloor. \textit{Alignment to the Rock} is gradually disabled in order to optimize the alignment while the robot is performing the landing (Figure \ref{311c}).
 \end{description}
 
 
@@ -602,11 +602,11 @@ The new task is:
 
 \subsubsection{Q2: What is the Jacobian relationship for the Alignment to Target control task? How was the task reference computed?} \
 
-The Jacobian relationshio for the Alignment starts from here:
+The Jacobian relationship for the Alignment is derived from the following formula:
 
 \begin{equation}
 \large
-D_{w}(\boldsymbol \rho)=\boldsymbol J_{alr} \boldsymbol \dot{q}
+D_{w}(\boldsymbol \rho)=\boldsymbol J_{alr} \boldsymbol \dot{y}
 \end{equation}
 
 Where defining $\boldsymbol J_{alr} $ is our goal.
@@ -617,7 +617,7 @@ We know that:
 D_{w}(\boldsymbol \rho)={^w}\boldsymbol n_{\rho} \dot\theta+\underbrace{\theta D_{w} {^w}{\boldsymbol n_{\rho}}}_{orthogonal}
 \end{equation}
 
-We are not interested on the orthogonal components so we can ignore them.
+Since we are not interested on the orthogonal components, we can ignore them.
 
 Regarding the first part of the equation,
 \begin{equation}
@@ -630,7 +630,7 @@ Regarding the first part of the equation,
 D_w(\boldsymbol \rho)={^w}\boldsymbol n_\rho^\top \left({^w}{\boldsymbol \omega}_{v}-{^w}{\boldsymbol \omega_{rock}}\right)
 \end{equation}
 
-We need to describe ${^w}{\boldsymbol{\omega}}_{v} \text{ and } \boldsymbol{\omega}_{rock} \text{ in term of } \boldsymbol{\dot{q}} $
+By describing  ${^w}{\boldsymbol{\omega}}_{v} \text{ in terms of } \boldsymbol{\dot{y}} $, we obtain the following Jacobian
 
 \begin{equation}
 \large
@@ -639,6 +639,8 @@ We need to describe ${^w}{\boldsymbol{\omega}}_{v} \text{ and } \boldsymbol{\ome
      \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}}\\
     \end{bmatrix}
 \end{equation}
+
+In order to describe ${^w}\boldsymbol{\omega}_{rock} \text{ in terms of }  \boldsymbol{\dot{y}}$, we use the following relationship
 
 \begin{equation}
 \large
@@ -651,7 +653,7 @@ We need to describe ${^w}{\boldsymbol{\omega}}_{v} \text{ and } \boldsymbol{\ome
 \end{equation}
 
 \noindent
-We are interested only on the $x$ and $y$ component of ${^w}{\boldsymbol v_{v}}$, to do this we premultiply, like this:
+Since we are interested only in the $x$ and $y$ component of ${^w}{\boldsymbol v_{v}}$, we select such components by premultiplying like this:
 
 \begin{equation}
 \large
@@ -683,6 +685,7 @@ We are interested only on the $x$ and $y$ component of ${^w}{\boldsymbol v_{v}}$
 %    \end{bmatrix}
 %\end{equation}
 
+From the last equation, we obtain the following Jacobian
 
 \begin{equation}
 \large
@@ -697,6 +700,8 @@ We are interested only on the $x$ and $y$ component of ${^w}{\boldsymbol v_{v}}$
     \end{bmatrix}
 \end{equation}
 
+The resulting Jacobian is obtained by substitution and it is equal to 
+
 \begin{equation}
 \large
 \boldsymbol J_{\text {alr }}={^w}{\boldsymbol n_{\rho}^\top}[{ \boldsymbol J_{vehicle} - \boldsymbol J_{rock}}]
@@ -707,12 +712,12 @@ We performed tests with different gain values for the task reference:
 \begin{itemize}
 	\item Very Small = $0.1$
 	\item Medium = $0.6$
-	\item Big = $1.2$
+	\item High = $1.2$
 \end{itemize}
-First, looking at positions and velocities graphs, it is clear that between the medium (Figure \ref{ppdot_w_m}) and the big gain (Figure \ref{ppdot_w_b}) there are no such important differences, with the big gain that transition between the two phases are not so smooth as for the medium one. Of course, the saturation helps the case with the big gain to not perform a too high velocity. 
-For the very small gain, the resulted graph is very different (Figure \ref{ppdot_w_s}), becausethe very low velocity performed during the alignment doesn't help to reach the desired position. In our 30 seconds simulation is impossible for the UVMS to align correctly. However, also improving the simulation time, it is normal that it is too slow to accomplish our goal.
+By looking at the position and velocity plots, it is clear that there are no significant differences between the medium (Figure \ref{ppdot_w_m}) and the high gain (Figure \ref{ppdot_w_b}) cases. The only difference is that the transition between phases in the high gain case is not as smooth as the medium one. Of course, the saturation prevents the case with the high tbioghe case with the high gain to not perform a too high velocity. 
+For the very small gain, the resulted graph is very different (Figure \ref{ppdot_w_s}), because the velocity achieved during the alignment is not enough to reach the desired position. In our 30 seconds simulation is impossible for the UVMS to align correctly. However, by increasing the simulation time, it is possible to accomplish our goal, even with such slow behavior..
 
-From the point of view of the activations and the errors, there are not different results than before. Medium and big gain graphs are very similar (almost identical) and the very small gain graph confirm the previous sentences.
+From the point of view of the activations and the errors, the results are coherent with the ones observed in the position and velocity plots.
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
 \begin{minipage}{0.40\textwidth}  
@@ -727,7 +732,7 @@ From the point of view of the activations and the errors, there are not differen
 \hspace{0.2\textwidth} 
 \begin{minipage}{0.40\textwidth}  
 \includegraphics[width=\textwidth]{313_b_ppdot.png}
-\caption{Positions and Velocity with big gain}\label{ppdot_w_b} 
+\caption{Positions and Velocity with high gain}\label{ppdot_w_b} 
 \end{minipage}
 \end{figure}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
@@ -744,36 +749,36 @@ From the point of view of the activations and the errors, there are not differen
 \hspace{0.2\textwidth} 
 \begin{minipage}{0.40\textwidth}  
 \includegraphics[width=\textwidth]{313_b_Activation.png}
-\caption{Activations with big gain}\label{act_w_b} 
+\caption{Activations with high gain}\label{act_w_b} 
 \end{minipage}
 \end{figure}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
 \begin{minipage}{0.40\textwidth}  
 \includegraphics[width=\textwidth]{313_s_Errors.png}
-\caption{Errors with small}\label{err_w_s} 
+\caption{Errors with small gain}\label{err_w_s} 
 \end{minipage}  
 \hspace{0.2\textwidth} 
 \begin{minipage}{0.40\textwidth}  
 \includegraphics[width=\textwidth]{313_m_Errors.png}
-\caption{Errors with medium}\label{err_w_m} 
+\caption{Errors with medium gain}\label{err_w_m} 
 \end{minipage} 
 \hspace{0.2\textwidth} 
 \begin{minipage}{0.40\textwidth}  
 \includegraphics[width=\textwidth]{313_b_Errors.png}
-\caption{Errors with big}\label{err_w_b} 
+\caption{Errors with high gain}\label{err_w_b} 
 \end{minipage}
 \end{figure}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 
 \clearpage 
 \subsubsection{Q4: After the landing is accomplished, what happens if you try to move the end-effector? Is the distance to the nodule sufficient to reach it with the end-effector? Comment the observed behavior.}\label{ex3}
-The tool could reach the center of the nodule, however, we notice that the vehicle moves to ``help'' the arm to achieve the desired position. It is clear that, to avoid this problem, we need to perform a non-reactive task to constraint the vehicle not move, as we will do in the next exercise \ref{subsec:non-react}. 
+The tool is able to reach the center of the nodule, however, we notice that, in order to do so, the vehicle "helps'' the arm to achieve the desired position by moving itself (coherently with the expected behavior of the \textit{Tool} task). It is clear that, in order to avoid this problem, we need to perform a non-reactive task to constraint the vehicle movements, as we will do in the next exercise \ref{subsec:non-react}. 
 
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{314_ppdot.png}
-    \caption{Visible that when tool starts move, vehicle helps it}
+    \caption{The velocity plot shows that when tool starts moving, the vehicle moves as well}
     \label{graphes3}
 \end{figure}
 
@@ -785,7 +790,7 @@ To manipulate as a fixed based manipulator, we need to constraint the vehicle to
 Goal: Add a constraint task that fixes the vehicle velocity to zero. Land on the seafloor. Try reaching the rock position with the end-effector, and observe that the vehicle does not move.
 
 \subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. At which priority level did you add the constraint task?}
-We have four different actions, with this hierarchy and activations:
+We have four different actions, with the following \textbf{hierarchy} and activations:
 %%%%%% TABLE %%%%%%%%%
 \begin{center}
 \begin{tabular}{ | c | c | c | c | c | c |}
@@ -805,15 +810,15 @@ We have four different actions, with this hierarchy and activations:
 \end{center}
 %%%%%% TABLE %%%%%%%%%
 \begin{description}
-\item \textbf{Vehicle Null Velocity} [NR, E, C], it is a constraint task, so it has higher priority than all the other tasks. The goal of the task is to block the motors.
-\item \textbf{Tool Position} [R, E, AD], it is an Action Definition task, that enable the arm to reach the tool target position. 
+\item \textbf{Vehicle Null Velocity} [NR, E, C]: it is a constraint task, therefore it has higher priority than all the other tasks. The goal of the task is to prevent the vehicle movements.
+\item \textbf{Tool Position} [R, E, AD]: it is an Action Definition task, that enables the arm to reach the tool target position, eventually by moving the vehicle as well. 
 \end{description}
 
 \begin{description}
 	\item Action A, safe waypoint navigation with all the safety task activated
 	\item Action B, alignment to the nodule with all the safety task activated
-	\item Action C, landing and final rotation to be aligned with the rock
-	\item Action D, the new one. Here it is enable the new \textit{Vehicle Null Velocity} task, that disable the UVMS' motors, to prevent movement. The only movement will be the extension of the arm to reach the desired target tool position.
+	\item Action C, landing and smooth rotation to be aligned with the rock
+	\item Action D, manipulator actuation after landing. Here it is enable the new \textit{Vehicle Null Velocity} task, that disable the UVMS' motors, to prevent movement. The only movement will be the extension of the arm to reach the desired target tool position.
 \end{description}
 
 %%%%%%% near images %%%%%%% 
@@ -829,7 +834,7 @@ We have four different actions, with this hierarchy and activations:
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%%
 \subsubsection{Q2: What is the Jacobian relationship for the Vehicle Null Velocity task? How was the task reference computed?}
-The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Position, but this time we need to fix the velocity of the UVMS to zero, so we premultiply it for the zeros vector. % CI VA IL TRASPOSTO? BE SURE DI OGNI MATRIX COME é FATTA
+The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Position, but this time we need to fix the velocity of the UVMS to zero, thus we premultiply it for the zeros vector. % CI VA IL TRASPOSTO? BE SURE DI OGNI MATRIX COME é FATTA
 
 %%%%%%% Jacobian Matrix %%%%%%% 
 \begin{equation}
@@ -847,7 +852,7 @@ The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Posit
 The velocity will not change during the activation of this task because it is a Non-Reactive.
 
 \subsubsection{Q3: Suppose the vehicle floating, i.e. not landed on the seafloor. What would happen, if due to currents, the vehicle moves?}
-The Vehicle Null task cannot take in position the UVMS, it doesn't take into account disturbances, it only put velocities to zero, so it is not able to contrast currents. In this scenario, the robot will start follow the current and it will go to a wrong position. The arm will continue to try to reach the desired position, and because it is not landed, the \textit{Vehicle Null Velocity} is not active, so the Tool Position try to achieve its goal and bring back all the vehicle. If the currents are not too strong it could reach again the position. Different from the previous exercise \ref{ex3}, in which the vehicle could not help the arm to be able to arrive to the target, now it could ``help''. \ocio
+The Vehicle Null task cannot take in position the UVMS, it doesn't take into account disturbances, it only put velocities to zero, therefore it is not able to contrast currents. In this scenario, the robot will start follow the current and it will go to a wrong position. The arm will continue to try to reach the desired position, and because it is not landed, the \textit{Vehicle Null Velocity} is not active, thus the Tool Position try to achieve its goal and bring back all the vehicle. If the currents are not too strong it could reach again the position. Different from the previous exercise \ref{ex3}, in which the vehicle could not help the arm to be able to arrive to the target, now it could ``help''. \ocio
 \clearpage
 
 \subsection{Adding a joint limit task}
@@ -878,7 +883,7 @@ We have four different actions, with this hierarchy and activations:
 %%%%%% TABLE %%%%%%%%%
 
 \begin{description}
-\item \textbf{Joint Limit} [R, I, S], it is a safety task, so it has higher priority than the other action-defining tasks. It is able to control that the joints don't operate over their prefixed threshold. \ocio
+\item \textbf{Joint Limit} [R, I, S], it is a safety task, thus it has higher priority than the other action-defining tasks. It is able to control that the joints don't operate over their prefixed threshold. \ocio
 \end{description}
 
 The actions are the same as before, the only difference is that Joint Limit is always active because it is a safety task. However, it is important when the robot perform the final action. 

@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  7 APR 2020 12:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.4.2)  7 APR 2020 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **cooperativeAGFG.tex
 (./cooperativeAGFG.tex
-LaTeX2e <2019-10-01> patch level 3
+LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/10/25 v1.4k Standard LaTeX document class
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -24,18 +24,22 @@ File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
+Package: geometry 2018/04/16 v5.8 Page Geometry
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2019/texmf-dist/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
-))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
 \Gm@cnth=\count88
 \Gm@cntv=\count89
 \c@Gm@tempcnt=\count90
@@ -56,7 +60,7 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/01 v1.3d Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -64,7 +68,7 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
@@ -81,7 +85,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 147.
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2019/03/01 v1.8w multicolumn formatting (FMi)
+Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \c@tracingmulticols=\count91
 \mult@box=\box27
 \multicol@leftmargin=\dimen113
@@ -120,21 +124,20 @@ Package: multicol 2019/03/01 v1.8w multicolumn formatting (FMi)
 \@tempa=\box48
 \@tempa=\box49
 \@tempa=\box50
-\c@minrows=\count97
-\c@columnbadness=\count98
-\c@finalcolumnbadness=\count99
+\c@columnbadness=\count97
+\c@finalcolumnbadness=\count98
 \last@try=\dimen119
 \multicolovershoot=\dimen120
 \multicolundershoot=\dimen121
 \mult@nat@firstbox=\box51
 \colbreak@box=\box52
-\mc@col@check@num=\count100
+\mc@col@check@num=\count99
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
 \FN@temptoken=\toks16
 \footnotemargin=\dimen122
-\c@pp@next@reset=\count101
+\c@pp@next@reset=\count100
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -152,12 +155,11 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks17
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2019/11/16 v2.17d AMS math features
+Package: amsmath 2018/12/01 v2.17b AMS math features
 \@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
@@ -176,30 +178,30 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count102
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count103
-\leftroot@=\count104
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count105
-\DOTSCASE@=\count106
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
+\inf@bad=\count101
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count102
+\leftroot@=\count103
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count104
+\DOTSCASE@=\count105
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
 \Mathstrutbox@=\box53
 \strutbox@=\box54
 \big@size=\dimen125
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count107
-\c@MaxMatrixCols=\count108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count106
+\c@MaxMatrixCols=\count107
 \dotsspace@=\muskip10
-\c@parentequation=\count109
-\dspbrk@lvl=\count110
+\c@parentequation=\count108
+\dspbrk@lvl=\count109
 \tag@help=\toks19
-\row@=\count111
-\column@=\count112
-\maxfields@=\count113
+\row@=\count110
+\column@=\count111
+\maxfields@=\count112
 \andhelp@=\toks20
 \eqnshift@=\dimen126
 \alignsep@=\dimen127
@@ -211,14 +213,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \multlinegap=\skip46
 \multlinetaggap=\skip47
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2858.
-LaTeX Info: Redefining \] on input line 2859.
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/numberedblock/numberedblock.sty
 Package: numberedblock 2014/02/24 v1.10
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks23
 \verbatim@line=\toks24
 \verbatim@in@stream=\read1
@@ -237,22 +239,22 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/listofitems/listofitems.sty
 (/usr/local/texlive/2019/texmf-dist/tex/generic/listofitems/listofitems.tex
-\loi_cnt_foreach_nest=\count114
-\loi_nestcnt=\count115
+\loi_cnt_foreach_nest=\count113
+\loi_nestcnt=\count114
 )
-Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
+Package: listofitems 2019/03/03 v1.61 Grab items in lists using user-specified 
 sep char (CT)
 )
-\c@@index=\count116
-\c@@plane=\count117
-\c@@row=\count118
-\c@@col=\count119
-\c@use@args=\count120
-\c@@record=\count121
-\c@arg@index=\count122
-\c@break@count=\count123
-\c@index@count=\count124
-\c@loop@count=\count125
+\c@@index=\count115
+\c@@plane=\count116
+\c@@row=\count117
+\c@@col=\count118
+\c@use@args=\count119
+\c@@record=\count120
+\c@arg@index=\count121
+\c@break@count=\count122
+\c@index@count=\count123
+\c@loop@count=\count124
 \Arg@toks=\toks25
 \@arrayident@toks=\toks26
 \rdar@file=\read2
@@ -260,7 +262,7 @@ sep char (CT)
 readarray: bounds checking OFF
 )
 \savedverbbox=\box55
-\c@VerbboxLineNo=\count126
+\c@VerbboxLineNo=\count125
 \boxtopsep=\dimen132
 \boxbottomsep=\dimen133
 \ps@tempdima=\dimen134
@@ -268,80 +270,88 @@ readarray: bounds checking OFF
 \boxtop@sep=\skip48
 \boxbottom@sep=\skip49
 )
-\c@nb@counter=\count127
+\c@nb@counter=\count126
 \@savedverbbox=\box57
 \maxblocklabelsize=\skip50
 \blockindent=\skip51
-\c@blocknum=\count128
+\c@blocknum=\count127
 \codeblockwidth=\skip52
 \parindentsave=\skip53
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
-LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
-
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
-LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
-
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
-Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
 \symboldsymbols=\mathgroup8
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
-LaTeX Info: Redefining \bm on input line 209.
+LaTeX Info: Redefining \bm on input line 207.
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
 \multirow@colwidth=\skip54
-\multirow@cntb=\count129
+\multirow@cntb=\count128
 \multirow@dima=\skip55
 \bigstrutjot=\dimen135
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
-Package: epstopdf 2019-12-09 v2.10 Conversion with epstopdf on the fly (HO)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
 
-(/usr/local/texlive/2019/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/local/texlive/2019/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)) (/usr/local/texlive/2019/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-(/usr/local/texlive/2019/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
-(/usr/local/texlive/2019/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
+Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2019-12-09 v2.10 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
+38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -352,23 +362,23 @@ Package: stackengine 2017/02/13 v4.01\ Stacking text and objects in convenient
 ways
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count130
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count129
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count131
-\calc@Bcount=\count132
+\calc@Acount=\count130
+\calc@Bcount=\count131
 \calc@Adimen=\dimen136
 \calc@Bdimen=\dimen137
 \calc@Askip=\skip56
 \calc@Bskip=\skip57
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count133
+\calc@Ccount=\count132
 \calc@Cskip=\skip58
 )
-\c@@stackindex=\count134
+\c@@stackindex=\count133
 \@boxshift=\skip59
 \stack@tmplength=\skip60
 \temp@stkl=\skip61
@@ -377,7 +387,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \@anchorbox=\box59
 \stackedbox=\box60
 \@centerbox=\box61
-\c@ROWcellindex@=\count135
+\c@ROWcellindex@=\count134
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/cases/cases.sty
 Package: cases 2002/05/02 ver 2.5 
@@ -386,8 +396,8 @@ Package: cases 2002/05/02 ver 2.5
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 61.
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
 \captionmargin=\dimen138
 \captionmargin@=\dimen139
 \captionwidth=\dimen140
@@ -395,19 +405,18 @@ Package caption3 Info: TeX engine: e-TeX on input line 61.
 \caption@indent=\dimen142
 \caption@parindent=\dimen143
 \caption@hangindent=\dimen144
-Package caption Info: Standard document class detected.
 )
-\c@KVtest=\count136
+\c@KVtest=\count135
 \sf@farskip=\skip63
 \sf@captopadj=\dimen145
 \sf@capskip=\skip64
 \sf@nearskip=\skip65
-\c@subfigure=\count137
-\c@subfigure@save=\count138
-\c@lofdepth=\count139
-\c@subtable=\count140
-\c@subtable@save=\count141
-\c@lotdepth=\count142
+\c@subfigure=\count136
+\c@subfigure@save=\count137
+\c@lofdepth=\count138
+\c@subtable=\count139
+\c@subtable@save=\count140
+\c@lotdepth=\count141
 \sf@top=\skip66
 \sf@bottom=\skip67
 )
@@ -491,16 +500,16 @@ LaTeX Font Info:    ... okay on input line 58.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count143
+\scratchcounter=\count142
 \scratchdimen=\dimen146
 \scratchbox=\box62
-\nofMPsegments=\count144
-\nofMParguments=\count145
+\nofMPsegments=\count143
+\nofMParguments=\count144
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count146
+\MPscratchCnt=\count145
 \MPscratchDim=\dimen147
-\MPnumerator=\count147
-\makeMPintoPDFobject=\count148
+\MPnumerator=\count146
+\makeMPintoPDFobject=\count147
 \everyMPtoPDFconversion=\toks28
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -511,8 +520,7 @@ Package caption Info: End \AtBeginDocument code.
 
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 8
-1.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 81.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -523,14 +531,12 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
-
+LaTeX Font Info:    Try loading font information for U+msa on input line 96.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
-
+LaTeX Font Info:    Try loading font information for U+msb on input line 96.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -780,89 +786,90 @@ LaTeX Font Warning: Command \large invalid in math mode on input line 629.
 LaTeX Font Warning: Command \large invalid in math mode on input line 636.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 644.
+LaTeX Font Warning: Command \large invalid in math mode on input line 646.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 649.
+LaTeX Font Warning: Command \large invalid in math mode on input line 651.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 657.
+LaTeX Font Warning: Command \large invalid in math mode on input line 659.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 688.
+LaTeX Font Warning: Command \large invalid in math mode on input line 691.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 701.
-
-<313_s_ppdot.png, id=94, 605.26125pt x 456.70625pt>
-File: 313_s_ppdot.png Graphic file (type png)
-<use 313_s_ppdot.png>
-Package pdftex.def Info: 313_s_ppdot.png  used on input line 719.
-(pdftex.def)             Requested size: 177.42868pt x 133.87698pt.
-<313_m_ppdot.png, id=95, 603.25375pt x 454.69875pt>
-File: 313_m_ppdot.png Graphic file (type png)
-<use 313_m_ppdot.png>
-Package pdftex.def Info: 313_m_ppdot.png  used on input line 724.
-(pdftex.def)             Requested size: 177.42868pt x 133.73254pt.
-<313_b_ppdot.png, id=96, 605.26125pt x 454.69875pt>
-File: 313_b_ppdot.png Graphic file (type png)
-<use 313_b_ppdot.png>
-Package pdftex.def Info: 313_b_ppdot.png  used on input line 729.
-(pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
-
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 718--732
-[]$[]$   $[]$
- []
-
-<313_s_Activation.png, id=97, 605.26125pt x 454.69875pt>
-File: 313_s_Activation.png Graphic file (type png)
-<use 313_s_Activation.png>
-Package pdftex.def Info: 313_s_Activation.png  used on input line 736.
-(pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
-<313_m_Activation.png, id=98, 604.2575pt x 454.69875pt>
-File: 313_m_Activation.png Graphic file (type png)
-<use 313_m_Activation.png>
-Package pdftex.def Info: 313_m_Activation.png  used on input line 741.
-(pdftex.def)             Requested size: 177.42868pt x 133.51053pt.
-<313_b_Activation.png, id=99, 604.2575pt x 454.69875pt>
-File: 313_b_Activation.png Graphic file (type png)
-<use 313_b_Activation.png>
-Package pdftex.def Info: 313_b_Activation.png  used on input line 746.
-(pdftex.def)             Requested size: 177.42868pt x 133.51053pt.
-
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 735--749
-[]$[]$   $[]$
- []
-
-<313_s_Errors.png, id=100, 605.26125pt x 455.7025pt>
-File: 313_s_Errors.png Graphic file (type png)
-<use 313_s_Errors.png>
-Package pdftex.def Info: 313_s_Errors.png  used on input line 753.
-(pdftex.def)             Requested size: 177.42868pt x 133.58275pt.
-<313_m_Errors.png, id=101, 605.26125pt x 453.695pt>
-File: 313_m_Errors.png Graphic file (type png)
-<use 313_m_Errors.png>
-Package pdftex.def Info: 313_m_Errors.png  used on input line 758.
-(pdftex.def)             Requested size: 177.42868pt x 132.99428pt.
-<313_b_Errors.png, id=102, 605.26125pt x 455.7025pt>
-File: 313_b_Errors.png Graphic file (type png)
-<use 313_b_Errors.png>
-Package pdftex.def Info: 313_b_Errors.png  used on input line 763.
-(pdftex.def)             Requested size: 177.42868pt x 133.58275pt.
-
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 752--766
-[]$[]$   $[]$
- []
+LaTeX Font Warning: Command \large invalid in math mode on input line 706.
 
 [13
 
-] [14 <./313_s_ppdot.png> <./313_m_ppdot.png> <./313_b_ppdot.png>] [15 <./313_s
-_Activation.png> <./313_m_Activation.png> <./313_b_Activation.png> <./313_s_Err
-ors.png> <./313_m_Errors.png> <./313_b_Errors.png>]
+]
+<313_s_ppdot.png, id=98, 605.26125pt x 456.70625pt>
+File: 313_s_ppdot.png Graphic file (type png)
+<use 313_s_ppdot.png>
+Package pdftex.def Info: 313_s_ppdot.png  used on input line 724.
+(pdftex.def)             Requested size: 177.42868pt x 133.87698pt.
+<313_m_ppdot.png, id=99, 603.25375pt x 454.69875pt>
+File: 313_m_ppdot.png Graphic file (type png)
+<use 313_m_ppdot.png>
+Package pdftex.def Info: 313_m_ppdot.png  used on input line 729.
+(pdftex.def)             Requested size: 177.42868pt x 133.73254pt.
+<313_b_ppdot.png, id=100, 605.26125pt x 454.69875pt>
+File: 313_b_ppdot.png Graphic file (type png)
+<use 313_b_ppdot.png>
+Package pdftex.def Info: 313_b_ppdot.png  used on input line 734.
+(pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
+
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 723--737
+[]$[]$   $[]$
+ []
+
+<313_s_Activation.png, id=101, 605.26125pt x 454.69875pt>
+File: 313_s_Activation.png Graphic file (type png)
+<use 313_s_Activation.png>
+Package pdftex.def Info: 313_s_Activation.png  used on input line 741.
+(pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
+<313_m_Activation.png, id=102, 604.2575pt x 454.69875pt>
+File: 313_m_Activation.png Graphic file (type png)
+<use 313_m_Activation.png>
+Package pdftex.def Info: 313_m_Activation.png  used on input line 746.
+(pdftex.def)             Requested size: 177.42868pt x 133.51053pt.
+<313_b_Activation.png, id=103, 604.2575pt x 454.69875pt>
+File: 313_b_Activation.png Graphic file (type png)
+<use 313_b_Activation.png>
+Package pdftex.def Info: 313_b_Activation.png  used on input line 751.
+(pdftex.def)             Requested size: 177.42868pt x 133.51053pt.
+
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 740--754
+[]$[]$   $[]$
+ []
+
+<313_s_Errors.png, id=104, 605.26125pt x 455.7025pt>
+File: 313_s_Errors.png Graphic file (type png)
+<use 313_s_Errors.png>
+Package pdftex.def Info: 313_s_Errors.png  used on input line 758.
+(pdftex.def)             Requested size: 177.42868pt x 133.58275pt.
+<313_m_Errors.png, id=105, 605.26125pt x 453.695pt>
+File: 313_m_Errors.png Graphic file (type png)
+<use 313_m_Errors.png>
+Package pdftex.def Info: 313_m_Errors.png  used on input line 763.
+(pdftex.def)             Requested size: 177.42868pt x 132.99428pt.
+<313_b_Errors.png, id=106, 605.26125pt x 455.7025pt>
+File: 313_b_Errors.png Graphic file (type png)
+<use 313_b_Errors.png>
+Package pdftex.def Info: 313_b_Errors.png  used on input line 768.
+(pdftex.def)             Requested size: 177.42868pt x 133.58275pt.
+
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 757--771
+[]$[]$   $[]$
+ []
+
+[14 <./313_s_ppdot.png> <./313_m_ppdot.png> <./313_b_ppdot.png>] [15 <./313_s_A
+ctivation.png> <./313_m_Activation.png> <./313_b_Activation.png> <./313_s_Error
+s.png> <./313_m_Errors.png> <./313_b_Errors.png>]
 <314_ppdot.png, id=122, 604.2575pt x 454.69875pt>
 File: 314_ppdot.png Graphic file (type png)
 <use 314_ppdot.png>
-Package pdftex.def Info: 314_ppdot.png  used on input line 775.
+Package pdftex.def Info: 314_ppdot.png  used on input line 780.
 (pdftex.def)             Requested size: 241.69872pt x 181.87627pt.
  [16
 
@@ -870,77 +877,77 @@ Package pdftex.def Info: 314_ppdot.png  used on input line 775.
 <411_q.png, id=127, 668.4975pt x 262.9825pt>
 File: 411_q.png Graphic file (type png)
 <use 411_q.png>
-Package pdftex.def Info: 411_q.png  used on input line 822.
+Package pdftex.def Info: 411_q.png  used on input line 827.
 (pdftex.def)             Requested size: 266.14978pt x 104.70558pt.
 <411_ppdot.png, id=128, 605.26125pt x 455.7025pt>
 File: 411_ppdot.png Graphic file (type png)
 <use 411_ppdot.png>
-Package pdftex.def Info: 411_ppdot.png  used on input line 825.
+Package pdftex.def Info: 411_ppdot.png  used on input line 830.
 (pdftex.def)             Requested size: 266.14978pt x 200.38455pt.
 <411_Errors.png, id=129, 603.75563pt x 453.695pt>
 File: 411_Errors.png Graphic file (type png)
 <use 411_Errors.png>
-Package pdftex.def Info: 411_Errors.png  used on input line 827.
+Package pdftex.def Info: 411_Errors.png  used on input line 832.
 (pdftex.def)             Requested size: 266.14978pt x 200.00024pt.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 836.
+LaTeX Font Warning: Command \large invalid in math mode on input line 841.
 
 [17
 
 ] [18 <./411_q.png> <./411_ppdot.png> <./411_Errors.png>] [19]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 890.
+LaTeX Font Warning: Command \large invalid in math mode on input line 895.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--902
+Underfull \hbox (badness 10000) in paragraph at lines 900--907
 
  []
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 903.
+LaTeX Font Warning: Command \large invalid in math mode on input line 908.
 
 [20
 
 ]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 950.
+LaTeX Font Warning: Command \large invalid in math mode on input line 955.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 963.
+LaTeX Font Warning: Command \large invalid in math mode on input line 968.
 
 <513_uncomment.png, id=146, 656.95438pt x 416.05438pt>
 File: 513_uncomment.png Graphic file (type png)
 <use 513_uncomment.png>
-Package pdftex.def Info: 513_uncomment.png  used on input line 1006.
+Package pdftex.def Info: 513_uncomment.png  used on input line 1011.
 (pdftex.def)             Requested size: 177.42868pt x 112.36792pt.
 
-Underfull \hbox (badness 1946) in paragraph at lines 1007--1007
+Underfull \hbox (badness 1946) in paragraph at lines 1012--1012
 []\OT1/cmr/m/n/10 Figure 32: Sim-u-la-tion with Mis-sion
  []
 
 <513_jointlimits.png, id=147, 726.715pt x 549.05125pt>
 File: 513_jointlimits.png Graphic file (type png)
 <use 513_jointlimits.png>
-Package pdftex.def Info: 513_jointlimits.png  used on input line 1011.
+Package pdftex.def Info: 513_jointlimits.png  used on input line 1016.
 (pdftex.def)             Requested size: 177.42868pt x 134.04538pt.
 <513_comment.png, id=148, 521.44812pt x 384.93813pt>
 File: 513_comment.png Graphic file (type png)
 <use 513_comment.png>
-Package pdftex.def Info: 513_comment.png  used on input line 1016.
+Package pdftex.def Info: 513_comment.png  used on input line 1021.
 (pdftex.def)             Requested size: 177.42868pt x 130.97708pt.
 <513_woutPS_jointLimits.png, id=149, 725.71124pt x 546.04pt>
 File: 513_woutPS_jointLimits.png Graphic file (type png)
 <use 513_woutPS_jointLimits.png>
-Package pdftex.def Info: 513_woutPS_jointLimits.png  used on input line 1021.
+Package pdftex.def Info: 513_woutPS_jointLimits.png  used on input line 1026.
 (pdftex.def)             Requested size: 177.42868pt x 133.50185pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1005--1024
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1010--1029
 []$[]$   $[]$
  []
 
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1005--1024
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1010--1029
 []$   $[]$ 
  []
 
@@ -951,15 +958,15 @@ woutPS_jointLimits.png>]
 <522_wout_MP.png, id=160, 728.7225pt x 549.05125pt>
 File: 522_wout_MP.png Graphic file (type png)
 <use 522_wout_MP.png>
-Package pdftex.def Info: 522_wout_MP.png  used on input line 1078.
+Package pdftex.def Info: 522_wout_MP.png  used on input line 1083.
 (pdftex.def)             Requested size: 177.42868pt x 133.67676pt.
 <522_w_MP.png, id=161, 728.7225pt x 547.04375pt>
 File: 522_w_MP.png Graphic file (type png)
 <use 522_w_MP.png>
-Package pdftex.def Info: 522_w_MP.png  used on input line 1083.
+Package pdftex.def Info: 522_w_MP.png  used on input line 1088.
 (pdftex.def)             Requested size: 177.42868pt x 133.18799pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1077--1086
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1082--1091
 []$[]$   $[]$ 
  []
 
@@ -967,70 +974,70 @@ Overfull \hbox (4.43765pt too wide) in paragraph at lines 1077--1086
 
  <./522_wout_MP.png> <./522_w_MP.png>]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 1102.
+LaTeX Font Warning: Command \large invalid in math mode on input line 1107.
 
 <522_1_wout_TPIK2.png, id=167, 645.41125pt x 485.815pt>
 File: 522_1_wout_TPIK2.png Graphic file (type png)
 <use 522_1_wout_TPIK2.png>
-Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 1117.
+Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 1122.
 (pdftex.def)             Requested size: 177.42868pt x 133.55135pt.
 <522_1_w_TPIK2.png, id=168, 502.87875pt x 381.425pt>
 File: 522_1_w_TPIK2.png Graphic file (type png)
 <use 522_1_w_TPIK2.png>
-Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 1122.
+Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 1127.
 (pdftex.def)             Requested size: 177.42868pt x 134.57164pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1116--1125
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1121--1130
 []$[]$   $[]$ 
  []
 
 <522_2_wout_TPIK2.png, id=169, 643.40375pt x 484.30937pt>
 File: 522_2_wout_TPIK2.png Graphic file (type png)
 <use 522_2_wout_TPIK2.png>
-Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 1129.
+Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 1134.
 (pdftex.def)             Requested size: 177.42868pt x 133.55128pt.
 <522_2_w_TPIK2.png, id=170, 505.89pt x 379.4175pt>
 File: 522_2_w_TPIK2.png Graphic file (type png)
 <use 522_2_w_TPIK2.png>
-Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 1134.
+Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 1139.
 (pdftex.def)             Requested size: 177.42868pt x 133.0702pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1128--1137
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1133--1142
 []$[]$   $[]$ 
  []
 
 <522_3_wout_TPIK2.png, id=171, 643.40375pt x 485.815pt>
 File: 522_3_wout_TPIK2.png Graphic file (type png)
 <use 522_3_wout_TPIK2.png>
-Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 1141.
+Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 1146.
 (pdftex.def)             Requested size: 177.42868pt x 133.96648pt.
 
-Underfull \hbox (badness 1742) in paragraph at lines 1142--1142
+Underfull \hbox (badness 1742) in paragraph at lines 1147--1147
 []\OT1/cmr/m/n/10 Figure 42: Zoomed Er-ror: with-out
  []
 
 <522_3_w_TPIK2.png, id=172, 505.89pt x 381.425pt>
 File: 522_3_w_TPIK2.png Graphic file (type png)
 <use 522_3_w_TPIK2.png>
-Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 1146.
+Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 1151.
 (pdftex.def)             Requested size: 177.42868pt x 133.77428pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1140--1149
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1145--1154
 []$[]$   $[]$ 
  []
 
 <522_4_wout_TPIK2.png, id=173, 645.41125pt x 486.81876pt>
 File: 522_4_wout_TPIK2.png Graphic file (type png)
 <use 522_4_wout_TPIK2.png>
-Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 1153.
+Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 1158.
 (pdftex.def)             Requested size: 177.42868pt x 133.82729pt.
 <522_4_w_TPIK2.png, id=174, 504.88625pt x 378.41376pt>
 File: 522_4_w_TPIK2.png Graphic file (type png)
 <use 522_4_w_TPIK2.png>
-Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 1158.
+Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 1163.
 (pdftex.def)             Requested size: 177.42868pt x 132.98378pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1152--1161
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1157--1166
 []$[]$   $[]$ 
  []
 
@@ -1048,13 +1055,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6233 strings out of 492162
- 88254 string characters out of 6125292
- 179517 words of memory out of 5000000
- 10405 multiletter control sequences out of 15000+600000
+ 5891 strings out of 492616
+ 84715 string characters out of 6129482
+ 176405 words of memory out of 5000000
+ 9612 multiletter control sequences out of 15000+600000
  19854 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,42p,901b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,38p,901b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1073,7 +1080,7 @@ e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (26 pages, 13436312 bytes).
+Output written on cooperativeAGFG.pdf (26 pages, 13436537 bytes).
 PDF statistics:
  248 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams

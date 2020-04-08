@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  8 APR 2020 12:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.22)  8 APR 2020 16:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -432,7 +432,14 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(./cooperativeAGFG.aux)
+(./cooperativeAGFG.aux
+
+LaTeX Warning: Label `images_2_3_1' multiply defined.
+
+
+LaTeX Warning: Label `graphes3' multiply defined.
+
+)
 \openout1 = `cooperativeAGFG.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
@@ -615,17 +622,7 @@ File: 111_ppdot.png Graphic file (type png)
 <use 111_ppdot.png>
 Package pdftex.def Info: 111_ppdot.png  used on input line 175.
 (pdftex.def)             Requested size: 301.62613pt x 227.85068pt.
-
-
-LaTeX Warning: Reference `fig:hae' on page 3 undefined on input line 182.
-
-
-LaTeX Warning: Reference `fig:hane' on page 3 undefined on input line 183.
-
-
-LaTeX Warning: Reference `fig:hane' on page 3 undefined on input line 187.
-
-[3 <./111_ppdot.png>]
+ [3 <./111_ppdot.png>]
 <112_HAenabled.png, id=34, 962.59625pt x 720.6925pt>
 File: 112_HAenabled.png Graphic file (type png)
 <use 112_HAenabled.png>
@@ -650,18 +647,9 @@ File: 122_MAV1m.png Graphic file (type png)
 <use 122_MAV1m.png>
 Package pdftex.def Info: 122_MAV1m.png  used on input line 280.
 (pdftex.def)             Requested size: 309.95251pt x 183.48224pt.
-
-LaTeX Warning: Reference `10m_ppdot' on page 5 undefined on input line 294.
-
 [5
 
 ]
-
-LaTeX Warning: Reference `5m_ppdot' on page 6 undefined on input line 297.
-
-
-LaTeX Warning: Reference `1m_ppdot' on page 6 undefined on input line 298.
-
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 308.
 
@@ -734,9 +722,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--451
 
  []
 
-
-LaTeX Warning: Reference `213' on page 9 undefined on input line 451.
-
 <213_MAV_A.png, id=68, 421.575pt x 316.18124pt>
 File: 213_MAV_A.png Graphic file (type png)
 <use 213_MAV_A.png>
@@ -761,235 +746,200 @@ File: 311_ppdot.png Graphic file (type png)
 <use 311_ppdot.png>
 Package pdftex.def Info: 311_ppdot.png  used on input line 574.
 (pdftex.def)             Requested size: 180.67639pt x 136.10954pt.
-
-
-LaTeX Warning: Reference `311a' on page 11 undefined on input line 580.
-
-
-LaTeX Warning: Reference `311b' on page 11 undefined on input line 581.
-
-
-LaTeX Warning: Reference `311c' on page 11 undefined on input line 582.
-
 <312_Nav.png, id=80, 702.625pt x 429.10312pt>
 File: 312_Nav.png Graphic file (type png)
 <use 312_Nav.png>
-Package pdftex.def Info: 312_Nav.png  used on input line 590.
+Package pdftex.def Info: 312_Nav.png  used on input line 589.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
 <312_Alr.png, id=81, 702.625pt x 429.10312pt>
 File: 312_Alr.png Graphic file (type png)
 <use 312_Alr.png>
-Package pdftex.def Info: 312_Alr.png  used on input line 593.
+Package pdftex.def Info: 312_Alr.png  used on input line 592.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
 <312_Land.png, id=82, 702.625pt x 429.10312pt>
 File: 312_Land.png Graphic file (type png)
 <use 312_Land.png>
-Package pdftex.def Info: 312_Land.png  used on input line 596.
+Package pdftex.def Info: 312_Land.png  used on input line 595.
 (pdftex.def)             Requested size: 266.14978pt x 162.54361pt.
-[11
+ [11
 
  <./311_ppdot.png>] [12 <./312_Nav.png> <./312_Alr.png> <./312_Land.png>]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 608.
+LaTeX Font Warning: Command \large invalid in math mode on input line 607.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 621.
+LaTeX Font Warning: Command \large invalid in math mode on input line 620.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 630.
+LaTeX Font Warning: Command \large invalid in math mode on input line 629.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 643.
+LaTeX Font Warning: Command \large invalid in math mode on input line 642.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 653.
+LaTeX Font Warning: Command \large invalid in math mode on input line 652.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 664.
+LaTeX Font Warning: Command \large invalid in math mode on input line 663.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 672.
+LaTeX Font Warning: Command \large invalid in math mode on input line 671.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 704.
+LaTeX Font Warning: Command \large invalid in math mode on input line 703.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 719.
+LaTeX Font Warning: Command \large invalid in math mode on input line 718.
 
 [13
 
 ]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 728.
-
-
-LaTeX Warning: Reference `ppdot_w_m' on page 14 undefined on input line 745.
-
-
-LaTeX Warning: Reference `ppdot_w_b' on page 14 undefined on input line 745.
-
-
-LaTeX Warning: Reference `ppdot_w_s' on page 14 undefined on input line 746.
+LaTeX Font Warning: Command \large invalid in math mode on input line 727.
 
 <313_s_ppdot.png, id=97, 605.26125pt x 456.70625pt>
 File: 313_s_ppdot.png Graphic file (type png)
 <use 313_s_ppdot.png>
-Package pdftex.def Info: 313_s_ppdot.png  used on input line 752.
+Package pdftex.def Info: 313_s_ppdot.png  used on input line 751.
 (pdftex.def)             Requested size: 177.42868pt x 133.87698pt.
 <313_m_ppdot.png, id=98, 603.25375pt x 454.69875pt>
 File: 313_m_ppdot.png Graphic file (type png)
 <use 313_m_ppdot.png>
-Package pdftex.def Info: 313_m_ppdot.png  used on input line 757.
+Package pdftex.def Info: 313_m_ppdot.png  used on input line 756.
 (pdftex.def)             Requested size: 177.42868pt x 133.73254pt.
 <313_b_ppdot.png, id=99, 605.26125pt x 454.69875pt>
 File: 313_b_ppdot.png Graphic file (type png)
 <use 313_b_ppdot.png>
-Package pdftex.def Info: 313_b_ppdot.png  used on input line 762.
+Package pdftex.def Info: 313_b_ppdot.png  used on input line 761.
 (pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 751--765
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 750--764
 []$[]$   $[]$
  []
 
 <313_s_Activation.png, id=100, 605.26125pt x 454.69875pt>
 File: 313_s_Activation.png Graphic file (type png)
 <use 313_s_Activation.png>
-Package pdftex.def Info: 313_s_Activation.png  used on input line 769.
+Package pdftex.def Info: 313_s_Activation.png  used on input line 768.
 (pdftex.def)             Requested size: 177.42868pt x 133.28851pt.
 <313_m_Activation.png, id=101, 604.2575pt x 454.69875pt>
 File: 313_m_Activation.png Graphic file (type png)
 <use 313_m_Activation.png>
-Package pdftex.def Info: 313_m_Activation.png  used on input line 774.
+Package pdftex.def Info: 313_m_Activation.png  used on input line 773.
 (pdftex.def)             Requested size: 177.42868pt x 133.51053pt.
 <313_b_Activation.png, id=102, 604.2575pt x 454.69875pt>
 File: 313_b_Activation.png Graphic file (type png)
 <use 313_b_Activation.png>
-Package pdftex.def Info: 313_b_Activation.png  used on input line 779.
+Package pdftex.def Info: 313_b_Activation.png  used on input line 778.
 (pdftex.def)             Requested size: 177.42868pt x 133.51053pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 768--782
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 767--781
 []$[]$   $[]$
  []
 
 <313_s_Errors.png, id=103, 605.26125pt x 455.7025pt>
 File: 313_s_Errors.png Graphic file (type png)
 <use 313_s_Errors.png>
-Package pdftex.def Info: 313_s_Errors.png  used on input line 786.
+Package pdftex.def Info: 313_s_Errors.png  used on input line 785.
 (pdftex.def)             Requested size: 177.42868pt x 133.58275pt.
 <313_m_Errors.png, id=104, 605.26125pt x 453.695pt>
 File: 313_m_Errors.png Graphic file (type png)
 <use 313_m_Errors.png>
-Package pdftex.def Info: 313_m_Errors.png  used on input line 791.
+Package pdftex.def Info: 313_m_Errors.png  used on input line 790.
 (pdftex.def)             Requested size: 177.42868pt x 132.99428pt.
 <313_b_Errors.png, id=105, 605.26125pt x 455.7025pt>
 File: 313_b_Errors.png Graphic file (type png)
 <use 313_b_Errors.png>
-Package pdftex.def Info: 313_b_Errors.png  used on input line 796.
+Package pdftex.def Info: 313_b_Errors.png  used on input line 795.
 (pdftex.def)             Requested size: 177.42868pt x 133.58275pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 785--799
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 784--798
 []$[]$   $[]$
  []
 
 [14] [15 <./313_s_ppdot.png> <./313_m_ppdot.png> <./313_b_ppdot.png> <./313_s_A
 ctivation.png> <./313_m_Activation.png> <./313_b_Activation.png>] [16 <./313_s_
 Errors.png> <./313_m_Errors.png> <./313_b_Errors.png>]
-
-LaTeX Warning: Reference `subsec:non-react' on page 17 undefined on input line 
-804.
-
 <314_ppdot.png, id=125, 604.2575pt x 454.69875pt>
 File: 314_ppdot.png Graphic file (type png)
 <use 314_ppdot.png>
-Package pdftex.def Info: 314_ppdot.png  used on input line 808.
+Package pdftex.def Info: 314_ppdot.png  used on input line 807.
 (pdftex.def)             Requested size: 241.69872pt x 181.87627pt.
-[17
+ [17
 
  <./314_ppdot.png>]
 <411_Errors.png, id=130, 603.75563pt x 453.695pt>
 File: 411_Errors.png Graphic file (type png)
 <use 411_Errors.png>
-Package pdftex.def Info: 411_Errors.png  used on input line 856.
+Package pdftex.def Info: 411_Errors.png  used on input line 855.
 (pdftex.def)             Requested size: 266.14978pt x 200.00024pt.
 <411_q.png, id=131, 668.4975pt x 262.9825pt>
 File: 411_q.png Graphic file (type png)
 <use 411_q.png>
-Package pdftex.def Info: 411_q.png  used on input line 858.
+Package pdftex.def Info: 411_q.png  used on input line 857.
 (pdftex.def)             Requested size: 266.14978pt x 104.70558pt.
 <411_ppdot.png, id=132, 605.26125pt x 455.7025pt>
 File: 411_ppdot.png Graphic file (type png)
 <use 411_ppdot.png>
-Package pdftex.def Info: 411_ppdot.png  used on input line 861.
+Package pdftex.def Info: 411_ppdot.png  used on input line 860.
 (pdftex.def)             Requested size: 266.14978pt x 200.38455pt.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 871.
+LaTeX Font Warning: Command \large invalid in math mode on input line 870.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 883.
+LaTeX Font Warning: Command \large invalid in math mode on input line 882.
 
 [18
 
 ] [19 <./411_Errors.png> <./411_q.png> <./411_ppdot.png>] [20]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 932.
+LaTeX Font Warning: Command \large invalid in math mode on input line 930.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 944.
+LaTeX Font Warning: Command \large invalid in math mode on input line 942.
 
 [21
 
 ]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 991.
+LaTeX Font Warning: Command \large invalid in math mode on input line 989.
 
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 1004.
-
-
-LaTeX Warning: Reference `513_nh1' on page 22 undefined on input line 1014.
-
-
-LaTeX Warning: Reference `513_h1' on page 22 undefined on input line 1014.
-
-
-LaTeX Warning: Reference `513_nh2' on page 22 undefined on input line 1014.
-
-
-LaTeX Warning: Reference `513_h2' on page 22 undefined on input line 1014.
+LaTeX Font Warning: Command \large invalid in math mode on input line 1001.
 
 <513_uncomment.png, id=149, 656.95438pt x 416.05438pt>
 File: 513_uncomment.png Graphic file (type png)
 <use 513_uncomment.png>
-Package pdftex.def Info: 513_uncomment.png  used on input line 1047.
+Package pdftex.def Info: 513_uncomment.png  used on input line 1045.
 (pdftex.def)             Requested size: 177.42868pt x 112.36792pt.
 
-Underfull \hbox (badness 1946) in paragraph at lines 1048--1048
+Underfull \hbox (badness 1946) in paragraph at lines 1046--1046
 []\OT1/cmr/m/n/10 Figure 32: Sim-u-la-tion with Mis-sion
  []
 
 <513_jointlimits.png, id=150, 726.715pt x 549.05125pt>
 File: 513_jointlimits.png Graphic file (type png)
 <use 513_jointlimits.png>
-Package pdftex.def Info: 513_jointlimits.png  used on input line 1052.
+Package pdftex.def Info: 513_jointlimits.png  used on input line 1050.
 (pdftex.def)             Requested size: 177.42868pt x 134.04538pt.
 <513_comment.png, id=151, 521.44812pt x 384.93813pt>
 File: 513_comment.png Graphic file (type png)
 <use 513_comment.png>
-Package pdftex.def Info: 513_comment.png  used on input line 1057.
+Package pdftex.def Info: 513_comment.png  used on input line 1055.
 (pdftex.def)             Requested size: 177.42868pt x 130.97708pt.
 <513_woutPS_jointLimits.png, id=152, 725.71124pt x 546.04pt>
 File: 513_woutPS_jointLimits.png Graphic file (type png)
 <use 513_woutPS_jointLimits.png>
-Package pdftex.def Info: 513_woutPS_jointLimits.png  used on input line 1062.
+Package pdftex.def Info: 513_woutPS_jointLimits.png  used on input line 1060.
 (pdftex.def)             Requested size: 177.42868pt x 133.50185pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1046--1065
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1044--1063
 []$[]$   $[]$
  []
 
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1046--1065
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1044--1063
 []$   $[]$ 
  []
 
@@ -997,12 +947,6 @@ Overfull \hbox (4.43765pt too wide) in paragraph at lines 1046--1065
 
 ] [23 <./513_uncomment.png> <./513_jointlimits.png> <./513_comment.png> <./513_
 woutPS_jointLimits.png>]
-
-LaTeX Warning: Reference `522_n1' on page 24 undefined on input line 1097.
-
-
-LaTeX Warning: Reference `522_n2' on page 24 undefined on input line 1097.
-
 <522_wout_MP.png, id=163, 728.7225pt x 549.05125pt>
 File: 522_wout_MP.png Graphic file (type png)
 <use 522_wout_MP.png>
@@ -1021,108 +965,81 @@ Overfull \hbox (4.43765pt too wide) in paragraph at lines 1118--1127
 [24
 
  <./522_wout_MP.png> <./522_w_MP.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1140--1142
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 1143.
-
-
-LaTeX Warning: Reference `JL_wout_TPIK2' on page 25 undefined on input line 115
-4.
+ []
 
 
-LaTeX Warning: Reference `Error_wout_TPIK2' on page 25 undefined on input line 
-1154.
-
-
-LaTeX Warning: Reference `zoomed_error_wout_TPIK2' on page 25 undefined on inpu
-t line 1154.
-
-
-LaTeX Warning: Reference `Jqandqdot_wout_TPIK2' on page 25 undefined on input l
-ine 1154.
-
-
-LaTeX Warning: Reference `JL_w_TPIK2' on page 25 undefined on input line 1154.
-
-
-LaTeX Warning: Reference `Error_w_TPIK2' on page 25 undefined on input line 115
-4.
-
-
-LaTeX Warning: Reference `zoomed_error_w_TPIK2' on page 25 undefined on input l
-ine 1154.
-
-
-LaTeX Warning: Reference `Jqandqdot_w_TPIK2' on page 25 undefined on input line
- 1154.
+LaTeX Font Warning: Command \large invalid in math mode on input line 1146.
 
 <522_1_wout_TPIK2.png, id=171, 645.41125pt x 485.815pt>
 File: 522_1_wout_TPIK2.png Graphic file (type png)
 <use 522_1_wout_TPIK2.png>
-Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 1158.
+Package pdftex.def Info: 522_1_wout_TPIK2.png  used on input line 1161.
 (pdftex.def)             Requested size: 177.42868pt x 133.55135pt.
 <522_1_w_TPIK2.png, id=172, 502.87875pt x 381.425pt>
 File: 522_1_w_TPIK2.png Graphic file (type png)
 <use 522_1_w_TPIK2.png>
-Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 1163.
+Package pdftex.def Info: 522_1_w_TPIK2.png  used on input line 1166.
 (pdftex.def)             Requested size: 177.42868pt x 134.57164pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1157--1166
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1160--1169
 []$[]$   $[]$ 
  []
 
 <522_2_wout_TPIK2.png, id=173, 643.40375pt x 484.30937pt>
 File: 522_2_wout_TPIK2.png Graphic file (type png)
 <use 522_2_wout_TPIK2.png>
-Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 1170.
+Package pdftex.def Info: 522_2_wout_TPIK2.png  used on input line 1173.
 (pdftex.def)             Requested size: 177.42868pt x 133.55128pt.
 <522_2_w_TPIK2.png, id=174, 505.89pt x 379.4175pt>
 File: 522_2_w_TPIK2.png Graphic file (type png)
 <use 522_2_w_TPIK2.png>
-Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 1175.
+Package pdftex.def Info: 522_2_w_TPIK2.png  used on input line 1178.
 (pdftex.def)             Requested size: 177.42868pt x 133.0702pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1169--1178
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1172--1181
 []$[]$   $[]$ 
  []
 
 <522_3_wout_TPIK2.png, id=175, 643.40375pt x 485.815pt>
 File: 522_3_wout_TPIK2.png Graphic file (type png)
 <use 522_3_wout_TPIK2.png>
-Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 1182.
+Package pdftex.def Info: 522_3_wout_TPIK2.png  used on input line 1185.
 (pdftex.def)             Requested size: 177.42868pt x 133.96648pt.
 
-Underfull \hbox (badness 1742) in paragraph at lines 1183--1183
+Underfull \hbox (badness 1742) in paragraph at lines 1186--1186
 []\OT1/cmr/m/n/10 Figure 42: Zoomed Er-ror: with-out
  []
 
 <522_3_w_TPIK2.png, id=176, 505.89pt x 381.425pt>
 File: 522_3_w_TPIK2.png Graphic file (type png)
 <use 522_3_w_TPIK2.png>
-Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 1187.
+Package pdftex.def Info: 522_3_w_TPIK2.png  used on input line 1190.
 (pdftex.def)             Requested size: 177.42868pt x 133.77428pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1181--1190
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1184--1193
 []$[]$   $[]$ 
  []
 
 <522_4_wout_TPIK2.png, id=177, 645.41125pt x 486.81876pt>
 File: 522_4_wout_TPIK2.png Graphic file (type png)
 <use 522_4_wout_TPIK2.png>
-Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 1194.
+Package pdftex.def Info: 522_4_wout_TPIK2.png  used on input line 1197.
 (pdftex.def)             Requested size: 177.42868pt x 133.82729pt.
 <522_4_w_TPIK2.png, id=178, 504.88625pt x 378.41376pt>
 File: 522_4_w_TPIK2.png Graphic file (type png)
 <use 522_4_w_TPIK2.png>
-Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 1199.
+Package pdftex.def Info: 522_4_w_TPIK2.png  used on input line 1202.
 (pdftex.def)             Requested size: 177.42868pt x 132.98378pt.
 
-Overfull \hbox (4.43765pt too wide) in paragraph at lines 1193--1202
+Overfull \hbox (4.43765pt too wide) in paragraph at lines 1196--1205
 []$[]$   $[]$ 
  []
 
 [25
 
- <./522_1_wout_TPIK2.png> <./522_1_w_TPIK2.png>] [26 <./522_2_wout_TPIK2.png> <
+] [26 <./522_1_wout_TPIK2.png> <./522_1_w_TPIK2.png> <./522_2_wout_TPIK2.png> <
 ./522_2_w_TPIK2.png> <./522_3_wout_TPIK2.png> <./522_3_w_TPIK2.png> <./522_4_wo
 ut_TPIK2.png> <./522_4_w_TPIK2.png>] (./cooperativeAGFG.aux)
 
@@ -1130,20 +1047,17 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.5pt have occurred.
 
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  6233 strings out of 492162
  88254 string characters out of 6125292
- 178044 words of memory out of 5000000
+ 179517 words of memory out of 5000000
  10405 multiletter control sequences out of 15000+600000
  19854 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,42p,907b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,42p,901b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1162,7 +1076,7 @@ e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cooperativeAGFG.pdf (27 pages, 13438856 bytes).
+Output written on cooperativeAGFG.pdf (27 pages, 13439025 bytes).
 PDF statistics:
  251 PDF objects out of 1000 (max. 8388607)
  116 compressed objects within 2 object streams

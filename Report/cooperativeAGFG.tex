@@ -71,7 +71,7 @@
 \normalsize
 Authors: Alberto Grillo, Filippo Gandolfi\\
 EMAILs: --- albogrillo@gmail.com, filippo.gandolfi95@gmail.com ---\\
-Date:  \\
+Date:  03 Aprile 2020 \\
 \end{center}
 \clearpage
 \mainmatter
@@ -136,9 +136,9 @@ The \textbf{Jacobian} relationship for the \textit{Vehicle Position} control tas
 \begin{equation}
 \large
     \boldsymbol{J}_v = \begin{bmatrix}
- & \underset{3\times3}{\boldsymbol{0}} & \underset{3\times3}{^{w}\boldsymbol{R}_{v}} \\
+ & \underset{3\times3}{\boldsymbol{0}_{ }} & \underset{3\times3}{^{w}\boldsymbol{R}_{v}} \\
 \underset{6\times7}{\boldsymbol{0}} \\
-& \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+& \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}_{ }} \\
 \end{bmatrix}
 \end{equation}
 \\ 
@@ -251,9 +251,9 @@ We need to control the movement along the $z$ axis, therefore we use the same Ja
 \boldsymbol{J}_{mav}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 1
 \end{bmatrix}
     \begin{bmatrix}
-     & \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
+     & \underset{3\times 3}{\boldsymbol{0}_{ }} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
      \underset{ 6\times 7}{\boldsymbol{0}} \\
-     & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+     & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}_{ }} \\
     \end{bmatrix}
 \end{equation}
 %%%%%%% %%%%%%% %%%%%%% %%%%%%% 
@@ -415,9 +415,9 @@ The Jacobian relationship for the \textit{Landing} is:
 \boldsymbol{J}_{land}=\begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 1
 \end{bmatrix}
     \begin{bmatrix}
-     & \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
+     & \underset{3\times 3}{\boldsymbol{0}_{ }} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
      \underset{6\times 7}{\boldsymbol{0}} \\
-     & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+     & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}_{ }} \\
     \end{bmatrix}
 \end{equation}
 As before, the Jacobian is required to control only the component along the $z$ axis.
@@ -428,7 +428,7 @@ We compute the \textbf{task reference} as:
 
 \begin{equation}
 \large
-    ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((d_{landing} + \Delta_{safeguard}) - ^w d_{sensor}) %delta
+    ^{w}\dot{\overline{\boldsymbol{x}}}_{land} = k((d_{landing} + \Delta_{safeguard}) - {^w}d_{sensor}) %delta
 \end{equation}
 where:
 \begin{itemize}
@@ -455,14 +455,14 @@ There are two major differences:
     \centering
     \begin{minipage}{0.50\textwidth}
     \includegraphics[scale=0.5]{213_MAV_A.png}
-    \caption{Graph MAV}
+    \caption{MAV activation plot}
     \label{213}
     \end{minipage}
 \hfill
     \centering
     \begin{minipage}{0.50\textwidth}
     \includegraphics[scale=0.5]{213_Landing_A.png}
-    \caption{Graph Landing}
+    \caption{Landing activation plot}
     \end{minipage}
 \end{figure}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
@@ -499,7 +499,7 @@ We have two different actions, with this \textbf{hierarchy} and the following ac
 \end{center}
 
 \begin{description}
-\item Action A: the UVMS performs the safe waypoint navigation. All the safety tasks are enabled. 
+\item Action A: the UVMS performs the safe waypoint navigation. All the safety tasks are enabled. This Action finishes when the position error is below a fixed threshold.
 \item Action B: the UVMS simply lands on the seafloor, performing the previous exercise task. Of course, the \textit{Minimum Altitude} task is disabled.
 \end{description}
  
@@ -544,7 +544,7 @@ Then land, aligning to the nodule.
 
 Goal: Add an alignment task between the longitudinal axis of the vehicle ($x$ axis) and the nodule target. In particular, the $x$ axis of the vehicle should align to the projection, on the inertial horizontal plane, of the unit vector joining the vehicle frame to the nodule frame.
 
-\subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Comment the behavior.}
+\subsubsection{Q1: Report the unified hierarchy of tasks used and their priorities. Comment the behaviour.}
 We have three different actions, with the following \textbf{hierarchy} and activations:
 %%%%%% TABLE %%%%%%%%%
 \begin{center}
@@ -577,10 +577,9 @@ We have three different actions, with the following \textbf{hierarchy} and activ
 \end{figure}
 
 \begin{description}
- \item Action A, as before, is safe waypoint navigation with all the safety tasks enabled (Figure \ref{311a}). 
- \item Action B is the action that performs the alignment to the rock, with all the safety task enabled (Figure \ref{311b}). 
- \item Action C performs the safe landing on the seafloor. \textit{Alignment to the Rock} is gradually disabled to optimize the alignment while the robot is performing the landing (Figure \ref{311c}).
-\end{description}
+ \item Action A, as before, is safe waypoint navigation with all the safety tasks enabled (Figure \ref{311a}). This Action finishes when the position error is below a fixed threshold.
+ \item Action B is the action that performs the alignment to the rock, with all the safety task enabled (Figure \ref{311b}). his Action finishes when the misalignment error is below a fixed threshold.
+ \item Action C performs the safe landing on the seafloor. \textit{Alignment to the Rock} is gradually disabled to optimize the alignment while the robot is performing the landing (Figure \ref{311c}). \end{description}
 
 
 
@@ -843,17 +842,17 @@ We have four different actions, with the following \textbf{hierarchy} and activa
 \end{description}
 
 \begin{description}
- \item Action A, safe waypoint navigation with all the safety task activated
- \item Action B, alignment to the nodule with all the safety task activated
- \item Action C, landing and smooth rotation to be aligned with the rock
- \item Action D, manipulator actuation after landing. Here the new \textit{Vehicle Null Velocity} task is enabled, preventing UVMS movements. The only movement will be the extension of the manipulator to reach the desired target tool position.
+ \item Action A, safe waypoint navigation with all the safety task enabled. This Action finishes when the position error is below a fixed threshold (in this case $0.1m$).
+ \item Action B, alignment to the nodule with all the safety task enabled. This Action finishes when the misalignment error is below a fixed threshold (in this case $0.07m$).
+ \item Action C, landing and smooth rotation to be aligned with the rock. This Action finishes when the vehicle touches the seafloor (in the simulation this happens at $\approx 0.17m$). 
+ \item Action D, manipulator actuation after landing. In this Action \textit{Vehicle Null Velocity} task is enabled, preventing vehicle movements. The only movement will be the extension of the manipulator to reach the desired target tool position.
 \end{description}
-
+The transitions between Actions are visibile in the Figure \ref{fig:411_errors}.
 %%%%%%% near images %%%%%%% 
 \begin{figure}[htp]
 \centering
 
-\includegraphics[width=.6\textwidth]{411_Errors.png}\caption{The error plot during the different phases (vertical green lines}
+\includegraphics[width=.6\textwidth]{411_Errors.png}\caption{The error plot during the different phases (vertical green lines)}
 \label{fig:411_errors}
 \includegraphics[width=.6\textwidth]{411_q.png}\caption{Arm joints start moving when Action D is triggered}
 \centering
@@ -870,25 +869,24 @@ The Jacobian for the Vehicle Null Velocity task is the same of the Vehicle Posit
 \begin{equation}
 \large
 \boldsymbol{J}_{vehNull}=    \begin{bmatrix}
-     & \underset{3\times 3}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
+     & \underset{3\times 3}{\boldsymbol{0}_{ }} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} \\
      \underset{6\times 7}{\boldsymbol{0}} \\
-     & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+     & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}_{ }} \\
     \end{bmatrix}
 \end{equation}
 %%%%%%% %%%%%%% %%%%%%% %%%%%%% 
 
-Since we do not want the vehicle to move, \textbf{task reference} is a zero vector defined as : 
+Since we do not want the vehicle to move, the \textbf{task reference} is a zero vector defined as: 
 
 \begin{equation}
 \large
-   \dot{\overline{\boldsymbol{x}}}_{vNull} =  \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0 \end{bmatrix}^{T}
+   \dot{\overline{\boldsymbol{x}}}_{vNull} =  \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0 \end{bmatrix}^\top
 \end{equation}
-This task will not change during the whole simulation because it is a Non-Reactive task.
 
 \subsubsection{Q3: Suppose the vehicle floating, i.e. not landed on the seafloor. What would happen, if due to currents, the vehicle moves?}
 The \textit{Vehicle Null} only puts vehicle velocities to zero, therefore it is not able to compensate disturbances. In a similar scenario, the UVMS will be influenced by the currents: if the disturbance is not too big, the vehicle is able to arrive at the desired position and to land. However, when the \textit{Vehicle Null} task is triggered in Action D, the UVMS will start drifting, eventually losing the target position. The arm will keep trying to reach the goal by stretching as much as possible.
 
-With a check on the position error during the mission phase update, it is possible to return to Action A to achieve again the desired position.
+With a check on the position error during the mission phase update, it is possible to return to Action A and achieve again the desired position.
 
 \clearpage
 
@@ -920,7 +918,7 @@ We have four different actions, with the following \textbf{hierarchy} and activa
 %%%%%% TABLE %%%%%%%%%
 
 \begin{description}
-\item \textbf{Joint Limit} [R, I, S]: it is a safety task, thus it has higher priority than the other action-defining tasks. It is able to control that the joints don't operate over their prefixed threshold. \ocio
+\item \textbf{Joint Limit} [R, I, S]: it is a safety task, thus it has higher priority than the other action-defining tasks. It is able to control that the joints don't operate over their fixed threshold.
 \end{description}
 
 The actions are the same as before, the only difference is that Joint Limit is always active because it is a safety task. However, it is important when the manipulator performs the final action. 
@@ -949,20 +947,20 @@ x_{activationMax,i}-x_{q, i} & \text { if } x_{q, i}>mid_{i}
 \end{equation}
 %%%%%%%%%%%%%
  where:
- \begin{description}
+ \begin{itemize}
   \item $i = 1,\dots,7$ is the $i$-th joint.
   \item $x_{q,i}$ is the $i$ joint position ($q$)
   \item $ActivationMin$ and $ActivationMax$ are the $10\%$ of the limit imposed for each joint.
   \item $mid_i = \dfrac{x_{ActivationMin,i} + x_{ActivationMax,i}}{2}\; $ is the middle point between the Minimum Activation and the Maximum.
   \item $k$ is the gain
-\end{description}
+\end{itemize}
 We use the Min and Max in order to be able to activate the joint limit when the joint arrives near the minimum guard ($ActivationMin$) or near the maximum one ($ActivationMax$).
 %%%%%%%%
 \clearpage
 
 \section{Exercise 5: Floating Manipulation}
 \subsection{Adding an optimization control objective}
-Use the DexROV simulation for this exercise .
+Use the DexROV simulation for this exercise.
 
 The goal is to try to optimize the joint positions, if possible, to keep the first four joints in a "preferred shape", represented by the following vector
 \begin{displaymath}
@@ -990,7 +988,6 @@ We decided to implement this task as a vector one, thus the \textbf{Jacobian} is
 \begin{equation}
 \large
 \boldsymbol{J}_{vehNull}=
-\begin{bmatrix}-0.0031 & 1.2586 & 0.0128 & -1.2460 \end{bmatrix}^\top
     \begin{bmatrix}
      \underset{4\times4}{\boldsymbol{I}} & \underset{4\times9}{\boldsymbol{0}} \\
     \end{bmatrix}
@@ -1002,12 +999,13 @@ We compute the \textbf{task reference} as the difference between the desired joi
 
 \begin{equation}
 \large
-   \dot{\overline{\boldsymbol{x}}}_{\operatorname{prefShape}} = k(x_{\operatorname{prefShape}} - x_{q}) %delta
+   \dot{\overline{\boldsymbol{x}}}_{\operatorname{prefShape}} = k(\boldsymbol x_{\operatorname{prefShape}} - \boldsymbol x_{q}) %delta
 \end{equation}
+where:
 \begin{itemize}
     \item $k$ is the control gain.
-    \item $x_{\operatorname{prefShape}}$ is the desired configuration of the first four joints.
-    \item $x_{q}$ is the actual configuration of the first four joints.
+    \item $\boldsymbol x_{\operatorname{prefShape}}$ is the desired configuration of the first four joints.
+    \item $\boldsymbol x_{q}$ is the actual configuration of the first four joints.
 \end{itemize} 
 
 \subsubsection{Q3: What is the difference between having or not having this objective?} %FICCARE COLLEGAMENTO IMMAGINI
@@ -1090,11 +1088,13 @@ We have two different actions, with the following \textbf{hierarchy} and activat
  \hline
 \end{tabular}
 \end{center}
+ The transition from Action A to Action B is triggered whenever the position error is below a priori fixed threshold.
+ 
 %%%%%% TABLE %%%%%%%%%
 
 % FICCARE IMMAGINI
 \subsubsection{Q2: What is the difference with the previous simulation (still in exercise 5), where only one action was used?}
-In the previous simulation, it was not possible to constrain the vehicle velocities to zero, in order to allow a safe manipulation. By adding a safe navigation phase it is possible to use the vehicle position task to move the UVMS to a position slightly above the pipe, then constrain vehicle velocities to allow the manipulator to reach the goal frame by activating the tool task. Moreover, this results in a smoother behaviour as it is shown in the figures below (Figure \ref{522_n1} and \ref{522_n2}).
+In the previous simulation, it was not possible to constrain the vehicle velocities to zero, in order to allow a safe manipulation. By adding a safe navigation phase, it possible to move the UVMS by using the \textit{Vehicle Position} instead of using the \textit{Tool} task. In the second phase, the \textit{Tool} task is triggered, but the vehicle velocities are constrained to zero: the manipulator is able to safely reach the goal frame. Moreover, this results in a smoother behaviour as it is shown in the figures below (Figure \ref{522_n1} and \ref{522_n2}).
 
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 
@@ -1133,12 +1133,15 @@ Let us now see how the two different subsystems (arm and vehicle) can be properl
 Goal: modify the control part to implement the parallel arm-vehicle coordination scheme. Observe that, even with a disturbance acting on the vehicle, the end-effector can stay in the required constant position.
 
 \subsubsection{Q1: Which tasks did you introduce to implement the parallel coordination scheme?}
-In order to implement an arm-vehicle coordination scheme, we implemented two optimizations (TPIK1 and TPIK2) running in parallel. Given an action $A$ the scheme works as follow:
+In order to implement an arm-vehicle coordination scheme, we implemented two optimizations (TPIK1 and TPIK2) running in parallel. Given an action $A$, the scheme works as follow:
 
 \begin{enumerate}
-\item TPIK1 is the same as the previous exercises. It considers the vehicle and the manipulator as a fully controllable system. Therefore, when the hierarchy of task corresponding to the action $A$ is solved, we take the reference for the vehicle velocities while we discard the joints velocities one.
-\item TPIK2 is equal to TPIK1 plus an additional task at the top of the hierarchy. This task is a non-reactive one and it is used to constrain the vehicle velocities. The Jacobian for this task is:
+\item TPIK1 is the same as the previous exercises. It considers the vehicle and the manipulator as a fully controllable system. When the hierarchy of task corresponding to the action $A$ is solved, we take the reference for the vehicle velocities while we discard the joints velocities one.
+\item TPIK2 is equal to TPIK1 plus an additional task at the top of the hierarchy.\\
+\textbf{Constrain Vehicle Velocities} [NR, E, C], this task is a non-reactive one and it is used to constrain the vehicle velocities to coordinate the arm and vehicle movements.\\
+
 \vspace{5px}
+The \textbf{Jacobian} for this task is:
 \begin{equation}
 \large
 \boldsymbol{J}_{vConstr}=
@@ -1147,11 +1150,11 @@ In order to implement an arm-vehicle coordination scheme, we implemented two opt
     \end{bmatrix}
 \end{equation}
 Its reference is the vector of the vehicle velocities computed by TPIK1 at the previous step. In a real-world case, the reference would be the vector of the measured vehicle velocities, but, since we are working in a simulation environment, we are allowed to use the ones computed by the algorithm in the previous loop iteration.
-Therefore, TPIK2 provides the optimal joints velocities by taking into account the "real" movement of the vehicle, which is different from the one computed by the algorithm because of the sinusoidal disturbance.
+Therefore, TPIK2 provides the optimal joints velocities by taking into account the "real" movement of the vehicle, which is different from the one computed by the algorithm because of the sinusoidal disturbance (without TPIK2 images: \ref{JL_wout_TPIK2}, \ref{Error_wout_TPIK2}, \ref{zoomed_error_wout_TPIK2}, \ref{Jqandqdot_wout_TPIK2}; with TPIK2 images: \ref{JL_w_TPIK2}, \ref{Error_w_TPIK2}, \ref{zoomed_error_w_TPIK2}, \ref{Jqandqdot_w_TPIK2}).
 \end{enumerate}
 
 \subsubsection{Q2: What happens if the sinusoidal disturbance becomes too big?}
-The vehicle and the manipulator try to compensate the disturbances. This means that if the gain is high enough and the amplitude of the disturbance is not too big, they are fast enough to reduce the error at the price of a smooth behaviour. Nevertheless when the amplitude of the sinusoidal disturbance becomes too big, they are not able to follow and to minimize the error, resulting in a sinusoidal behavior visible on the related plot (without TPIK2 images: \ref{JL_wout_TPIK2}, \ref{Error_wout_TPIK2}, \ref{zoomed_error_wout_TPIK2}, \ref{Jqandqdot_wout_TPIK2}; with TPIK2 images: \ref{JL_w_TPIK2}, \ref{Error_w_TPIK2}, \ref{zoomed_error_w_TPIK2}, \ref{Jqandqdot_w_TPIK2}).
+The vehicle and the manipulator try to compensate the disturbances. This means that if the gain is high enough and the amplitude of the disturbance is not too big, they are fast enough to reduce the error at the price of a smooth behaviour. Nevertheless when the amplitude of the sinusoidal disturbance becomes too big, they are not able to follow and to minimize the error, resulting in a sinusoidal behaviour.
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[htpb] 
 \begin{minipage}{0.40\textwidth} 

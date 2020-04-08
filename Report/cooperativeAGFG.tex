@@ -609,7 +609,12 @@ The Jacobian relationship for the Alignment is derived from the following formul
 D_{w}(\boldsymbol \rho)=\boldsymbol J_{alr} \boldsymbol \dot{y}
 \end{equation}
 
-Where defining $\boldsymbol J_{alr} $ is our goal.
+where:
+\begin{itemize}
+\item $\boldsymbol \rho$ is the misalignment vector.
+\item $D_{w}(\boldsymbol \rho)$ is the derivative of the misalignment vector.
+\item $\boldsymbol J_{alr} $ is the Jacobian we want to compute.
+\end{itemize}
 
 We know that:
 \begin{equation}
@@ -619,11 +624,18 @@ D_{w}(\boldsymbol \rho)={^w}\boldsymbol n_{\rho} \dot\theta+\underbrace{\theta D
 
 Since we are not interested in the orthogonal components, we can ignore them.
 
-Regarding the first part of the equation,
+Regarding the first part of the sum, ${^w}\boldsymbol n_{\rho}$ is the misalignment versor projected on the world and we know the following relationship:
+
 \begin{equation}
 \large
 \dot{\theta}={^w}\boldsymbol{\omega}_{v} - {^w}{\boldsymbol\omega_{{rock}}}
 \end{equation}
+
+where:
+\begin{itemize}
+\item ${^w}\boldsymbol{\omega}_{v}$ is the angular velocity of the vehicle, referred to the world.
+\item ${^w}\boldsymbol{\omega}_{rock}$ is the angular velocity of the projected distance between the rock and the vehicle, referred to the world.
+\end{itemize}
 
 By describing  ${^w}{\boldsymbol{\omega}}_{v} \text{ in terms of } \boldsymbol{\dot{y}} $, we can deduce the following Jacobian
 
@@ -631,7 +643,7 @@ By describing  ${^w}{\boldsymbol{\omega}}_{v} \text{ in terms of } \boldsymbol{\
 \large
 {\boldsymbol J_{vehicle}} = 
     \begin{bmatrix}
-     \underset{3\times 10}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}}\\
+     \underset{3\times 10}{\boldsymbol{0}_{ }} & \underset{3\times 3}{^{w}\boldsymbol{R}_{v}}\\
     \end{bmatrix}
 \end{equation}
 
@@ -641,6 +653,12 @@ In order to describe ${^w}\boldsymbol{\omega}_{rock} \text{ in terms of }  \bold
 \large
 {^w}{\boldsymbol v}_{v}={^w}\boldsymbol \omega_{rock} \wedge {^w} \boldsymbol d
 \end{equation}
+
+where:
+\begin{itemize}
+\item ${^w}{\boldsymbol v}_{v}$ is the linear velocity of the vehicle projected on the world frame.
+\item ${^w} \boldsymbol d$ is the projected distance on the horizontal inertial frame, between the rock and the $z$ axis of the vehicle.
+\end{itemize}
 
 \begin{equation}
 \large
@@ -691,7 +709,7 @@ From the last equation, we deduce the following Jacobian
 0 & 0 & 0
 \end{array}\right]
     \begin{bmatrix}
-     \underset{3\times 7}{\boldsymbol{0}} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}} \\
+     \underset{3\times 7}{\boldsymbol{0}_{ }} & \underset{ 3\times 3}{^{w}\boldsymbol{R}_{v}} & \underset{3\times 3}{\boldsymbol{0}_{ }} \\
     \end{bmatrix}
 \end{equation}
 
@@ -702,8 +720,10 @@ The resulting Jacobian is obtained by substitution and it is equal to
 \boldsymbol J_{\text {alr}}={^w}{\boldsymbol n_{\rho}^\top}[{ \boldsymbol J_{vehicle} - \boldsymbol J_{rock}}]
 \end{equation}
 
-We compute the \textbf{task reference} as:
+\noindent
+\vspace{10px}
 
+We compute the \textbf{task reference} as:
 \begin{equation}
 \large
     \dot{\overline{\boldsymbol{x}}}_{alr} = k( 0 - \left\| ^w \boldsymbol \rho \right\|) %delta

@@ -71,7 +71,7 @@
 \normalsize
 Authors: Alberto Grillo, Filippo Gandolfi\\
 EMAILs: --- albogrillo@gmail.com, filippo.gandolfi95@gmail.com ---\\
-Date:  03 Aprile 2020 \\
+Date:  3/4/2020 \\
 \end{center}
 \clearpage
 \mainmatter
@@ -191,11 +191,11 @@ Moreover, swapping the priority is wrong because the \textit{Horizontal Attitude
 %%%%%%% near images %%%%%%% 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=.5\textwidth]{112_HAenabled.png}\caption{\textit{Horizontal Attitude} enabled, the robot is parallel with the seafloor.}
+\includegraphics[width=.5\textwidth]{112_HAenabled.png}\caption{\textit{Horizontal Attitude} enabled, the UVMS is parallel with the seafloor.}
 \label{fig:hae}
 \vspace{5px}
 \centering
-\includegraphics[width=.5\textwidth]{112_HANotenabled.png}\caption{\textit{Horizontal Attitude} not enabled, the robot is not parallel with the seafloor.}
+\includegraphics[width=.5\textwidth]{112_HANotenabled.png}\caption{\textit{Horizontal Attitude} not enabled, the UVMS is not parallel with the seafloor.}
 \label{fig:hane}
 \end{figure}
 %%%%%%% %%%%%%%%%% %%%%%%% 
@@ -278,7 +278,7 @@ where:
 \begin{figure}[t]
     \centering
     \includegraphics[scale=0.4]{122_MAV1m.png}
-    \caption{Minimum altitude is enabled and the robot is following the seafloor}
+    \caption{Minimum altitude is enabled, the UVMS is following the seafloor}
     \label{images_2_1}
 \end{figure}
 
@@ -291,7 +291,7 @@ where:
 In order to test this task, we simulated with different values for the minimum altitude, all with the same $k$ gain (equal to $0.2$).
 
 \begin{itemize}
-    \item \textbf{10 m:} The UVMS has an initial position below this threshold, thus it starts floating towards the surface very quickly (it is possible also to notice this huge vertical velocity $\dot{z}$, in the graph (Figure \ref{10m_ppdot})). 
+    \item \textbf{10 m:} The UVMS has an initial position below this threshold, thus it starts floating towards the surface very quickly (it is possible to notice this vertical velocity $\dot{z}$, in (Figure \ref{10m_ppdot})). 
     Of course, the task is not accomplished because the target position is far from the threshold, therefore, this value does not seem a reasonable one. % 
     \item \textbf{5 m:} Again, the task is triggered immediately, because the initial position is below the minimum altitude value. This control task is a safety one, therefore every time the UVMS is under the minimum altitude, the activation is enabled and it has the highest priority. 
     Again, it seems not a reasonable value. (Figure \ref{5m_ppdot}).
@@ -579,7 +579,7 @@ We have three different actions, with the following \textbf{hierarchy} and activ
 \begin{description}
  \item Action A, as before, is safe waypoint navigation with all the safety tasks enabled (Figure \ref{311a}). This Action finishes when the position error is below a fixed threshold.
  \item Action B is the action that performs the alignment to the rock, with all the safety task enabled (Figure \ref{311b}). his Action finishes when the misalignment error is below a fixed threshold.
- \item Action C performs the safe landing on the seafloor. \textit{Alignment to the Rock} is gradually disabled to optimize the alignment while the robot is performing the landing (Figure \ref{311c}). \end{description}
+ \item Action C performs the safe landing on the seafloor. \textit{Alignment to the Rock} is gradually disabled to optimize the alignment while the vehicle is performing the landing (Figure \ref{311c}). \end{description}
 
 
 
@@ -623,7 +623,7 @@ D_{w}(\boldsymbol \rho)={^w}\boldsymbol n_{\rho} \dot\theta+\underbrace{\theta D
 
 Since we are not interested in the orthogonal components, we can ignore them.
 
-Regarding the first part of the sum, ${^w}\boldsymbol n_{\rho}$ is the misalignment versor projected on the world and we know the following relationship:
+By looking at the first term of the sum, we know that ${^w}\boldsymbol n_{\rho}$ is the misalignment versor projected on the world and $\dot\theta$ can be written as :
 
 \begin{equation}
 \large
@@ -742,7 +742,7 @@ We performed tests with different gain values for the task reference:
  \item High = $1.2$
 \end{itemize}
 By looking at the position and velocity plots, it is clear that there are no significant differences between the medium (Figure \ref{ppdot_w_m}) and the high gain (Figure \ref{ppdot_w_b}) cases. The only difference is that the transition between phases in the high gain case is not as smooth as in the medium one. Of course, the saturation prevents the former to perform a much higher velocity. 
-For the very small gain, the resulted graph is very different (Figure \ref{ppdot_w_s}), because the velocity achieved during the alignment is not enough to reach the desired position. In our 30 seconds simulation is impossible for the UVMS to align correctly. However, by increasing the simulation time, it is possible to accomplish our goal, even with such slow behaviour.
+For the very small gain, the plot is very different (Figure \ref{ppdot_w_s}), because the velocity achieved during the alignment is not enough to reach the desired position. In our 30 seconds simulation is impossible for the UVMS to align correctly. However, by increasing the simulation time, it is possible to accomplish our goal, even with such slow behaviour.
 
 From the point of view of the activations and the errors, the results are coherent with the ones observed in the position and velocity plots.
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%

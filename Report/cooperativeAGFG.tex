@@ -448,7 +448,7 @@ where:
 There are two major differences:
 \begin{itemize} 
 \item The first one is that \textit{Landing} is not a safety task, but an action-defining one. While the \textit{Minimum Altitude} task is used to avoid collisions with the seafloor, the \textit{Landing} task defines an action (as the \textit{Vehicle Position} task), therefore it has lower priority.\\
-\item The second difference is that \textit{Minimum Altitude} is an inequality task rather than \textit{Landing} which is an equality one. As visible on the plots below (Figure \ref{213}), MAV is active when we are under the defined threshold while \textit{Landing} is triggered only when a prerequisite is satisfied and it is not deactivated until we land on the seafloor.
+\item The second difference is that \textit{Minimum Altitude} is an inequality task rather than \textit{Landing} which is an equality one. As visible on the plots below (Figure \ref{213}), MAV is active when we are under the defined threshold while \textit{Landing} is triggered only when a prerequisite is satisfied and it is not disabled until we land on the seafloor.
 \end{itemize}
 %%%%%%%% MINI PAGE IMAGES %%%%%%%%
 \begin{figure}[!h]
